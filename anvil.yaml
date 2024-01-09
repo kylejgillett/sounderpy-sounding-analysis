@@ -6,4 +6,7 @@ native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=E
     rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-services: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
