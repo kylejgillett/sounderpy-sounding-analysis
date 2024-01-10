@@ -3,7 +3,7 @@ container:
   properties: {background: '#000'}
 components:
 - name: column_panel_1
-  properties: {col_widths: '{"ZQQFFV":45,"HTXQOO":15,"VELXGO":45}', foreground: 'theme:Primary',
+  properties: {col_widths: '{"HTXQOO":15,"VELXGO":45}', foreground: 'theme:Primary',
     background: '#000'}
   type: ColumnPanel
   layout_properties: {grid_position: 'RSWSUA,PPOQGY'}
@@ -120,7 +120,7 @@ components:
             ', font_size: 20, font: '', background: '#44a2ff', bold: true}
         type: Button
         layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
-        event_bindings: {click: obs_button_click}
+        event_bindings: {click: raob_button_click}
       - name: raob_plot_label
         properties: {bold: true, align: center, font_size: 18, background: '', foreground: '#fbff00'}
         type: Label
@@ -346,16 +346,34 @@ components:
       properties: {display_mode: original_size}
       type: Image
       layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+- name: spacer_2_copy_copy
+  properties: {height: 102}
+  type: Spacer
+  layout_properties: {grid_position: 'RCHCIE,AAARTR'}
+- name: label_2_copy_2
+  properties: {text: 'Have questions about this app? DM me on twitter! @wxkylegillett',
+    align: center, font: cascadia code, foreground: '#FFFFFF'}
+  type: Label
+  layout_properties: {grid_position: 'IXLCVM,NNCHJQ'}
+- name: link_1
+  properties: {url: 'https://github.com/kylejgillett/sounderpy', text: SounderPy on Github,
+    underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
+    font: cascadia code}
+  type: Link
+  layout_properties: {grid_position: 'IXLCVM,FMCIGF'}
 - name: link_1_copy
   properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: SounderPy Documentation,
     underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
     font: cascadia code}
   type: Link
   layout_properties: {grid_position: 'IXLCVM,LKTGZY'}
-- name: link_1
-  properties: {url: 'https://github.com/kylejgillett/sounderpy', text: SounderPy on Github,
-    underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-    font: cascadia code}
-  type: Link
-  layout_properties: {grid_position: 'IEYDKA,XRYPSR'}
+- name: label_2_copy_2_copy
+  properties: {text: 'Powered by SounderPy v3.0.0, 2024 | (C) Kyle J Gillett 2024
+
+
+      Gillett, K., 2024: SounderPy Soundings Web App (Version 1). https://sounderpysoundings.anvil.app/
+
+      ', align: center, font: cascadia code, foreground: '#FFFFFF'}
+  type: Label
+  layout_properties: {grid_position: 'YWOBMI,HBNIXY'}
 is_package: true
