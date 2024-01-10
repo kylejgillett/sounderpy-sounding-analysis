@@ -297,3 +297,8 @@ color_scheme:
   - {name: Primary Overlay 1, color: 'rgba(208, 188, 255, 0.05)'}
   - {name: Primary Overlay 2, color: 'rgba(208, 188, 255, 0.08)'}
   - {name: Primary Overlay 3, color: 'rgba(208, 188, 255, 0.11)'}
+  - {name: On Disabled, color: 'rgba(230, 225, 229, 0.38)'}
+  - {name: Disabled Container, color: 'rgba(230, 225, 229, 0.12)'}
+  - {name: Light Overlay 1, color: 'rgba(232, 222, 248, 0.08)'}
+  - {name: Light Overlay 2, color: 'rgba(232, 222, 248, 0.12)'}
+  - {name: Dark Overlay 2, color: 'rgba(232, 222, 248, 0.12)'}
