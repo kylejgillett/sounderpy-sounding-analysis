@@ -4,7 +4,7 @@ services:
   server_config: {}
 startup: {type: form, module: Form1}
 package_name: SounderPy_Soundings_
-allow_embedding: true
+allow_embedding: false
 name: 'SounderPy Soundings '
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
