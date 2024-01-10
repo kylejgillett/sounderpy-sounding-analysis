@@ -1,129 +1,128 @@
-is_package: true
 container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+  type: ColumnPanel
+  properties: {background: '#000'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{"EXQTKF":15,"ZQQFFV":45}', foreground: 'theme:Primary',
-    background: 'theme:Background'}
-  name: column_panel_1
-  layout_properties: {slot: default}
+- name: column_panel_1
+  properties: {col_widths: '{"ZQQFFV":45,"HTXQOO":15,"VELXGO":45}', foreground: 'theme:Primary',
+    background: '#000'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'RSWSUA,PPOQGY'}
   components:
   - name: image_1
     properties: {source: _/theme/251580013-2e9477c9-e36a-4163-accb-fe46780058dd.png,
       height: 127}
     type: Image
-    layout_properties: {grid_position: 'DHNECK,EXQTKF MADLTX,OILSWJ'}
-  - name: link_1_copy
-    properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: Check out SounderPy Documentation,
-      underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-      font: cascadia code}
-    type: Link
-    layout_properties: {grid_position: 'DHNECK,EXQTKF UTIZRH,FPNYVH'}
-  - name: link_1
-    properties: {url: 'https://github.com/kylejgillett/sounderpy', text: Check out SounderPy on Github,
-      underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-      font: cascadia code}
-    type: Link
-    layout_properties: {grid_position: 'DHNECK,EXQTKF HKGJYO,UWTBMK'}
+    layout_properties: {grid_position: 'XWZYAZ,HTXQOO'}
   - name: label_1
     properties: {text: " SOUNDERPY \nSOUNDING PLOTTER", icon: '', underline: false,
-      bold: true, font_size: 40, align: center, font: cascadia code, foreground: 'theme:On
-        Primary Container'}
+      bold: true, font_size: 40, align: center, font: cascadia code, foreground: '#fbff00'}
     type: Label
-    layout_properties: {grid_position: 'DHNECK,ZQQFFV ZFQKTU,PLZCPG'}
+    layout_properties: {grid_position: 'XWZYAZ,VELXGO'}
   - name: label_3
     properties: {text: 'Welcome to the SounderPy web-based sounding retrieval tool! ',
-      bold: true, align: center, font_size: 20, font: cascadia code, foreground: 'theme:Primary'}
+      bold: true, align: center, font_size: 20, font: cascadia code, foreground: '#FFFF'}
     type: Label
-    layout_properties: {grid_position: 'DHNECK,ZQQFFV VZLJCZ,YBRKVT'}
+    layout_properties: {grid_position: 'VZLJCZ,YBRKVT'}
   - name: label_2
-    properties: {text: 'This is a simple web app that plots SounderPy soundings right
-        in your browser!
+    properties: {text: 'This is a very simple web app that plots SounderPy soundings
+        right in your browser!
 
 
         This tool can plot RAOB observed soundings, ACARS observed soundings and latest
-        model forecast soundings!', align: center, font: cascadia code}
+        model forecast soundings!
+
+
+        (C) Kyle J Gillett 2024 | @wxkylegillett', align: center, font: cascadia code,
+      foreground: '#FFFFFF'}
     type: Label
-    layout_properties: {grid_position: 'DHNECK,ZQQFFV ONNQKB,KUOEQG'}
+    layout_properties: {grid_position: 'ONNQKB,KUOEQG'}
   - name: spacer_1
     properties: {height: 46}
     type: Spacer
     layout_properties: {grid_position: 'FGYMGJ,CCRQON'}
-  - name: card_2
-    properties: {role: card, visible: true, foreground: 'theme:Primary', background: 'theme:Error'}
+  - name: raob_card
+    properties: {role: card, visible: true, foreground: 'theme:Primary', background: '#44a2ff'}
     type: ColumnPanel
     layout_properties: {grid_position: 'FQOGUW,DVHCNI'}
     components:
     - name: card_1_copy
-      properties: {role: card, background: 'theme:Background', col_widths: '{"BTQSPL":30,"IJSIQT":30}'}
+      properties: {role: card, background: '#363636', col_widths: '{}'}
       type: ColumnPanel
       layout_properties: {grid_position: 'VVBZAR,ZMDZQM'}
       components:
       - name: raob_header
         properties: {text: OBSERVED RAOB SOUNDINGS, icon: '', bold: true, align: center,
-          spacing_above: large, font_size: 28, foreground: 'theme:On Tertiary Container',
-          font: cascadia code}
+          spacing_above: small, font_size: 28, foreground: '#fbff00', font: cascadia code}
         type: Label
         layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+      - name: label_2_copy
+        properties: {text: 'This tool retrieves RAOB and IGRAv2 Observed Soundings.
+            To use this, provide a RAOB or IGRAv2 site identifier, a sounding launch
+            date and sounding launch hour, then select optional settings and finally
+            push the ''GET SOUNDING'' button ', align: center, font: cascadia code,
+          foreground: '#FFFFFF', font_size: 12}
+        type: Label
+        layout_properties: {grid_position: 'TQKHUO,NWHAIQ'}
       - name: raob_instructions_label
         properties: {text: 'PLEASE ENTER A SITE ID, LAUNCH DATE & LAUNCH TIME', icon: 'fa:exclamation-circle',
-          bold: true, align: center, spacing_above: small, font_size: 14, foreground: 'theme:On
-            Tertiary Container'}
+          bold: true, align: center, spacing_above: small, font_size: 14, foreground: '#FFFFFF'}
         type: Label
-        layout_properties: {grid_position: 'XMADQA,IJSIQT IYWXWH,HDIUUF'}
+        layout_properties: {grid_position: 'XNQFRE,QKDRPI'}
       - name: raob_station_id
-        properties: {text: STATION ID, icon: 'fa:map-marker', bold: true, align: center}
+        properties: {text: STATION ID, icon: 'fa:map-marker', bold: true, align: center,
+          foreground: '#FFFFFF'}
         type: Label
-        layout_properties: {grid_position: 'XMADQA,IJSIQT CLHHKN,CGLVDG'}
+        layout_properties: {grid_position: 'CLHHKN,CGLVDG'}
       - name: raob_site_id
-        properties: {align: center, placeholder: 3 digit RAOB or 11 digit IGRAv2 ID,
-          enabled: true, italic: true}
+        properties: {align: center, placeholder: '3 digit RAOB or 11 digit IGRAv2
+            ID (ex: ''DTX'')', enabled: true, italic: true, background: '#707070',
+          foreground: 'theme:'}
         type: TextBox
-        layout_properties: {grid_position: 'XMADQA,IJSIQT FYOZQQ,WKUXHH'}
+        layout_properties: {grid_position: 'FYOZQQ,WKUXHH'}
         event_bindings: {pressed_enter: station_id_pressed_enter}
       - name: raob_date_label
-        properties: {text: LAUNCH DATE, icon: 'fa:calendar', bold: true, align: center}
+        properties: {text: LAUNCH DATE, icon: 'fa:calendar', bold: true, align: center,
+          foreground: '#FFFFFF'}
         type: Label
-        layout_properties: {grid_position: 'XMADQA,IJSIQT CMNHRV,LRIBEQ'}
+        layout_properties: {grid_position: 'CMNHRV,LRIBEQ'}
       - name: raob_date
         properties: {placeholder: enter a launch date, pick_time: true, enabled: true,
-          visible: true, format: '"%m-%d-%Y"', align: center}
+          visible: true, format: '"%m-%d-%Y"', align: center, background: '#707070',
+          foreground: 'theme:'}
         type: DatePicker
-        layout_properties: {grid_position: 'XMADQA,IJSIQT SBFXQU,OYHMHY'}
+        layout_properties: {grid_position: 'SBFXQU,OYHMHY'}
       - name: raob_hour_label
-        properties: {text: LAUNCH HOUR, icon: 'fa:clock-o', bold: true, align: center}
+        properties: {text: LAUNCH HOUR, icon: 'fa:clock-o', bold: true, align: center,
+          foreground: '#FFFF'}
         type: Label
-        layout_properties: {grid_position: 'XMADQA,IJSIQT LJIOUE,EHXHSZ'}
+        layout_properties: {grid_position: 'LJIOUE,EHXHSZ'}
       - name: raob_hour
         properties: {placeholder: 'UTC format (ex: ''12'', ''00'')', italic: true,
-          align: center}
+          align: center, background: '#707070', foreground: 'theme:'}
         type: TextBox
-        layout_properties: {grid_position: 'XMADQA,IJSIQT DNBQRR,APHAFK'}
+        layout_properties: {grid_position: 'DNBQRR,APHAFK'}
       - name: raob_dark_mode_check
-        properties: {text: Turn on dark mode, checked: true, role: null, foreground: 'theme:On
-            Tertiary Container', background: '', allow_indeterminate: false, align: left}
+        properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
+          background: '', allow_indeterminate: false, align: left}
         type: CheckBox
-        layout_properties: {grid_position: 'XMADQA,IJSIQT WDCNFT,SQJLLM', full_width_row: false}
+        layout_properties: {grid_position: 'WDCNFT,SQJLLM', full_width_row: false}
         event_bindings: {change: dark_mode_check_change}
       - name: raob_color_blind_check
         properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
-          foreground: 'theme:Tertiary', background: '', allow_indeterminate: false,
-          align: left}
+          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left}
         type: CheckBox
-        layout_properties: {grid_position: 'XMADQA,IJSIQT SRCUAF,TRIYUX'}
+        layout_properties: {grid_position: 'SRCUAF,TRIYUX'}
         event_bindings: {change: check_box_1_change}
       - name: raob_button
-        properties: {role: filled, align: center, border: '', foreground: 'theme:On
-            Tertiary', text: 'GET SOUNDING
+        properties: {role: filled, align: center, border: '', foreground: '#fbff00',
+          text: 'GET SOUNDING
 
-            ', font_size: 20, font: '', background: 'theme:On Primary Container',
-          bold: true}
+            ', font_size: 20, font: '', background: '#44a2ff', bold: true}
         type: Button
-        layout_properties: {grid_position: 'XMADQA,IJSIQT TQCSFA,FHOEWA'}
+        layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
         event_bindings: {click: obs_button_click}
       - name: raob_plot_label
-        properties: {bold: true, align: center, font_size: 18}
+        properties: {bold: true, align: center, font_size: 18, background: '', foreground: '#fbff00'}
         type: Label
         layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
       - name: raob_image_display
@@ -134,88 +133,229 @@ components:
     properties: {height: 102}
     type: Spacer
     layout_properties: {grid_position: 'PSLXDT,UGRCCP'}
-  - name: card_2_copy
-    properties: {role: card}
-    type: ColumnPanel
-    layout_properties: {grid_position: 'RDPIWA,BSEARY'}
-    components:
-    - name: card_1_copy_copy
-      properties: {role: card, background: 'theme:Background', col_widths: '{"IJSIQT":30}'}
-      type: ColumnPanel
-      layout_properties: {grid_position: 'VVBZAR,ZMDZQM'}
-      components:
-      - name: acars_header
-        properties: {text: OBSERVED ACARS SOUNDINGS, icon: '', bold: true, align: center,
-          spacing_above: large, font_size: 28, foreground: 'theme:On Tertiary Container',
-          font: cascadia code}
-        type: Label
-        layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
-      - name: acars_instructions
-        properties: {text: 'STEP 1: PLEASE ENTER A FLIGHT DATE AND HOUR', icon: 'fa:exclamation-circle',
-          bold: true, align: center, spacing_above: small, font_size: 14, foreground: 'theme:On
-            Tertiary Container'}
-        type: Label
-        layout_properties: {grid_position: 'IYWXWH,HDIUUF'}
-      - name: acars_date_label
-        properties: {text: FLIGHT DATE, icon: 'fa:calendar', bold: true, align: center}
-        type: Label
-        layout_properties: {grid_position: 'CMNHRV,LRIBEQ'}
-      - name: acars_date
-        properties: {placeholder: enter a launch date, pick_time: true, enabled: true,
-          visible: true, format: '"%m-%d-%Y"', align: center}
-        type: DatePicker
-        layout_properties: {grid_position: 'SBFXQU,OYHMHY'}
-      - name: acars_hour_label
-        properties: {text: FLIGHT HOUR, icon: 'fa:clock-o', bold: true, align: center}
-        type: Label
-        layout_properties: {grid_position: 'LJIOUE,EHXHSZ'}
-      - name: acars_hour
-        properties: {placeholder: 'UTC format (ex: ''12'', ''00'')', italic: true,
-          align: center}
-        type: TextBox
-        layout_properties: {grid_position: 'DNBQRR,APHAFK'}
-      - name: acars_flight_id_label
-        properties: {text: FLIGHT ID, icon: 'fa:map-marker', bold: true, align: center}
-        type: Label
-        layout_properties: {grid_position: 'YBBBVH,JQWKQH'}
-      - name: acars_flight_id
-        properties: {align: center, placeholder: 3 digit RAOB or 11 digit IGRAv2 ID,
-          enabled: true, italic: true}
-        type: TextBox
-        layout_properties: {grid_position: ''}
-        event_bindings: {pressed_enter: station_id_pressed_enter}
-      - name: acars_dark_mode_check
-        properties: {text: Turn on dark mode, checked: true, role: null, foreground: 'theme:On
-            Tertiary Container', background: '', allow_indeterminate: false, align: left}
-        type: CheckBox
-        layout_properties: {grid_position: 'WDCNFT,SQJLLM', full_width_row: false}
-        event_bindings: {change: dark_mode_check_change}
-      - name: acars_color_blind_check
-        properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
-          foreground: 'theme:Tertiary', background: '', allow_indeterminate: false,
-          align: left}
-        type: CheckBox
-        layout_properties: {grid_position: 'SRCUAF,TRIYUX'}
-        event_bindings: {change: check_box_1_change}
-      - name: acars_button
-        properties: {role: filled, align: center, border: '', foreground: 'theme:On
-            Tertiary', text: 'GET SOUNDING
-
-            ', font_size: 20, font: '', background: 'theme:On Primary Container',
-          bold: true}
-        type: Button
-        layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
-        event_bindings: {click: obs_button_click}
-      - name: acars_plot_label
-        properties: {bold: true, align: center, font_size: 18}
-        type: Label
-        layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
-      - name: acars_image_display
-        properties: {display_mode: original_size}
-        type: Image
-        layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
-- name: column_panel_2
-  properties: {}
+- name: acars_card
+  properties: {role: card, visible: true, foreground: 'theme:Primary', background: '#44a2ff'}
   type: ColumnPanel
-  layout_properties: {slot: left-nav}
-  components: []
+  layout_properties: {grid_position: 'TRBQBJ,MIZCOW'}
+  components:
+  - name: card_1_copy_copy
+    properties: {role: card, background: '#363636', col_widths: '{}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'YJASZZ,ZWVHPM'}
+    components:
+    - name: acars_header
+      properties: {text: OBSERVED ACARS SOUNDINGS, icon: '', bold: true, align: center,
+        spacing_above: small, font_size: 28, foreground: '#fbff00', font: cascadia code}
+      type: Label
+      layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+    - name: label_2_copy_copy
+      properties: {text: 'This tool retrieves ACARS aircraft observed soundings from
+          US airports. To use this, you must first search for available profiles for
+          a given date and hour. Do so by providing a flight date and flight hour,
+          then push the ''GET AVAILABLE PROFILES'' button. Next, you can copy one
+          of the ''flight identifiers'' and paste it in the ''FLIGHT ID'' box. Finally,
+          select optional settings and finally push the ''GET SOUNDING'' button  ',
+        align: center, font: cascadia code, foreground: '#FFFFFF', font_size: 12}
+      type: Label
+      layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
+    - name: acars_instructions_label
+      properties: {text: 'STEP 1: PLEASE ENTER A FLIGHT DATE & FLIGHT TIME TO SEARCH
+          FOR AVAILABLE PROFILES', icon: 'fa:exclamation-circle', bold: true, align: center,
+        spacing_above: small, font_size: 14, foreground: '#FFFFFF'}
+      type: Label
+      layout_properties: {grid_position: 'IYWXWH,HDIUUF'}
+    - name: acars_date_label
+      properties: {text: LAUNCH DATE, icon: 'fa:calendar', bold: true, align: center,
+        foreground: '#FFFFFF'}
+      type: Label
+      layout_properties: {grid_position: 'CMNHRV,LRIBEQ'}
+    - name: acars_date
+      properties: {placeholder: enter a launch date, pick_time: true, enabled: true,
+        visible: true, format: '"%m-%d-%Y"', align: center, background: '#707070',
+        foreground: 'theme:'}
+      type: DatePicker
+      layout_properties: {grid_position: 'SBFXQU,OYHMHY'}
+    - name: acars_hour_label
+      properties: {text: LAUNCH HOUR, icon: 'fa:clock-o', bold: true, align: center,
+        foreground: '#FFFF'}
+      type: Label
+      layout_properties: {grid_position: 'LJIOUE,EHXHSZ'}
+    - name: acars_hour
+      properties: {placeholder: 'UTC format (ex: ''12'', ''00'')', italic: true, align: center,
+        background: '#707070', foreground: 'theme:'}
+      type: TextBox
+      layout_properties: {grid_position: 'DNBQRR,APHAFK'}
+    - name: acars_profiles_button
+      properties: {role: filled, align: center, border: '', foreground: '#fbff00',
+        text: 'GET AVAILABLE PROFILES
+
+          ', font_size: 13, font: '', background: '#44a2ff', bold: true}
+      type: Button
+      layout_properties: {grid_position: 'GNNFER,QJZVSN'}
+      event_bindings: {click: acars_profiles_button_click}
+    - name: acars_profiles_list
+      properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#fbff00',
+        italic: true}
+      type: Label
+      layout_properties: {grid_position: 'CXSRKP,SXTXPU'}
+    - name: acars_instructions_label_2
+      properties: {text: 'STEP 2: PLEASE ''COPY & PASTE'' ONE OF THE ABOVE ''FLIGHT
+          IDS'' INTO THE BOX BELOW', icon: 'fa:exclamation-circle', bold: true, align: center,
+        spacing_above: small, font_size: 14, foreground: '#FFFFFF'}
+      type: Label
+      layout_properties: {grid_position: 'GCMCHY,KWRDME'}
+    - name: acars_flight_id
+      properties: {text: FLIGHT ID, icon: 'fa:map-marker', bold: true, align: center,
+        foreground: '#FFFFFF'}
+      type: Label
+      layout_properties: {grid_position: 'GYKSGS,TKRZVE'}
+    - name: acars_site_id
+      properties: {align: center, placeholder: 'ACARS Flight ID (ex: ''PDX_0050'')',
+        enabled: true, italic: true, background: '#707070', foreground: 'theme:'}
+      type: TextBox
+      layout_properties: {grid_position: ''}
+      event_bindings: {pressed_enter: station_id_pressed_enter}
+    - name: acars_dark_mode_check
+      properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
+        background: '', allow_indeterminate: false, align: left}
+      type: CheckBox
+      layout_properties: {grid_position: 'WDCNFT,SQJLLM', full_width_row: false}
+      event_bindings: {change: dark_mode_check_change}
+    - name: acars_color_blind_check
+      properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
+        foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left}
+      type: CheckBox
+      layout_properties: {grid_position: 'SRCUAF,TRIYUX'}
+      event_bindings: {change: check_box_1_change}
+    - name: acars_button
+      properties: {role: filled, align: center, border: '', foreground: '#fbff00',
+        text: 'GET SOUNDING
+
+          ', font_size: 20, font: '', background: '#44a2ff', bold: true}
+      type: Button
+      layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
+      event_bindings: {click: acars_button_click}
+    - name: acars_plot_label
+      properties: {bold: true, align: center, font_size: 18, background: '', foreground: '#fbff00'}
+      type: Label
+      layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
+    - name: acars_image_display
+      properties: {display_mode: original_size}
+      type: Image
+      layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+- name: spacer_2_copy
+  properties: {height: 102}
+  type: Spacer
+  layout_properties: {grid_position: 'XKVIVF,EYADVD'}
+- name: bufkit_card
+  properties: {role: card, visible: true, foreground: 'theme:Primary', background: '#44a2ff'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'DEGPPB,KGGJEM'}
+  components:
+  - name: card_1_copy_copy_copy
+    properties: {role: card, background: '#363636', col_widths: '{}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
+    components:
+    - name: bufkit_header
+      properties: {text: LATEST BUFKIT FORECAST SOUNDINGS, icon: '', bold: true, align: center,
+        spacing_above: small, font_size: 28, foreground: '#fbff00', font: cascadia code}
+      type: Label
+      layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+    - name: label_2_copy_copy_copy
+      properties: {text: 'This tool retrieves the latest BUFKIT forecast sounding
+          for a given model, BUFKIT site, and forecast hour. First, provide the model
+          you''d like to access (HRRR, RAP, NAM, GFS, SREF, HIRESW), a valid BUFKIT
+          site identifier, and forecast hour. Next, select optional settings and finally
+          push the ''GET SOUNDING'' button.', align: center, font: cascadia code,
+        foreground: '#FFFFFF', font_size: 12}
+      type: Label
+      layout_properties: {grid_position: 'VVPPWG,FBGFQR'}
+    - name: bufkit_instructions_label
+      properties: {text: 'PLEASE ENTER A MODEL, BUFKIT SITE ID, & FORECAST HOUR',
+        icon: 'fa:exclamation-circle', bold: true, align: center, spacing_above: small,
+        font_size: 14, foreground: '#FFFFFF'}
+      type: Label
+      layout_properties: {grid_position: 'IYWXWH,HDIUUF'}
+    - name: bufkit_model_label
+      properties: {text: MODEL, icon: 'fa:database', bold: true, align: center, foreground: '#FFFFFF'}
+      type: Label
+      layout_properties: {grid_position: 'KDRYGB,HJERIP'}
+    - name: bufkit_model
+      properties: {align: center, placeholder: 'HRRR, RAP, NAM, GFS, SREF, HIRESW',
+        enabled: true, italic: true, background: '#707070', foreground: 'theme:'}
+      type: TextBox
+      layout_properties: {grid_position: 'JAROZQ,QAKYWS'}
+      event_bindings: {pressed_enter: station_id_pressed_enter}
+    - name: bufkit_site_id_label
+      properties: {text: 'BUFKIT SITE ID
+
+          ', icon: 'fa:map-marker', bold: true, align: center, foreground: '#FFFFFF'}
+      type: Label
+      layout_properties: {grid_position: 'LTVWSI,PKTPGO'}
+    - name: bufkit_sites_map_link
+      properties: {url: 'http://www.meteo.psu.edu/bufkit/DomainNAMRAP_NAM_12.html',
+        text: See available BUFKIT site maps at the Penn State BUFKIT Warehouse page,
+        underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
+        font: cascadia code}
+      type: Link
+      layout_properties: {grid_position: 'DKWJXM,GRYRVP'}
+    - name: bufkit_site_id
+      properties: {align: center, placeholder: 3 or 4 digit *BUFKIT* Site ID, enabled: true,
+        italic: true, background: '#707070', foreground: 'theme:'}
+      type: TextBox
+      layout_properties: {grid_position: 'XOTBYK,AVIAYV'}
+      event_bindings: {pressed_enter: station_id_pressed_enter}
+    - name: bufkir_fhour_label
+      properties: {text: 'FORECAST HOUR
+
+          ', icon: 'fa:clock-o', bold: true, align: center, foreground: '#FFFF'}
+      type: Label
+      layout_properties: {grid_position: 'LJIOUE,EHXHSZ'}
+    - name: bufkit_fhour
+      properties: {placeholder: 'Forecast Hour (hours from run time, as a number,
+          ex: 3)', italic: true, align: center, background: '#707070', type: number,
+        foreground: 'theme:'}
+      type: TextBox
+      layout_properties: {grid_position: 'DNBQRR,APHAFK'}
+    - name: bufkit_dark_mode_check
+      properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
+        background: '', allow_indeterminate: false, align: left}
+      type: CheckBox
+      layout_properties: {grid_position: 'WDCNFT,SQJLLM', full_width_row: false}
+      event_bindings: {change: dark_mode_check_change}
+    - name: bufkit_color_blind_check
+      properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
+        foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left}
+      type: CheckBox
+      layout_properties: {grid_position: 'SRCUAF,TRIYUX'}
+      event_bindings: {change: check_box_1_change}
+    - name: bufkit_button
+      properties: {role: filled, align: center, border: '', foreground: '#fbff00',
+        text: 'GET SOUNDING
+
+          ', font_size: 20, font: '', background: '#44a2ff', bold: true}
+      type: Button
+      layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
+      event_bindings: {click: bufkit_button_click}
+    - name: bufkit_plot_label
+      properties: {bold: true, align: center, font_size: 18, background: '', foreground: '#fbff00'}
+      type: Label
+      layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
+    - name: bufkit_image_display
+      properties: {display_mode: original_size}
+      type: Image
+      layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+- name: link_1_copy
+  properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: SounderPy Documentation,
+    underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
+    font: cascadia code}
+  type: Link
+  layout_properties: {grid_position: 'IXLCVM,LKTGZY'}
+- name: link_1
+  properties: {url: 'https://github.com/kylejgillett/sounderpy', text: SounderPy on Github,
+    underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
+    font: cascadia code}
+  type: Link
+  layout_properties: {grid_position: 'IEYDKA,XRYPSR'}
+is_package: true

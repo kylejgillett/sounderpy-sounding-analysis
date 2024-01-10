@@ -4,16 +4,13 @@ import anvil.server
 
 class Form1(Form1Template):
   def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
+    # Set Form Properties and Data Bindings.
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
 
-  def station_id_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    pass
 
-  def obs_button_click(self, **event_args):
+  def raob_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     params = anvil.server.call('get_obs_sounding',
                                self.raob_site_id.text,
@@ -25,4 +22,39 @@ class Form1(Form1Template):
                                self.raob_color_blind_check.checked)
     self.raob_image_display.source = params[0]
     self.raob_plot_label.text = params[1]
-    
+
+
+  def acars_profiles_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.acars_profiles_list.text = anvil.server.call('get_acars_profile_list',
+                               self.acars_date.date.strftime('%Y'),
+                               self.acars_date.date.strftime('%m'),
+                               self.acars_date.date.strftime('%d'),
+                               self.acars_hour.text)
+  
+  def acars_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    params = anvil.server.call('get_acars_sounding',
+                               self.acars_site_id.text,
+                               self.acars_date.date.strftime('%Y'),
+                               self.acars_date.date.strftime('%m'),
+                               self.acars_date.date.strftime('%d'),
+                               self.acars_hour.text,
+                               self.acars_dark_mode_check.checked,
+                               self.acars_color_blind_check.checked)
+    self.acars_image_display.source = params[0]
+    self.acars_plot_label.text = params[1]
+
+
+
+
+  def bufkit_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    params = anvil.server.call('get_bufkit_sounding',
+                               self.bufkit_model.text,
+                               self.bufkit_site_id.text,
+                               self.bufkit_fhour.text,
+                               self.bufkit_dark_mode_check.checked,
+                               self.bufkit_color_blind_check.checked)
+    self.bufkit_image_display.source = params[0]
+    self.bufkit_plot_label.text = params[1]
