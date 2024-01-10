@@ -8,7 +8,7 @@ allow_embedding: true
 name: 'SounderPy Soundings '
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-metadata: {title: 'SounderPy Soundings ', logo_img: 'asset:GDSrWo0XkAAGWX5-logo.png',
+metadata: {title: 'SounderPy Soundings ', logo_img: 'asset:GDSrWo0XkAAGWX5(1)-logo.png',
   description: 'This is a very simple web app that plots SounderPy soundings right
     in your browser!  This tool can plot RAOB observed soundings, ACARS observed soundings
     and latest model forecast soundings!'}
