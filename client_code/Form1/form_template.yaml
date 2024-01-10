@@ -27,12 +27,13 @@ components:
     layout_properties: {grid_position: 'DHNECK,EXQTKF HKGJYO,UWTBMK'}
   - name: label_1
     properties: {text: " SOUNDERPY \nSOUNDING PLOTTER", icon: '', underline: false,
-      bold: true, font_size: 40, align: center, font: cascadia code}
+      bold: true, font_size: 40, align: center, font: cascadia code, foreground: 'theme:On
+        Primary Container'}
     type: Label
     layout_properties: {grid_position: 'DHNECK,ZQQFFV ZFQKTU,PLZCPG'}
   - name: label_3
     properties: {text: 'Welcome to the SounderPy web-based sounding retrieval tool! ',
-      bold: true, align: center, font_size: 20, font: cascadia code}
+      bold: true, align: center, font_size: 20, font: cascadia code, foreground: 'theme:Primary'}
     type: Label
     layout_properties: {grid_position: 'DHNECK,ZQQFFV VZLJCZ,YBRKVT'}
   - name: label_2
