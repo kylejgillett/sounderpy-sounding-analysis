@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {background: '#000'}
+  properties: {background: '#000', col_widths: '{"NNCHJQ":30,"LKTGZY":30}'}
 components:
 - name: column_panel_1
   properties: {col_widths: '{"HTXQOO":15,"VELXGO":45}', foreground: 'theme:Primary',
@@ -15,12 +15,12 @@ components:
     layout_properties: {grid_position: 'XWZYAZ,HTXQOO'}
   - name: label_1
     properties: {text: " SOUNDERPY \nSOUNDING PLOTTER", icon: '', underline: false,
-      bold: true, font_size: 40, align: center, font: cascadia code, foreground: '#fbff00'}
+      bold: true, font_size: 45, align: center, font: cascadia code, foreground: '#fbff00'}
     type: Label
     layout_properties: {grid_position: 'XWZYAZ,VELXGO'}
   - name: label_3
     properties: {text: 'Welcome to the SounderPy web-based sounding retrieval tool! ',
-      bold: true, align: center, font_size: 20, font: cascadia code, foreground: '#FFFF'}
+      bold: true, align: center, font_size: 25, font: cascadia code, foreground: '#FFFF'}
     type: Label
     layout_properties: {grid_position: 'VZLJCZ,YBRKVT'}
   - name: label_2
@@ -33,7 +33,7 @@ components:
 
 
         (C) Kyle J Gillett 2024 | @wxkylegillett', align: center, font: cascadia code,
-      foreground: '#FFFFFF'}
+      foreground: '#FFFFFF', font_size: 15}
     type: Label
     layout_properties: {grid_position: 'ONNQKB,KUOEQG'}
   - name: spacer_1
@@ -52,7 +52,7 @@ components:
       components:
       - name: raob_header
         properties: {text: OBSERVED RAOB SOUNDINGS, icon: '', bold: true, align: center,
-          spacing_above: small, font_size: 28, foreground: '#fbff00', font: cascadia code}
+          spacing_above: small, font_size: 32, foreground: '#fbff00', font: cascadia code}
         type: Label
         layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
       - name: label_2_copy
@@ -65,51 +65,53 @@ components:
         layout_properties: {grid_position: 'TQKHUO,NWHAIQ'}
       - name: raob_instructions_label
         properties: {text: 'PLEASE ENTER A SITE ID, LAUNCH DATE & LAUNCH TIME', icon: 'fa:exclamation-circle',
-          bold: true, align: center, spacing_above: small, font_size: 14, foreground: '#FFFFFF'}
+          bold: true, align: center, spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
         type: Label
         layout_properties: {grid_position: 'XNQFRE,QKDRPI'}
       - name: raob_station_id
         properties: {text: STATION ID, icon: 'fa:map-marker', bold: true, align: center,
-          foreground: '#FFFFFF'}
+          foreground: '#FFFFFF', font_size: 17}
         type: Label
         layout_properties: {grid_position: 'CLHHKN,CGLVDG'}
       - name: raob_site_id
         properties: {align: center, placeholder: '3 digit RAOB or 11 digit IGRAv2
             ID (ex: ''DTX'')', enabled: true, italic: true, background: '#707070',
-          foreground: 'theme:'}
+          foreground: 'theme:', bold: true, font_size: 15}
         type: TextBox
         layout_properties: {grid_position: 'FYOZQQ,WKUXHH'}
         event_bindings: {pressed_enter: station_id_pressed_enter}
       - name: raob_date_label
         properties: {text: LAUNCH DATE, icon: 'fa:calendar', bold: true, align: center,
-          foreground: '#FFFFFF'}
+          foreground: '#FFFFFF', font_size: 17}
         type: Label
         layout_properties: {grid_position: 'CMNHRV,LRIBEQ'}
       - name: raob_date
-        properties: {placeholder: enter a launch date, pick_time: true, enabled: true,
-          visible: true, format: '"%m-%d-%Y"', align: center, background: '#707070',
-          foreground: 'theme:'}
+        properties: {align: center, pick_time: true, placeholder: enter a launch date,
+          enabled: true, foreground: 'theme:', visible: true, font_size: 15, background: '#707070',
+          bold: true, format: '"%m-%d-%Y"'}
         type: DatePicker
         layout_properties: {grid_position: 'SBFXQU,OYHMHY'}
       - name: raob_hour_label
         properties: {text: LAUNCH HOUR, icon: 'fa:clock-o', bold: true, align: center,
-          foreground: '#FFFF'}
+          foreground: '#FFFF', font_size: 17}
         type: Label
         layout_properties: {grid_position: 'LJIOUE,EHXHSZ'}
       - name: raob_hour
         properties: {placeholder: 'UTC format (ex: ''12'', ''00'')', italic: true,
-          align: center, background: '#707070', foreground: 'theme:'}
+          align: center, background: '#707070', foreground: 'theme:', bold: true,
+          font_size: 15}
         type: TextBox
         layout_properties: {grid_position: 'DNBQRR,APHAFK'}
       - name: raob_dark_mode_check
         properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
-          background: '', allow_indeterminate: false, align: left}
+          background: '', allow_indeterminate: false, align: left, font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'WDCNFT,SQJLLM', full_width_row: false}
         event_bindings: {change: dark_mode_check_change}
       - name: raob_color_blind_check
         properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
-          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left}
+          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
+          font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'SRCUAF,TRIYUX'}
         event_bindings: {change: check_box_1_change}
@@ -145,7 +147,7 @@ components:
     components:
     - name: acars_header
       properties: {text: OBSERVED ACARS SOUNDINGS, icon: '', bold: true, align: center,
-        spacing_above: small, font_size: 28, foreground: '#fbff00', font: cascadia code}
+        spacing_above: small, font_size: 32, foreground: '#fbff00', font: cascadia code}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: label_2_copy_copy
@@ -161,69 +163,71 @@ components:
     - name: acars_instructions_label
       properties: {text: 'STEP 1: PLEASE ENTER A FLIGHT DATE & FLIGHT TIME TO SEARCH
           FOR AVAILABLE PROFILES', icon: 'fa:exclamation-circle', bold: true, align: center,
-        spacing_above: small, font_size: 14, foreground: '#FFFFFF'}
+        spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'IYWXWH,HDIUUF'}
     - name: acars_date_label
       properties: {text: LAUNCH DATE, icon: 'fa:calendar', bold: true, align: center,
-        foreground: '#FFFFFF'}
+        foreground: '#FFFFFF', font: '', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'CMNHRV,LRIBEQ'}
     - name: acars_date
-      properties: {placeholder: enter a launch date, pick_time: true, enabled: true,
-        visible: true, format: '"%m-%d-%Y"', align: center, background: '#707070',
-        foreground: 'theme:'}
+      properties: {align: center, pick_time: true, placeholder: enter a launch date,
+        enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true,
+        background: '#707070', bold: true, format: '"%m-%d-%Y"'}
       type: DatePicker
       layout_properties: {grid_position: 'SBFXQU,OYHMHY'}
     - name: acars_hour_label
       properties: {text: LAUNCH HOUR, icon: 'fa:clock-o', bold: true, align: center,
-        foreground: '#FFFF'}
+        foreground: '#FFFF', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'LJIOUE,EHXHSZ'}
     - name: acars_hour
       properties: {placeholder: 'UTC format (ex: ''12'', ''00'')', italic: true, align: center,
-        background: '#707070', foreground: 'theme:'}
+        background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'DNBQRR,APHAFK'}
     - name: acars_profiles_button
       properties: {role: filled, align: center, border: '', foreground: '#fbff00',
         text: 'GET AVAILABLE PROFILES
 
-          ', font_size: 13, font: '', background: '#44a2ff', bold: true}
+          ', font_size: 17, font: '', background: '#44a2ff', bold: true}
       type: Button
       layout_properties: {grid_position: 'GNNFER,QJZVSN'}
       event_bindings: {click: acars_profiles_button_click}
     - name: acars_profiles_list
-      properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#fbff00',
+      properties: {bold: false, align: center, font_size: 15, background: '', foreground: '#fbff00',
         italic: true}
       type: Label
       layout_properties: {grid_position: 'CXSRKP,SXTXPU'}
     - name: acars_instructions_label_2
       properties: {text: 'STEP 2: PLEASE ''COPY & PASTE'' ONE OF THE ABOVE ''FLIGHT
           IDS'' INTO THE BOX BELOW', icon: 'fa:exclamation-circle', bold: true, align: center,
-        spacing_above: small, font_size: 14, foreground: '#FFFFFF'}
+        spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'GCMCHY,KWRDME'}
     - name: acars_flight_id
       properties: {text: FLIGHT ID, icon: 'fa:map-marker', bold: true, align: center,
-        foreground: '#FFFFFF'}
+        foreground: '#FFFFFF', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'GYKSGS,TKRZVE'}
     - name: acars_site_id
       properties: {align: center, placeholder: 'ACARS Flight ID (ex: ''PDX_0050'')',
-        enabled: true, italic: true, background: '#707070', foreground: 'theme:'}
+        enabled: true, italic: true, background: '#707070', foreground: 'theme:',
+        bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: ''}
       event_bindings: {pressed_enter: station_id_pressed_enter}
     - name: acars_dark_mode_check
       properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
-        background: '', allow_indeterminate: false, align: left}
+        background: '', allow_indeterminate: false, align: left, font_size: 15}
       type: CheckBox
       layout_properties: {grid_position: 'WDCNFT,SQJLLM', full_width_row: false}
       event_bindings: {change: dark_mode_check_change}
     - name: acars_color_blind_check
       properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
-        foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left}
+        foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
+        font_size: 15}
       type: CheckBox
       layout_properties: {grid_position: 'SRCUAF,TRIYUX'}
       event_bindings: {change: check_box_1_change}
@@ -259,7 +263,7 @@ components:
     components:
     - name: bufkit_header
       properties: {text: LATEST BUFKIT FORECAST SOUNDINGS, icon: '', bold: true, align: center,
-        spacing_above: small, font_size: 28, foreground: '#fbff00', font: cascadia code}
+        spacing_above: small, font_size: 32, foreground: '#fbff00', font: cascadia code}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: label_2_copy_copy_copy
@@ -274,23 +278,26 @@ components:
     - name: bufkit_instructions_label
       properties: {text: 'PLEASE ENTER A MODEL, BUFKIT SITE ID, & FORECAST HOUR',
         icon: 'fa:exclamation-circle', bold: true, align: center, spacing_above: small,
-        font_size: 14, foreground: '#FFFFFF'}
+        font_size: 20, foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'IYWXWH,HDIUUF'}
     - name: bufkit_model_label
-      properties: {text: MODEL, icon: 'fa:database', bold: true, align: center, foreground: '#FFFFFF'}
+      properties: {text: MODEL, icon: 'fa:database', bold: true, align: center, foreground: '#FFFFFF',
+        font_size: 17}
       type: Label
       layout_properties: {grid_position: 'KDRYGB,HJERIP'}
     - name: bufkit_model
       properties: {align: center, placeholder: 'HRRR, RAP, NAM, GFS, SREF, HIRESW',
-        enabled: true, italic: true, background: '#707070', foreground: 'theme:'}
+        enabled: true, italic: true, background: '#707070', foreground: 'theme:',
+        bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'JAROZQ,QAKYWS'}
       event_bindings: {pressed_enter: station_id_pressed_enter}
     - name: bufkit_site_id_label
       properties: {text: 'BUFKIT SITE ID
 
-          ', icon: 'fa:map-marker', bold: true, align: center, foreground: '#FFFFFF'}
+          ', icon: 'fa:map-marker', bold: true, align: center, foreground: '#FFFFFF',
+        font_size: 17}
       type: Label
       layout_properties: {grid_position: 'LTVWSI,PKTPGO'}
     - name: bufkit_sites_map_link
@@ -302,31 +309,32 @@ components:
       layout_properties: {grid_position: 'DKWJXM,GRYRVP'}
     - name: bufkit_site_id
       properties: {align: center, placeholder: 3 or 4 digit *BUFKIT* Site ID, enabled: true,
-        italic: true, background: '#707070', foreground: 'theme:'}
+        italic: true, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'XOTBYK,AVIAYV'}
       event_bindings: {pressed_enter: station_id_pressed_enter}
     - name: bufkir_fhour_label
       properties: {text: 'FORECAST HOUR
 
-          ', icon: 'fa:clock-o', bold: true, align: center, foreground: '#FFFF'}
+          ', icon: 'fa:clock-o', bold: true, align: center, foreground: '#FFFF', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'LJIOUE,EHXHSZ'}
     - name: bufkit_fhour
       properties: {placeholder: 'Forecast Hour (hours from run time, as a number,
           ex: 3)', italic: true, align: center, background: '#707070', type: number,
-        foreground: 'theme:'}
+        foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'DNBQRR,APHAFK'}
     - name: bufkit_dark_mode_check
       properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
-        background: '', allow_indeterminate: false, align: left}
+        background: '', allow_indeterminate: false, align: left, font_size: 15}
       type: CheckBox
       layout_properties: {grid_position: 'WDCNFT,SQJLLM', full_width_row: false}
       event_bindings: {change: dark_mode_check_change}
     - name: bufkit_color_blind_check
       properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
-        foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left}
+        foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
+        font_size: 15}
       type: CheckBox
       layout_properties: {grid_position: 'SRCUAF,TRIYUX'}
       event_bindings: {change: check_box_1_change}
@@ -354,27 +362,27 @@ components:
   properties: {url: 'https://www.buymeacoffee.com/kylejgillett', align: center, foreground: 'theme:On
       Tertiary Container', text: 'Enjoy using this app? Consider supporting future
       development of SounderPy and SounderPy applications by “Buying me a coffee”!
-      ☕', font: cascadia code, col_spacing: huge, icon_align: top, italic: true, bold: true,
-    underline: true}
+      ☕', font_size: 15, font: cascadia code, col_spacing: huge, icon_align: top,
+    italic: true, bold: true, underline: true}
   type: Link
   layout_properties: {grid_position: 'HCIERL,LBXRYM'}
 - name: label_2_copy_2
   properties: {text: 'Have questions about this app? DM me on twitter! @wxkylegillett',
-    align: center, font: cascadia code, foreground: '#FFFFFF'}
+    align: center, font: cascadia code, foreground: '#FFFFFF', font_size: 20}
   type: Label
   layout_properties: {grid_position: 'IXLCVM,NNCHJQ'}
-- name: link_1
-  properties: {url: 'https://github.com/kylejgillett/sounderpy', text: SounderPy on Github,
-    underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-    font: cascadia code}
-  type: Link
-  layout_properties: {grid_position: 'IXLCVM,FMCIGF'}
 - name: link_1_copy
   properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: SounderPy Documentation,
     underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-    font: cascadia code}
+    font: cascadia code, font_size: 20}
   type: Link
-  layout_properties: {grid_position: 'IXLCVM,LKTGZY'}
+  layout_properties: {grid_position: 'IXLCVM,LKTGZY KGRNIW,SVMXES'}
+- name: link_1
+  properties: {url: 'https://github.com/kylejgillett/sounderpy', text: SounderPy on Github,
+    underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
+    font: cascadia code, font_size: 20}
+  type: Link
+  layout_properties: {grid_position: 'IXLCVM,LKTGZY NQRJQI,UDYAYS'}
 - name: label_2_copy_2_copy
   properties: {text: 'Powered by SounderPy v3.0.0, 2024 | (C) Kyle J Gillett 2024
 
