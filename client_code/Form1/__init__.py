@@ -16,13 +16,13 @@ class Form1(Form1Template):
   def obs_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     params = anvil.server.call('get_obs_sounding',
-                               self.station_id.text,
-                               self.get_date.date.strftime('%Y'),
-                               self.get_date.date.strftime('%m'),
-                               self.get_date.date.strftime('%d'),
-                               self.launch_hour.text,
-                               self.dark_mode_check.checked,
-                               self.color_blind_check.checked)
-    self.image_sounding.source = params[0]
-    self.plot_area_label.text = params[1]
+                               self.raob_site_id.text,
+                               self.raob_date.date.strftime('%Y'),
+                               self.raob_date.date.strftime('%m'),
+                               self.raob_date.date.strftime('%d'),
+                               self.raob_hour.text,
+                               self.raob_dark_mode_check.checked,
+                               self.raob_color_blind_check.checked)
+    self.raob_image_display.source = params[0]
+    self.raob_plot_label.text = params[1]
     
