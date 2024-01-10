@@ -123,6 +123,12 @@ components:
         type: Button
         layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
         event_bindings: {click: raob_button_click}
+      - name: raob_standby_label
+        properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#FFFFFF',
+          italic: true}
+        type: Label
+        layout_properties: {grid_position: 'XQIEYH,HVANXS'}
+        event_bindings: {show: raob_plot_label_copy_show}
       - name: raob_plot_label
         properties: {bold: true, align: center, font_size: 18, background: '', foreground: '#fbff00'}
         type: Label
@@ -239,6 +245,12 @@ components:
       type: Button
       layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
       event_bindings: {click: acars_button_click}
+    - name: acars_standby_label
+      properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#FFFFFF',
+        italic: true}
+      type: Label
+      layout_properties: {grid_position: 'BQARFE,HNABIL'}
+      event_bindings: {show: raob_plot_label_copy_show}
     - name: acars_plot_label
       properties: {bold: true, align: center, font_size: 18, background: '', foreground: '#fbff00'}
       type: Label
@@ -346,6 +358,12 @@ components:
       type: Button
       layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
       event_bindings: {click: bufkit_button_click}
+    - name: bufkit_standby_label
+      properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#FFFFFF',
+        italic: true}
+      type: Label
+      layout_properties: {grid_position: 'KXBBLA,MDFJSA'}
+      event_bindings: {show: raob_plot_label_copy_show}
     - name: bufkit_plot_label
       properties: {bold: true, align: center, font_size: 18, background: '', foreground: '#fbff00'}
       type: Label

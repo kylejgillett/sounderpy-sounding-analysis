@@ -12,7 +12,8 @@ class Form1(Form1Template):
 
   def raob_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    params = anvil.server.call('get_obs_sounding',
+    self.raob_standby_label.text = "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
+    params = anvil.server.call('get_raob_sounding',
                                self.raob_site_id.text,
                                self.raob_date.date.strftime('%Y'),
                                self.raob_date.date.strftime('%m'),
@@ -34,6 +35,7 @@ class Form1(Form1Template):
   
   def acars_button_click(self, **event_args):
     """This method is called when the button is clicked"""
+    self.acars_standby_label.text = "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
     params = anvil.server.call('get_acars_sounding',
                                self.acars_site_id.text,
                                self.acars_date.date.strftime('%Y'),
@@ -50,6 +52,7 @@ class Form1(Form1Template):
 
   def bufkit_button_click(self, **event_args):
     """This method is called when the button is clicked"""
+    self.bufkit_standby_label.text = "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
     params = anvil.server.call('get_bufkit_sounding',
                                self.bufkit_model.text,
                                self.bufkit_site_id.text,
