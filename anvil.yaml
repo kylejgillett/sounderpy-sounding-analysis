@@ -6,8 +6,11 @@ startup: {type: form, module: Form1}
 package_name: SounderPy_Soundings_
 allow_embedding: false
 name: 'SounderPy Soundings '
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
-  server_spec: null}
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-sandbox
+  server_spec: {base: python310-datascience}
 metadata: {title: 'SounderPy Soundings ', logo_img: 'asset:GDSrWo0XkAAGWX5(1)-logo.png',
   description: 'This is a very simple web app that plots SounderPy soundings right
     in your browser!  This tool can plot RAOB observed soundings, ACARS observed soundings
