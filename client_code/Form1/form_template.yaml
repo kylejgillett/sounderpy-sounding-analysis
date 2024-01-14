@@ -36,6 +36,11 @@ components:
       foreground: '#FFFFFF', font_size: 15}
     type: Label
     layout_properties: {grid_position: 'ONNQKB,KUOEQG'}
+  - name: timer_1
+    properties: {interval: 600000}
+    type: Timer
+    layout_properties: {grid_position: 'RLDVEB,IEJKYL'}
+    event_bindings: {tick: timer_1_tick}
   - name: spacer_1
     properties: {height: 46}
     type: Spacer

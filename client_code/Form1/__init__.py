@@ -61,3 +61,8 @@ class Form1(Form1Template):
                                self.bufkit_color_blind_check.checked)
     self.bufkit_image_display.source = params[0]
     self.bufkit_plot_label.text = params[1]
+
+  def timer_1_tick(self, **event_args):
+    """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
+    anvil.server.call('timer_task')
+    pass
