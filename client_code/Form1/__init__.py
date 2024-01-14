@@ -65,4 +65,3 @@ class Form1(Form1Template):
   def timer_1_tick(self, **event_args):
     """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
     anvil.server.call('timer_task')
-    pass
