@@ -381,6 +381,12 @@ components:
   properties: {height: 102}
   type: Spacer
   layout_properties: {grid_position: 'RCHCIE,AAARTR'}
+- name: tick_image
+  properties: {display_mode: original_size}
+  type: Image
+  layout_properties: {grid_position: 'KCYCDS,WGPJHZ'}
+  data_bindings:
+  - {property: source, code: '', writeback: false}
 - name: label_2_copy_2_copy_2
   properties: {text: Please note this is a very basic web application and it will likely experience issues under heavy traffic,
     align: center, font: cascadia code, foreground: '#FFFFFF', font_size: 20}
