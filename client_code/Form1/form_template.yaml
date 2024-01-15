@@ -37,7 +37,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'ONNQKB,KUOEQG'}
   - name: timer_1
-    properties: {interval: 600000}
+    properties: {interval: 600}
     type: Timer
     layout_properties: {grid_position: 'RLDVEB,IEJKYL'}
     event_bindings: {tick: timer_1_tick}
@@ -381,6 +381,11 @@ components:
   properties: {height: 102}
   type: Spacer
   layout_properties: {grid_position: 'RCHCIE,AAARTR'}
+- name: acars_date_label_copy
+  properties: {text: LATEST HRRR BUFKIT ANALYSIS FOR KMOP (MOUNT PLEASANT), icon: '',
+    bold: true, align: center, foreground: '#FFFFFF', font: '', font_size: 17}
+  type: Label
+  layout_properties: {grid_position: 'AOKIQD,HDYXOX'}
 - name: tick_image
   properties: {display_mode: original_size}
   type: Image

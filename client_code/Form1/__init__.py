@@ -6,8 +6,8 @@ class Form1(Form1Template):
   def __init__(self, **properties):
     # Set Form Properties and Data Bindings.
     self.init_components(**properties)
-
-    # Any code you write here will run before the form opens.
+    image = anvil.server.call('timer_task')
+    self.tick_image.source = image
 
 
   def raob_button_click(self, **event_args):
