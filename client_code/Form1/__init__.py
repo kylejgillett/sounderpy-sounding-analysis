@@ -6,8 +6,8 @@ class Form1(Form1Template):
   def __init__(self, **properties):
     # Set Form Properties and Data Bindings.
     self.init_components(**properties)
-    image = anvil.server.call('timer_task')
-    self.tick_image.source = image
+    # image = anvil.server.call('timer_task')
+    # self.tick_image.source = image
 
 
   def raob_button_click(self, **event_args):
@@ -62,7 +62,7 @@ class Form1(Form1Template):
     self.bufkit_image_display.source = params[0]
     self.bufkit_plot_label.text = params[1]
 
-  def timer_1_tick(self, **event_args):
-    """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
-    image = anvil.server.call('timer_task')
-    self.tick_image.source = image
+  # def timer_1_tick(self, **event_args):
+  #   """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
+  #   image = anvil.server.call('timer_task')
+  #   self.tick_image.source = image

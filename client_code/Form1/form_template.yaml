@@ -383,11 +383,11 @@ components:
   layout_properties: {grid_position: 'RCHCIE,AAARTR'}
 - name: acars_date_label_copy
   properties: {text: LATEST HRRR BUFKIT ANALYSIS FOR KMOP (MOUNT PLEASANT), icon: '',
-    bold: true, align: center, foreground: '#FFFFFF', font: '', font_size: 17}
+    bold: true, align: center, foreground: '#FFFFFF', font: '', font_size: 17, visible: false}
   type: Label
   layout_properties: {grid_position: 'AOKIQD,HDYXOX'}
 - name: tick_image
-  properties: {display_mode: original_size}
+  properties: {display_mode: original_size, visible: false}
   type: Image
   layout_properties: {grid_position: 'KCYCDS,WGPJHZ'}
   data_bindings:
