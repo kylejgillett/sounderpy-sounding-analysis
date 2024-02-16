@@ -17,7 +17,7 @@ components:
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: reanl_info_text
-      properties: {text: This tool retrieves Rapid Refresh & Radic Update Cycle model reanalysis data from NCEI for a given date/time and location.,
+      properties: {text: This tool retrieves Rapid Refresh & Rapid Update Cycle model reanalysis data from NCEI for a given date/time and location.,
         align: center, font: '', foreground: '#FFFFFF', font_size: 12}
       type: Label
       layout_properties: {grid_position: 'VPBARC,FDAVCL'}
