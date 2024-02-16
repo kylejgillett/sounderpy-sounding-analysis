@@ -1,26 +1,26 @@
 container:
   type: ColumnPanel
-  properties: {background: '#000', col_widths: '{"NNCHJQ":30,"LKTGZY":30}'}
+  properties: {background: '#000', col_widths: '{}'}
 components:
 - name: column_panel_1
-  properties: {col_widths: '{"HTXQOO":15,"VELXGO":45}', foreground: 'theme:Primary',
+  properties: {col_widths: '{"GZRSTV":10,"KHJLOR":50}', foreground: 'theme:Primary',
     background: '#000'}
   type: ColumnPanel
   layout_properties: {grid_position: 'RSWSUA,PPOQGY'}
   components:
   - name: image_1
     properties: {source: _/theme/251580013-2e9477c9-e36a-4163-accb-fe46780058dd.png,
-      height: 127}
+      height: 127, horizontal_align: left}
     type: Image
-    layout_properties: {grid_position: 'XWZYAZ,HTXQOO'}
+    layout_properties: {grid_position: 'EPFWUB,GZRSTV'}
   - name: label_1
     properties: {text: " SOUNDERPY \nSOUNDING PLOTTER", icon: '', underline: false,
-      bold: true, font_size: 45, align: center, font: cascadia code, foreground: '#fbff00'}
+      bold: true, font_size: 45, align: left, font: '', foreground: '#fbff00'}
     type: Label
-    layout_properties: {grid_position: 'XWZYAZ,VELXGO'}
+    layout_properties: {grid_position: 'EPFWUB,KHJLOR'}
   - name: label_3
     properties: {text: 'Welcome to the SounderPy web-based sounding retrieval tool! ',
-      bold: true, align: center, font_size: 25, font: cascadia code, foreground: '#FFFF'}
+      bold: true, align: center, font_size: 25, font: '', foreground: '#FFFF'}
     type: Label
     layout_properties: {grid_position: 'VZLJCZ,YBRKVT'}
   - name: label_2
@@ -32,8 +32,8 @@ components:
         model forecast soundings!
 
 
-        (C) Kyle J Gillett 2024 | @wxkylegillett', align: center, font: cascadia code,
-      foreground: '#FFFFFF', font_size: 15}
+        (C) Kyle J Gillett 2024 | @wxkylegillett', align: center, font: '', foreground: '#FFFFFF',
+      font_size: 15}
     type: Label
     layout_properties: {grid_position: 'ONNQKB,KUOEQG'}
   - name: timer_1
@@ -57,15 +57,15 @@ components:
       components:
       - name: raob_header
         properties: {text: OBSERVED RAOB SOUNDINGS, icon: '', bold: true, align: center,
-          spacing_above: small, font_size: 32, foreground: '#fbff00', font: cascadia code}
+          spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
         type: Label
         layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
       - name: label_2_copy
         properties: {text: 'This tool retrieves RAOB and IGRAv2 Observed Soundings.
             To use this, provide a RAOB or IGRAv2 site identifier, a sounding launch
             date and sounding launch hour, then select optional settings and finally
-            push the ''GET SOUNDING'' button ', align: center, font: cascadia code,
-          foreground: '#FFFFFF', font_size: 12}
+            push the ''GET SOUNDING'' button ', align: center, font: '', foreground: '#FFFFFF',
+          font_size: 12}
         type: Label
         layout_properties: {grid_position: 'TQKHUO,NWHAIQ'}
       - name: raob_instructions_label
@@ -158,7 +158,7 @@ components:
     components:
     - name: acars_header
       properties: {text: OBSERVED ACARS SOUNDINGS, icon: '', bold: true, align: center,
-        spacing_above: small, font_size: 32, foreground: '#fbff00', font: cascadia code}
+        spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: label_2_copy_copy
@@ -168,7 +168,7 @@ components:
           then push the ''GET AVAILABLE PROFILES'' button. Next, you can copy one
           of the ''flight identifiers'' and paste it in the ''FLIGHT ID'' box. Finally,
           select optional settings and finally push the ''GET SOUNDING'' button  ',
-        align: center, font: cascadia code, foreground: '#FFFFFF', font_size: 12}
+        align: center, font: '', foreground: '#FFFFFF', font_size: 12}
       type: Label
       layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
     - name: acars_instructions_label
@@ -280,7 +280,7 @@ components:
     components:
     - name: bufkit_header
       properties: {text: LATEST BUFKIT FORECAST SOUNDINGS, icon: '', bold: true, align: center,
-        spacing_above: small, font_size: 32, foreground: '#fbff00', font: cascadia code}
+        spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: label_2_copy_copy_copy
@@ -288,8 +288,8 @@ components:
           for a given model, BUFKIT site, and forecast hour. First, provide the model
           you''d like to access (HRRR, RAP, NAM, GFS, SREF, HIRESW), a valid BUFKIT
           site identifier, and forecast hour. Next, select optional settings and finally
-          push the ''GET SOUNDING'' button.', align: center, font: cascadia code,
-        foreground: '#FFFFFF', font_size: 12}
+          push the ''GET SOUNDING'' button.', align: center, font: '', foreground: '#FFFFFF',
+        font_size: 12}
       type: Label
       layout_properties: {grid_position: 'VVPPWG,FBGFQR'}
     - name: bufkit_instructions_label
@@ -394,14 +394,12 @@ components:
     - name: reanl_header
       properties: {text: RAP-RUC MODEL REANALYSIS SOUNDINGS, icon: '', bold: true,
         align: center, spacing_above: small, font_size: 32, foreground: '#fbff00',
-        font: cascadia code}
+        font: ''}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: reanl_info_text
-      properties: {text: '**UNDER DEVELOPMENT*** This tool retrieves Rapid Refresh
-          & Radic Update Cycle model reanalysis data from NCEI for a given date/time
-          and location.', align: center, font: cascadia code, foreground: '#FFFFFF',
-        font_size: 12}
+      properties: {text: This tool retrieves Rapid Refresh & Radic Update Cycle model reanalysis data from NCEI for a given date/time and location.,
+        align: center, font: '', foreground: '#FFFFFF', font_size: 12}
       type: Label
       layout_properties: {grid_position: 'VPBARC,FDAVCL'}
     - name: reanl_instructions_label
@@ -487,43 +485,55 @@ components:
       type: Image
       layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
 - name: spacer_2_copy_copy
-  properties: {height: 102}
+  properties: {height: 171}
   type: Spacer
   layout_properties: {grid_position: 'RCHCIE,AAARTR'}
-- name: label_2_copy_2_copy_2
-  properties: {text: Please note this is a very basic web application and it will likely experience issues under heavy traffic,
-    align: center, font: cascadia code, foreground: '#FFFFFF', font_size: 20}
-  type: Label
-  layout_properties: {grid_position: 'AHEGSV,AFZBPR'}
-- name: link_1_copy_2
-  properties: {url: 'https://www.buymeacoffee.com/kylejgillett', align: center, foreground: 'theme:On
-      Tertiary Container', text: 'Enjoy using this app? Consider supporting future
-      development of SounderPy and SounderPy applications by “Buying me a coffee”!
-      ☕', font_size: 15, font: cascadia code, col_spacing: huge, icon_align: top,
-    italic: true, bold: true, underline: true}
-  type: Link
-  layout_properties: {grid_position: 'HCIERL,LBXRYM'}
-- name: label_2_copy_2
-  properties: {text: 'Have questions about this app? DM me on twitter! @wxkylegillett',
-    align: center, font: cascadia code, foreground: '#FFFFFF', font_size: 20}
-  type: Label
-  layout_properties: {grid_position: 'IXLCVM,NNCHJQ'}
-- name: link_1_copy
-  properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: SounderPy Documentation,
-    underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-    font: cascadia code, font_size: 20}
-  type: Link
-  layout_properties: {grid_position: 'IXLCVM,LKTGZY KGRNIW,SVMXES'}
-- name: link_1
-  properties: {url: 'https://github.com/kylejgillett/sounderpy', text: SounderPy on Github,
-    underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-    font: cascadia code, font_size: 20}
-  type: Link
-  layout_properties: {grid_position: 'IXLCVM,LKTGZY NQRJQI,UDYAYS'}
-- name: label_2_copy_2_copy
-  properties: {text: 'Powered by SounderPy v3.0.1, 2024 | (C) Kyle J Gillett 2024
+- name: reanl_card_copy
+  properties: {role: card, visible: true, foreground: 'theme:Primary', background: '#44a2ff'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'EKRCBN,TLJZWN'}
+  components:
+  - name: reanl_card_inside_copy
+    properties: {role: card, background: '#363636', col_widths: '{}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
+    components:
+    - name: label_2_copy_2_copy_2
+      properties: {text: Please note this is a very basic web application and it will likely experience issues under heavy traffic,
+        align: center, font: cascadia code, foreground: '#FFFFFF', font_size: 20}
+      type: Label
+      layout_properties: {grid_position: 'MAKRMG,NUFEMF'}
+    - name: link_1_copy_2
+      properties: {url: 'https://www.buymeacoffee.com/kylejgillett', align: center,
+        foreground: 'theme:On Tertiary Container', text: 'Enjoy using this app? Consider
+          supporting future development of SounderPy and SounderPy applications by
+          “Buying me a coffee”! ☕', font_size: 15, font: cascadia code, col_spacing: huge,
+        icon_align: top, italic: true, bold: true, underline: true}
+      type: Link
+      layout_properties: {grid_position: 'FFFVZI,MYVMHX'}
+    - name: label_2_copy_2
+      properties: {text: 'Have questions about this app? DM me on twitter! @wxkylegillett',
+        align: center, font: cascadia code, foreground: '#FFFFFF', font_size: 20}
+      type: Label
+      layout_properties: {grid_position: 'NPULFS,MCCGIR'}
+    - name: link_1_copy
+      properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: SounderPy Documentation,
+        underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
+        font: cascadia code, font_size: 20}
+      type: Link
+      layout_properties: {grid_position: 'NPULFS,KSRCRW'}
+      components:
+      - name: link_1
+        properties: {url: 'https://github.com/kylejgillett/sounderpy', text: SounderPy on Github,
+          underline: true, bold: true, foreground: 'theme:On Tertiary Container',
+          align: center, font: cascadia code, font_size: 20}
+        type: Link
+        layout_properties: {grid_position: 'AYVXZA,AUZMYO'}
+        components: []
+    - name: label_2_copy_2_copy
+      properties: {text: 'Powered by SounderPy v3.0.1, 2024 | (C) Kyle J Gillett 2024
 
-      ', align: center, font: cascadia code, foreground: '#FFFFFF'}
-  type: Label
-  layout_properties: {grid_position: 'YWOBMI,HBNIXY'}
+          ', align: center, font: cascadia code, foreground: '#FFFFFF'}
+      type: Label
+      layout_properties: {grid_position: 'HFBIZM,XUTDIV'}
 is_package: true
