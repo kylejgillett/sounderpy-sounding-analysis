@@ -428,7 +428,7 @@ components:
       layout_properties: {grid_position: ''}
     - name: reanl_hour
       properties: {placeholder: 'UTC hour (12, 18, 00 etc)', italic: true, align: center,
-        background: '#707070', type: number, foreground: 'theme:', bold: true, font_size: 15}
+        background: '#707070', type: text, foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'UJOHVR,FZFWCK'}
     - name: reanl_latlon_label
