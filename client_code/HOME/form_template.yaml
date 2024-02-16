@@ -1,0 +1,155 @@
+container:
+  type: ColumnPanel
+  properties: {background: '#000', col_widths: '{}'}
+components:
+- name: column_panel_1
+  properties: {col_widths: '{}', foreground: 'theme:Primary', background: '#000'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'RSWSUA,PPOQGY'}
+  components:
+  - name: timer_1
+    properties: {interval: 600}
+    type: Timer
+    layout_properties: {grid_position: 'RLDVEB,IEJKYL'}
+    event_bindings: {tick: timer_1_tick}
+  - name: card_2
+    properties: {role: card, background: '#44a2ff', spacing_below: none, spacing_above: none,
+      col_spacing: tiny}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'TTSSZM,EHQRPP'}
+    components:
+    - name: card_1
+      properties: {role: card, background: '#363636', wrap_on: never, col_widths: '{"BGDPRW":25,"RBVESM":35}',
+        spacing_above: none, spacing_below: none}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'HPAUYQ,EHAKEJ'}
+      components:
+      - name: image_1
+        properties: {source: _/theme/251580013-2e9477c9-e36a-4163-accb-fe46780058dd.png,
+          height: 164, horizontal_align: right}
+        type: Image
+        layout_properties: {grid_position: 'BDDDSP,BGDPRW'}
+      - name: label_1
+        properties: {align: left, foreground: '#fbff00', text: "SOUNDERPY \n", font_size: 40,
+          font: '', spacing_above: none, spacing_below: none, bold: true, underline: false,
+          icon: ''}
+        type: Label
+        layout_properties: {grid_position: 'BDDDSP,RBVESM QGCHKU,GDVOHZ'}
+      - name: label_1_copy
+        properties: {align: left, foreground: '#fbff00', text: 'SOUNDING ANALYSIS
+            TOOL
+
+            ', font_size: 25, font: '', spacing_above: none, spacing_below: none,
+          bold: true, underline: false, icon: ''}
+        type: Label
+        layout_properties: {grid_position: 'BDDDSP,RBVESM ONQXQV,EVVPCK'}
+    - name: card_3
+      properties: {role: card, background: '#000000', spacing_above: none, spacing_below: none}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'HPAUYQ,JVXBXC'}
+      components:
+      - name: label_2
+        properties: {text: "Welcome to the SounderPy Sounding Analysis web app! \n\
+            \nThis is a simple tool that plots SounderPy soundings right in your browser.\
+            \ Below you can plot can plot RAOB observations, ACARS observations, latest\
+            \ model forecasts, and RAP-RUC model reanalyses! \n\n(C) Kyle J Gillett\
+            \ 2024 | @wxkylegillett", align: center, font: '', foreground: '#FFFFFF',
+          font_size: 15}
+        type: Label
+        layout_properties: {grid_position: 'FFXJVP,VRFWED'}
+  - name: card_4
+    properties: {role: card, background: '#44a2ff', wrap_on: mobile}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'SCHABZ,GUSNNT'}
+    components:
+    - name: raob_tab_button
+      properties: {text: "RAOB \nOBSERVATIONS", background: '#363636'}
+      type: Button
+      layout_properties: {grid_position: 'ZAUPKC,QTHOJM'}
+      event_bindings: {click: raob_tab_click}
+      data_bindings:
+      - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
+    - name: acars_tab_button
+      properties: {text: "ACARS\n OBSERVATIONS\n", background: '#363636'}
+      type: Button
+      layout_properties: {grid_position: 'ZAUPKC,VUUZTK'}
+      event_bindings: {click: acars_tab_click}
+    - name: bufkit_tab_button
+      properties: {text: "MODEL \nFORECASTS\n", background: '#363636'}
+      type: Button
+      layout_properties: {grid_position: 'ZAUPKC,ENKAOB'}
+      event_bindings: {click: bufkit_tab_click}
+    - name: reanl_tab_button
+      properties: {text: "MODEL \nREANALYSIS\n", background: '#363636'}
+      type: Button
+      layout_properties: {grid_position: 'ZAUPKC,DEMRZR'}
+      event_bindings: {click: reanl_tab_click}
+    - name: reanl_tab_button_copy
+      properties: {text: 'ABOUT
+
+          SOUNDERPY
+
+          ', background: '#363636'}
+      type: Button
+      layout_properties: {grid_position: 'ZAUPKC,MJVRYS'}
+      event_bindings: {click: about_tab_click}
+    data_bindings: []
+  - name: tab_panel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: small,
+      background: ''}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'UZNNJF,QNSKTC'}
+- name: spacer_2_copy_copy
+  properties: {height: 138}
+  type: Spacer
+  layout_properties: {grid_position: 'RCHCIE,AAARTR'}
+- name: reanl_card_copy
+  properties: {role: card, visible: true, foreground: 'theme:Primary', background: '#44a2ff'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'EKRCBN,TLJZWN'}
+  components:
+  - name: reanl_card_inside_copy
+    properties: {role: card, background: '#363636', col_widths: '{}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
+    components:
+    - name: label_2_copy_2_copy_2
+      properties: {text: Please note this is a very basic web application and it will likely experience issues under heavy traffic,
+        align: center, font: '', foreground: '#FFFFFF', font_size: 20}
+      type: Label
+      layout_properties: {grid_position: 'MAKRMG,NUFEMF'}
+    - name: link_1_copy_2
+      properties: {url: 'https://www.buymeacoffee.com/kylejgillett', align: center,
+        foreground: 'theme:On Tertiary Container', text: 'Enjoy using this app? Consider
+          supporting future development of SounderPy and SounderPy applications by
+          “Buying me a coffee”! ☕', font_size: 15, font: '', col_spacing: huge, icon_align: top,
+        italic: true, bold: true, underline: true}
+      type: Link
+      layout_properties: {grid_position: 'FFFVZI,MYVMHX'}
+    - name: label_2_copy_2
+      properties: {text: 'Have questions about this app? DM me on twitter! @wxkylegillett',
+        align: center, font: '', foreground: '#FFFFFF', font_size: 20}
+      type: Label
+      layout_properties: {grid_position: 'NPULFS,MCCGIR'}
+    - name: link_1_copy
+      properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: SounderPy Documentation,
+        underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
+        font: '', font_size: 20}
+      type: Link
+      layout_properties: {grid_position: 'NPULFS,KSRCRW'}
+      components:
+      - name: link_1
+        properties: {url: 'https://github.com/kylejgillett/sounderpy', text: SounderPy on Github,
+          underline: true, bold: true, foreground: 'theme:On Tertiary Container',
+          align: center, font: '', font_size: 20}
+        type: Link
+        layout_properties: {grid_position: 'AYVXZA,AUZMYO'}
+        components: []
+    - name: label_2_copy_2_copy
+      properties: {text: 'Powered by SounderPy v3.0.1, 2024 | (C) Kyle J Gillett 2024
+
+          ', align: center, font: '', foreground: '#FFFFFF'}
+      type: Label
+      layout_properties: {grid_position: 'HFBIZM,XUTDIV'}
+is_package: true

@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Form1}
+startup: {type: form, module: HOME}
 package_name: SounderPy_Soundings_
 allow_embedding: false
 name: 'SounderPy Soundings '
