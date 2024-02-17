@@ -1,0 +1,7 @@
+container: {type: ColumnPanel}
+components:
+- name: map_1
+  properties: {height: '300'}
+  type: GoogleMap
+  layout_properties: {grid_position: 'SHHUFM,ZLBGDY'}
+is_package: true

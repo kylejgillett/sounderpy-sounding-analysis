@@ -7,11 +7,6 @@ components:
   type: ColumnPanel
   layout_properties: {grid_position: 'RSWSUA,PPOQGY'}
   components:
-  - name: timer_1
-    properties: {interval: 600}
-    type: Timer
-    layout_properties: {grid_position: 'RLDVEB,IEJKYL'}
-    event_bindings: {tick: timer_1_tick}
   - name: card_2
     properties: {role: card, background: '#44a2ff', spacing_below: none, spacing_above: none,
       col_spacing: tiny}
