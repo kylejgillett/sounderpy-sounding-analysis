@@ -21,8 +21,8 @@ components:
           a given date and hour. Do so by providing a flight date and flight hour,
           then push the ''GET AVAILABLE PROFILES'' button. Next, you can copy one
           of the ''flight identifiers'' and paste it in the ''FLIGHT ID'' box. Finally,
-          select optional settings and finally push the ''GET SOUNDING'' button  ',
-        align: center, font: '', foreground: '#FFFFFF', font_size: 12}
+          select optional settings and push the ''GET SOUNDING'' button  ', align: center,
+        font: '', foreground: '#FFFFFF', font_size: 12}
       type: Label
       layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
     - name: acars_instructions_label

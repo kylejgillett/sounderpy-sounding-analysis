@@ -17,7 +17,12 @@ components:
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: reanl_info_text
-      properties: {text: This tool retrieves Rapid Refresh & Rapid Update Cycle model reanalysis data from NCEI for a given date/time and location.,
+      properties: {text: 'This tool retrieves Rapid Refresh & Rapid Update Cycle model
+          reanalysis data from NCEI for a given date/time and location. To learn more
+          about the RAP/RUC reanalysis datasets, available times and the lat/lon domain
+          (CONUS), check out the link below:
+
+          https://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update ',
         align: center, font: '', foreground: '#FFFFFF', font_size: 12}
       type: Label
       layout_properties: {grid_position: 'VPBARC,FDAVCL'}

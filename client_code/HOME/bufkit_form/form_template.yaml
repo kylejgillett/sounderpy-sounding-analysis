@@ -19,8 +19,8 @@ components:
       properties: {text: 'This tool retrieves the latest BUFKIT forecast sounding
           for a given model, BUFKIT site, and forecast hour. First, provide the model
           you''d like to access (HRRR, RAP, NAM, GFS, SREF, HIRESW), a valid BUFKIT
-          site identifier, and forecast hour. Next, select optional settings and finally
-          push the ''GET SOUNDING'' button.', align: center, font: '', foreground: '#FFFFFF',
+          site identifier, and forecast hour. Next, select optional settings and push
+          the ''GET SOUNDING'' button.', align: center, font: '', foreground: '#FFFFFF',
         font_size: 12}
       type: Label
       layout_properties: {grid_position: 'VVPPWG,FBGFQR'}

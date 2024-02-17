@@ -18,8 +18,8 @@ components:
     - name: label_2_copy
       properties: {text: 'This tool retrieves RAOB and IGRAv2 Observed Soundings.
           To use this, provide a RAOB or IGRAv2 site identifier, a sounding launch
-          date and sounding launch hour, then select optional settings and finally
-          push the ''GET SOUNDING'' button ', align: center, font: '', foreground: '#FFFFFF',
+          date and sounding launch hour, then select optional settings and push the
+          ''GET SOUNDING'' button ', align: center, font: '', foreground: '#FFFFFF',
         font_size: 12}
       type: Label
       layout_properties: {grid_position: 'TQKHUO,NWHAIQ'}
