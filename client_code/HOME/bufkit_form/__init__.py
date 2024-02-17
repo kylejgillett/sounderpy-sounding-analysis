@@ -16,8 +16,8 @@ class bufkit_form(bufkit_formTemplate):
                                self.bufkit_model.text,
                                self.bufkit_site_id.text,
                                self.bufkit_fhour.text,
-                               self.bufkit_dark_mode_check.checked,
                                self.bufkit_color_blind_check.checked,
+                               self.bufkit_dark_mode_check.checked,
                                self.bufkit_hodo_check.checked)
     self.bufkit_image_display.source = params[0]
     self.bufkit_plot_label.text = params[1]

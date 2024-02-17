@@ -104,7 +104,7 @@ def process_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dark_mode,
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, save=True, filename='sounderpy_sounding')
         else:
-             spy.build_sounding(clean_data, dark_mode=dark_mode, color_blind=color_blind, save=True)
+             spy.build_sounding(clean_data, color_blind=color_blind, dark_mode=dark_mode, save=True)
 
         image = anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 

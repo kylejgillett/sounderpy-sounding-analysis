@@ -18,8 +18,8 @@ class reanl_form(reanl_formTemplate):
                                 self.reanl_date.date.strftime('%m'),
                                 self.reanl_date.date.strftime('%d'),
                                 self.reanl_hour.text,
-                                self.reanl_dark_mode_check.checked,
                                 self.reanl_color_blind_check.checked,
+                                self.reanl_dark_mode_check.checked,
                                 self.reanl_hodo_check.checked)
     self.reanl_image_display.source = params[0]
     self.reanl_plot_label.text = params[1]
