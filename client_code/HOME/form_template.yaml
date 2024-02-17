@@ -65,17 +65,29 @@ components:
       data_bindings:
       - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
     - name: acars_tab_button
-      properties: {text: "ACARS\n OBSERVATIONS\n", background: '#363636'}
+      properties: {text: 'ACARS
+
+          OBSERVATIONS
+
+          ', background: '#363636'}
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,VUUZTK'}
       event_bindings: {click: acars_tab_click}
     - name: bufkit_tab_button
-      properties: {text: "MODEL \nFORECASTS\n", background: '#363636'}
+      properties: {text: 'MODEL
+
+          FORECASTS
+
+          ', background: '#363636'}
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,ENKAOB'}
       event_bindings: {click: bufkit_tab_click}
     - name: reanl_tab_button
-      properties: {text: "MODEL \nREANALYSIS\n", background: '#363636'}
+      properties: {text: 'MODEL
+
+          REANALYSIS
+
+          ', background: '#363636'}
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,DEMRZR'}
       event_bindings: {click: reanl_tab_click}

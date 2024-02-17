@@ -27,6 +27,7 @@ class acars_form(acars_formTemplate):
                                self.acars_date.date.strftime('%d'),
                                self.acars_hour.text,
                                self.acars_dark_mode_check.checked,
-                               self.acars_color_blind_check.checked)
+                               self.acars_color_blind_check.checked,
+                               self.acars_hodo_check.checked)
     self.acars_image_display.source = params[0]
     self.acars_plot_label.text = params[1]

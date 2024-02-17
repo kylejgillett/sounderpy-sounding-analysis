@@ -19,6 +19,7 @@ class raob_form(raob_formTemplate):
                                 self.raob_date.date.strftime('%d'),
                                 self.raob_hour.text,
                                 self.raob_dark_mode_check.checked,
-                                self.raob_color_blind_check.checked)
+                                self.raob_color_blind_check.checked,
+                                self.raob_hodo_check.checked)
       self.raob_image_display.source = params[0]
       self.raob_plot_label.text = params[1]

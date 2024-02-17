@@ -87,6 +87,12 @@ components:
       type: CheckBox
       layout_properties: {grid_position: 'SRCUAF,TRIYUX'}
       event_bindings: {change: check_box_1_change}
+    - name: bufkit_hodo_check
+      properties: {text: Plot hodograph only, checked: false, role: null, foreground: '#FFFFFF',
+        background: '', allow_indeterminate: false, align: left, font_size: 15}
+      type: CheckBox
+      layout_properties: {grid_position: 'OSHJER,MLHNTY'}
+      event_bindings: {change: check_box_1_change}
     - name: bufkit_button
       properties: {role: filled, align: center, border: '', foreground: '#fbff00',
         text: 'GET SOUNDING

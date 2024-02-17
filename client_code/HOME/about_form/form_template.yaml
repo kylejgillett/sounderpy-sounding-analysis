@@ -17,18 +17,18 @@ components:
       layout_properties: {grid_position: 'JMPLHM,NNMSJS'}
     - name: label_2_copy_2
       properties: {text: "SounderPy is an open-source atmospheric science Python package\
-          \ for vertical profile analysis. This web-app is an extension uses SounderPy\
-          \ functionality to load data and create soundings right in your browser\
-          \ with no coding involved (on your end \ud83d\ude09). \n\nSounderPy was\
-          \ developed with the goal in mind to keep the code (and now this web-app)\
-          \ simple and efficient for users of all experience levels and for reliability\
-          \ in all use cases.\n\nThe SounderPy Python package has been used by a number\
-          \ of institutions such as the Des Moines, IA National Weather Service Office,\
-          \ the Columbia, SC National Weather Service Office, the State University\
-          \ of New York at Albany, Mississippi State University, and others. Students\
-          \ have used SounderPy in projects and papers at Ohio State University, Central\
-          \ Michigan University & Rizal Technological University.\n", align: left,
-        font: cascadia code, foreground: '#FFFFFF', font_size: 20}
+          \ for vertical profile analysis. This web-app is an extension of SounderPy\
+          \ that uses the code's same functionality to load data and create soundings\
+          \ right in your browser with no coding involved (on your end \ud83d\ude09\
+          ). \n\nSounderPy was developed with the goal in mind to keep the code (and\
+          \ now this web-app) simple and efficient for users of all experience levels\
+          \ and for reliability in all use cases.\n\nThe SounderPy Python package\
+          \ has been used by a number of institutions such as the Des Moines, IA National\
+          \ Weather Service Office, the Columbia, SC National Weather Service Office,\
+          \ the State University of New York at Albany, Mississippi State University,\
+          \ and others. Students have used SounderPy in projects and papers at Ohio\
+          \ State University, Central Michigan University & Rizal Technological University.\n",
+        align: left, font: cascadia code, foreground: '#FFFFFF', font_size: 20}
       type: Label
       layout_properties: {grid_position: 'DRFTNF,QCWFUG'}
     - name: spacer_1_copy
