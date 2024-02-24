@@ -28,7 +28,7 @@ components:
           \ the State University of New York at Albany, Mississippi State University,\
           \ and others. Students have used SounderPy in projects and papers at Ohio\
           \ State University, Central Michigan University & Rizal Technological University.\n",
-        align: left, font: cascadia code, foreground: '#FFFFFF', font_size: 20}
+        align: left, font: '', foreground: '#FFFFFF', font_size: 20}
       type: Label
       layout_properties: {grid_position: 'DRFTNF,QCWFUG'}
     - name: spacer_1_copy
@@ -87,18 +87,13 @@ components:
 
 
           Have an issue? You can open a GitHub Issue or just shoot me a DM on Twitter
-          (@wxkylegillett)!', align: left, font: cascadia code, foreground: '#FFFFFF',
-        font_size: 20}
+          (@wxkylegillett)!', align: left, font: '', foreground: '#FFFFFF', font_size: 20}
       type: Label
       layout_properties: {grid_position: 'SUHQHA,CWFDNY'}
     - name: spacer_2
       properties: {height: 70}
       type: Spacer
       layout_properties: {grid_position: 'ONAWHX,GERHJI'}
-    - name: form1_1
-      properties: {}
-      type: form:Form1
-      layout_properties: {grid_position: 'VKPNYN,QXJPJI'}
     - name: label_2_copy_2_copy_2_copy_copy
       properties: {text: REFERENCES, align: left, font: '', foreground: '#FFFFFF',
         font_size: 30, bold: true}
