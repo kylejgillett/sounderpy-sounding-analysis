@@ -223,8 +223,11 @@ def get_latest_run():
         run_time = buf_file[4][buf_file[4].index('TIME') + 7:(buf_file[4].index('TIME')+9)+9]
         
         text_list.append(f'{str.upper(model)}: {run_time[2:4]}/{run_time[4:6]} {run_time[7:9]}Z')
-        
-        
-
-
+      
+        final_str = ''
+        for i, string in enumerate(text_list):
+          final_str += string
+          if i < len(text_list) - 1:
+              final_str += " | "
+    
     return final_str
