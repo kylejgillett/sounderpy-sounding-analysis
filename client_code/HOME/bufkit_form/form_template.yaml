@@ -53,9 +53,13 @@ components:
       properties: {url: 'http://www.meteo.psu.edu/bufkit/DomainNAMRAP_NAM_12.html',
         text: See available BUFKIT site maps at the Penn State BUFKIT Warehouse page,
         underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-        font: cascadia code}
+        font: cascadia code, visible: false}
       type: Link
       layout_properties: {grid_position: 'QRXHQT,IETKTA'}
+    - name: bufkit_map_comp_1
+      properties: {}
+      type: form:HOME.bufkit_map_comp
+      layout_properties: {grid_position: 'OHESOT,HLDGRY'}
     - name: bufkit_site_id
       properties: {align: center, placeholder: 3 or 4 digit *BUFKIT* Site ID, enabled: true,
         italic: true, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
@@ -68,6 +72,16 @@ components:
           ', icon: 'fa:clock-o', bold: true, align: center, foreground: '#FFFF', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'CTEUJJ,RLTPLD'}
+    - name: bufkit_fhour_label_copy
+      properties: {text: 'LATEST MODEL RUNS:
+
+          ', icon: '', bold: true, align: center, foreground: '#FFFF', font_size: 14}
+      type: Label
+      layout_properties: {grid_position: 'ZCXETA,JFWEQX'}
+    - name: latest_runs_txt
+      properties: {align: center, bold: true, foreground: '#000000'}
+      type: Label
+      layout_properties: {grid_position: 'SWRNNK,LNROZP'}
     - name: bufkit_fhour
       properties: {placeholder: 'Forecast Hour (hours from run time, as a number,
           ex: 3)', italic: true, align: center, background: '#707070', type: number,

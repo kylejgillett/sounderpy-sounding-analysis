@@ -2,6 +2,7 @@ import anvil.server
 import sounderpy as spy
 import anvil.media
 from datetime import datetime as dt
+from urllib.request import urlopen
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -131,7 +132,6 @@ def process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mod
         return image, label_txt
 
 
-
 #####################
 # GET RAOB FUNCTION #
 #####################
@@ -195,3 +195,41 @@ def get_reanl_sounding(latlon, year, month, day, hour, color_blind, dark_mode, h
     image, label_txt = process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mode, hodo)
 
     return image, label_txt
+
+
+###########################
+# GET MODEL RUNS FUNCTION #
+###########################
+@anvil.server.callable
+def get_latest_run():
+    
+    # make sure variables are in the correct case
+    text_list = []
+    station = 'KMOP'
+    
+    for model in ['gfs', 'nam', 'namnest', 'rap', 'hrrr', 'sref', 'hiresw']: 
+        if model == 'gfs':
+            model3 = 'gfs3' 
+        else:
+            model3 = model
+        data_conn = f'http://www.meteo.psu.edu/bufkit/data/{model.upper()}/{model3}_{station.lower()}.buf'
+
+        # GET BUFKIT FILE 
+        # CONVERT LINES OF BYTES TO STRINGS 
+        buf_file = urlopen(data_conn)
+        buf_file = [str(line).replace("b'", "").replace("\\r\\n'", "") for line in buf_file]
+
+        # SET UP DATE / TIME OBJECTS FROM THE BUFKIT FILE
+        run_time = buf_file[4][buf_file[4].index('TIME') + 7:(buf_file[4].index('TIME')+9)+9]
+        
+        text_list.append(f'{str.upper(model)}: {run_time[2:4]}/{run_time[4:6]} {run_time[7:9]}Z')
+        
+        
+    final_str = ''
+    for i, string in enumerate(text_list):
+        
+        final_str += string
+        if i < len(text_list) - 1:
+            final_str += " | "
+
+    return final_str
