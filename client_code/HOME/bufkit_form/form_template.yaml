@@ -53,7 +53,7 @@ components:
       properties: {url: 'http://www.meteo.psu.edu/bufkit/DomainNAMRAP_NAM_12.html',
         text: See available BUFKIT site maps at the Penn State BUFKIT Warehouse page,
         underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-        font: cascadia code, visible: false}
+        font: cascadia code, visible: true}
       type: Link
       layout_properties: {grid_position: 'QRXHQT,IETKTA'}
     - name: bufkit_site_id
