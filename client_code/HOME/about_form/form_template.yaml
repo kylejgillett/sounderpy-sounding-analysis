@@ -141,4 +141,8 @@ components:
         foreground: 'theme:On Tertiary Container'}
       type: Label
       layout_properties: {grid_position: 'LLUCPI,WQUYIN'}
+    - name: bufkit_map_comp_1
+      properties: {}
+      type: form:HOME.bufkit_map_comp
+      layout_properties: {grid_position: 'XEECPL,XVEQRX'}
 is_package: true
