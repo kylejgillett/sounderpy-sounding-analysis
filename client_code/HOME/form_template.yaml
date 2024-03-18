@@ -57,14 +57,14 @@ components:
     type: ColumnPanel
     layout_properties: {grid_position: 'SCHABZ,GUSNNT'}
     components:
-    - name: raob_tab_button_E
+    - name: raob_tab_button
       properties: {text: "RAOB \nOBSERVATIONS", background: '#363636'}
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,QTHOJM'}
       event_bindings: {click: raob_tab_click}
       data_bindings:
       - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
-    - name: acars_tab_button_E
+    - name: acars_tab_button
       properties: {text: 'ACARS
 
           OBSERVATIONS
@@ -161,16 +161,9 @@ components:
         layout_properties: {grid_position: 'AYVXZA,AUZMYO'}
         components: []
     - name: label_2_copy_2_copy
-      properties: {text: 'Powered by SounderPy v3.0.1, 2024 | (C) Kyle J Gillett 2024
+      properties: {text: 'Powered by SounderPy v3.0.3, 2024 | (C) Kyle J Gillett 2024
 
           ', align: center, font: '', foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'HFBIZM,XUTDIV'}
-    - name: acars_tab_button
-      properties: {text: '-', background: '#363636'}
-      type: Button
-      layout_properties: {grid_position: 'TUWWAN,FWCXEG'}
-      event_bindings: {click: acars_tab_click}
-      data_bindings:
-      - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
 is_package: true

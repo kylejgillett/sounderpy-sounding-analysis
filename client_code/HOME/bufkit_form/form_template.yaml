@@ -25,39 +25,54 @@ components:
       type: Label
       layout_properties: {grid_position: 'VVPPWG,FBGFQR'}
     - name: bufkit_instructions_label
-      properties: {text: 'PLEASE ENTER A MODEL, BUFKIT SITE ID, & FORECAST HOUR',
+      properties: {text: 'PLEASE ENTER A BUFKIT SITE ID, MODEL, & FORECAST HOUR',
         icon: 'fa:exclamation-circle', bold: true, align: center, spacing_above: small,
         font_size: 20, foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'OCJELD,WQWPEO'}
-    - name: bufkit_model_label
-      properties: {text: MODEL, icon: 'fa:database', bold: true, align: center, foreground: '#FFFFFF',
-        font_size: 17}
+    - name: bufkit_instructions_label_copy
+      properties: {text: VALID BUFKIT SITES, icon: 'fa:map', bold: true, align: center,
+        spacing_above: small, font_size: 15, foreground: '#FFFFFF'}
       type: Label
-      layout_properties: {grid_position: 'RGPEMA,ONUIEC'}
-    - name: bufkit_model
-      properties: {align: center, placeholder: 'HRRR, RAP, NAM, GFS, SREF, HIRESW',
-        enabled: true, italic: true, background: '#707070', foreground: 'theme:',
-        bold: true, font_size: 15}
-      type: TextBox
-      layout_properties: {grid_position: 'HPZESN,WAKDRJ'}
-      event_bindings: {pressed_enter: station_id_pressed_enter}
+      layout_properties: {grid_position: 'OCOAQF,TYUCWM'}
+    - name: bufkit_map_comp_1
+      properties: {}
+      type: form:HOME.bufkit_map_comp
+      layout_properties: {grid_position: 'LHLGXX,HUMYMS'}
     - name: bufkit_site_id_label
       properties: {text: 'BUFKIT SITE ID
 
           ', icon: 'fa:map-marker', bold: true, align: center, foreground: '#FFFFFF',
         font_size: 17}
       type: Label
-      layout_properties: {grid_position: 'ROZKCM,FUUCUJ'}
-    - name: bufkit_map_comp_1
-      properties: {}
-      type: form:HOME.bufkit_map_comp
-      layout_properties: {grid_position: 'LHLGXX,HUMYMS'}
+      layout_properties: {grid_position: 'EBIECG,YUWNWN'}
     - name: bufkit_site_id
       properties: {align: center, placeholder: 3 or 4 digit *BUFKIT* Site ID, enabled: true,
         italic: true, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'VUWHJY,XRPJUI'}
+      event_bindings: {pressed_enter: station_id_pressed_enter}
+    - name: bufkit_model_label
+      properties: {text: MODEL, icon: 'fa:database', bold: true, align: center, foreground: '#FFFFFF',
+        font_size: 17}
+      type: Label
+      layout_properties: {grid_position: ''}
+    - name: bufkit_fhour_label_copy
+      properties: {text: 'LATEST MODEL RUNS:
+
+          ', icon: '', bold: true, align: center, foreground: '#FFFF', font_size: 14}
+      type: Label
+      layout_properties: {grid_position: 'SRQYXQ,BTZFSP'}
+    - name: latest_runs_txt
+      properties: {align: center, bold: true, foreground: '#000000'}
+      type: Label
+      layout_properties: {grid_position: 'CIMCOS,ZQHNOF'}
+    - name: bufkit_model
+      properties: {align: center, placeholder: 'HRRR, RAP, NAM, GFS, SREF, HIRESW',
+        enabled: true, italic: true, background: '#707070', foreground: 'theme:',
+        bold: true, font_size: 15}
+      type: TextBox
+      layout_properties: {grid_position: 'GXNKET,BIKCZV'}
       event_bindings: {pressed_enter: station_id_pressed_enter}
     - name: bufkit_fhour_label
       properties: {text: 'FORECAST HOUR
@@ -65,41 +80,73 @@ components:
           ', icon: 'fa:clock-o', bold: true, align: center, foreground: '#FFFF', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'CTEUJJ,RLTPLD'}
-    - name: bufkit_fhour_label_copy
-      properties: {text: 'LATEST MODEL RUNS:
-
-          ', icon: '', bold: true, align: center, foreground: '#FFFF', font_size: 14}
-      type: Label
-      layout_properties: {grid_position: 'ZCXETA,JFWEQX'}
-    - name: latest_runs_txt
-      properties: {align: center, bold: true, foreground: '#000000'}
-      type: Label
-      layout_properties: {grid_position: 'SWRNNK,LNROZP'}
     - name: bufkit_fhour
       properties: {placeholder: 'Forecast Hour (hours from run time, as a number,
           ex: 3)', italic: true, align: center, background: '#707070', type: number,
         foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
-      layout_properties: {grid_position: ''}
-    - name: bufkit_dark_mode_check
-      properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
-        background: '', allow_indeterminate: false, align: left, font_size: 15}
-      type: CheckBox
-      layout_properties: {grid_position: 'UOVORF,JCFWMM'}
-      event_bindings: {change: dark_mode_check_change}
-    - name: bufkit_color_blind_check
-      properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
-        foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
-        font_size: 15}
-      type: CheckBox
-      layout_properties: {grid_position: 'SRCUAF,TRIYUX'}
-      event_bindings: {change: check_box_1_change}
-    - name: bufkit_hodo_check
-      properties: {text: Plot hodograph only, checked: false, role: null, foreground: '#FFFFFF',
-        background: '', allow_indeterminate: false, align: left, font_size: 15}
-      type: CheckBox
-      layout_properties: {grid_position: 'OSHJER,MLHNTY'}
-      event_bindings: {change: check_box_1_change}
+      layout_properties: {grid_position: 'DCPILS,WWVHNQ'}
+    - name: bufkir_options_card
+      properties: {role: card, background: '#363636'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'XLBXVM,LTDGWH'}
+      components:
+      - name: bufkit_dark_mode_check
+        properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
+          background: '', allow_indeterminate: false, align: left, font_size: 15}
+        type: CheckBox
+        layout_properties: {grid_position: 'MLSBOI,ZYMWEI IBQVEU,SQQYDB'}
+        event_bindings: {change: dark_mode_check_change}
+      - name: bufkit_color_blind_check
+        properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
+          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
+          font_size: 15}
+        type: CheckBox
+        layout_properties: {grid_position: 'MLSBOI,ZYMWEI WJTXUC,WTLZER'}
+        event_bindings: {change: check_box_1_change}
+      - name: bufkit_hodo_check
+        properties: {role: null, align: left, border: '', foreground: '#FFFFFF', allow_indeterminate: false,
+          text: Plot hodograph only, font_size: 15, background: '', checked: false}
+        type: CheckBox
+        layout_properties: {grid_position: 'MLSBOI,ZYMWEI IUSILP,UYOWIG'}
+        event_bindings: {change: check_box_1_change}
+      - name: acars_sm_card
+        properties: {role: card, background: '#363636'}
+        type: ColumnPanel
+        layout_properties: {grid_position: 'MLSBOI,KQDDVB'}
+        components:
+        - name: bufkit_stormmotion_label
+          properties: {text: Select a storm motion from the list below or enter your own.,
+            icon: '', bold: true, align: center, spacing_above: small, font_size: 12,
+            foreground: '#FFFFFF'}
+          type: Label
+          layout_properties: {grid_position: 'BABWWC,DLGWRU'}
+        - name: bufkit_sm
+          properties:
+            items: [right_moving, left_moving, mean_wind]
+          type: DropDown
+          layout_properties: {grid_position: 'NOIXON,LQYJAR'}
+        - name: bufkit_direction
+          properties: {align: center, placeholder: 'direction (ex: 245) in degrees',
+            enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true,
+            background: '#707070', bold: true}
+          type: TextBox
+          layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
+          event_bindings: {pressed_enter: station_id_pressed_enter}
+        - name: bufkit_speed
+          properties: {align: center, placeholder: 'speed: (ex: 45) in knots', enabled: true,
+            italic: true, background: '#707070', foreground: 'theme:', bold: true,
+            font_size: 15}
+          type: TextBox
+          layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
+          event_bindings: {pressed_enter: station_id_pressed_enter}
+      - name: bufkit_simple_check
+        properties: {text: Plot Simple Sounding (faster), checked: false, role: null,
+          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
+          font_size: 15}
+        type: CheckBox
+        layout_properties: {grid_position: 'MLSBOI,ZYMWEI LACVJE,RRAGCU'}
+        event_bindings: {change: check_box_1_change}
     - name: bufkit_button
       properties: {role: filled, align: center, border: '', foreground: '#fbff00',
         text: 'GET SOUNDING

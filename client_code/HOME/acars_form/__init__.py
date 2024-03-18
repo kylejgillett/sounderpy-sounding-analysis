@@ -25,8 +25,6 @@ class acars_form(acars_formTemplate):
       storm_motion = [int(self.acars_direction.text), int(self.acars_speed.text)]
     else:
       storm_motion = self.acars_sm.selected_value
-
-    self.acars_standby_label.text =f"{type(storm_motion)}"
     
     if self.acars_simple_check.checked:
       style = 'simple'

@@ -89,6 +89,7 @@ def process_acars_function(profile_id, year, month, day, hour, color_blind, dark
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
         else:
              spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, color_blind=color_blind, storm_motion=storm_motion, special_parcels='simple', save=True)
+             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, color_blind=color_blind, storm_motion=storm_motion, special_parcels='simple', save=True)
 
         image =anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
