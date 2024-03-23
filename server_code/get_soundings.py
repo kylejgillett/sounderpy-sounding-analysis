@@ -35,6 +35,9 @@ def worker():
         elif task["function"] == "acars_function":
             result = process_acars_function(*task["args"])
 
+        elif task["function"] == "latest_bufkit_function":
+            result = process_bufkit_function(*task["args"])
+
         elif task["function"] == "bufkit_function":
             result = process_bufkit_function(*task["args"])
 
@@ -97,9 +100,26 @@ def process_acars_function(profile_id, year, month, day, hour, color_blind, dark
 
         return image, label_txt
 
-def process_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion):
+def process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion):
     with lock:
         clean_data = spy.get_bufkit_data(str(model), str(bufkit_site), int(fcst_hr))
+
+        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z Launch for {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
+
+        if hodo == True:  
+             spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
+        else:
+             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', color_blind=color_blind, save=True)
+        image = anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
+
+        print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+
+        return image, label_txt
+
+
+def process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion):
+    with lock:
+        clean_data = spy.get_bufkit_data(str(model), str(bufkit_site), int(fcst_hr), str(run_year), str(run_month), str(run_day), str(run_hour))
 
         label_txt = f"{clean_data['site_info']['valid-time'][3]}Z Launch for {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
 
@@ -175,11 +195,24 @@ def get_acars_sounding(profile_id, year, month, day, hour, color_blind, dark_mod
 # GET BUFKIT FUNCTION #
 #######################
 @anvil.server.callable
-def get_bufkit_sounding(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion):
+def get_bufkit_sounding(model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion):
     # Add the task (request) to the queue
-    task_queue.put({"function": "bufkit_function", "args": (model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion)})
+    task_queue.put({"function": "bufkit_function", "args": (model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion)})
 
-    image, label_txt = process_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion)
+    image, label_txt = process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion)
+
+    return image, label_txt
+
+
+##############################
+# GET LATEST BUFKIT FUNCTION #
+##############################
+@anvil.server.callable
+def get_latest_bufkit_sounding(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion):
+    # Add the task (request) to the queue
+    task_queue.put({"function": "latest_bufkit_function", "args": (model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion)})
+
+    image, label_txt = process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion)
 
     return image, label_txt
 
