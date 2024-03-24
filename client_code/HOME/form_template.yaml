@@ -81,7 +81,7 @@ components:
 
           FORECASTS
 
-          ', background: '#363636'}
+          ', background: '#363636', visible: true}
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,ENKAOB'}
       event_bindings: {click: bufkit_tab_click}
@@ -111,8 +111,8 @@ components:
     type: ColumnPanel
     layout_properties: {grid_position: 'UZNNJF,QNSKTC'}
 - name: label_3
-  properties: {bold: true, align: center, text: 'THIS SITE IS CURRENTLY DOWN FOR MAINTENANCE
-      AND WILL RETURN SHORTLY
+  properties: {bold: true, align: center, text: 'THIS SITE IS CURRENTLY DOWN FOR *BRIEF*
+      MAINTENANCE AND WILL RETURN BY 15:30 UTC
 
       ', font_size: 27, visible: false}
   type: Label
@@ -141,28 +141,9 @@ components:
         foreground: 'theme:On Tertiary Container', text: 'Enjoy using this app? Consider
           supporting future development of SounderPy and SounderPy applications by
           “Buying me a coffee”! ☕', font_size: 15, font: '', col_spacing: huge, icon_align: top,
-        italic: true, bold: true, underline: true}
+        italic: true, bold: true, underline: false}
       type: Link
       layout_properties: {grid_position: 'FFFVZI,MYVMHX'}
-    - name: label_2_copy_2
-      properties: {text: 'Have questions about this app? DM me on twitter! @wxkylegillett',
-        align: center, font: '', foreground: '#FFFFFF', font_size: 20}
-      type: Label
-      layout_properties: {grid_position: 'NPULFS,MCCGIR'}
-    - name: link_1_copy
-      properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: Full SounderPy Documentation,
-        underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
-        font: '', font_size: 20}
-      type: Link
-      layout_properties: {grid_position: 'NPULFS,KSRCRW'}
-      components:
-      - name: link_1
-        properties: {url: 'https://github.com/kylejgillett/sounderpy', text: SounderPy Code on Github,
-          underline: true, bold: true, foreground: 'theme:On Tertiary Container',
-          align: center, font: '', font_size: 20}
-        type: Link
-        layout_properties: {grid_position: 'AYVXZA,AUZMYO'}
-        components: []
     - name: label_2_copy_2_copy
       properties: {text: 'Powered by SounderPy v3.0.2, 2024 | (C) Kyle J Gillett 2024
 
