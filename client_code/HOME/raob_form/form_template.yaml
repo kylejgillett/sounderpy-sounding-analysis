@@ -28,15 +28,6 @@ components:
         bold: true, align: center, spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'XNQFRE,QKDRPI'}
-    - name: bufkit_instructions_label_copy
-      properties: {text: VALID RAOB SITES (CURRENT & PAST SITES), icon: 'fa:map',
-        bold: true, align: center, spacing_above: small, font_size: 15, foreground: '#FFFFFF'}
-      type: Label
-      layout_properties: {grid_position: 'ODRIHS,FJBIGK'}
-    - name: raob_map_comp_1
-      properties: {}
-      type: form:HOME.raob_map_comp
-      layout_properties: {grid_position: 'NUPIKL,IFIKBR'}
     - name: raob_station_id
       properties: {text: STATION ID, icon: 'fa:map-marker', bold: true, align: center,
         foreground: '#FFFFFF', font_size: 17}
@@ -153,4 +144,22 @@ components:
       properties: {display_mode: original_size}
       type: Image
       layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+- name: spacer_1
+  properties: {height: 155}
+  type: Spacer
+  layout_properties: {grid_position: 'MIJINO,NHVOCS'}
+- name: card_1
+  properties: {role: card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'BTPSBB,OKVHRX'}
+  components:
+  - name: bufkit_instructions_label_copy
+    properties: {text: VALID RAOB SITES (CURRENT & PAST SITES), icon: 'fa:map', bold: true,
+      align: center, spacing_above: small, font_size: 15, foreground: '#FFFFFF'}
+    type: Label
+    layout_properties: {grid_position: 'FRBNRD,CVKQRZ'}
+  - name: raob_map_comp_1
+    properties: {}
+    type: form:HOME.raob_map_comp
+    layout_properties: {grid_position: 'PWHRCG,AOPLWQ'}
 is_package: true

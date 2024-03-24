@@ -31,15 +31,6 @@ components:
         spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'TGRLHE,VLIUXR'}
-    - name: bufkit_instructions_label_copy
-      properties: {text: VALID BUFKIT SITES, icon: 'fa:map', bold: true, align: center,
-        spacing_above: small, font_size: 15, foreground: '#FFFFFF'}
-      type: Label
-      layout_properties: {grid_position: 'OCOAQF,TYUCWM'}
-    - name: bufkit_map_comp_1
-      properties: {}
-      type: form:HOME.bufkit_map_comp
-      layout_properties: {grid_position: 'LHLGXX,HUMYMS'}
     - name: bufkit_fhour_label_copy
       properties: {text: 'LATEST MODEL RUNS:
 
@@ -58,8 +49,9 @@ components:
       type: Label
       layout_properties: {grid_position: 'GXNKET,NQIIZC WOWKGK,LKNFYM'}
     - name: bufkit_site_id
-      properties: {align: center, placeholder: 3 or 4 digit *BUFKIT* Site ID, enabled: true,
-        italic: true, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
+      properties: {align: center, placeholder: 3 or 4 digit BUFKIT site ID (see map below),
+        enabled: true, italic: true, background: '#707070', foreground: 'theme:',
+        bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'GXNKET,NQIIZC PMNPAX,CTYJTK'}
       event_bindings: {pressed_enter: station_id_pressed_enter}
@@ -202,4 +194,22 @@ components:
       properties: {display_mode: original_size}
       type: Image
       layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+- name: spacer_1
+  properties: {height: 155}
+  type: Spacer
+  layout_properties: {grid_position: 'PXTGGA,QEMIPL'}
+- name: card_1
+  properties: {role: card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'PJPKFE,OAMGCJ'}
+  components:
+  - name: bufkit_instructions_label_copy
+    properties: {text: VALID BUFKIT SITES, icon: 'fa:map', bold: true, align: center,
+      spacing_above: small, font_size: 15, foreground: '#FFFFFF'}
+    type: Label
+    layout_properties: {grid_position: 'YYHUBV,KSNAJN'}
+  - name: bufkit_map_comp_1
+    properties: {}
+    type: form:HOME.bufkit_map_comp
+    layout_properties: {grid_position: 'PXYTVQ,TUMUQJ'}
 is_package: true
