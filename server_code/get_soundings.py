@@ -3,6 +3,8 @@ import sounderpy as spy
 import anvil.media
 from datetime import datetime as dt
 from urllib.request import urlopen
+import pandas as pd
+import numpy as np
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -76,11 +78,28 @@ def process_raob_function(site_id, year, month, day, hour, color_blind, dark_mod
 def process_acars_list_function(year, month, day, hour):
     with lock:
 
-        profiles_list = spy.acars_data(str(year), str(month), str(day), str(hour)).list_profiles()
+       list_1 = spy.acars_data(str(year), str(month), str(day), str(hour)).list_profiles()
 
-        print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+       list_2 = [profile[0:3] for profile in list_1]
+      
+       airports_csv = pd.read_csv(f'https://raw.githubusercontent.com/kylejgillett/sounderpy/main/src/AIRPORTS.csv',
+              skiprows=7, skipinitialspace = True)
+      
+       list_3 = []
+      
+       for arpt, profile in zip(list_2, list_1):
+          where = [np.where(airports_csv['IATA'].str.contains(arpt, na=False, case=True))[0]][0][0]
+          # ADD AIRPORT DATA INTO DICT
+          keys = ['Name', 'City', 'Country', 'Latitude', 'Longitude',]
+          airport_info = []
+          for key in keys:
+              airport_info.append(airports_csv[key][where])
+          
+          list_3.append(f'{profile} | {airport_info[0]}, {airport_info[1]}') 
 
-        return profiles_list
+       print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+
+       return "\n".join(list_3)
 
 def process_acars_function(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
     with lock:

@@ -1,0 +1,14 @@
+container:
+  type: HtmlTemplate
+  properties: {html: "<!DOCTYPE html>\n<html>\n<body>\n  <div align=center>\n  <p\
+      \ id=\"utc-time\", style=\"color:white; font-weight: bold\"></p>\n  </div>\n\
+      \  <script>\n    function updateUTCTime() {\n      var now = new Date();\n \
+      \     // Customize the time format to end with 'Z'\n      var utcString = \"\
+      Current UTC time: \" + now.toISOString().replace('T', ' ').replace(/\\.\\d+Z$/,\
+      \ 'Z');\n      document.getElementById('utc-time').textContent = utcString;\n\
+      \    }\n\n    // Update time every second\n    setInterval(updateUTCTime, 1000);\n\
+      \n    // Initial call to display time immediately\n    updateUTCTime();\n  </script>\n\
+      </body>\n</html>\n"}
+components: []
+is_package: true
+custom_component: true

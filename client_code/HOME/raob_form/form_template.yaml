@@ -15,14 +15,6 @@ components:
         spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
-    - name: label_2_copy
-      properties: {text: 'This tool retrieves RAOB and IGRAv2 Observed Soundings.
-          To use this, provide a RAOB or IGRAv2 site identifier, a sounding launch
-          date and sounding launch hour, then select optional settings and push the
-          ''GET SOUNDING'' button ', align: center, font: '', foreground: '#FFFFFF',
-        font_size: 12}
-      type: Label
-      layout_properties: {grid_position: 'TQKHUO,NWHAIQ'}
     - name: raob_instructions_label
       properties: {text: 'PLEASE ENTER A SITE ID, LAUNCH DATE & LAUNCH TIME', icon: 'fa:exclamation-circle',
         bold: true, align: center, spacing_above: small, font_size: 20, foreground: '#FFFFFF'}

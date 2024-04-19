@@ -17,11 +17,11 @@ components:
       layout_properties: {grid_position: 'JMPLHM,NNMSJS'}
     - name: label_2_copy_2
       properties: {text: "SounderPy is an open-source atmospheric science Python package\
-          \ for vertical profile analysis. This web-app is an extension of SounderPy's\
-          \ that uses the code's same functionality to load data and create soundings\
-          \ right in your browser with no coding involved (on your end \ud83d\ude09\
-          ). \n\n\nThis library is developed with the goal in mind to keep the code\
-          \ (and now this web-app) simple and efficient for users of all experience\
+          \ for vertical profile analysis. This web-app is an extension of the SounderPy\
+          \ library that uses the code's same functionality to load data and create\
+          \ soundings right in your browser with no coding involved (on your end \ud83d\
+          \ude09). \n\nThis library is developed with the goal in mind to keep the\
+          \ code (and now this web-app) simple and efficient for users of all experience\
           \ levels and for reliability in all use cases.\n\n\u2615 SounderPy is an\
           \ open-source package developed on my own time. If you would you like to\
           \ support continued SounderPy development, consider \u201cBuying me a coffee\u201d\
