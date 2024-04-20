@@ -32,7 +32,7 @@ class acars_form(acars_formTemplate):
       style = 'full'
     
     params = anvil.server.call('get_acars_sounding',
-                               self.acars_site_id.text,
+                               self.acars_site_id.text[0:8],
                                self.acars_date.date.strftime('%Y'),
                                self.acars_date.date.strftime('%m'),
                                self.acars_date.date.strftime('%d'),
