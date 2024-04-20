@@ -97,9 +97,44 @@ def process_acars_list_function(year, month, day, hour):
           
           list_3.append(f'{profile} | {airport_info[0]}, {airport_info[1]}') 
 
-       print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+       #print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
 
        return "\n".join(list_3)
+
+
+
+# def process_acars_airport_list_function(year, month, day, site_id):
+#     with lock:
+
+#        for hour in range(start_hour, end_hour):
+          
+          # if hour < 10:
+          #     hour = f'0{hour}'
+          
+          # try:
+          #     acars_conn = spy.acars_data(year, month, day, str(hour))
+      
+          #     acars_list = acars_conn.list_profiles()
+          #     new_list = [item for item in acars_list if any(phrase in item for phrase in site)]
+      
+          #     profiles.extend(new_list)
+          # except:
+          #     pass
+      
+#        for arpt, profile in zip(list_2, list_1):
+#           where = [np.where(airports_csv['IATA'].str.contains(arpt, na=False, case=True))[0]][0][0]
+#           # ADD AIRPORT DATA INTO DICT
+#           keys = ['Name', 'City', 'Country', 'Latitude', 'Longitude',]
+#           airport_info = []
+#           for key in keys:
+#               airport_info.append(airports_csv[key][where])
+          
+#           list_3.append(f'{profile} | {airport_info[0]}, {airport_info[1]}') 
+
+#        print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+
+#        return "\n".join(list_3)
+
 
 def process_acars_function(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
     with lock:
@@ -115,7 +150,7 @@ def process_acars_function(profile_id, year, month, day, hour, color_blind, dark
 
         image =anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
-        print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+        #print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
 
         return image, label_txt
 
@@ -131,7 +166,7 @@ def process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dar
              spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', color_blind=color_blind, save=True)
         image = anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
-        print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+        #print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
 
         return image, label_txt
 
@@ -148,7 +183,7 @@ def process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, ru
              spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', color_blind=color_blind, save=True)
         image = anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
-        print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+        #print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
 
         return image, label_txt
 
@@ -166,7 +201,7 @@ def process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mod
 
         image = anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
-        print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+        #print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
 
         return image, label_txt
 
