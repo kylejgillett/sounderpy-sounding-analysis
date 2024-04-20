@@ -103,37 +103,37 @@ def process_acars_list_function(year, month, day, hour):
 
 
 
-# def process_acars_airport_list_function(year, month, day, site_id):
-#     with lock:
-
-#        for hour in range(start_hour, end_hour):
-          
-          # if hour < 10:
-          #     hour = f'0{hour}'
-          
-          # try:
-          #     acars_conn = spy.acars_data(year, month, day, str(hour))
+def process_acars_airport_list_function(year, month, day, site_id):
+    with lock: 
       
-          #     acars_list = acars_conn.list_profiles()
-          #     new_list = [item for item in acars_list if any(phrase in item for phrase in site)]
-      
-          #     profiles.extend(new_list)
-          # except:
-          #     pass
-      
-#        for arpt, profile in zip(list_2, list_1):
-#           where = [np.where(airports_csv['IATA'].str.contains(arpt, na=False, case=True))[0]][0][0]
-#           # ADD AIRPORT DATA INTO DICT
-#           keys = ['Name', 'City', 'Country', 'Latitude', 'Longitude',]
-#           airport_info = []
-#           for key in keys:
-#               airport_info.append(airports_csv[key][where])
+       for hour in range(0, 24):
           
-#           list_3.append(f'{profile} | {airport_info[0]}, {airport_info[1]}') 
+          if hour < 10:
+              hour = f'0{hour}'
+          
+          try:
+              acars_conn = spy.acars_data(year, month, day, str(hour))
+      
+              acars_list = acars_conn.list_profiles()
+              new_list = [item for item in acars_list if any(phrase in item for phrase in [str(site_id)])]
+      
+              profiles.extend(new_list)
+          except:
+              pass
+      
+       for arpt, profile in zip(list_2, list_1):
+          where = [np.where(airports_csv['IATA'].str.contains(arpt, na=False, case=True))[0]][0][0]
+          # ADD AIRPORT DATA INTO DICT
+          keys = ['Name', 'City', 'Country', 'Latitude', 'Longitude',]
+          airport_info = []
+          for key in keys:
+              airport_info.append(airports_csv[key][where])
+          
+          list_3.append(f'{profile} | {airport_info[0]}, {airport_info[1]}') 
 
-#        print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+       print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
 
-#        return "\n".join(list_3)
+       return "\n".join(list_3)
 
 
 def process_acars_function(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
