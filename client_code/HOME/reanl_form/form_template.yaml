@@ -17,20 +17,13 @@ components:
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: reanl_info_text
-      properties: {text: 'This tool retrieves Rapid Refresh & Rapid Update Cycle model
-          reanalysis data from NCEI for a given date/time and location. To learn more
-          about the RAP/RUC reanalysis datasets, available times and the lat/lon domain
-          (CONUS), check out the link below:
-
-          https://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update ',
+      properties: {text: "This tool retrieves Rapid Refresh & Rapid Update Cycle model\
+          \ reanalysis data from NCEI for a given date/time and location. To learn\
+          \ more about the RAP/RUC reanalysis datasets, available times and the lat/lon\
+          \ domain (CONUS), check out the link below: \nhttps://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update ",
         align: center, font: '', foreground: '#FFFFFF', font_size: 12}
       type: Label
       layout_properties: {grid_position: 'VPBARC,FDAVCL'}
-    - name: reanl_instructions_label
-      properties: {text: 'PLEASE ENTER A DATE, HOUR, & LAT/LON', icon: 'fa:exclamation-circle',
-        bold: true, align: center, spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
-      type: Label
-      layout_properties: {grid_position: 'UGEMVP,AHFUGF'}
     - name: reanl_date_label
       properties: {text: REANALYSIS DATE, icon: 'fa:calendar', bold: true, align: center,
         foreground: '#FFFFFF', font: '', font_size: 17}

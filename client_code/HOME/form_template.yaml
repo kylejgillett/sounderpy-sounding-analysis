@@ -158,4 +158,11 @@ components:
           ', align: center, font: '', foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'HFBIZM,XUTDIV'}
+    - name: test_button
+      properties: {text: '-', background: '#363636', visible: false}
+      type: Button
+      layout_properties: {grid_position: 'KUNHFL,QGWPSR'}
+      event_bindings: {click: test_tab_click}
+      data_bindings:
+      - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
 is_package: true

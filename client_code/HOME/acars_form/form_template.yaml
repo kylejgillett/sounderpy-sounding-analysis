@@ -6,7 +6,7 @@ components:
   layout_properties: {grid_position: 'IBHDIK,AWNVDF'}
   components:
   - name: card_1_copy_copy
-    properties: {role: card, background: '#363636', col_widths: '{"ZWDTFP":15,"SXTXPU":45}'}
+    properties: {role: card, background: '#363636', col_widths: '{}'}
     type: ColumnPanel
     layout_properties: {grid_position: 'YJASZZ,ZWVHPM'}
     components:
@@ -16,63 +16,121 @@ components:
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: label_2_copy_copy
-      properties: {text: 'Plot ACARS aircraft observed soundings from US airports.
-          To use this, you must first search for available profiles for a given date
-          and hour. Do so by providing a flight date and flight hour, then push the
-          ''GET AVAILABLE PROFILES'' button. Next, you can copy one of the ''flight
-          identifiers'' (ex: ''BNA_1240'') and paste it in the ''FLIGHT ID'' box.
-          Finally, select optional settings and push the ''GET SOUNDING'' button  ',
-        align: center, font: '', foreground: '#FFFFFF', font_size: 12}
+      properties: {text: "Plot ACARS aircraft observed soundings from US airports.\
+          \ To use this, you must first search for available profiles for a given\
+          \ date and hour. Do so by providing a flight date and flight hour, then\
+          \ push the 'GET AVAILABLE PROFILES' button. Next, you can copy one of the\
+          \ 'flight identifiers' (ex: 'BNA_1240') and paste it in the 'FLIGHT ID'\
+          \ box. Finally, select optional settings and push the 'GET SOUNDING' button.\n\
+          \n  ", align: center, font: '', foreground: '#FFFFFF', font_size: 12}
       type: Label
       layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
-    - name: acars_instructions_label
-      properties: {text: 'STEP 1: ENTER A FLIGHT DATE & FLIGHT TIME TO SEARCH FOR
-          AVAILABLE PROFILES', icon: 'fa:exclamation-circle', bold: true, align: center,
-        spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
-      type: Label
-      layout_properties: {grid_position: 'IYWXWH,HDIUUF'}
-    - name: acars_date_label
-      properties: {text: FLIGHT DATE, icon: 'fa:calendar', bold: true, align: center,
-        foreground: '#FFFFFF', font: '', font_size: 17}
-      type: Label
-      layout_properties: {grid_position: 'CMNHRV,LRIBEQ'}
-    - name: acars_date
-      properties: {align: center, pick_time: true, placeholder: enter a flight date,
-        enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true,
-        background: '#707070', bold: true, format: '"%m-%d-%Y"'}
-      type: DatePicker
-      layout_properties: {grid_position: 'SBFXQU,OYHMHY'}
-    - name: acars_hour_label
-      properties: {text: FLIGHT HOUR, icon: 'fa:clock-o', bold: true, align: center,
-        foreground: '#FFFF', font_size: 17}
-      type: Label
-      layout_properties: {grid_position: 'LJIOUE,EHXHSZ'}
-    - name: acars_hour
-      properties: {placeholder: 'UTC format (ex: ''12'', ''00'')', italic: true, align: center,
-        background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
-      type: TextBox
-      layout_properties: {grid_position: 'DNBQRR,APHAFK'}
-    - name: acars_profiles_button
-      properties: {role: filled, align: center, border: '', foreground: '#fbff00',
-        text: 'GET AVAILABLE PROFILES
+    - name: card_2
+      properties: {role: card, col_widths: '{"GVNQWK":10,"VWKWNM":50}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'LJIOUE,NAZZFV'}
+      components:
+      - name: acars_instructions_label
+        properties: {text: 'LATEST PROFILES BY DATE & HOUR
 
-          ', font_size: 17, font: '', background: '#44a2ff', bold: true}
-      type: Button
-      layout_properties: {grid_position: 'GNNFER,QJZVSN'}
-      event_bindings: {click: acars_profiles_button_click}
-    - name: spacer_1
-      properties: {height: 32}
-      type: Spacer
-      layout_properties: {grid_position: 'CXSRKP,ZWDTFP'}
-    - name: acars_profiles_list
-      properties: {bold: false, align: left, font_size: 15, background: '', foreground: '#fbff00',
-        italic: true}
-      type: Label
-      layout_properties: {grid_position: 'CXSRKP,SXTXPU', full_width_row: false}
+            _______________________________________', icon: '', bold: true, align: center,
+          spacing_above: small, font_size: 20, foreground: '#FFFF00'}
+        type: Label
+        layout_properties: {grid_position: 'FVUDCV,VVLYEC'}
+      - name: acars_date_label
+        properties: {text: FLIGHT DATE, icon: 'fa:calendar', bold: true, align: center,
+          foreground: '#FFFFFF', font: '', font_size: 14}
+        type: Label
+        layout_properties: {grid_position: 'MQMAQT,SMPKGZ'}
+      - name: acars_hour_label
+        properties: {text: FLIGHT HOUR, icon: 'fa:clock-o', bold: true, align: center,
+          foreground: '#FFFF', font_size: 14}
+        type: Label
+        layout_properties: {grid_position: 'MQMAQT,OOSGSX'}
+      - name: acars_all_date
+        properties: {align: center, pick_time: true, placeholder: enter a flight date,
+          enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true,
+          background: '#707070', bold: true, format: '"%m-%d-%Y"'}
+        type: DatePicker
+        layout_properties: {grid_position: 'NFPCIT,EKPLRN'}
+      - name: acars_all_hour
+        properties: {placeholder: 'UTC format (ex: ''12'', ''00'')', italic: true,
+          align: center, background: '#707070', foreground: 'theme:', bold: true,
+          font_size: 15}
+        type: TextBox
+        layout_properties: {grid_position: 'NFPCIT,RWIZAV'}
+      - name: acars_all_profiles_button
+        properties: {role: filled, align: center, border: '', foreground: '#fbff00',
+          text: 'GET AVAILABLE PROFILES
+
+            ', font_size: 17, font: '', background: '#44a2ff', bold: true}
+        type: Button
+        layout_properties: {grid_position: 'BSBATR,GOFXTF'}
+        event_bindings: {click: acars_all_profiles_button_click}
+      - name: spacer_2
+        properties: {height: 35}
+        type: Spacer
+        layout_properties: {grid_position: 'HITQMV,OFXNJW'}
+      - name: acars_all_profiles_list
+        properties: {bold: false, align: left, font_size: 12, background: '', foreground: '#fbff00',
+          italic: true}
+        type: Label
+        layout_properties: {grid_position: 'DBELRL,VWKWNM'}
+    - name: card_1
+      properties: {role: card, col_widths: '{"XKCUUD":50}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'LJIOUE,EWFKVT'}
+      components:
+      - name: acars_instructions_label_copy
+        properties: {text: 'ALL PROFILES BY DATE & AIRPORT
+
+            _______________________________________', icon: '', bold: true, align: center,
+          spacing_above: small, font_size: 20, foreground: '#FFFF00'}
+        type: Label
+        layout_properties: {grid_position: 'YZTFXS,QKKQXT'}
+      - name: acars_date_label_copy_2
+        properties: {text: FLIGHT DATE, icon: 'fa:calendar', bold: true, align: center,
+          foreground: '#FFFFFF', font: '', font_size: 14}
+        type: Label
+        layout_properties: {grid_position: 'DUEZNP,DKKSHT'}
+      - name: acars_date_label_copy
+        properties: {text: AIRPORT ID, icon: 'fa:calendar', bold: true, align: center,
+          foreground: '#FFFFFF', font: '', font_size: 14}
+        type: Label
+        layout_properties: {grid_position: 'DUEZNP,XEQKMF'}
+      - name: acars_airport_date
+        properties: {align: center, pick_time: true, placeholder: enter a flight date,
+          enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true,
+          background: '#707070', bold: true, format: '"%m-%d-%Y"'}
+        type: DatePicker
+        layout_properties: {grid_position: 'KRWEDA,CZBPQG'}
+      - name: acars_airport_id
+        properties: {placeholder: 'airport ICAO ID (ex: ''JFK'')', italic: true, align: center,
+          background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
+        type: TextBox
+        layout_properties: {grid_position: 'KRWEDA,VNBDTK'}
+      - name: acars_airport_profiles_button
+        properties: {role: filled, align: center, border: '', foreground: '#fbff00',
+          text: 'GET AVAILABLE PROFILES
+
+            ', font_size: 17, font: '', background: '#44a2ff', bold: true}
+        type: Button
+        layout_properties: {grid_position: 'HPZVAG,EFWMWV'}
+        event_bindings: {click: acars_airport_profiles_button_click}
+      - name: acars_airport_info_label
+        properties: {bold: false, align: center, font_size: 15, background: '', foreground: '#fbff00',
+          italic: true}
+        type: Label
+        layout_properties: {grid_position: 'FWLMBB,HGMCIS'}
+      - name: acars_airport_profiles_list
+        properties: {bold: false, align: center, font_size: 15, background: '', foreground: '#fbff00',
+          italic: true}
+        type: Label
+        layout_properties: {grid_position: 'OPXBHA,XKCUUD'}
     - name: acars_instructions_label_2
-      properties: {text: 'STEP 2: ''COPY & PASTE'' ONE OF THE ABOVE ''FLIGHT IDS''
-          INTO THE BOX BELOW', icon: 'fa:exclamation-circle', bold: true, align: center,
-        spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
+      properties: {text: "\n 'COPY & PASTE' ONE OF THE ABOVE 'FLIGHT IDS' INTO THE\
+          \ BOX BELOW\n_______________________________________", icon: '', bold: true,
+        align: center, spacing_above: small, font_size: 20, foreground: '#FFFF00'}
       type: Label
       layout_properties: {grid_position: 'GCMCHY,KWRDME'}
     - name: acars_flight_id
@@ -85,7 +143,7 @@ components:
         enabled: true, italic: true, background: '#707070', foreground: 'theme:',
         bold: true, font_size: 15}
       type: TextBox
-      layout_properties: {grid_position: ''}
+      layout_properties: {grid_position: ',undefined'}
       event_bindings: {pressed_enter: station_id_pressed_enter}
     - name: acars_options_card
       properties: {role: card, background: '#363636'}

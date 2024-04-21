@@ -15,11 +15,6 @@ components:
         spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
-    - name: raob_instructions_label
-      properties: {text: 'PLEASE ENTER A SITE ID, LAUNCH DATE & LAUNCH TIME', icon: 'fa:exclamation-circle',
-        bold: true, align: center, spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
-      type: Label
-      layout_properties: {grid_position: 'XNQFRE,QKDRPI'}
     - name: raob_station_id
       properties: {text: STATION ID, icon: 'fa:map-marker', bold: true, align: center,
         foreground: '#FFFFFF', font_size: 17}

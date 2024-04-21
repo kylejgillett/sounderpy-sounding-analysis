@@ -75,7 +75,12 @@ def process_raob_function(site_id, year, month, day, hour, color_blind, dark_mod
 
         return image, label_txt
 
-def process_acars_list_function(year, month, day, hour):
+
+
+
+
+
+def process_acars_all_list_function(year, month, day, hour):
     with lock:
 
        list_1 = spy.acars_data(str(year), str(month), str(day), str(hour)).list_profiles()
@@ -103,8 +108,14 @@ def process_acars_list_function(year, month, day, hour):
 
 
 
-def process_acars_airport_list_function(year, month, day, site_id):
+def process_acars_airport_list_function(year, month, day, airport):
     with lock: 
+      
+       profiles_list = []
+       dates_list = []
+
+       airports_csv = pd.read_csv(f'https://raw.githubusercontent.com/kylejgillett/sounderpy/main/src/AIRPORTS.csv',
+          skiprows=7, skipinitialspace = True)
       
        for hour in range(0, 24):
           
@@ -115,25 +126,25 @@ def process_acars_airport_list_function(year, month, day, site_id):
               acars_conn = spy.acars_data(year, month, day, str(hour))
       
               acars_list = acars_conn.list_profiles()
-              new_list = [item for item in acars_list if any(phrase in item for phrase in [str(site_id)])]
-      
-              profiles.extend(new_list)
+              p_list = [item for item in acars_list if any(phrase in item for phrase in [str(airport)])]
+              d_list = [[year, month, day, hour] for item in acars_list if any(phrase in item for phrase in [str(airport)])]
+            
+              profiles_list.extend(p_list)
+              dates_list.extend(d_list)
           except:
               pass
       
-       for arpt, profile in zip(list_2, list_1):
-          where = [np.where(airports_csv['IATA'].str.contains(arpt, na=False, case=True))[0]][0][0]
-          # ADD AIRPORT DATA INTO DICT
-          keys = ['Name', 'City', 'Country', 'Latitude', 'Longitude',]
-          airport_info = []
-          for key in keys:
-              airport_info.append(airports_csv[key][where])
+       where = [np.where(airports_csv['IATA'].str.contains(airport, na=False, case=True))[0]][0][0]
+       # ADD AIRPORT DATA INTO DICT
+       airport_info = f"{airports_csv['Name'][where]}, {airports_csv['City'][where]}"
           
-          list_3.append(f'{profile} | {airport_info[0]}, {airport_info[1]}') 
 
-       print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+       return "\n".join(profiles_list), airport_info, profiles_list, dates_list
 
-       return "\n".join(list_3)
+
+
+
+
 
 
 def process_acars_function(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
@@ -223,14 +234,26 @@ def get_raob_sounding(site_id, year, month, day, hour, color_blind, dark_mode, h
 # GET ACARS LIST FUNCTION #
 ###########################
 @anvil.server.callable
-def get_acars_profile_list(year, month, day, hour):
+def get_acars_all_profile_list(year, month, day, hour):
     # Add the task (request) to the queue
-    task_queue.put({"function": "acars_list_function", "args": (year, month, day, hour)})
+    task_queue.put({"function": "acars_all_list_function", "args": (year, month, day, hour)})
 
-    acars_list = process_acars_list_function(year, month, day, hour)
+    acars_list = process_acars_all_list_function(year, month, day, hour)
 
     return acars_list
 
+
+###########################
+# GET ACARS LIST FUNCTION #
+###########################
+@anvil.server.callable
+def get_acars_airport_profile_list(year, month, day, airport):
+    # Add the task (request) to the queue
+    task_queue.put({"function": "acars_airport_list_function", "args": (year, month, day, airport)})
+
+    acars_list, airport_info, profiles_list, dates_list = process_acars_airport_list_function(year, month, day, airport)
+
+    return acars_list, airport_info, profiles_list, dates_list
 
 ######################
 # GET ACARS FUNCTION #

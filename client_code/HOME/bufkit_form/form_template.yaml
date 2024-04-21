@@ -17,12 +17,6 @@ components:
         spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
-    - name: bufkit_instructions_label
-      properties: {text: 'PLEASE ENTER A BUFKIT SITE ID, MODEL, MODEL RUN DATE, &
-          FORECAST HOUR', icon: 'fa:exclamation-circle', bold: true, align: center,
-        spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
-      type: Label
-      layout_properties: {grid_position: 'TGRLHE,VLIUXR'}
     - name: bufkit_fhour_label_copy
       properties: {text: 'LATEST MODEL RUNS:
 
