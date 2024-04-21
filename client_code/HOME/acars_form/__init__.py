@@ -48,18 +48,17 @@ class acars_form(acars_formTemplate):
         day = self.dates_list[profile_idx][2]
         hour = self.dates_list[profile_idx][3]
       except:
-         year = self.acars_all_date.date.strftime('%Y'),
-         month = self.acars_all_date.date.strftime('%m'),
-         day = self.acars_all_date.date.strftime('%d'),
-         hour = self.acars_all_hour.text,
+         year = self.acars_all_date.date.strftime('%Y')
+         month = self.acars_all_date.date.strftime('%m')
+         day = self.acars_all_date.date.strftime('%d')
+         hour = self.acars_all_hour.text
          pass
     else:
-      year = self.acars_all_date.date.strftime('%Y'),
-      month = self.acars_all_date.date.strftime('%m'),
-      day = self.acars_all_date.date.strftime('%d'),
-      hour = self.acars_all_hour.text,
+      year = self.acars_all_date.date.strftime('%Y')
+      month = self.acars_all_date.date.strftime('%m')
+      day = self.acars_all_date.date.strftime('%d')
+      hour = self.acars_all_hour.text
     
-    print(year, month, day, hour, )  
     params = anvil.server.call('get_acars_sounding',
                                self.acars_site_id.text[0:8],
                                year,
