@@ -62,7 +62,7 @@ def process_raob_function(site_id, year, month, day, hour, color_blind, dark_mod
     with lock:
         clean_data = spy.get_obs_data(str(site_id), str(year), str(month), str(day), str(hour))
 
-        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z Launch for {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
+        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z RAOB for {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
         
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
@@ -155,7 +155,7 @@ def process_acars_function(profile_id, year, month, day, hour, color_blind, dark
     with lock:
         clean_data = spy.acars_data(str(year), str(month), str(day), str(hour)).get_profile(profile_id)
 
-        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z Launch for {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
+        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z flight from {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
 
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
@@ -173,7 +173,7 @@ def process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dar
     with lock:
         clean_data = spy.get_bufkit_data(str(model), str(bufkit_site), int(fcst_hr))
 
-        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z Launch for {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
+        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z forecast for {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
 
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
@@ -190,7 +190,7 @@ def process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, ru
     with lock:
         clean_data = spy.get_bufkit_data(str(model), str(bufkit_site), int(fcst_hr), str(run_year), str(run_month), str(run_day), str(run_hour))
 
-        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z Launch for {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
+        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z forecast for {clean_data['site_info']['site-id']}, {clean_data['site_info']['site-name']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
 
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
@@ -207,7 +207,7 @@ def process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mod
     with lock:
         clean_data = spy.get_model_data('rap-ruc', latlon, str(year), str(month), str(day), str(hour))
 
-        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z  Reanalysis for {clean_data['site_info']['site-latlon']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
+        label_txt = f"{clean_data['site_info']['valid-time'][3]}Z reanalysis for {clean_data['site_info']['site-latlon']} at {clean_data['site_info']['valid-time'][1]}-{clean_data['site_info']['valid-time'][2]}-{clean_data['site_info']['valid-time'][0]}-{clean_data['site_info']['valid-time'][3]}Z"
 
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
