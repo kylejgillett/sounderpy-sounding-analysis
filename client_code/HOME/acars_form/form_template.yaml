@@ -16,17 +16,17 @@ components:
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: label_2_copy_copy
-      properties: {text: "Plot ACARS aircraft observed soundings from US airports.\
-          \ To use this, you must first search for available profiles for a given\
-          \ date and hour. Do so by providing a flight date and flight hour, then\
-          \ push the 'GET AVAILABLE PROFILES' button. Next, you can copy one of the\
-          \ 'flight identifiers' (ex: 'BNA_1240') and paste it in the 'FLIGHT ID'\
-          \ box. Finally, select optional settings and push the 'GET SOUNDING' button.\n\
-          \n  ", align: center, font: '', foreground: '#FFFFFF', font_size: 12}
+      properties: {text: "Plot ACARS aircraft observed soundings from North American\
+          \ airports. To use this, you must first search for either... all available\
+          \ profiles from any airport for a given date and hour or... all available\
+          \ profiles for a single airport on a given date. Next, you can copy one\
+          \ of the 'flight identifiers' (ex: 'BNA_1240') and paste it in the 'FLIGHT\
+          \ ID' box. Finally, select optional settings and push the 'GET SOUNDING'\
+          \ button.\n\n  ", align: center, font: '', foreground: '#FFFFFF', font_size: 12}
       type: Label
       layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
     - name: card_2
-      properties: {role: card, col_widths: '{"GVNQWK":10,"VWKWNM":50}'}
+      properties: {role: card, col_widths: '{"VWKWNM":50}'}
       type: ColumnPanel
       layout_properties: {grid_position: 'LJIOUE,NAZZFV'}
       components:
@@ -67,10 +67,11 @@ components:
         type: Button
         layout_properties: {grid_position: 'BSBATR,GOFXTF'}
         event_bindings: {click: acars_all_profiles_button_click}
-      - name: spacer_2
-        properties: {height: 35}
-        type: Spacer
-        layout_properties: {grid_position: 'HITQMV,OFXNJW'}
+      - name: empty_text_box
+        properties: {bold: false, align: center, font_size: 15, background: '', foreground: '#fbff00',
+          italic: true, text: ''}
+        type: Label
+        layout_properties: {grid_position: 'UREINQ,AXARFA'}
       - name: acars_all_profiles_list
         properties: {bold: false, align: left, font_size: 12, background: '', foreground: '#fbff00',
           italic: true}
@@ -123,7 +124,7 @@ components:
         type: Label
         layout_properties: {grid_position: 'FWLMBB,HGMCIS'}
       - name: acars_airport_profiles_list
-        properties: {bold: false, align: center, font_size: 15, background: '', foreground: '#fbff00',
+        properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#fbff00',
           italic: true}
         type: Label
         layout_properties: {grid_position: 'OPXBHA,XKCUUD'}

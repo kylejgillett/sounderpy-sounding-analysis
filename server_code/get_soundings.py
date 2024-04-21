@@ -137,9 +137,13 @@ def process_acars_airport_list_function(year, month, day, airport):
        where = [np.where(airports_csv['IATA'].str.contains(airport, na=False, case=True))[0]][0][0]
        # ADD AIRPORT DATA INTO DICT
        airport_info = f"{airports_csv['Name'][where]}, {airports_csv['City'][where]}"
-          
 
-       return "\n".join(profiles_list), airport_info, profiles_list, dates_list
+       if len(profiles_list) >0: 
+        profile_ids = "\n".join(profiles_list)
+       else:
+         profile_ids = "No profiles found for given date & airport"
+
+       return profile_ids, airport_info, profiles_list, dates_list
 
 
 
