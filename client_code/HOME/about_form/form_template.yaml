@@ -64,9 +64,25 @@ components:
           Michigan University, Texas A&M University, & Rizal Technological University.
 
 
+
           ', align: left, font: '', foreground: '#FFFFFF', font_size: 16}
       type: Label
       layout_properties: {grid_position: 'ESQLKY,NQUCCZ'}
+    - name: label_2_copy_2_copy_2_copy_copy_3_copy
+      properties: {text: 'Publications using SounderPy: ', align: left, font: '',
+        foreground: '#FFFFFF', font_size: 18, bold: true}
+      type: Label
+      layout_properties: {grid_position: 'UGOLRD,HHMZBL'}
+    - name: label_2_copy_2_copy_3_copy
+      properties: {text: 'Assessing Radiative Impacts of African Smoke Aerosols Over
+          the Southeastern Atlantic Ocean | Logan et al. 2024
+
+
+
+
+          ', align: left, font: '', foreground: '#FFFFFF', font_size: 16}
+      type: Label
+      layout_properties: {grid_position: 'VQEEIX,KAMUFY'}
     - name: link_1_copy
       properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: Check out SounderPy's Full Documentation,
         underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center,
@@ -88,7 +104,7 @@ components:
           type: Link
           layout_properties: {grid_position: 'BDBGTL,IGUMBZ'}
     - name: spacer_1
-      properties: {height: 57}
+      properties: {height: 23}
       type: Spacer
       layout_properties: {grid_position: 'RLCDRT,JZAUHU'}
     - name: label_2_copy_2_copy_2_copy
@@ -101,13 +117,11 @@ components:
 
 
           Thank you so much for checking out and using SounderPy. My name is Kyle
-          Gillett and I am the developer of SounderPy. This tool started out as a
-          way for me to internally house all of my data retrieval functions for plotting
+          Gillett and I am the developer of SounderPy and a master''s student of Atmospheric
+          Science at the University of North Dakota. This tool started out as a way
+          for me to internally house all of my data retrieval functions for plotting
           soundings. As you can see, it has since blossomed into a full-scale Python
-          package. I am currently an undergraduate student of Meteorology at Central
-          Michigan University, the President of the Central Michigan University Student
-          Chapter of the American Meteorological Society and an on-air meteorologist
-          with WNEM TV-5 in Saginaw, MI.
+          package.
 
 
           Have an issue/comment/feedback? You can open a GitHub Issue or just shoot
