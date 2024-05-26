@@ -72,15 +72,15 @@ components:
       layout_properties: {grid_position: 'EJPJHL,LEQMKV'}
       components:
       - name: reanl_dark_mode_check
-        properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
+        properties: {text: Turn on dark mode, checked: false, role: null, foreground: '#FFFFFF',
           background: '', allow_indeterminate: false, align: left, font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IBQVEU,SQQYDB'}
         event_bindings: {change: dark_mode_check_change}
       - name: reanl_color_blind_check
-        properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
-          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
-          font_size: 15}
+        properties: {role: null, align: left, foreground: '#FFFFFF', allow_indeterminate: false,
+          text: Turn on color-blind friendly settings, font_size: 15, italic: true,
+          background: '', checked: true}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI WJTXUC,WTLZER'}
         event_bindings: {change: check_box_1_change}
@@ -93,7 +93,7 @@ components:
       - name: acars_sm_card
         properties: {role: card, background: '#363636'}
         type: ColumnPanel
-        layout_properties: {grid_position: 'MLSBOI,KQDDVB'}
+        layout_properties: {grid_position: 'MLSBOI,KQDDVB XEDDPT,VMXZAW'}
         components:
         - name: raob_stormmotion_label
           properties: {text: Select a storm motion from the list below or enter your own.,
@@ -117,6 +117,28 @@ components:
           properties: {align: center, placeholder: 'speed: (ex: 45) in knots', enabled: true,
             italic: true, background: '#707070', foreground: 'theme:', bold: true,
             font_size: 15}
+          type: TextBox
+          layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
+          event_bindings: {pressed_enter: station_id_pressed_enter}
+      - name: acars_sm_card_copy_2
+        properties: {role: card, background: '#363636'}
+        type: ColumnPanel
+        layout_properties: {grid_position: 'MLSBOI,KQDDVB ZCMUUH,QLOTWS'}
+        components:
+        - name: reanl_modifysfc_laybel
+          properties: {text: Modify surface temperature and dewpoint (in °C), icon: '',
+            bold: true, align: center, spacing_above: small, font_size: 12, foreground: '#FFFFFF'}
+          type: Label
+          layout_properties: {grid_position: 'BABWWC,DLGWRU'}
+        - name: reanl
+          properties: {align: center, placeholder: T°C, enabled: true, foreground: 'theme:',
+            font_size: 15, type: text, italic: true, background: '#707070', bold: true}
+          type: TextBox
+          layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
+          event_bindings: {pressed_enter: station_id_pressed_enter}
+        - name: reanl_dewp
+          properties: {align: center, placeholder: Td°C, enabled: true, italic: true,
+            background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
           event_bindings: {pressed_enter: station_id_pressed_enter}

@@ -54,7 +54,7 @@ components:
       layout_properties: {grid_position: 'DAPSCB,SYRHIF'}
       components:
       - name: raob_dark_mode_check
-        properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
+        properties: {text: Turn on dark mode, checked: false, role: null, foreground: '#FFFFFF',
           background: '', allow_indeterminate: false, align: left, font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IBQVEU,SQQYDB'}
@@ -75,7 +75,7 @@ components:
       - name: acars_sm_card
         properties: {role: card, background: '#363636'}
         type: ColumnPanel
-        layout_properties: {grid_position: 'MLSBOI,KQDDVB'}
+        layout_properties: {grid_position: 'MLSBOI,KQDDVB PWXSPK,UYWEMM'}
         components:
         - name: raob_stormmotion_label
           properties: {text: Select a storm motion from the list below or enter your own.,
@@ -99,6 +99,28 @@ components:
           properties: {align: center, placeholder: 'speed: (ex: 45) in knots', enabled: true,
             italic: true, background: '#707070', foreground: 'theme:', bold: true,
             font_size: 15}
+          type: TextBox
+          layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
+          event_bindings: {pressed_enter: station_id_pressed_enter}
+      - name: acars_sm_card_copy_2
+        properties: {role: card, background: '#363636'}
+        type: ColumnPanel
+        layout_properties: {grid_position: 'MLSBOI,KQDDVB HRVEMP,XXRUGM'}
+        components:
+        - name: raob_modifysfc_laybel
+          properties: {text: Modify surface temperature and dewpoint (in °C), icon: '',
+            bold: true, align: center, spacing_above: small, font_size: 12, foreground: '#FFFFFF'}
+          type: Label
+          layout_properties: {grid_position: 'BABWWC,DLGWRU'}
+        - name: raob_temp
+          properties: {align: center, placeholder: T°C, enabled: true, foreground: 'theme:',
+            font_size: 15, type: text, italic: true, background: '#707070', bold: true}
+          type: TextBox
+          layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
+          event_bindings: {pressed_enter: station_id_pressed_enter}
+        - name: raob_dewp
+          properties: {align: center, placeholder: Td°C, enabled: true, italic: true,
+            background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
           event_bindings: {pressed_enter: station_id_pressed_enter}

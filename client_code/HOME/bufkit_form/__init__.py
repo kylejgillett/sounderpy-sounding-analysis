@@ -25,6 +25,10 @@ class bufkit_form(bufkit_formTemplate):
     else:
       style = 'full'
 
+    if len(self.bufkit_temp.text) > 0:
+      modify_sfc = [self.bufkit_temp.text, self.bufkit_dewp.text]
+    else:
+      modify_sfc = False
 
 
     if len(self.bufkit_run_hour.text) > 0:
@@ -41,7 +45,8 @@ class bufkit_form(bufkit_formTemplate):
                                self.bufkit_dark_mode_check.checked,
                                self.bufkit_hodo_check.checked,
                                style,
-                               storm_motion)
+                               storm_motion,
+                               modify_sfc)
       
     else:
       params = anvil.server.call('get_latest_bufkit_sounding',
@@ -52,7 +57,8 @@ class bufkit_form(bufkit_formTemplate):
                                self.bufkit_dark_mode_check.checked,
                                self.bufkit_hodo_check.checked,
                                style,
-                               storm_motion)
+                               storm_motion,
+                               modify_sfc)
 
   
     self.bufkit_image_display.source = params[0]

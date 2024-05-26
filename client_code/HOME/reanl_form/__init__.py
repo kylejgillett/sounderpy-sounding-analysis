@@ -22,6 +22,12 @@ class reanl_form(reanl_formTemplate):
       style = 'simple'
     else:
       style = 'full'
+
+    if len(self.reanl_temp.text) > 0:
+      modify_sfc = [self.reanl_temp.text, self.reanl_dewp.text]
+    else:
+      modify_sfc = False
+    
     params = anvil.server.call('get_reanl_sounding',
                                 [float(self.reanl_lat.text), float(self.reanl_lon.text)],
                                 self.reanl_date.date.strftime('%Y'),
@@ -32,6 +38,7 @@ class reanl_form(reanl_formTemplate):
                                 self.reanl_dark_mode_check.checked,
                                 self.reanl_hodo_check.checked,
                                 style,
-                                storm_motion)
+                                storm_motion,
+                                modify_sfc)
     self.reanl_image_display.source = params[0]
     self.reanl_plot_label.text = params[1]

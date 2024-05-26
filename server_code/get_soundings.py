@@ -4,6 +4,7 @@ import anvil.media
 from datetime import datetime as dt
 from urllib.request import urlopen
 import pandas as pd
+import pandas as pd
 import numpy as np
 
 # This is a server module. It runs on the Anvil server,
@@ -58,7 +59,7 @@ worker_thread.start()
 
 
 # Example functions that may require different variables
-def process_raob_function(site_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
+def process_raob_function(site_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     with lock:
         clean_data = spy.get_obs_data(str(site_id), str(year), str(month), str(day), str(hour))
 
@@ -67,10 +68,11 @@ def process_raob_function(site_id, year, month, day, hour, color_blind, dark_mod
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
         else:
-             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', color_blind=color_blind, save=True)
+             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', color_blind=color_blind, save=True, map_zoom=0, modify_sfc=modify_sfc)
           
         image = anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
+        print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
         print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
 
         return image, label_txt
@@ -151,7 +153,7 @@ def process_acars_airport_list_function(year, month, day, airport):
 
 
 
-def process_acars_function(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
+def process_acars_function(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     with lock:
         clean_data = spy.acars_data(str(year), str(month), str(day), str(hour)).get_profile(profile_id)
 
@@ -160,8 +162,8 @@ def process_acars_function(profile_id, year, month, day, hour, color_blind, dark
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
         else:
-             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, color_blind=color_blind, storm_motion=storm_motion, special_parcels='simple', save=True)
-             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, color_blind=color_blind, storm_motion=storm_motion, special_parcels='simple', save=True)
+             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, color_blind=color_blind, 
+                                storm_motion=storm_motion, special_parcels='simple', save=True, map_zoom=0, modify_sfc=modify_sfc)
 
         image =anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
@@ -169,7 +171,7 @@ def process_acars_function(profile_id, year, month, day, hour, color_blind, dark
 
         return image, label_txt
 
-def process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion):
+def process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     with lock:
         clean_data = spy.get_bufkit_data(str(model), str(bufkit_site), int(fcst_hr))
 
@@ -178,7 +180,8 @@ def process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dar
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
         else:
-             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', color_blind=color_blind, save=True)
+             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', 
+                                color_blind=color_blind, save=True, map_zoom=0, modify_sfc=modify_sfc)
         image = anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
         #print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
@@ -186,7 +189,7 @@ def process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dar
         return image, label_txt
 
 
-def process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion):
+def process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     with lock:
         clean_data = spy.get_bufkit_data(str(model), str(bufkit_site), int(fcst_hr), str(run_year), str(run_month), str(run_day), str(run_hour))
 
@@ -195,7 +198,8 @@ def process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, ru
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
         else:
-             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', color_blind=color_blind, save=True)
+             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', 
+                                color_blind=color_blind, save=True, map_zoom=0, modify_sfc=modify_sfc)
         image = anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
         #print(dt.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
@@ -203,7 +207,7 @@ def process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, ru
         return image, label_txt
 
 
-def process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
+def process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     with lock:
         clean_data = spy.get_model_data('rap-ruc', latlon, str(year), str(month), str(day), str(hour))
 
@@ -212,7 +216,7 @@ def process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mod
         if hodo == True:  
              spy.build_hodograph(clean_data, dark_mode=dark_mode, storm_motion=storm_motion, save=True, filename='sounderpy_sounding')
         else:
-             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', color_blind=color_blind, save=True)
+             spy.build_sounding(clean_data, style=style, dark_mode=dark_mode, storm_motion=storm_motion, special_parcels='simple', color_blind=color_blind, save=True, map_zoom=0, modify_sfc=modify_sfc)
 
         image = anvil.media.from_file('sounderpy_sounding.png', 'image/jpeg')
 
@@ -225,11 +229,11 @@ def process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mod
 # GET RAOB FUNCTION #
 #####################
 @anvil.server.callable
-def get_raob_sounding(site_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
+def get_raob_sounding(site_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     # Add the task (request) to the queue
-    task_queue.put({"function": "raob_function", "args": (site_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion)})
+    task_queue.put({"function": "raob_function", "args": (site_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)})
 
-    image, label_txt = process_raob_function(site_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion)
+    image, label_txt = process_raob_function(site_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)
 
     return image, label_txt
 
@@ -263,11 +267,11 @@ def get_acars_airport_profile_list(year, month, day, airport):
 # GET ACARS FUNCTION #
 ######################
 @anvil.server.callable
-def get_acars_sounding(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
+def get_acars_sounding(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     # Add the task (request) to the queue
-    task_queue.put({"function": "acars_function", "args": (profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion)})
+    task_queue.put({"function": "acars_function", "args": (profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)})
 
-    image, label_txt = process_acars_function(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion)
+    image, label_txt = process_acars_function(profile_id, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)
 
     return image, label_txt
 
@@ -276,11 +280,11 @@ def get_acars_sounding(profile_id, year, month, day, hour, color_blind, dark_mod
 # GET BUFKIT FUNCTION #
 #######################
 @anvil.server.callable
-def get_bufkit_sounding(model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion):
+def get_bufkit_sounding(model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     # Add the task (request) to the queue
-    task_queue.put({"function": "bufkit_function", "args": (model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion)})
+    task_queue.put({"function": "bufkit_function", "args": (model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)})
 
-    image, label_txt = process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion)
+    image, label_txt = process_bufkit_function(model, bufkit_site, fcst_hr, run_year, run_month, run_day, run_hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)
 
     return image, label_txt
 
@@ -289,11 +293,11 @@ def get_bufkit_sounding(model, bufkit_site, fcst_hr, run_year, run_month, run_da
 # GET LATEST BUFKIT FUNCTION #
 ##############################
 @anvil.server.callable
-def get_latest_bufkit_sounding(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion):
+def get_latest_bufkit_sounding(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     # Add the task (request) to the queue
-    task_queue.put({"function": "latest_bufkit_function", "args": (model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion)})
+    task_queue.put({"function": "latest_bufkit_function", "args": (model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)})
 
-    image, label_txt = process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion)
+    image, label_txt = process_latest_bufkit_function(model, bufkit_site, fcst_hr, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)
 
     return image, label_txt
 
@@ -302,11 +306,11 @@ def get_latest_bufkit_sounding(model, bufkit_site, fcst_hr, color_blind, dark_mo
 # GET REANL FUNCTION #
 #######################
 @anvil.server.callable
-def get_reanl_sounding(latlon, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion):
+def get_reanl_sounding(latlon, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc):
     # Add the task (request) to the queue
-    task_queue.put({"function": "reanl_function", "args": (latlon, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion)})
+    task_queue.put({"function": "reanl_function", "args": (latlon, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)})
 
-    image, label_txt = process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion)
+    image, label_txt = process_reanl_function(latlon, year, month, day, hour, color_blind, dark_mode, hodo, style, storm_motion, modify_sfc)
 
     return image, label_txt
 

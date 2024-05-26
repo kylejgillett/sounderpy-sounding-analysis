@@ -24,6 +24,10 @@ class raob_form(raob_formTemplate):
     else:
       style = 'full'
 
+    if len(self.raob_temp.text) > 0:
+      modify_sfc = [self.raob_temp.text, self.raob_dewp.text]
+    else:
+      modify_sfc = False
       
     params = anvil.server.call('get_raob_sounding',
                               self.raob_site_id.text,
@@ -35,6 +39,7 @@ class raob_form(raob_formTemplate):
                               self.raob_dark_mode_check.checked,
                               self.raob_hodo_check.checked,
                               style,
-                              storm_motion)
+                              storm_motion,
+                              modify_sfc)
     self.raob_image_display.source = params[0]
     self.raob_plot_label.text = params[1]

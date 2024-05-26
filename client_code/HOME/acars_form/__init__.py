@@ -40,6 +40,11 @@ class acars_form(acars_formTemplate):
     else:
       style = 'full'
 
+    if len(self.acars_temp.text) > 0:
+      modify_sfc = [self.acars_temp.text, self.acars_dewp.text]
+    else:
+      modify_sfc = False
+      
     if len(self.acars_airport_id.text) > 0:
       try:
         profile_idx = self.profiles_list.index(self.acars_site_id.text) 
@@ -69,6 +74,7 @@ class acars_form(acars_formTemplate):
                                self.acars_dark_mode_check.checked,
                                self.acars_hodo_check.checked,
                                style,
-                               storm_motion)
+                               storm_motion,
+                               modify_sfc)
     self.acars_image_display.source = params[0]
     self.acars_plot_label.text = params[1]
