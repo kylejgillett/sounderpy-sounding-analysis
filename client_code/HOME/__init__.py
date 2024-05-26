@@ -43,8 +43,8 @@ class HOME(HOMETemplate):
     self.tab_panel.add_component(about_form())
     pass
 
-  # def test_tab_click(self, **event_args):
-  #   """This method is called when the button is clicked"""
-  #   self.tab_panel.clear()
-  #   self.tab_panel.add_component(acars_form_copy())
-  #   pass
+  def test_tab_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.tab_panel.clear()
+    self.tab_panel.add_component(bufkit_form())
+    pass
