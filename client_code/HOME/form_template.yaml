@@ -182,7 +182,7 @@ components:
       type: Label
       layout_properties: {grid_position: 'HFBIZM,XUTDIV'}
     - name: test_button
-      properties: {text: '-', background: '#363636', visible: true}
+      properties: {text: '-', background: '#363636', visible: false}
       type: Button
       layout_properties: {grid_position: 'KUNHFL,QGWPSR'}
       event_bindings: {click: test_tab_click}
