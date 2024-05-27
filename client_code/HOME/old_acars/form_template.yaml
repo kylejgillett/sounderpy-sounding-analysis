@@ -1,7 +1,7 @@
 container: {type: ColumnPanel}
 components:
 - name: acars_card
-  properties: {role: card, visible: false, foreground: 'theme:Primary', background: '#44a2ff'}
+  properties: {role: card, visible: true, foreground: 'theme:Primary', background: '#44a2ff'}
   type: ColumnPanel
   layout_properties: {grid_position: 'IBHDIK,AWNVDF'}
   components:
