@@ -164,6 +164,20 @@ components:
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI WJTXUC,WTLZER'}
         event_bindings: {change: check_box_1_change}
+      - name: acars_ecape_check
+        properties: {text: Add ECAPE parcel path (slower), checked: false, role: null,
+          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
+          font_size: 15}
+        type: CheckBox
+        layout_properties: {grid_position: 'MLSBOI,ZYMWEI BUYJMD,KFGPML'}
+        event_bindings: {change: check_box_1_change}
+      - name: acars_simple_check
+        properties: {text: Plot Simple Sounding (faster), checked: false, role: null,
+          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
+          font_size: 15}
+        type: CheckBox
+        layout_properties: {grid_position: 'MLSBOI,ZYMWEI NNNRIL,RSMHGJ'}
+        event_bindings: {change: check_box_1_change}
       - name: acars_hodo_check
         properties: {role: null, align: left, border: '', foreground: '#FFFFFF', allow_indeterminate: false,
           text: Plot hodograph only, font_size: 15, background: '', checked: false}
@@ -222,13 +236,6 @@ components:
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
-      - name: acars_simple_check
-        properties: {text: Plot Simple Sounding (faster), checked: false, role: null,
-          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
-          font_size: 15}
-        type: CheckBox
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI LACVJE,RRAGCU'}
-        event_bindings: {change: check_box_1_change}
     - name: acars_button
       properties: {role: filled, align: center, border: '', foreground: '#fbff00',
         text: 'GET SOUNDING

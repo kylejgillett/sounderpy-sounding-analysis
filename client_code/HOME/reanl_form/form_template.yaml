@@ -79,10 +79,24 @@ components:
         event_bindings: {change: dark_mode_check_change}
       - name: reanl_color_blind_check
         properties: {role: null, align: left, foreground: '#FFFFFF', allow_indeterminate: false,
-          text: Turn on color-blind friendly settings, font_size: 15, italic: true,
+          text: Turn on color-blind friendly settings, font_size: 15, italic: false,
           background: '', checked: true}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI WJTXUC,WTLZER'}
+        event_bindings: {change: check_box_1_change}
+      - name: reanl_ecape_check
+        properties: {text: Add ECAPE parcel path (slower), checked: false, role: null,
+          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
+          font_size: 15}
+        type: CheckBox
+        layout_properties: {grid_position: 'MLSBOI,ZYMWEI ZFVDPC,TMSXJR'}
+        event_bindings: {change: check_box_1_change}
+      - name: reanl_simple_check
+        properties: {text: Plot Simple Sounding (faster), checked: false, role: null,
+          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
+          font_size: 15}
+        type: CheckBox
+        layout_properties: {grid_position: 'MLSBOI,ZYMWEI HBPLCX,XPZVGB'}
         event_bindings: {change: check_box_1_change}
       - name: reanl_hodo_check
         properties: {role: null, align: left, border: '', foreground: '#FFFFFF', allow_indeterminate: false,
@@ -142,13 +156,6 @@ components:
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
-      - name: reanl_simple_check
-        properties: {text: Plot Simple Sounding (faster), checked: false, role: null,
-          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
-          font_size: 15}
-        type: CheckBox
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI LACVJE,RRAGCU'}
-        event_bindings: {change: check_box_1_change}
     - name: reanl_button
       properties: {role: filled, align: center, border: '', foreground: '#fbff00',
         text: 'GET SOUNDING

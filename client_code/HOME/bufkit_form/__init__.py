@@ -30,6 +30,10 @@ class bufkit_form(bufkit_formTemplate):
     else:
       modify_sfc = False
 
+    if self.bufkit_ecape_check.checked:
+      special_parcels = None
+    else:
+      special_parcels = 'simple'
 
     if len(self.bufkit_run_hour.text) > 0:
       
@@ -46,7 +50,8 @@ class bufkit_form(bufkit_formTemplate):
                                self.bufkit_hodo_check.checked,
                                style,
                                storm_motion,
-                               modify_sfc)
+                               modify_sfc,
+                               special_parcels)
       
     else:
       params = anvil.server.call('get_latest_bufkit_sounding',
@@ -58,7 +63,8 @@ class bufkit_form(bufkit_formTemplate):
                                self.bufkit_hodo_check.checked,
                                style,
                                storm_motion,
-                               modify_sfc)
+                               modify_sfc,
+                               special_parcels)
 
   
     self.bufkit_image_display.source = params[0]

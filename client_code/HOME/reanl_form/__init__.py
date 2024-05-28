@@ -23,6 +23,13 @@ class reanl_form(reanl_formTemplate):
     else:
       style = 'full'
 
+    
+    if self.reanl_ecape_check.checked:
+      special_parcels = None
+    else:
+      special_parcels = 'simple'
+
+    
     if len(self.reanl_temp.text) > 0:
       modify_sfc = [self.reanl_temp.text, self.reanl_dewp.text]
     else:
@@ -39,6 +46,7 @@ class reanl_form(reanl_formTemplate):
                                 self.reanl_hodo_check.checked,
                                 style,
                                 storm_motion,
-                                modify_sfc)
+                                modify_sfc,
+                                special_parcels)
     self.reanl_image_display.source = params[0]
     self.reanl_plot_label.text = params[1]

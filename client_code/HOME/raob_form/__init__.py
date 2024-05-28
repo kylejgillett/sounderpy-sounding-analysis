@@ -28,7 +28,13 @@ class raob_form(raob_formTemplate):
       modify_sfc = [self.raob_temp.text, self.raob_dewp.text]
     else:
       modify_sfc = False
-      
+
+    if self.raob_ecape_check.checked:
+      special_parcels = None
+    else:
+      special_parcels = 'simple'
+
+    
     params = anvil.server.call('get_raob_sounding',
                               self.raob_site_id.text,
                               self.raob_date.date.strftime('%Y'),
@@ -40,6 +46,7 @@ class raob_form(raob_formTemplate):
                               self.raob_hodo_check.checked,
                               style,
                               storm_motion,
-                              modify_sfc)
+                              modify_sfc,
+                              special_parcels)
     self.raob_image_display.source = params[0]
     self.raob_plot_label.text = params[1]

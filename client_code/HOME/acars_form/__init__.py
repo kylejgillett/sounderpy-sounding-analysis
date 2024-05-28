@@ -44,7 +44,13 @@ class acars_form(acars_formTemplate):
       modify_sfc = [self.acars_temp.text, self.acars_dewp.text]
     else:
       modify_sfc = False
-      
+
+    if self.acars_ecape_check.checked:
+      special_parcels = None
+    else:
+      special_parcels = 'simple'
+
+    
     if len(self.acars_airport_id.text) > 0:
       try:
         profile_idx = self.profiles_list.index(self.acars_site_id.text) 
@@ -75,6 +81,7 @@ class acars_form(acars_formTemplate):
                                self.acars_hodo_check.checked,
                                style,
                                storm_motion,
-                               modify_sfc)
+                               modify_sfc, 
+                               special_parcels)
     self.acars_image_display.source = params[0]
     self.acars_plot_label.text = params[1]
