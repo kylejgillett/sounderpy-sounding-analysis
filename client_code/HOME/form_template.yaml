@@ -163,7 +163,7 @@ components:
     layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
     components:
     - name: label_2_copy_2_copy_2
-      properties: {text: Please note this is a very basic web application with a 30-second server code timeout. It will likely experience issues under heavy traffic.,
+      properties: {text: Please note this is a very basic web application and may experience issues under heavy traffic.,
         align: center, font: '', foreground: '#FFFFFF', font_size: 20}
       type: Label
       layout_properties: {grid_position: 'MAKRMG,NUFEMF'}
@@ -176,13 +176,13 @@ components:
       type: Link
       layout_properties: {grid_position: 'FFFVZI,MYVMHX'}
     - name: label_2_copy_2_copy
-      properties: {text: 'Powered by SounderPy v3.0.3, 2024 | (C) Kyle J Gillett 2024
+      properties: {text: 'Powered by SounderPy v3.0.4, 2024 | (C) Kyle J Gillett 2024
 
           ', align: center, font: '', foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'HFBIZM,XUTDIV'}
     - name: test_button
-      properties: {text: '-', background: '#363636', visible: false}
+      properties: {text: '-', background: '#363636', visible: true}
       type: Button
       layout_properties: {grid_position: 'KUNHFL,QGWPSR'}
       event_bindings: {click: test_tab_click}
