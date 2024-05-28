@@ -144,7 +144,7 @@ components:
             bold: true, align: center, spacing_above: small, font_size: 12, foreground: '#FFFFFF'}
           type: Label
           layout_properties: {grid_position: 'BABWWC,DLGWRU'}
-        - name: reanl
+        - name: reanl_temp
           properties: {align: center, placeholder: T°C, enabled: true, foreground: 'theme:',
             font_size: 15, type: text, italic: true, background: '#707070', bold: true}
           type: TextBox
