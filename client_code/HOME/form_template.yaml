@@ -167,8 +167,7 @@ components:
 
       NEW FEATURES: RH w/hgt, max parcel level, wet-bulb-zero hgt, & sfc elevation
       annotations; improved hodograph readability; effective inflow layer kinematic
-      values; map w/radar inset (currently unavailable on this web-app), ability to
-      modify sfc values
+      values; map w/radar inset, ability to modify sfc values
 
       FIXES: corrected NAMNEST & NAM3KM naming issue; fixed SRW readout when using
       custom storm motions; fixed NAM & GFS forecast hours; corrected PWAT rounding.',
