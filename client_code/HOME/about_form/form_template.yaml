@@ -16,18 +16,28 @@ components:
       type: Label
       layout_properties: {grid_position: 'JMPLHM,NNMSJS'}
     - name: label_2_copy_2
-      properties: {text: "SounderPy is an open-source atmospheric science Python package\
+      properties: {text: "SounderPy is an open-source atmospheric science Python paackage\
           \ for vertical profile analysis. This web-app is an extension of the SounderPy\
           \ library that uses the code's same functionality to load data and create\
           \ soundings right in your browser with no coding involved (on your end \ud83d\
           \ude09). \n\nThis library is developed with the goal in mind to keep the\
           \ code (and now this web-app) simple and efficient for users of all experience\
-          \ levels and for reliability in all use cases.\n\n\u2615 SounderPy is an\
-          \ open-source package developed on my own time. If you would you like to\
-          \ support continued SounderPy development, consider \u201cBuying me a coffee\u201d\
-          ! \u2615\n\n", align: left, font: '', foreground: '#FFFFFF', font_size: 16}
+          \ levels and for reliability in all use cases.\n\n", align: left, font: '',
+        foreground: '#FFFFFF', font_size: 16}
       type: Label
-      layout_properties: {grid_position: 'DRFTNF,QCWFUG'}
+      layout_properties: {grid_position: 'DRFTNF,BOKERR'}
+    - name: link_2
+      properties: {text: '☕ SounderPy is an open-source library developed on my own
+          time. If you would you like to support continued SounderPy development,
+          please consider “Buying me a coffee”! ☕', url: 'https://www.buymeacoffee.com/kylejgillett',
+        italic: true, font_size: 15, bold: true, align: center, background: '#0fb1ff',
+        foreground: 'theme:'}
+      type: Link
+      layout_properties: {grid_position: 'LVNWKF,UCJCQT'}
+    - name: spacer_1_copy
+      properties: {height: 43}
+      type: Spacer
+      layout_properties: {grid_position: 'COIKFF,XMZZKE'}
     - name: label_2_copy_2_copy_2_copy_copy_3
       properties: {text: 'SounderPy: A sounding visualization tool for severe-weather
           analysis and forecasting', align: left, font: '', foreground: '#FFFFFF',
@@ -140,7 +150,7 @@ components:
       layout_properties: {grid_position: 'NPGDWJ,TDPQVB'}
     - name: label_2_copy_2_copy_copy
       properties: {text: 'Gillett, K., 2024: SounderPy: Vertical Profile Data Retrieval
-          & Analysis Tool for Python (Version 3.0.2). Py-Pi, https://pypi.org/project/sounderpy/',
+          & Analysis Tool for Python (Version 3.0.3). Py-Pi, https://pypi.org/project/sounderpy/',
         align: left, font: '', foreground: '#FFFFFF', font_size: 16}
       type: Label
       layout_properties: {grid_position: 'HKAAID,ENHMTI'}
