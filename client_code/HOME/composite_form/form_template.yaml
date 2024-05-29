@@ -1,0 +1,53 @@
+container: {type: ColumnPanel}
+components:
+- name: bufkit_card
+  properties: {role: card, visible: true, foreground: 'theme:Primary', background: '#44a2ff'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'RVMUIU,CZNCUG'}
+  components:
+  - name: card_1_copy_copy_copy
+    properties: {role: card, background: '#363636', col_widths: '{}', visible: true}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
+    components:
+    - name: bufkit_header
+      properties: {text: COMPOSITE SOUNDING BUILDER, icon: '', bold: true, align: center,
+        spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
+      type: Label
+      layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+    - name: raob_tab_button
+      properties: {text: "MODEL FORECAST\n HOURS FOR A GIVEN RUN", background: '#363636'}
+      type: Button
+      layout_properties: {grid_position: 'ASFOXB,FAYDTW'}
+      event_bindings: {click: raob_tab_click}
+      data_bindings:
+      - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
+    - name: raob_tab_button_copy
+      properties: {text: "MODEL FORECAST \nRUNS FOR A GIVEN HOUR", background: '#363636'}
+      type: Button
+      layout_properties: {grid_position: 'ASFOXB,HXCZPB'}
+      event_bindings: {click: raob_tab_click}
+      data_bindings:
+      - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
+    - name: raob_tab_button_copy_2_copy
+      properties: {text: SINGLE SITE RAOB OBSERVATIONS, background: '#363636'}
+      type: Button
+      layout_properties: {grid_position: 'ASFOXB,GGQEYV'}
+      event_bindings: {click: raob_tab_click}
+      data_bindings:
+      - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
+    - name: raob_tab_button_copy_2
+      properties: {text: MULTI-SITE RAOB OBSERVATIONS, background: '#363636'}
+      type: Button
+      layout_properties: {grid_position: 'ASFOXB,GZCEBF'}
+      event_bindings: {click: raob_tab_click}
+      data_bindings:
+      - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
+    - name: tab_panel
+      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '',
+        spacing_below: small, background: ''}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'COOFQV,MPJUYU'}
+      components: []
+is_package: true
