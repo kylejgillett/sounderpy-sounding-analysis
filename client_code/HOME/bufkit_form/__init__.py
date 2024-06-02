@@ -66,7 +66,6 @@ class bufkit_form(bufkit_formTemplate):
                                self.bufkit_fhour.text,
                                self.bufkit_color_blind_check.checked,
                                self.bufkit_dark_mode_check.checked,
-                               self.bufkit_dark_mode_check.checked,
                                self.bufkit_hodo_check.checked,
                                style,
                                storm_motion,
