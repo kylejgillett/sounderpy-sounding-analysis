@@ -35,6 +35,11 @@ class bufkit_form(bufkit_formTemplate):
     else:
       special_parcels = 'simple'
 
+    if self.bufkit_map_check.checked:
+      map_zoom = 2
+    else:
+      map_zoom = 0
+      
     if len(self.bufkit_run_hour.text) > 0:
       
       params = anvil.server.call('get_bufkit_sounding',
@@ -51,7 +56,8 @@ class bufkit_form(bufkit_formTemplate):
                                style,
                                storm_motion,
                                modify_sfc,
-                               special_parcels)
+                               special_parcels,
+                               map_zoom)
       
     else:
       params = anvil.server.call('get_latest_bufkit_sounding',
@@ -60,11 +66,13 @@ class bufkit_form(bufkit_formTemplate):
                                self.bufkit_fhour.text,
                                self.bufkit_color_blind_check.checked,
                                self.bufkit_dark_mode_check.checked,
+                               self.bufkit_dark_mode_check.checked,
                                self.bufkit_hodo_check.checked,
                                style,
                                storm_motion,
                                modify_sfc,
-                               special_parcels)
+                               special_parcels, 
+                               map_zoom)
 
   
     self.bufkit_image_display.source = params[0]

@@ -50,6 +50,11 @@ class acars_form(acars_formTemplate):
     else:
       special_parcels = 'simple'
 
+    if self.acars_map_check.checked:
+      map_zoom = 2
+    else:
+      map_zoom = 0
+
     
     if len(self.acars_airport_id.text) > 0:
       try:
@@ -82,6 +87,8 @@ class acars_form(acars_formTemplate):
                                style,
                                storm_motion,
                                modify_sfc, 
-                               special_parcels)
+                               special_parcels,
+                               map_zoom)
     self.acars_image_display.source = params[0]
+    self.acars_plot_label.text = params[1]
     self.acars_plot_label.text = params[1]

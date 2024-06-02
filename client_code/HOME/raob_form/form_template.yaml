@@ -66,6 +66,12 @@ components:
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI WJTXUC,WTLZER'}
         event_bindings: {change: check_box_1_change}
+      - name: raob_map_check
+        properties: {text: Add map inset (slower), checked: false, role: null, foreground: '#FFFFFF',
+          background: '', allow_indeterminate: false, align: left, font_size: 15}
+        type: CheckBox
+        layout_properties: {grid_position: 'MLSBOI,ZYMWEI ARZRYV,HUCBZJ'}
+        event_bindings: {change: check_box_1_change}
       - name: raob_ecape_check
         properties: {text: Add ECAPE parcel path (slower), checked: false, role: null,
           foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,

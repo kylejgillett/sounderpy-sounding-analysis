@@ -34,6 +34,11 @@ class reanl_form(reanl_formTemplate):
       modify_sfc = [self.reanl_temp.text, self.reanl_dewp.text]
     else:
       modify_sfc = False
+
+    if self.reanl_map_check.checked:
+      map_zoom = 2
+    else:
+      map_zoom = 0
     
     params = anvil.server.call('get_reanl_sounding',
                                 [float(self.reanl_lat.text), float(self.reanl_lon.text)],
@@ -47,6 +52,7 @@ class reanl_form(reanl_formTemplate):
                                 style,
                                 storm_motion,
                                 modify_sfc,
-                                special_parcels)
+                                special_parcels, 
+                                map_zoom)
     self.reanl_image_display.source = params[0]
     self.reanl_plot_label.text = params[1]

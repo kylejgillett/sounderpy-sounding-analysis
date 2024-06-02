@@ -34,7 +34,10 @@ class raob_form(raob_formTemplate):
     else:
       special_parcels = 'simple'
 
-    
+    if self.raob_map_check.checked:
+      map_zoom = 2
+    else:
+      map_zoom = 0
     params = anvil.server.call('get_raob_sounding',
                               self.raob_site_id.text,
                               self.raob_date.date.strftime('%Y'),
@@ -47,6 +50,7 @@ class raob_form(raob_formTemplate):
                               style,
                               storm_motion,
                               modify_sfc,
-                              special_parcels)
+                              special_parcels, 
+                              map_zoom)
     self.raob_image_display.source = params[0]
     self.raob_plot_label.text = params[1]
