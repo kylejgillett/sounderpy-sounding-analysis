@@ -11,8 +11,7 @@ components:
     layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
     components:
     - name: bufkit_header
-      properties: {text: COMPOSITE SOUNDING BUILDER, icon: '', bold: true, align: center,
-        spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
+      properties: {text: COMPOSITE SOUNDING BUILDER, icon: '', bold: true, align: center, spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: card_1
@@ -21,55 +20,67 @@ components:
       layout_properties: {grid_position: 'YNPFVG,KVNIUM'}
       components:
       - name: raob_tab_button
-        properties: {text: "MODEL FORECAST\n HOURS FOR A GIVEN RUN", background: '#363636'}
+        properties:
+          text: |-
+            MODEL FORECAST
+             HOURS FOR A GIVEN RUN
+          background: '#363636'
         type: Button
         layout_properties: {grid_position: 'WPVUSG,SCQZXG QZJPZE,LDGLVS'}
         event_bindings: {click: raob_tab_click}
         data_bindings:
         - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
       - name: raob_tab_button_copy_2_copy
-        properties: {text: "RAOB OBSERVATIONS \nFOR A SINGLE SITE", background: '#363636'}
+        properties:
+          text: "RAOB OBSERVATIONS \nFOR A SINGLE SITE"
+          background: '#363636'
         type: Button
         layout_properties: {grid_position: 'WPVUSG,SCQZXG QZCHGK,UPUJYD'}
         event_bindings: {click: raob_tab_click}
         data_bindings:
         - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
       - name: raob_tab_button_copy_copy
-        properties: {text: "MODEL FORECAST \nFOR MULTIPLE SITES", background: '#363636'}
+        properties:
+          text: "MODEL FORECAST \nFOR MULTIPLE SITES"
+          background: '#363636'
         type: Button
         layout_properties: {grid_position: 'WPVUSG,HIXVVH AOXBUE,NGQTZR'}
         event_bindings: {click: raob_tab_click}
         data_bindings:
         - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
       - name: raob_tab_button_copy_2
-        properties: {text: 'RAOB OBSERVATIONS
-
-            FOR MULTIPLE SITES', background: '#363636'}
+        properties:
+          text: |-
+            RAOB OBSERVATIONS
+            FOR MULTIPLE SITES
+          background: '#363636'
         type: Button
         layout_properties: {grid_position: 'WPVUSG,HIXVVH VTAPAP,TEBEGZ'}
         event_bindings: {click: raob_tab_click}
         data_bindings:
         - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
       - name: raob_tab_button_copy
-        properties: {text: "MODEL FORECAST \nRUNS FOR A GIVEN HOUR", background: '#363636'}
+        properties:
+          text: "MODEL FORECAST \nRUNS FOR A GIVEN HOUR"
+          background: '#363636'
         type: Button
         layout_properties: {grid_position: 'WPVUSG,MOKNTC YCTFSR,TWFBCF'}
         event_bindings: {click: raob_tab_click}
         data_bindings:
         - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
       - name: raob_tab_button_copy_2_copy_2
-        properties: {text: 'ACARS OBSERVATIONS
-
-            FOR A GIVEN AIRPORT', background: '#363636'}
+        properties:
+          text: |-
+            ACARS OBSERVATIONS
+            FOR A GIVEN AIRPORT
+          background: '#363636'
         type: Button
         layout_properties: {grid_position: 'WPVUSG,MOKNTC SWEGGK,SSQRGK'}
         event_bindings: {click: raob_tab_click}
         data_bindings:
         - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
     - name: tab_panel
-      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-        wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '',
-        spacing_below: small, background: ''}
+      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: small, background: ''}
       type: ColumnPanel
       layout_properties: {grid_position: 'COOFQV,MPJUYU'}
       components: []

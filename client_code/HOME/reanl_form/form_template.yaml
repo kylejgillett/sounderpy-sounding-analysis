@@ -11,57 +11,60 @@ components:
     layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
     components:
     - name: reanl_header
-      properties: {text: RAP-RUC MODEL REANALYSIS SOUNDINGS, icon: '', bold: true,
-        align: center, spacing_above: small, font_size: 32, foreground: '#fbff00',
-        font: ''}
+      properties: {text: RAP-RUC MODEL REANALYSIS SOUNDINGS, icon: '', bold: true, align: center, spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: reanl_info_text
-      properties: {text: "This tool retrieves Rapid Refresh & Rapid Update Cycle model\
-          \ reanalysis data from NCEI for a given date/time and location. To learn\
-          \ more about the RAP/RUC reanalysis datasets, available times and the lat/lon\
-          \ domain (CONUS), check out the link below: \nhttps://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update ",
-        align: center, font: '', foreground: '#FFFFFF', font_size: 12}
+      properties:
+        text: "This tool retrieves Rapid Refresh & Rapid Update Cycle model reanalysis data from NCEI for a given date/time and location. To learn more about the RAP/RUC reanalysis datasets, available times and the lat/lon domain (CONUS), check out the link below: \nhttps://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update "
+        align: center
+        font: ''
+        foreground: '#FFFFFF'
+        font_size: 12
       type: Label
       layout_properties: {grid_position: 'VPBARC,FDAVCL'}
     - name: reanl_date_label
-      properties: {text: REANALYSIS DATE, icon: 'fa:calendar', bold: true, align: center,
-        foreground: '#FFFFFF', font: '', font_size: 17}
+      properties: {text: REANALYSIS DATE, icon: 'fa:calendar', bold: true, align: center, foreground: '#FFFFFF', font: '', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'MIYARA,NMEANR'}
     - name: reanl_date
-      properties: {align: center, pick_time: true, placeholder: enter a UTC date,
-        enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true,
-        background: '#707070', bold: true, format: '"%m-%d-%Y"'}
+      properties: {align: center, pick_time: true, placeholder: enter a UTC date, enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true, background: '#707070', bold: true, format: '"%m-%d-%Y"'}
       type: DatePicker
       layout_properties: {grid_position: 'IRKSKU,WZGCSQ'}
     - name: reanl_fhour_label
-      properties: {text: 'REANALYSIS HOUR
-
-          ', icon: 'fa:clock-o', bold: true, align: center, foreground: '#FFFF', font_size: 17}
+      properties:
+        text: |
+          REANALYSIS HOUR
+        icon: fa:clock-o
+        bold: true
+        align: center
+        foreground: '#FFFF'
+        font_size: 17
       type: Label
       layout_properties: {grid_position: ''}
     - name: reanl_hour
-      properties: {placeholder: 'UTC hour (12, 18, 00 etc)', italic: true, align: center,
-        background: '#707070', type: text, foreground: 'theme:', bold: true, font_size: 15}
+      properties: {placeholder: 'UTC hour (12, 18, 00 etc)', italic: true, align: center, background: '#707070', type: text, foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'UJOHVR,FZFWCK'}
     - name: reanl_latlon_label
-      properties: {text: 'LATITUDE (RIGHT), LONGITUDE (LEFT)
-
-          ', icon: 'fa:map-pin', bold: true, align: center, foreground: '#FFFF', font_size: 17}
+      properties:
+        text: |
+          LATITUDE (RIGHT), LONGITUDE (LEFT)
+        icon: fa:map-pin
+        bold: true
+        align: center
+        foreground: '#FFFF'
+        font_size: 17
       type: Label
       layout_properties: {grid_position: 'ADAEQP,YUUYKI'}
     - name: reanl_lat
-      properties: {placeholder: LATITUDE (42.58), italic: true, align: center, background: '#707070',
-        type: text, foreground: 'theme:', bold: true, font_size: 15}
+      properties: {placeholder: LATITUDE (42.58), italic: true, align: center, background: '#707070', type: text, foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'WDCNFT,NJYJAY'}
       data_bindings:
       - {property: type, code: 'self.item[''float'']', writeback: false}
     - name: reanl_lon
-      properties: {placeholder: LONGITUDE (-100.42), italic: true, align: center,
-        background: '#707070', type: text, foreground: 'theme:', bold: true, font_size: 15}
+      properties: {placeholder: LONGITUDE (-100.42), italic: true, align: center, background: '#707070', type: text, foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'WDCNFT,NITXAV'}
       data_bindings:
@@ -72,42 +75,32 @@ components:
       layout_properties: {grid_position: 'EJPJHL,LEQMKV'}
       components:
       - name: reanl_dark_mode_check
-        properties: {text: Turn on dark mode, checked: false, role: null, foreground: '#FFFFFF',
-          background: '', allow_indeterminate: false, align: left, font_size: 15}
+        properties: {text: Turn on dark mode, checked: false, role: null, foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left, font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IBQVEU,SQQYDB'}
         event_bindings: {change: dark_mode_check_change}
       - name: reanl_color_blind_check
-        properties: {role: null, align: left, foreground: '#FFFFFF', allow_indeterminate: false,
-          text: Turn on color-blind friendly settings, font_size: 15, italic: false,
-          background: '', checked: true}
+        properties: {role: null, align: left, foreground: '#FFFFFF', allow_indeterminate: false, text: Turn on color-blind friendly settings, font_size: 15, italic: false, background: '', checked: true}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI WJTXUC,WTLZER'}
         event_bindings: {change: check_box_1_change}
       - name: reanl_map_check
-        properties: {role: null, align: left, foreground: '#FFFFFF', allow_indeterminate: false,
-          text: Add map inset (slower), font_size: 15, italic: false, background: '',
-          checked: false}
+        properties: {role: null, align: left, foreground: '#FFFFFF', allow_indeterminate: false, text: Add map inset (slower), font_size: 15, italic: false, background: '', checked: false}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI FNJUFR,OYNOLG'}
         event_bindings: {change: check_box_1_change}
       - name: reanl_ecape_check
-        properties: {text: Add ECAPE parcel path (slower), checked: false, role: null,
-          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
-          font_size: 15}
+        properties: {text: Add ECAPE parcel path (slower), checked: false, role: null, foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left, font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI ZFVDPC,TMSXJR'}
         event_bindings: {change: check_box_1_change}
       - name: reanl_simple_check
-        properties: {text: Plot Simple Sounding (faster), checked: false, role: null,
-          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
-          font_size: 15}
+        properties: {text: Plot Simple Sounding (faster), checked: false, role: null, foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left, font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI HBPLCX,XPZVGB'}
         event_bindings: {change: check_box_1_change}
       - name: reanl_hodo_check
-        properties: {role: null, align: left, border: '', foreground: '#FFFFFF', allow_indeterminate: false,
-          text: Plot hodograph only, font_size: 15, background: '', checked: false}
+        properties: {role: null, align: left, border: '', foreground: '#FFFFFF', allow_indeterminate: false, text: Plot hodograph only, font_size: 15, background: '', checked: false}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IUSILP,UYOWIG'}
         event_bindings: {change: check_box_1_change}
@@ -117,9 +110,7 @@ components:
         layout_properties: {grid_position: 'MLSBOI,KQDDVB XEDDPT,VMXZAW'}
         components:
         - name: raob_stormmotion_label
-          properties: {text: Select a storm motion from the list below or enter your own.,
-            icon: '', bold: true, align: center, spacing_above: small, font_size: 12,
-            foreground: '#FFFFFF'}
+          properties: {text: Select a storm motion from the list below or enter your own., icon: '', bold: true, align: center, spacing_above: small, font_size: 12, foreground: '#FFFFFF'}
           type: Label
           layout_properties: {grid_position: 'BABWWC,DLGWRU'}
         - name: reanl_sm
@@ -128,16 +119,12 @@ components:
           type: DropDown
           layout_properties: {grid_position: 'NOIXON,LQYJAR'}
         - name: reanl_direction
-          properties: {align: center, placeholder: 'direction (ex: 245) in degrees',
-            enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true,
-            background: '#707070', bold: true}
+          properties: {align: center, placeholder: 'direction (ex: 245) in degrees', enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true, background: '#707070', bold: true}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
         - name: reanl_speed
-          properties: {align: center, placeholder: 'speed: (ex: 45) in knots', enabled: true,
-            italic: true, background: '#707070', foreground: 'theme:', bold: true,
-            font_size: 15}
+          properties: {align: center, placeholder: 'speed: (ex: 45) in knots', enabled: true, italic: true, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
@@ -147,33 +134,36 @@ components:
         layout_properties: {grid_position: 'MLSBOI,KQDDVB ZCMUUH,QLOTWS'}
         components:
         - name: reanl_modifysfc_laybel
-          properties: {text: Modify surface temperature and dewpoint (in °C), icon: '',
-            bold: true, align: center, spacing_above: small, font_size: 12, foreground: '#FFFFFF'}
+          properties: {text: Modify surface temperature and dewpoint (in °C), icon: '', bold: true, align: center, spacing_above: small, font_size: 12, foreground: '#FFFFFF'}
           type: Label
           layout_properties: {grid_position: 'BABWWC,DLGWRU'}
         - name: reanl_temp
-          properties: {align: center, placeholder: T°C, enabled: true, foreground: 'theme:',
-            font_size: 15, type: text, italic: true, background: '#707070', bold: true}
+          properties: {align: center, placeholder: T°C, enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true, background: '#707070', bold: true}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
         - name: reanl_dewp
-          properties: {align: center, placeholder: Td°C, enabled: true, italic: true,
-            background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
+          properties: {align: center, placeholder: Td°C, enabled: true, italic: true, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
     - name: reanl_button
-      properties: {role: filled, align: center, border: '', foreground: '#fbff00',
-        text: 'GET SOUNDING
-
-          ', font_size: 20, font: '', background: '#44a2ff', bold: true}
+      properties:
+        role: filled
+        align: center
+        border: ''
+        foreground: '#fbff00'
+        text: |
+          GET SOUNDING
+        font_size: 20
+        font: ''
+        background: '#44a2ff'
+        bold: true
       type: Button
       layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
       event_bindings: {click: reanl_button_click}
     - name: reanl_standby_label
-      properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#FFFFFF',
-        italic: true}
+      properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#FFFFFF', italic: true}
       type: Label
       layout_properties: {grid_position: 'KXBBLA,MDFJSA'}
       event_bindings: {show: raob_plot_label_copy_show}

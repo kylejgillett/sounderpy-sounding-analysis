@@ -8,35 +8,47 @@ components:
   layout_properties: {grid_position: 'RSWSUA,PPOQGY'}
   components:
   - name: card_2
-    properties: {role: card, background: '#44a2ff', spacing_below: none, spacing_above: none,
-      col_spacing: tiny, col_widths: '{"EHAKEJ":30,"JVXBXC":30}'}
+    properties: {role: card, background: '#44a2ff', spacing_below: none, spacing_above: none, col_spacing: tiny, col_widths: '{"EHAKEJ":30,"JVXBXC":30}'}
     type: ColumnPanel
     layout_properties: {grid_position: 'TTSSZM,EHQRPP'}
     components:
     - name: card_1
-      properties: {role: card, background: '#363636', wrap_on: never, col_widths: '{"BGDPRW":25,"RBVESM":35}',
-        spacing_above: none, spacing_below: none}
+      properties: {role: card, background: '#363636', wrap_on: never, col_widths: '{"BGDPRW":25,"RBVESM":35}', spacing_above: none, spacing_below: none}
       type: ColumnPanel
       layout_properties: {grid_position: 'HPAUYQ,EHAKEJ'}
       components:
       - name: image_1
-        properties: {source: _/theme/251580013-2e9477c9-e36a-4163-accb-fe46780058dd.png,
-          height: 155, horizontal_align: right}
+        properties: {source: _/theme/251580013-2e9477c9-e36a-4163-accb-fe46780058dd.png, height: 155, horizontal_align: right}
         type: Image
         layout_properties: {grid_position: 'BDDDSP,BGDPRW'}
       - name: label_1
-        properties: {align: center, foreground: '#fbff00', text: 'SOUNDERPY
-
-            ', font_size: 40, font: '', spacing_above: none, spacing_below: none,
-          bold: true, underline: false, icon: ''}
+        properties:
+          bold: true
+          align: center
+          spacing_above: none
+          icon: ''
+          underline: false
+          font: ''
+          foreground: '#fbff00'
+          spacing_below: none
+          font_size: 40
+          text: |
+            SOUNDERPY
         type: Label
         layout_properties: {grid_position: 'BDDDSP,RBVESM QGCHKU,GDVOHZ'}
       - name: label_1_copy
-        properties: {align: center, foreground: '#fbff00', text: 'SOUNDING ANALYSIS
-            TOOL
-
-            ', font_size: 24, font: '', spacing_above: none, spacing_below: none,
-          bold: true, underline: false, icon: ''}
+        properties:
+          bold: true
+          align: center
+          spacing_above: none
+          icon: ''
+          underline: false
+          font: ''
+          foreground: '#fbff00'
+          spacing_below: none
+          font_size: 24
+          text: |
+            SOUNDING ANALYSIS TOOL
         type: Label
         layout_properties: {grid_position: 'BDDDSP,RBVESM ONQXQV,EVVPCK'}
     - name: card_3
@@ -45,12 +57,15 @@ components:
       layout_properties: {grid_position: 'HPAUYQ,JVXBXC'}
       components:
       - name: label_2
-        properties: {text: "Welcome to the SounderPy Sounding Analysis web app! \n\
-            \nThis is a simple tool that plots SounderPy soundings right in your browser.\
-            \ Below you can plot can plot RAOB observations, ACARS observations, latest\
-            \ model forecasts, and RAP-RUC model reanalyses! \n\n(C) Kyle J Gillett\
-            \ 2024 | @wxkylegillett", align: center, font: '', foreground: '#FFFFFF',
-          font_size: 14, spacing_below: small, spacing_above: small, bold: false}
+        properties:
+          text: "Welcome to the SounderPy Sounding Analysis web app! \n\nThis is a simple tool that plots SounderPy soundings right in your browser. Below you can plot can plot RAOB observations, ACARS observations, latest model forecasts, and RAP-RUC model reanalyses! \n\n(C) Kyle J Gillett 2024 | @wxkylegillett"
+          align: center
+          font: ''
+          foreground: '#FFFFFF'
+          font_size: 14
+          spacing_below: small
+          spacing_above: small
+          bold: false
         type: Label
         layout_properties: {grid_position: 'FFXJVP,VRFWED'}
     - name: spacer_2_copy_copy_copy
@@ -62,10 +77,13 @@ components:
       type: form:HOME.utctime_display_comp
       layout_properties: {grid_position: 'AWGUCY,VBPURN'}
   - name: label_3_copy
-    properties: {bold: true, align: center, text: 'CURRENTLY POWERED BY SOUNDERPY
-        V3.0.4 BETA
-
-        ', font_size: 18, visible: true}
+    properties:
+      bold: true
+      align: center
+      text: |
+        CURRENTLY POWERED BY SOUNDERPY V3.0.4 BETA
+      font_size: 18
+      visible: true
     type: Label
     layout_properties: {grid_position: 'FSNBCQ,ZQFDJV'}
   - name: card_4
@@ -74,62 +92,66 @@ components:
     layout_properties: {grid_position: 'SCHABZ,GUSNNT'}
     components:
     - name: raob_tab_button
-      properties: {text: 'RAOB
-
-          OBSERVATIONS', background: '#363636'}
+      properties:
+        text: |-
+          RAOB
+          OBSERVATIONS
+        background: '#363636'
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,QTHOJM'}
       event_bindings: {click: raob_tab_click}
       data_bindings:
       - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
     - name: acars_tab_button
-      properties: {text: 'ACARS
-
+      properties:
+        text: |
+          ACARS
           OBSERVATIONS
-
-          ', background: '#363636'}
+        background: '#363636'
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,VUUZTK'}
       event_bindings: {click: acars_tab_click}
     - name: bufkit_tab_button
-      properties: {text: 'MODEL
-
+      properties:
+        text: |
+          MODEL
           FORECASTS
-
-          ', background: '#363636', visible: true}
+        background: '#363636'
+        visible: true
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,ENKAOB'}
       event_bindings: {click: bufkit_tab_click}
     - name: reanl_tab_button
-      properties: {text: 'MODEL
-
+      properties:
+        text: |
+          MODEL
           REANALYSIS
-
-          ', background: '#363636'}
+        background: '#363636'
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,DEMRZR'}
       event_bindings: {click: reanl_tab_click}
     - name: reanl_tab_button_copy
-      properties: {text: 'ABOUT
-
+      properties:
+        text: |
+          ABOUT
           SOUNDERPY
-
-          ', background: '#363636'}
+        background: '#363636'
       type: Button
       layout_properties: {grid_position: 'ZAUPKC,MJVRYS'}
       event_bindings: {click: about_tab_click}
     data_bindings: []
   - name: tab_panel
-    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: small,
-      background: ''}
+    properties: {role: null, col_widths: '', spacing_above: none, background: '', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
     type: ColumnPanel
     layout_properties: {grid_position: 'UZNNJF,QNSKTC'}
 - name: label_3
-  properties: {bold: true, align: center, text: 'THIS SITE IS CURRENTLY DOWN FOR *BRIEF*
-      MAINTENANCE AND WILL RETURN BY 14:00 UTC
-
-      ', font_size: 27, visible: false}
+  properties:
+    bold: true
+    align: center
+    text: |
+      THIS SITE IS CURRENTLY DOWN FOR *BRIEF* MAINTENANCE AND WILL RETURN BY 14:00 UTC
+    font_size: 27
+    visible: false
   type: Label
   layout_properties: {grid_position: 'ODLEVR,CYQMAM'}
 - name: spacer_2_copy_copy
@@ -137,53 +159,47 @@ components:
   type: Spacer
   layout_properties: {grid_position: 'RCHCIE,AAARTR'}
 - name: label_3_copy_copy_2
-  properties: {bold: true, align: center, text: 'SOUNDERPY NEWS
-
-      ', font_size: 18, visible: true}
+  properties:
+    bold: true
+    align: center
+    text: |
+      SOUNDERPY NEWS
+    font_size: 18
+    visible: true
   type: Label
   layout_properties: {grid_position: 'UACYCK,AHMSCS'}
 - name: label_3_copy_copy_copy_copy_copy
-  properties: {bold: true, align: left, text: ' 05/30/2024', font_size: 14, visible: true,
-    italic: true}
+  properties: {bold: true, align: left, text: ' 05/30/2024', font_size: 14, visible: true, italic: true}
   type: Label
   layout_properties: {grid_position: 'TSMMCF,JAGWKY'}
 - name: label_3_copy_copy_copy_2_copy
-  properties: {bold: true, align: left, text: 'At this time the sounding ''map insets''
-      have been temporarily disabled as the new sever seems to randomly struggle producing
-      them... (aka I still need to find a better server solution) - UPDATE: map insets
-      are now available as an optional setting. ', font_size: 12, visible: true, italic: true}
+  properties: {bold: true, align: left, text: 'At this time the sounding ''map insets'' have been temporarily disabled as the new sever seems to randomly struggle producing them... (aka I still need to find a better server solution) - UPDATE: map insets are now available as an optional setting. ', font_size: 12, visible: true, italic: true}
   type: Label
   layout_properties: {grid_position: 'JFUUJK,MKXBUP'}
 - name: label_3_copy_copy_copy_copy
-  properties: {bold: true, align: left, text: ' 05/28/2024', font_size: 14, visible: true,
-    italic: true}
+  properties: {bold: true, align: left, text: ' 05/28/2024', font_size: 14, visible: true, italic: true}
   type: Label
   layout_properties: {grid_position: 'FFJVTE,SVLEKN'}
 - name: label_3_copy_copy_copy_2
-  properties: {bold: true, align: left, text: 'IT''S PARTY TIME...this app got a major
-      server upgrade! As such, this app can now process requests much faster. ECAPE-parcel
-      paths and map-insets have been implemented! (here''s to hoping and praying it
-      doesn''t break)', font_size: 12, visible: true, italic: true}
+  properties: {bold: true, align: left, text: 'IT''S PARTY TIME...this app got a major server upgrade! As such, this app can now process requests much faster. ECAPE-parcel paths and map-insets have been implemented! (here''s to hoping and praying it doesn''t break)', font_size: 12, visible: true, italic: true}
   type: Label
   layout_properties: {grid_position: 'UCUSWO,GDJFKF'}
 - name: label_3_copy_copy_copy
-  properties: {bold: true, align: left, text: ' 05/27/2024', font_size: 14, visible: true,
-    italic: true}
+  properties: {bold: true, align: left, text: ' 05/27/2024', font_size: 14, visible: true, italic: true}
   type: Label
   layout_properties: {grid_position: 'BRFDEM,RNGGTC'}
 - name: label_3_copy_copy
-  properties: {bold: true, align: left, text: ' YOU ARE TESTING THE *NEXT* SOUNDERPY
-      VERSION (3.0.4 BETA2). Some issues may be possible. If you have any comments
-      or concerns about this new version, please reach out!
+  properties:
+    bold: true
+    align: left
+    text: |2-
+       YOU ARE TESTING THE *NEXT* SOUNDERPY VERSION (3.0.4 BETA2). Some issues may be possible. If you have any comments or concerns about this new version, please reach out!
 
-
-      NEW FEATURES: RH w/hgt, max parcel level, wet-bulb-zero hgt, & sfc elevation
-      annotations; improved hodograph readability; effective inflow layer kinematic
-      values; map w/radar inset, ability to modify sfc values
-
-      FIXES: corrected NAMNEST & NAM3KM naming issue; fixed SRW readout when using
-      custom storm motions; fixed NAM & GFS forecast hours; corrected PWAT rounding.',
-    font_size: 12, visible: true, italic: true}
+      NEW FEATURES: RH w/hgt, max parcel level, wet-bulb-zero hgt, & sfc elevation annotations; improved hodograph readability; effective inflow layer kinematic values; map w/radar inset, ability to modify sfc values
+      FIXES: corrected NAMNEST & NAM3KM naming issue; fixed SRW readout when using custom storm motions; fixed NAM & GFS forecast hours; corrected PWAT rounding.
+    font_size: 12
+    visible: true
+    italic: true
   type: Label
   layout_properties: {grid_position: 'JSUJSP,FFFHDK'}
 - name: reanl_card_copy
@@ -197,22 +213,20 @@ components:
     layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
     components:
     - name: label_2_copy_2_copy_2
-      properties: {text: Please note this is a very basic web application and may experience issues under heavy traffic.,
-        align: center, font: '', foreground: '#FFFFFF', font_size: 20}
+      properties: {text: Please note this is a very basic web application and may experience issues under heavy traffic., align: center, font: '', foreground: '#FFFFFF', font_size: 20}
       type: Label
       layout_properties: {grid_position: 'MAKRMG,NUFEMF'}
     - name: link_1_copy_2
-      properties: {url: 'https://www.buymeacoffee.com/kylejgillett', align: center,
-        foreground: 'theme:On Tertiary Container', text: 'Enjoy using this app? Consider
-          supporting future development of SounderPy and SounderPy applications by
-          “Buying me a coffee”! ☕', font_size: 15, font: '', col_spacing: huge, icon_align: top,
-        italic: true, bold: true, underline: false}
+      properties: {bold: true, align: center, underline: false, font: '', col_spacing: huge, icon_align: top, foreground: 'theme:On Tertiary Container', url: 'https://www.buymeacoffee.com/kylejgillett', italic: true, font_size: 15, text: 'Enjoy using this app? Consider supporting future development of SounderPy and SounderPy applications by “Buying me a coffee”! ☕'}
       type: Link
       layout_properties: {grid_position: 'FFFVZI,MYVMHX'}
     - name: label_2_copy_2_copy
-      properties: {text: 'Powered by SounderPy v3.0.4, 2024 | (C) Kyle J Gillett 2024
-
-          ', align: center, font: '', foreground: '#FFFFFF'}
+      properties:
+        text: |
+          Powered by SounderPy v3.0.4, 2024 | (C) Kyle J Gillett 2024
+        align: center
+        font: ''
+        foreground: '#FFFFFF'
       type: Label
       layout_properties: {grid_position: 'HFBIZM,XUTDIV'}
     - name: test_button

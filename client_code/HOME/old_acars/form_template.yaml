@@ -11,52 +11,45 @@ components:
     layout_properties: {grid_position: 'YJASZZ,ZWVHPM'}
     components:
     - name: acars_header
-      properties: {text: OBSERVED ACARS SOUNDINGS, icon: '', bold: true, align: center,
-        spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
+      properties: {text: OBSERVED ACARS SOUNDINGS, icon: '', bold: true, align: center, spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
       type: Label
       layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
     - name: label_2_copy_copy
-      properties: {text: 'Plot ACARS aircraft observed soundings from US airports.
-          To use this, you must first search for available profiles for a given date
-          and hour. Do so by providing a flight date and flight hour, then push the
-          ''GET AVAILABLE PROFILES'' button. Next, you can copy one of the ''flight
-          identifiers'' (ex: ''BNA_1240'') and paste it in the ''FLIGHT ID'' box.
-          Finally, select optional settings and push the ''GET SOUNDING'' button  ',
-        align: center, font: '', foreground: '#FFFFFF', font_size: 12}
+      properties: {text: 'Plot ACARS aircraft observed soundings from US airports. To use this, you must first search for available profiles for a given date and hour. Do so by providing a flight date and flight hour, then push the ''GET AVAILABLE PROFILES'' button. Next, you can copy one of the ''flight identifiers'' (ex: ''BNA_1240'') and paste it in the ''FLIGHT ID'' box. Finally, select optional settings and push the ''GET SOUNDING'' button  ', align: center, font: '', foreground: '#FFFFFF', font_size: 12}
       type: Label
       layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
     - name: acars_instructions_label
-      properties: {text: 'STEP 1: ENTER A FLIGHT DATE & FLIGHT TIME TO SEARCH FOR
-          AVAILABLE PROFILES', icon: 'fa:exclamation-circle', bold: true, align: center,
-        spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
+      properties: {text: 'STEP 1: ENTER A FLIGHT DATE & FLIGHT TIME TO SEARCH FOR AVAILABLE PROFILES', icon: 'fa:exclamation-circle', bold: true, align: center, spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'IYWXWH,HDIUUF'}
     - name: acars_date_label
-      properties: {text: FLIGHT DATE, icon: 'fa:calendar', bold: true, align: center,
-        foreground: '#FFFFFF', font: '', font_size: 17}
+      properties: {text: FLIGHT DATE, icon: 'fa:calendar', bold: true, align: center, foreground: '#FFFFFF', font: '', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'CMNHRV,LRIBEQ'}
     - name: acars_date
-      properties: {align: center, pick_time: true, placeholder: enter a flight date,
-        enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true,
-        background: '#707070', bold: true, format: '"%m-%d-%Y"'}
+      properties: {align: center, pick_time: true, placeholder: enter a flight date, enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true, background: '#707070', bold: true, format: '"%m-%d-%Y"'}
       type: DatePicker
       layout_properties: {grid_position: 'SBFXQU,OYHMHY'}
     - name: acars_hour_label
-      properties: {text: FLIGHT HOUR, icon: 'fa:clock-o', bold: true, align: center,
-        foreground: '#FFFF', font_size: 17}
+      properties: {text: FLIGHT HOUR, icon: 'fa:clock-o', bold: true, align: center, foreground: '#FFFF', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'LJIOUE,EHXHSZ'}
     - name: acars_hour
-      properties: {placeholder: 'UTC format (ex: ''12'', ''00'')', italic: true, align: center,
-        background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
+      properties: {placeholder: 'UTC format (ex: ''12'', ''00'')', italic: true, align: center, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: 'DNBQRR,APHAFK'}
     - name: acars_profiles_button
-      properties: {role: filled, align: center, border: '', foreground: '#fbff00',
-        text: 'GET AVAILABLE PROFILES
-
-          ', font_size: 17, font: '', background: '#44a2ff', bold: true}
+      properties:
+        role: filled
+        align: center
+        border: ''
+        foreground: '#fbff00'
+        text: |
+          GET AVAILABLE PROFILES
+        font_size: 17
+        font: ''
+        background: '#44a2ff'
+        bold: true
       type: Button
       layout_properties: {grid_position: 'GNNFER,QJZVSN'}
       event_bindings: {click: acars_profiles_button_click}
@@ -65,25 +58,19 @@ components:
       type: Spacer
       layout_properties: {grid_position: 'CXSRKP,ZWDTFP'}
     - name: acars_profiles_list
-      properties: {bold: false, align: left, font_size: 15, background: '', foreground: '#fbff00',
-        italic: true}
+      properties: {bold: false, align: left, font_size: 15, background: '', foreground: '#fbff00', italic: true}
       type: Label
       layout_properties: {grid_position: 'CXSRKP,SXTXPU', full_width_row: false}
     - name: acars_instructions_label_2
-      properties: {text: 'STEP 2: ''COPY & PASTE'' ONE OF THE ABOVE ''FLIGHT IDS''
-          INTO THE BOX BELOW', icon: 'fa:exclamation-circle', bold: true, align: center,
-        spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
+      properties: {text: 'STEP 2: ''COPY & PASTE'' ONE OF THE ABOVE ''FLIGHT IDS'' INTO THE BOX BELOW', icon: 'fa:exclamation-circle', bold: true, align: center, spacing_above: small, font_size: 20, foreground: '#FFFFFF'}
       type: Label
       layout_properties: {grid_position: 'GCMCHY,KWRDME'}
     - name: acars_flight_id
-      properties: {text: FLIGHT ID, icon: 'fa:map-marker', bold: true, align: center,
-        foreground: '#FFFFFF', font_size: 17}
+      properties: {text: FLIGHT ID, icon: 'fa:map-marker', bold: true, align: center, foreground: '#FFFFFF', font_size: 17}
       type: Label
       layout_properties: {grid_position: 'GYKSGS,TKRZVE'}
     - name: acars_site_id
-      properties: {align: center, placeholder: 'ACARS Flight ID (ex: ''PDX_0050'')',
-        enabled: true, italic: true, background: '#707070', foreground: 'theme:',
-        bold: true, font_size: 15}
+      properties: {align: center, placeholder: 'ACARS Flight ID (ex: ''PDX_0050'')', enabled: true, italic: true, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
       type: TextBox
       layout_properties: {grid_position: ''}
       event_bindings: {pressed_enter: station_id_pressed_enter}
@@ -93,21 +80,17 @@ components:
       layout_properties: {grid_position: 'COWVWA,CHDZOV'}
       components:
       - name: acars_dark_mode_check
-        properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF',
-          background: '', allow_indeterminate: false, align: left, font_size: 15}
+        properties: {text: Turn on dark mode, checked: true, role: null, foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left, font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IBQVEU,SQQYDB'}
         event_bindings: {change: dark_mode_check_change}
       - name: acars_color_blind_check
-        properties: {text: Turn on color-blind friendly settings, checked: true, role: null,
-          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
-          font_size: 15}
+        properties: {text: Turn on color-blind friendly settings, checked: true, role: null, foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left, font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI WJTXUC,WTLZER'}
         event_bindings: {change: check_box_1_change}
       - name: acars_hodo_check
-        properties: {role: null, align: left, border: '', foreground: '#FFFFFF', allow_indeterminate: false,
-          text: Plot hodograph only, font_size: 15, background: '', checked: false}
+        properties: {role: null, align: left, border: '', foreground: '#FFFFFF', allow_indeterminate: false, text: Plot hodograph only, font_size: 15, background: '', checked: false}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IUSILP,UYOWIG'}
         event_bindings: {change: check_box_1_change}
@@ -117,9 +100,7 @@ components:
         layout_properties: {grid_position: 'MLSBOI,KQDDVB'}
         components:
         - name: acars_instructions_label_2_copy
-          properties: {text: Select a storm motion from the list below or enter your own.,
-            icon: '', bold: true, align: center, spacing_above: small, font_size: 12,
-            foreground: '#FFFFFF'}
+          properties: {text: Select a storm motion from the list below or enter your own., icon: '', bold: true, align: center, spacing_above: small, font_size: 12, foreground: '#FFFFFF'}
           type: Label
           layout_properties: {grid_position: 'BABWWC,DLGWRU'}
         - name: acars_sm
@@ -128,37 +109,37 @@ components:
           type: DropDown
           layout_properties: {grid_position: 'NOIXON,LQYJAR'}
         - name: acars_direction
-          properties: {align: center, placeholder: 'direction (ex: 245) in degrees',
-            enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true,
-            background: '#707070', bold: true}
+          properties: {align: center, placeholder: 'direction (ex: 245) in degrees', enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true, background: '#707070', bold: true}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
         - name: acars_speed
-          properties: {align: center, placeholder: 'speed: (ex: 45) in knots', enabled: true,
-            italic: true, background: '#707070', foreground: 'theme:', bold: true,
-            font_size: 15}
+          properties: {align: center, placeholder: 'speed: (ex: 45) in knots', enabled: true, italic: true, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
       - name: acars_simple_check
-        properties: {text: Plot Simple Sounding (faster), checked: false, role: null,
-          foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left,
-          font_size: 15}
+        properties: {text: Plot Simple Sounding (faster), checked: false, role: null, foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left, font_size: 15}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI LACVJE,RRAGCU'}
         event_bindings: {change: check_box_1_change}
     - name: acars_button
-      properties: {role: filled, align: center, border: '', foreground: '#fbff00',
-        text: 'GET SOUNDING
-
-          ', font_size: 20, font: '', background: '#44a2ff', bold: true}
+      properties:
+        role: filled
+        align: center
+        border: ''
+        foreground: '#fbff00'
+        text: |
+          GET SOUNDING
+        font_size: 20
+        font: ''
+        background: '#44a2ff'
+        bold: true
       type: Button
       layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
       event_bindings: {click: acars_button_click}
     - name: acars_standby_label
-      properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#FFFFFF',
-        italic: true}
+      properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#FFFFFF', italic: true}
       type: Label
       layout_properties: {grid_position: 'BQARFE,HNABIL'}
       event_bindings: {show: raob_plot_label_copy_show}
@@ -171,10 +152,13 @@ components:
       type: Image
       layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
 - name: label_3
-  properties: {bold: true, align: center, text: 'ACARS DATA ACCESS IS CURRENTLY DOWN
-      FOR *BRIEF* MAINTENANCE AND WILL RETURN BY 01:30 UTC
-
-      ', font_size: 27, visible: true}
+  properties:
+    bold: true
+    align: center
+    text: |
+      ACARS DATA ACCESS IS CURRENTLY DOWN FOR *BRIEF* MAINTENANCE AND WILL RETURN BY 01:30 UTC
+    font_size: 27
+    visible: true
   type: Label
   layout_properties: {grid_position: 'YYTSAY,MOOENV'}
 is_package: true

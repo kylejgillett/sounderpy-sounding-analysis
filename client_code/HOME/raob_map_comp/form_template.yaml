@@ -1,9 +1,17 @@
 container:
   type: HtmlTemplate
-  properties: {html: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"\
-      UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\
-      >\n</head>\n<body>\n    <iframe src=\"https://kylejgillett.github.io/sounderpy/raob_map\"\
-      \ width=\"100%\" height=\"500\"></iframe>\n</body>\n</html>\n"}
+  properties:
+    html: |
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      </head>
+      <body>
+          <iframe src="https://kylejgillett.github.io/sounderpy/raob_map" width="100%" height="500"></iframe>
+      </body>
+      </html>
 components: []
 is_package: true
 custom_component: true
