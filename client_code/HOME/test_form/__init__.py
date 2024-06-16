@@ -83,7 +83,10 @@ class test_form(test_formTemplate):
     
     def bufkit_cm1_button_click(self, **event_args):
         cm1_file = anvil.server.call(
-            "get_cm1_file"
+            "get_cm1_file",
+            self.bufkit_model.text,
+            self.bufkit_site_id.text,
+            self.bufkit_fhour.text,
           )
         anvil.media.download(cm1_file)
     

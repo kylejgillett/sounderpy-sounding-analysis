@@ -82,7 +82,7 @@ components:
         type: Label
         layout_properties: {grid_position: 'WEPRWE,PCRVQM YCIHOJ,QFPZAY'}
       - name: bufkit_run_date
-        properties: {align: center, pick_time: true, placeholder: leave blank for latest, enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true, background: '#707070', bold: true, format: '"%m-%d-%Y"'}
+        properties: {bold: true, format: '"%m-%d-%Y"', align: center, placeholder: leave blank for latest, pick_time: true, background: '#707070', foreground: 'theme:', visible: true, italic: true, enabled: true, font_size: 15}
         type: DatePicker
         layout_properties: {grid_position: 'WEPRWE,PCRVQM KRMJHW,LRYGMU'}
       - name: bufkit_fhour_label_copy_copy_copy
@@ -111,15 +111,15 @@ components:
     - name: bufkit_button
       properties:
         role: filled
+        bold: true
         align: center
-        border: ''
+        background: '#44a2ff'
+        font: ''
         foreground: '#fbff00'
+        border: ''
+        font_size: 20
         text: |
           GET SOUNDING
-        font_size: 20
-        font: ''
-        background: '#44a2ff'
-        bold: true
       type: Button
       layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
       event_bindings: {click: bufkit_button_click}

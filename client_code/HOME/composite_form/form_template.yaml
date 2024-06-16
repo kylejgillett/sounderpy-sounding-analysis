@@ -19,7 +19,7 @@ components:
       type: ColumnPanel
       layout_properties: {grid_position: 'YNPFVG,KVNIUM'}
       components:
-      - name: raob_tab_button
+      - name: bufkit_fcsthrs_button
         properties:
           text: |-
             MODEL FORECAST
@@ -30,7 +30,7 @@ components:
         event_bindings: {click: raob_tab_click}
         data_bindings:
         - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
-      - name: raob_tab_button_copy_2_copy
+      - name: singlesiteraob_button
         properties:
           text: "RAOB OBSERVATIONS \nFOR A SINGLE SITE"
           background: '#363636'
@@ -80,7 +80,7 @@ components:
         data_bindings:
         - {property: tag, code: 'self.item[''raob_tab'']', writeback: false}
     - name: tab_panel
-      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '', spacing_below: small, background: ''}
+      properties: {role: null, col_widths: '', spacing_above: none, background: '', wrap_on: mobile, col_spacing: medium, foreground: '', spacing_below: small, visible: true, border: '', tooltip: ''}
       type: ColumnPanel
       layout_properties: {grid_position: 'COOFQV,MPJUYU'}
       components: []
