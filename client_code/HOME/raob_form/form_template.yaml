@@ -28,7 +28,7 @@ components:
       type: Label
       layout_properties: {grid_position: 'CMNHRV,LRIBEQ'}
     - name: raob_date
-      properties: {align: center, pick_time: true, placeholder: enter a launch date, enabled: true, foreground: 'theme:', visible: true, font_size: 15, background: '#707070', bold: true, format: '"%m-%d-%Y"'}
+      properties: {bold: true, format: '"%m-%d-%Y"', align: center, placeholder: enter a launch date, pick_time: true, background: '#707070', foreground: 'theme:', visible: true, enabled: true, font_size: 15}
       type: DatePicker
       layout_properties: {grid_position: 'SBFXQU,OYHMHY'}
     - name: raob_hour_label
@@ -70,7 +70,7 @@ components:
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI JPOGFT,BNMCWD'}
         event_bindings: {change: check_box_1_change}
       - name: raob_hodo_check
-        properties: {role: null, align: left, border: '', foreground: '#FFFFFF', allow_indeterminate: false, text: Plot hodograph only, font_size: 15, background: '', checked: false}
+        properties: {role: null, align: left, background: '', allow_indeterminate: false, foreground: '#FFFFFF', checked: false, border: '', font_size: 15, text: Plot hodograph only}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IUSILP,UYOWIG'}
         event_bindings: {change: check_box_1_change}
@@ -89,7 +89,7 @@ components:
           type: DropDown
           layout_properties: {grid_position: 'NOIXON,LQYJAR'}
         - name: raob_direction
-          properties: {align: center, placeholder: 'direction (ex: 245) in degrees', enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true, background: '#707070', bold: true}
+          properties: {bold: true, align: center, placeholder: 'direction (ex: 245) in degrees', background: '#707070', type: text, foreground: 'theme:', italic: true, enabled: true, font_size: 15}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
@@ -108,7 +108,7 @@ components:
           type: Label
           layout_properties: {grid_position: 'BABWWC,DLGWRU'}
         - name: raob_temp
-          properties: {align: center, placeholder: T°C, enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true, background: '#707070', bold: true}
+          properties: {bold: true, align: center, placeholder: T°C, background: '#707070', type: text, foreground: 'theme:', italic: true, enabled: true, font_size: 15}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
@@ -120,15 +120,15 @@ components:
     - name: raob_button
       properties:
         role: filled
+        bold: true
         align: center
-        border: ''
+        background: '#44a2ff'
+        font: ''
         foreground: '#fbff00'
+        border: ''
+        font_size: 20
         text: |
           GET SOUNDING
-        font_size: 20
-        font: ''
-        background: '#44a2ff'
-        bold: true
       type: Button
       layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
       event_bindings: {click: raob_button_click}
@@ -145,6 +145,10 @@ components:
       properties: {display_mode: original_size}
       type: Image
       layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+    - name: raob_station_id_copy
+      properties: {text: 'Wind profile look funky? Try Using the IGRAv2 ID instead', icon: 'fa:question-circle', bold: true, align: center, foreground: '#FFFFFF', font_size: 13}
+      type: Label
+      layout_properties: {grid_position: 'PTKKQV,HTIPAG'}
 - name: spacer_1
   properties: {height: 155}
   type: Spacer

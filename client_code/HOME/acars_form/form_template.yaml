@@ -5,8 +5,12 @@ components:
   type: ColumnPanel
   layout_properties: {grid_position: 'IBHDIK,AWNVDF'}
   components:
+  - name: acars_header_copy
+    properties: {text: ACARS DATA ACCESS IS CURRENTLY UNAVAILABLE, icon: '', bold: true, align: center, spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
+    type: Label
+    layout_properties: {grid_position: 'YZQZEK,DNYKHB'}
   - name: card_1_copy_copy
-    properties: {role: card, background: '#363636', col_widths: '{}'}
+    properties: {role: card, background: '#363636', col_widths: '{}', visible: false}
     type: ColumnPanel
     layout_properties: {grid_position: 'YJASZZ,ZWVHPM'}
     components:
@@ -50,7 +54,7 @@ components:
         type: Label
         layout_properties: {grid_position: 'MQMAQT,OOSGSX'}
       - name: acars_all_date
-        properties: {align: center, pick_time: true, placeholder: enter a flight date, enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true, background: '#707070', bold: true, format: '"%m-%d-%Y"'}
+        properties: {bold: true, format: '"%m-%d-%Y"', align: center, placeholder: enter a flight date, pick_time: true, background: '#707070', foreground: 'theme:', visible: true, italic: true, enabled: true, font_size: 15}
         type: DatePicker
         layout_properties: {grid_position: 'NFPCIT,EKPLRN'}
       - name: acars_all_hour
@@ -60,15 +64,15 @@ components:
       - name: acars_all_profiles_button
         properties:
           role: filled
+          bold: true
           align: center
-          border: ''
+          background: '#44a2ff'
+          font: ''
           foreground: '#fbff00'
+          border: ''
+          font_size: 17
           text: |
             GET AVAILABLE PROFILES
-          font_size: 17
-          font: ''
-          background: '#44a2ff'
-          bold: true
         type: Button
         layout_properties: {grid_position: 'BSBATR,GOFXTF'}
         event_bindings: {click: acars_all_profiles_button_click}
@@ -107,7 +111,7 @@ components:
         type: Label
         layout_properties: {grid_position: 'DUEZNP,XEQKMF'}
       - name: acars_airport_date
-        properties: {align: center, pick_time: true, placeholder: enter a flight date, enabled: true, foreground: 'theme:', visible: true, font_size: 15, italic: true, background: '#707070', bold: true, format: '"%m-%d-%Y"'}
+        properties: {bold: true, format: '"%m-%d-%Y"', align: center, placeholder: enter a flight date, pick_time: true, background: '#707070', foreground: 'theme:', visible: true, italic: true, enabled: true, font_size: 15}
         type: DatePicker
         layout_properties: {grid_position: 'KRWEDA,CZBPQG'}
       - name: acars_airport_id
@@ -117,15 +121,15 @@ components:
       - name: acars_airport_profiles_button
         properties:
           role: filled
+          bold: true
           align: center
-          border: ''
+          background: '#44a2ff'
+          font: ''
           foreground: '#fbff00'
+          border: ''
+          font_size: 17
           text: |
             GET AVAILABLE PROFILES
-          font_size: 17
-          font: ''
-          background: '#44a2ff'
-          bold: true
         type: Button
         layout_properties: {grid_position: 'HPZVAG,EFWMWV'}
         event_bindings: {click: acars_airport_profiles_button_click}
@@ -191,7 +195,7 @@ components:
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI NNNRIL,RSMHGJ'}
         event_bindings: {change: check_box_1_change}
       - name: acars_hodo_check
-        properties: {role: null, align: left, border: '', foreground: '#FFFFFF', allow_indeterminate: false, text: Plot hodograph only, font_size: 15, background: '', checked: false}
+        properties: {role: null, align: left, background: '', allow_indeterminate: false, foreground: '#FFFFFF', checked: false, border: '', font_size: 15, text: Plot hodograph only}
         type: CheckBox
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IUSILP,UYOWIG'}
         event_bindings: {change: check_box_1_change}
@@ -210,7 +214,7 @@ components:
           type: DropDown
           layout_properties: {grid_position: 'NOIXON,LQYJAR'}
         - name: acars_direction
-          properties: {align: center, placeholder: 'direction (ex: 245) in degrees', enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true, background: '#707070', bold: true}
+          properties: {bold: true, align: center, placeholder: 'direction (ex: 245) in degrees', background: '#707070', type: text, foreground: 'theme:', italic: true, enabled: true, font_size: 15}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
@@ -229,7 +233,7 @@ components:
           type: Label
           layout_properties: {grid_position: 'BABWWC,DLGWRU'}
         - name: acars_temp
-          properties: {align: center, placeholder: T°C, enabled: true, foreground: 'theme:', font_size: 15, type: text, italic: true, background: '#707070', bold: true}
+          properties: {bold: true, align: center, placeholder: T°C, background: '#707070', type: text, foreground: 'theme:', italic: true, enabled: true, font_size: 15}
           type: TextBox
           layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
           event_bindings: {pressed_enter: station_id_pressed_enter}
@@ -241,15 +245,15 @@ components:
     - name: acars_button
       properties:
         role: filled
+        bold: true
         align: center
-        border: ''
+        background: '#44a2ff'
+        font: ''
         foreground: '#fbff00'
+        border: ''
+        font_size: 20
         text: |
           GET SOUNDING
-        font_size: 20
-        font: ''
-        background: '#44a2ff'
-        bold: true
       type: Button
       layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
       event_bindings: {click: acars_button_click}
