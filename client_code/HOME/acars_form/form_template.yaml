@@ -223,12 +223,12 @@ components:
           type: TextBox
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,OSQXFI'}
-          name: acars_temp_copy
+          name: acars_wspeed
           properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: ws (kts), type: text}
           type: TextBox
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,ITESWM'}
-          name: acars_temp_copy_2
+          name: acars_temp_wdir
           properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: wd (deg), type: text}
           type: TextBox
         layout_properties: {grid_position: 'MLSBOI,KQDDVB KOTXPJ,ZTVWPU'}
