@@ -65,6 +65,21 @@ components:
       name: utctime_display_comp_1
       properties: {}
       type: form:HOME.utctime_display_comp
+    - layout_properties: {grid_position: 'ZIAPCB,CRKILN'}
+      name: label_1_copy_copy
+      properties:
+        align: center
+        bold: true
+        font: ''
+        font_size: 18
+        foreground: '#fbff00'
+        icon: ''
+        spacing_above: none
+        spacing_below: none
+        text: |
+          NOTICE: RAP/RUC reanalysis, and IGRAv2 observations data are unavailable until further notice as NCEI servers are offline following the devastating effects of Tropical Cyclone Helene in Ashville, North Carolina.
+        underline: false
+      type: Label
     layout_properties: {grid_position: 'TTSSZM,EHQRPP'}
     name: card_2
     properties: {background: '#44a2ff', col_spacing: tiny, col_widths: '{"EHAKEJ":30,"JVXBXC":30}', role: card, spacing_above: none, spacing_below: none}
