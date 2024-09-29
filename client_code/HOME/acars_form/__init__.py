@@ -36,18 +36,18 @@ class acars_form(acars_formTemplate):
       storm_motion = self.acars_sm.selected_value
 
 
-    # def check_for_vals(T_val, Td_val, ws_val, wd_val):
-    #   modify_sfc = {}
-    #   vals = [T_val, Td_val, ws_val, wd_val]
-    #   keys = ["T", "Td", "ws", "wd"]
+    def check_for_vals(T_val, Td_val, ws_val, wd_val):
+      modify_sfc = {}
+      vals = [T_val, Td_val, ws_val, wd_val]
+      keys = ["T", "Td", "ws", "wd"]
       
-    #   for val, key in zip(vals, keys):
-    #     if len(val.text) > 0:
-    #       modify_sfc[key] = val.text
+      for val, key in zip(vals, keys):
+        if len(val.text) > 0:
+          modify_sfc[key] = val.text
     
-    #   return modify_sfc 
+      return modify_sfc 
 
-    # modify_sfc = check_for_vals(acars.temp, acars.dewt, acars.wspeed, acars.wdir)
+    modify_sfc = check_for_vals(self.acars.temp, self.acars.dewt, self.acars.wspeed, self.acars.wdir)
 
 
     if self.acars_ecape_check.checked:
