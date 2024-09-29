@@ -35,12 +35,21 @@ class acars_form(acars_formTemplate):
     else:
       storm_motion = self.acars_sm.selected_value
 
-    if self.acars_simple_check.checked:
-      style = 'simple'
-    else:
-      style = 'full'
 
+    def check_for_vals(T_val, Td_val, ws_val, wd_val):
+      modify_sfc = {}
+      vals = [T_val, Td_val, ws_val, wd_val]
+      keys = ["T", "Td", "ws", "wd"]
+      
+      for val, key in zip(vals, keys):
+        if len(val.text) > 0:
+          modify_sfc[key] = 
+        else:
+        pass
+      
     if len(self.acars_temp.text) > 0:
+      if len(self.acars_dewp.text) > 0:
+        
       modify_sfc = [self.acars_temp.text, self.acars_dewp.text]
     else:
       modify_sfc = False
@@ -84,7 +93,6 @@ class acars_form(acars_formTemplate):
                                self.acars_color_blind_check.checked,
                                self.acars_dark_mode_check.checked,
                                self.acars_hodo_check.checked,
-                               style,
                                storm_motion,
                                modify_sfc, 
                                special_parcels,

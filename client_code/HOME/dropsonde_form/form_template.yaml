@@ -1,67 +1,55 @@
-container: {type: ColumnPanel}
 components:
-- name: acars_card
-  properties: {role: card, visible: true, foreground: 'theme:Primary', background: '#44a2ff'}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'IBHDIK,AWNVDF'}
-  components:
-  - name: card_1_copy_copy
-    properties: {role: card, background: '#363636', col_widths: '{}'}
-    type: ColumnPanel
-    layout_properties: {grid_position: 'YJASZZ,ZWVHPM'}
-    components:
-    - name: drops_header
-      properties: {text: AIRCRAFT RECON DROPSONDES, icon: '', bold: true, align: center, spacing_above: small, font_size: 32, foreground: '#fbff00', font: ''}
+- components:
+  - components:
+    - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+      name: drops_header
+      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: AIRCRAFT RECON DROPSONDES}
       type: Label
-      layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
-    - name: label_2_copy_copy
+    - layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
+      name: label_2_copy_copy
       properties:
-        text: "Plot recent aircraft hurricane reconnaissance dropsonde profiles. Click the 'GET AVAILABLE PROFILES' button to return a list of recent \"dropsonde ID keys\". Copy and paste one of the dropsonde ID keys into the bottom box and press the 'GET SOUNDING' button.\n\n  "
         align: center
         font: ''
-        foreground: '#FFFFFF'
         font_size: 12
+        foreground: '#FFFFFF'
+        text: "Plot recent aircraft hurricane reconnaissance dropsonde profiles. Click the 'GET AVAILABLE PROFILES' button to return a list of recent \"dropsonde ID keys\". Copy and paste one of the dropsonde ID keys into the bottom box and press the 'GET SOUNDING' button.\n\n  "
       type: Label
-      layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
-    - name: card_2
-      properties: {role: card, col_widths: '{"VWKWNM":50}'}
-      type: ColumnPanel
-      layout_properties: {grid_position: 'LJIOUE,NAZZFV'}
-      components:
-      - name: drops_instructions_label
+    - components:
+      - layout_properties: {grid_position: 'FVUDCV,VVLYEC'}
+        name: drops_instructions_label
         properties:
+          align: center
+          bold: true
+          font_size: 20
+          foreground: '#FFFF00'
+          icon: ''
+          spacing_above: small
           text: |-
             GET ALL RECENT AIRCRAFT DROPSONDES
             _______________________________________
-          icon: ''
-          bold: true
-          align: center
-          spacing_above: small
-          font_size: 20
-          foreground: '#FFFF00'
         type: Label
-        layout_properties: {grid_position: 'FVUDCV,VVLYEC'}
-      - name: drops_all_profiles_button
+      - event_bindings: {click: drops_all_profiles_button_click}
+        layout_properties: {grid_position: 'BSBATR,GOFXTF'}
+        name: drops_all_profiles_button
         properties:
-          role: filled
-          bold: true
           align: center
           background: '#44a2ff'
-          font: ''
-          foreground: '#fbff00'
+          bold: true
           border: ''
+          font: ''
           font_size: 17
+          foreground: '#fbff00'
+          role: filled
           text: |
             GET AVAILABLE PROFILES
         type: Button
-        layout_properties: {grid_position: 'BSBATR,GOFXTF'}
-        event_bindings: {click: drops_all_profiles_button_click}
-      - name: drops_key_text_box
+      - layout_properties: {grid_position: 'UREINQ,AXARFA'}
+        name: drops_key_text_box
         properties:
-          bold: false
           align: center
-          font_size: 15
           background: ''
+          bold: false
+          font_size: 15
           foreground: '#fbff00'
           italic: true
           text: |
@@ -69,97 +57,109 @@ components:
              'AF302-1802A-BERYL__1222z__EYEWALL'
             'Aircraft-mission-storm__time__location'
         type: Label
-        layout_properties: {grid_position: 'UREINQ,AXARFA'}
-      - name: drops_all_profiles_list
-        properties: {bold: false, align: left, font_size: 12, background: '', foreground: '#fbff00', italic: true}
+      - layout_properties: {grid_position: 'DBELRL,VWKWNM'}
+        name: drops_all_profiles_list
+        properties: {align: left, background: '', bold: false, font_size: 12, foreground: '#fbff00', italic: true}
         type: Label
-        layout_properties: {grid_position: 'DBELRL,VWKWNM'}
-    - name: dropsonde_instructions_label_2
+      layout_properties: {grid_position: 'LJIOUE,NAZZFV'}
+      name: card_2
+      properties: {col_widths: '{"VWKWNM":50}', role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'GCMCHY,KWRDME'}
+      name: dropsonde_instructions_label_2
       properties:
+        align: center
+        bold: true
+        font_size: 20
+        foreground: '#FFFF00'
+        icon: ''
+        spacing_above: small
         text: |2-
 
            'COPY & PASTE' ONE OF THE ABOVE 'DROPSONDE IDS' INTO THE BOX BELOW
           _______________________________________
-        icon: ''
-        bold: true
-        align: center
-        spacing_above: small
-        font_size: 20
-        foreground: '#FFFF00'
       type: Label
-      layout_properties: {grid_position: 'GCMCHY,KWRDME'}
-    - name: dropsonde_flight_id
-      properties: {text: DROPSONDE ID, icon: 'fa:map-marker', bold: true, align: center, foreground: '#FFFFFF', font_size: 17}
+    - layout_properties: {grid_position: 'GYKSGS,TKRZVE'}
+      name: dropsonde_flight_id
+      properties: {align: center, bold: true, font_size: 17, foreground: '#FFFFFF', icon: 'fa:map-marker', text: DROPSONDE ID}
       type: Label
-      layout_properties: {grid_position: 'GYKSGS,TKRZVE'}
-    - name: dropsonde_site_id
-      properties: {align: center, placeholder: 'DROPSONDE ID (ex: ''AF302-1802A-BERYL__1222z__EYEWALL'')', enabled: true, italic: true, background: '#707070', foreground: 'theme:', bold: true, font_size: 15}
-      type: TextBox
+    - event_bindings: {pressed_enter: station_id_pressed_enter}
       layout_properties: {grid_position: ',undefined'}
-      event_bindings: {pressed_enter: station_id_pressed_enter}
-    - name: acars_options_card
-      properties: {role: card, background: '#363636'}
-      type: ColumnPanel
-      layout_properties: {grid_position: 'COWVWA,CHDZOV'}
-      components:
-      - name: dropsonde_dark_mode_check
-        properties: {text: Turn on dark mode, checked: false, role: null, foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left, font_size: 15}
-        type: CheckBox
+      name: dropsonde_site_id
+      properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'DROPSONDE ID (ex: ''AF302-1802A-BERYL__1222z__EYEWALL'')'}
+      type: TextBox
+    - components:
+      - event_bindings: {change: dark_mode_check_change}
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IBQVEU,SQQYDB'}
-        event_bindings: {change: dark_mode_check_change}
-      - name: dropsonde_color_blind_check
-        properties: {text: Turn on color-blind friendly settings, checked: true, role: null, foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left, font_size: 15}
+        name: dropsonde_dark_mode_check
+        properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Turn on dark mode}
         type: CheckBox
+      - event_bindings: {change: check_box_1_change}
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI WJTXUC,WTLZER'}
-        event_bindings: {change: check_box_1_change}
-      - name: dropsonde_sat_check
-        properties: {text: Add IR Satellite, checked: false, role: null, foreground: '#FFFFFF', background: '', allow_indeterminate: false, align: left, font_size: 15}
+        name: dropsonde_color_blind_check
+        properties: {align: left, allow_indeterminate: false, background: '', checked: true, font_size: 15, foreground: '#FFFFFF', role: null, text: Turn on color-blind friendly settings}
         type: CheckBox
+      - event_bindings: {change: check_box_1_change}
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI PIVYEX,PCCYHF'}
-        event_bindings: {change: check_box_1_change}
-    - name: dropsonde_button
+        name: dropsonde_sat_check
+        properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Add IR Satellite}
+        type: CheckBox
+      layout_properties: {grid_position: 'COWVWA,CHDZOV'}
+      name: acars_options_card
+      properties: {background: '#363636', role: card}
+      type: ColumnPanel
+    - event_bindings: {click: dropsonde_button_click}
+      layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
+      name: dropsonde_button
       properties:
-        role: filled
-        bold: true
         align: center
         background: '#44a2ff'
-        font: ''
-        foreground: '#fbff00'
+        bold: true
         border: ''
+        font: ''
         font_size: 20
+        foreground: '#fbff00'
+        role: filled
         text: |
           GET DROPSONDE
       type: Button
-      layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
-      event_bindings: {click: dropsonde_button_click}
-    - name: dropsonde_standby_label
-      properties: {bold: false, align: center, font_size: 12, background: '', foreground: '#FFFFFF', italic: true}
-      type: Label
+    - event_bindings: {show: raob_plot_label_copy_show}
       layout_properties: {grid_position: 'BQARFE,HNABIL'}
-      event_bindings: {show: raob_plot_label_copy_show}
-    - name: dropsonde_plot_label
-      properties: {bold: true, align: center, font_size: 18, background: '', foreground: '#fbff00'}
+      name: dropsonde_standby_label
+      properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#FFFFFF', italic: true}
       type: Label
-      layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
-    - name: dropsonde_image_display
+    - layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
+      name: dropsonde_plot_label
+      properties: {align: center, background: '', bold: true, font_size: 18, foreground: '#fbff00'}
+      type: Label
+    - layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+      name: dropsonde_image_display
       properties: {display_mode: original_size}
       type: Image
-      layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
-- name: spacer_1
+    layout_properties: {grid_position: 'YJASZZ,ZWVHPM'}
+    name: card_1_copy_copy
+    properties: {background: '#363636', col_widths: '{}', role: card}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'IBHDIK,AWNVDF'}
+  name: acars_card
+  properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
+  type: ColumnPanel
+- layout_properties: {grid_position: 'LBMUOO,ESONIG'}
+  name: spacer_1
   properties: {height: 155}
   type: Spacer
-  layout_properties: {grid_position: 'LBMUOO,ESONIG'}
-- name: card_1_copy
-  properties: {role: card}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'QMPKQH,WTWVJH'}
-  components:
-  - name: bufkit_instructions_label_copy
-    properties: {text: US Airports Map | Courtesy OurAirports.com, icon: 'fa:map', bold: true, align: center, spacing_above: small, font_size: 15, foreground: '#FFFFFF'}
+- components:
+  - layout_properties: {grid_position: 'YYHUBV,KSNAJN'}
+    name: bufkit_instructions_label_copy
+    properties: {align: center, bold: true, font_size: 15, foreground: '#FFFFFF', icon: 'fa:map', spacing_above: small, text: US Airports Map | Courtesy OurAirports.com}
     type: Label
-    layout_properties: {grid_position: 'YYHUBV,KSNAJN'}
-  - name: airport_map_comp_1
+  - layout_properties: {grid_position: 'IONOFZ,HAQCHG'}
+    name: airport_map_comp_1
     properties: {}
     type: form:HOME.airport_map_comp
-    layout_properties: {grid_position: 'IONOFZ,HAQCHG'}
+  layout_properties: {grid_position: 'QMPKQH,WTWVJH'}
+  name: card_1_copy
+  properties: {role: card}
+  type: ColumnPanel
+container: {type: ColumnPanel}
 is_package: true

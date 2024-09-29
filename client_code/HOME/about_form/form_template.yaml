@@ -1,129 +1,123 @@
-container: {type: ColumnPanel}
 components:
-- name: reanl_card_copy
-  properties: {role: card, visible: true, foreground: 'theme:Primary', background: '#44a2ff'}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'SINVBT,IRFRLE'}
-  components:
-  - name: reanl_card_inside_copy
-    properties: {role: card, background: '#363636', col_widths: '{}'}
-    type: ColumnPanel
-    layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
-    components:
-    - name: label_2_copy_2_copy_2
-      properties: {text: WELCOME TO THE SOUNDERPY SOUNDING ANALYSIS WEB-APP, align: left, font: '', foreground: '#FFFFFF', font_size: 24, bold: true}
+- components:
+  - components:
+    - layout_properties: {grid_position: 'JMPLHM,NNMSJS'}
+      name: label_2_copy_2_copy_2
+      properties: {align: left, bold: true, font: '', font_size: 24, foreground: '#FFFFFF', text: WELCOME TO THE SOUNDERPY SOUNDING ANALYSIS WEB-APP}
       type: Label
-      layout_properties: {grid_position: 'JMPLHM,NNMSJS'}
-    - name: label_2_copy_2
+    - layout_properties: {grid_position: 'DRFTNF,BOKERR'}
+      name: label_2_copy_2
       properties:
-        text: "SounderPy is an open-source atmospheric science Python paackage for vertical profile analysis. This web-app is an extension of the SounderPy library that uses the code's same functionality to load data and create soundings right in your browser with no coding involved (on your end 😉). \n\nThis library is developed with the goal in mind to keep the code (and now this web-app) simple and efficient for users of all experience levels and for reliability in all use cases.\n\n"
         align: left
         font: ''
-        foreground: '#FFFFFF'
         font_size: 16
+        foreground: '#FFFFFF'
+        text: "SounderPy is an open-source atmospheric science Python paackage for vertical profile analysis. This web-app is an extension of the SounderPy library that uses the code's same functionality to load data and create soundings right in your browser with no coding involved (on your end 😉). \n\nThis library is developed with the goal in mind to keep the code (and now this web-app) simple and efficient for users of all experience levels and for reliability in all use cases.\n\n"
       type: Label
-      layout_properties: {grid_position: 'DRFTNF,BOKERR'}
-    - name: link_2
-      properties: {text: '☕ SounderPy is an open-source library developed on my own time. If you would you like to support continued SounderPy development, please consider “Buying me a coffee”! ☕', url: 'https://www.buymeacoffee.com/kylejgillett', italic: true, font_size: 15, bold: true, align: center, background: '#0fb1ff', foreground: 'theme:'}
+    - layout_properties: {grid_position: 'LVNWKF,UCJCQT'}
+      name: link_2
+      properties: {align: center, background: '#0fb1ff', bold: true, font_size: 15, foreground: 'theme:', italic: true, text: '☕ SounderPy is an open-source library developed on my own time. If you would you like to support continued SounderPy development, please consider “Buying me a coffee”! ☕', url: 'https://www.buymeacoffee.com/kylejgillett'}
       type: Link
-      layout_properties: {grid_position: 'LVNWKF,UCJCQT'}
-    - name: spacer_1_copy
+    - layout_properties: {grid_position: 'COIKFF,XMZZKE'}
+      name: spacer_1_copy
       properties: {height: 43}
       type: Spacer
-      layout_properties: {grid_position: 'COIKFF,XMZZKE'}
-    - name: label_2_copy_2_copy_2_copy_copy_3
-      properties: {text: 'SounderPy: A sounding visualization tool for severe-weather analysis and forecasting', align: left, font: '', foreground: '#FFFFFF', font_size: 24, bold: true}
+    - layout_properties: {grid_position: 'WDMIUK,OEIKXA'}
+      name: label_2_copy_2_copy_2_copy_copy_3
+      properties: {align: left, bold: true, font: '', font_size: 24, foreground: '#FFFFFF', text: 'SounderPy: A sounding visualization tool for severe-weather analysis and forecasting'}
       type: Label
-      layout_properties: {grid_position: 'WDMIUK,OEIKXA'}
-    - name: label_2_copy_2_copy_3
+    - layout_properties: {grid_position: 'ESQLKY,NQUCCZ'}
+      name: label_2_copy_2_copy_3
       properties:
+        align: left
+        font: ''
+        font_size: 16
+        foreground: '#FFFFFF'
         text: |+
           ABSTRACT: SounderPy is a simple, open-source Python package for retrieving and plotting vertical profile (sounding) data. Built for simplicity and reliability for all uses and users, this project’s goal is to provide a uniform method for sounding analysis across multiple data types. Severe weather analysis and forecasting requires a sound comprehension of thermodynamic and kinematic properties of the environment. SounderPy makes this possible with robust access to data and custom visualizations. The tool creates complex yet effective sounding and hodograph plots with high readability which are designed specifically for severe weather analysis and forecasting. SounderPy is capable of retrieving and plotting model forecast data, observed radiosonde data, Aircraft Communications Addressing and Reporting System (ACARS) observation data, and model reanalysis data. All of this functionality can be completed in three simple lines of code or less, making SounderPy an accessible tool for both Python experts and novices. A number of scientific Python libraries build the base of SounderPy’s efficient and durable functionality, such as NumPy, Matplotlib, xarray, Metpy, and SHARPpy. SounderPy is available through GitHub and PyPi and is distributed under an MIT license.
 
           SounderPy has been used by several institutions. For example, this tool has been implemented by the Des Moines, Little Rock, Columbia, and Grand Rapids National Weather Service Offices, the State University of New York at Albany, Mississippi State University, the University of North Dakota, and others. Many students at various universities have used SounderPy in projects and papers, such as students at Ohio State University, Central Michigan University, Texas A&M University, & Rizal Technological University.
 
 
+      type: Label
+    - layout_properties: {grid_position: 'UGOLRD,HHMZBL'}
+      name: label_2_copy_2_copy_2_copy_copy_3_copy
+      properties: {align: left, bold: true, font: '', font_size: 18, foreground: '#FFFFFF', text: 'Publications using SounderPy: '}
+      type: Label
+    - layout_properties: {grid_position: 'VQEEIX,KAMUFY'}
+      name: label_2_copy_2_copy_3_copy
+      properties:
         align: left
         font: ''
-        foreground: '#FFFFFF'
         font_size: 16
-      type: Label
-      layout_properties: {grid_position: 'ESQLKY,NQUCCZ'}
-    - name: label_2_copy_2_copy_2_copy_copy_3_copy
-      properties: {text: 'Publications using SounderPy: ', align: left, font: '', foreground: '#FFFFFF', font_size: 18, bold: true}
-      type: Label
-      layout_properties: {grid_position: 'UGOLRD,HHMZBL'}
-    - name: label_2_copy_2_copy_3_copy
-      properties:
+        foreground: '#FFFFFF'
         text: |+
           Assessing Radiative Impacts of African Smoke Aerosols Over the Southeastern Atlantic Ocean | Logan et al. 2024
 
 
 
-        align: left
-        font: ''
-        foreground: '#FFFFFF'
-        font_size: 16
       type: Label
-      layout_properties: {grid_position: 'VQEEIX,KAMUFY'}
-    - name: link_1_copy
-      properties: {url: 'https://kylejgillett.github.io/sounderpy/', text: Check out SounderPy's Full Documentation, underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center, font: '', font_size: 16}
-      type: Link
-      layout_properties: {grid_position: 'ETQFHJ,DNXBDH'}
-      components:
-      - name: link_1
-        properties: {url: 'https://github.com/kylejgillett/sounderpy', text: Check out SounderPy's code on Github, underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center, font: '', font_size: 16}
-        type: Link
-        layout_properties: {grid_position: 'AYVXZA,AUZMYO'}
-        components:
-        - name: link_1_copy_2
-          properties: {url: 'https://kylegillettwx.wordpress.com/', text: Check out the author's website, underline: true, bold: true, foreground: 'theme:On Tertiary Container', align: center, font: '', font_size: 16}
+    - components:
+      - components:
+        - layout_properties: {grid_position: 'BDBGTL,IGUMBZ'}
+          name: link_1_copy_2
+          properties: {align: center, bold: true, font: '', font_size: 16, foreground: 'theme:On Tertiary Container', text: Check out the author's website, underline: true, url: 'https://kylegillettwx.wordpress.com/'}
           type: Link
-          layout_properties: {grid_position: 'BDBGTL,IGUMBZ'}
-    - name: spacer_1
+        layout_properties: {grid_position: 'AYVXZA,AUZMYO'}
+        name: link_1
+        properties: {align: center, bold: true, font: '', font_size: 16, foreground: 'theme:On Tertiary Container', text: Check out SounderPy's code on Github, underline: true, url: 'https://github.com/kylejgillett/sounderpy'}
+        type: Link
+      layout_properties: {grid_position: 'ETQFHJ,DNXBDH'}
+      name: link_1_copy
+      properties: {align: center, bold: true, font: '', font_size: 16, foreground: 'theme:On Tertiary Container', text: Check out SounderPy's Full Documentation, underline: true, url: 'https://kylejgillett.github.io/sounderpy/'}
+      type: Link
+    - layout_properties: {grid_position: 'RLCDRT,JZAUHU'}
+      name: spacer_1
       properties: {height: 23}
       type: Spacer
-      layout_properties: {grid_position: 'RLCDRT,JZAUHU'}
-    - name: label_2_copy_2_copy_2_copy
-      properties: {text: ABOUT THE AUTHOR, align: left, font: '', foreground: '#FFFFFF', font_size: 24, bold: true}
+    - layout_properties: {grid_position: 'KOPXJN,AENBII'}
+      name: label_2_copy_2_copy_2_copy
+      properties: {align: left, bold: true, font: '', font_size: 24, foreground: '#FFFFFF', text: ABOUT THE AUTHOR}
       type: Label
-      layout_properties: {grid_position: 'KOPXJN,AENBII'}
-    - name: label_2_copy_2_copy
+    - layout_properties: {grid_position: 'SUHQHA,CWFDNY'}
+      name: label_2_copy_2_copy
       properties:
+        align: left
+        font: ''
+        font_size: 16
+        foreground: '#FFFFFF'
         text: |-
           Hey!
 
           Thank you so much for checking out and using SounderPy. My name is Kyle Gillett and I am the developer of SounderPy and a master's student of Atmospheric Science at the University of North Dakota. This tool started out as a way for me to internally house all of my data retrieval functions for plotting soundings. As you can see, it has since blossomed into a full-scale Python package.
 
           Have an issue/comment/feedback? You can open a GitHub Issue or just shoot me a DM on Twitter! (@wxkylegillett)
-        align: left
-        font: ''
-        foreground: '#FFFFFF'
-        font_size: 16
       type: Label
-      layout_properties: {grid_position: 'SUHQHA,CWFDNY'}
-    - name: spacer_2_copy
+    - layout_properties: {grid_position: 'GUOIXW,HHRCZK'}
+      name: spacer_2_copy
       properties: {height: 70}
       type: Spacer
-      layout_properties: {grid_position: 'GUOIXW,HHRCZK'}
-    - name: label_2_copy_2_copy_2_copy_copy_2
-      properties: {text: CITING THIS PROJECT, align: left, font: '', foreground: '#FFFFFF', font_size: 24, bold: true}
+    - layout_properties: {grid_position: 'NPGDWJ,TDPQVB'}
+      name: label_2_copy_2_copy_2_copy_copy_2
+      properties: {align: left, bold: true, font: '', font_size: 24, foreground: '#FFFFFF', text: CITING THIS PROJECT}
       type: Label
-      layout_properties: {grid_position: 'NPGDWJ,TDPQVB'}
-    - name: label_2_copy_2_copy_copy
-      properties: {text: 'Gillett, K., 2024: SounderPy: Vertical Profile Data Retrieval & Analysis Tool for Python (Version 3.0.3). Py-Pi, https://pypi.org/project/sounderpy/', align: left, font: '', foreground: '#FFFFFF', font_size: 16}
+    - layout_properties: {grid_position: 'HKAAID,ENHMTI'}
+      name: label_2_copy_2_copy_copy
+      properties: {align: left, font: '', font_size: 16, foreground: '#FFFFFF', text: 'Gillett, K., 2024: SounderPy: Vertical Profile Data Retrieval & Analysis Tool for Python (Version 3.0.3). Py-Pi, https://pypi.org/project/sounderpy/'}
       type: Label
-      layout_properties: {grid_position: 'HKAAID,ENHMTI'}
-    - name: spacer_2
+    - layout_properties: {grid_position: 'ONAWHX,GERHJI'}
+      name: spacer_2
       properties: {height: 70}
       type: Spacer
-      layout_properties: {grid_position: 'ONAWHX,GERHJI'}
-    - name: label_2_copy_2_copy_2_copy_copy
-      properties: {text: REFERENCES, align: left, font: '', foreground: '#FFFFFF', font_size: 24, bold: true}
+    - layout_properties: {grid_position: 'NIMGLM,WVLOFE'}
+      name: label_2_copy_2_copy_2_copy_copy
+      properties: {align: left, bold: true, font: '', font_size: 24, foreground: '#FFFFFF', text: REFERENCES}
       type: Label
-      layout_properties: {grid_position: 'NIMGLM,WVLOFE'}
-    - name: label_1
+    - layout_properties: {grid_position: 'LLUCPI,WQUYIN'}
+      name: label_1
       properties:
+        foreground: theme:On Tertiary Container
+        italic: true
         text: |-
           <> Harris, C.R., Millman, K.J., van der Walt, S.J. et al. Array programming with NumPy. Nature 585, 357–362 (2020). DOI: 10.1038/s41586-020-2649-2.
 
@@ -138,8 +132,14 @@ components:
           <> Pauli Virtanen, Ralf Gommers, Travis E. Oliphant, Matt Haberland, Tyler Reddy, David Cournapeau, Evgeni Burovski, Pearu Peterson, Warren Weckesser, Jonathan Bright, Stéfan J. van der Walt, Matthew Brett, Joshua Wilson, K. Jarrod Millman, Nikolay Mayorov, Andrew R. J. Nelson, Eric Jones, Robert Kern, Eric Larson, CJ Carey, İlhan Polat, Yu Feng, Eric W. Moore, Jake VanderPlas, Denis Laxalde, Josef Perktold, Robert Cimrman, Ian Henriksen, E.A. Quintero, Charles R Harris, Anne M. Archibald, Antônio H. Ribeiro, Fabian Pedregosa, Paul van Mulbregt, and SciPy 1.0 Contributors. (2020) SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17(3), 261-272.
 
           <> Marsh, P., Halbert, K., Blumberg, G., Supinie, T., Esmaili, R., Szkodzinski, J., “SHARPpy: Sounding/Hodograph Analysis and Research Program in Python.” GitHub. Available at: https://github.com/sharppy/SHARPpy.
-        italic: true
-        foreground: theme:On Tertiary Container
       type: Label
-      layout_properties: {grid_position: 'LLUCPI,WQUYIN'}
+    layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
+    name: reanl_card_inside_copy
+    properties: {background: '#363636', col_widths: '{}', role: card}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'SINVBT,IRFRLE'}
+  name: reanl_card_copy
+  properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
+  type: ColumnPanel
+container: {type: ColumnPanel}
 is_package: true

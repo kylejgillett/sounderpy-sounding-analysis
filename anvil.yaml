@@ -1,18 +1,18 @@
+allow_embedding: false
+metadata: {description: 'A simple tool that plots SounderPy soundings right in your browser. ', logo_img: 'asset:GDSrWo0XkAAGWX5(1)-logo.png', title: SounderPy Sounding Analysis}
+name: SounderPy Sounding Analysis
+native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
+package_name: SounderPy_Sounding_Analysis
+runtime_options:
+  client_version: '3'
+  server_spec: {base: python310-datascience}
+  server_version: python3-sandbox
+  version: 2
 scheduled_tasks: []
 services:
-- source: /runtime/services/tables.yml
-  client_config: {}
+- client_config: {}
   server_config: {}
-startup: {type: form, module: HOME}
-package_name: SounderPy_Sounding_Analysis
-allow_embedding: false
-name: SounderPy Sounding Analysis
-runtime_options:
-  version: 2
-  client_version: '3'
-  server_version: python3-sandbox
-  server_spec: {base: python310-datascience}
-metadata: {title: SounderPy Sounding Analysis, logo_img: 'asset:GDSrWo0XkAAGWX5(1)-logo.png', description: 'A simple tool that plots SounderPy soundings right in your browser. '}
+  source: /runtime/services/tables.yml
+startup: {module: HOME, type: form}
 startup_form: null
-native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
 uplink_visible: true
