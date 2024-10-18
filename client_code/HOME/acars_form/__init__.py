@@ -42,12 +42,12 @@ class acars_form(acars_formTemplate):
       keys = ["T", "Td", "ws", "wd"]
       
       for val, key in zip(vals, keys):
-        if len(val.text) > 0:
-          modify_sfc[key] = val.text
+        if len(val) > 0:
+          modify_sfc[key] = float(val)
     
       return modify_sfc 
 
-    surface_mod_vals = check_for_vals(self.acars_temp, self.acars_dewp, self.acars_wspeed, self.acars_wdir)
+    surface_mod_vals = check_for_vals(self.acars_temp.text, self.acars_dewp.text, self.acars_wspeed.text, self.acars_wdir.text)
 
     if len(surface_mod_vals) > 0:
       modify_sfc = surface_mod_vals 

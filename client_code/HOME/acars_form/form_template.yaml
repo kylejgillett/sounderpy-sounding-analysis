@@ -173,11 +173,6 @@ components:
         properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Add ECAPE parcel path (slower)}
         type: CheckBox
       - event_bindings: {change: check_box_1_change}
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI NNNRIL,RSMHGJ'}
-        name: acars_simple_check
-        properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Plot simple sounding (faster)}
-        type: CheckBox
-      - event_bindings: {change: check_box_1_change}
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IUSILP,UYOWIG'}
         name: acars_hodo_check
         properties: {align: left, allow_indeterminate: false, background: '', border: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Plot hodograph only}
@@ -219,7 +214,7 @@ components:
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
           name: acars_dewp
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C}
+          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C, type: text}
           type: TextBox
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,OSQXFI'}

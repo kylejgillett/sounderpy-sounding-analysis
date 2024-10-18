@@ -19,11 +19,6 @@ class bufkit_form(bufkit_formTemplate):
       storm_motion = [int(self.bufkit_direction.text), int(self.bufkit_speed.text)]
     else:
       storm_motion = self.bufkit_sm.selected_value
-    
-    if self.bufkit_simple_check.checked:
-      style = 'simple'
-    else:
-      style = 'full'
 
     if len(self.bufkit_temp.text) > 0:
       modify_sfc = [self.bufkit_temp.text, self.bufkit_dewp.text]

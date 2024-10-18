@@ -18,14 +18,23 @@ class raob_form(raob_formTemplate):
       storm_motion = [int(self.raob_direction.text), int(self.raob_speed.text)]
     else:
       storm_motion = self.raob_sm.selected_value
-    
-    if self.raob_simple_check.checked:
-      style = 'simple'
-    else:
-      style = 'full'
+  
 
-    if len(self.raob_temp.text) > 0:
-      modify_sfc = [self.raob_temp.text, self.raob_dewp.text]
+    def check_for_vals(T_val, Td_val, ws_val, wd_val):
+      modify_sfc = {}
+      vals = [T_val, Td_val, ws_val, wd_val]
+      keys = ["T", "Td", "ws", "wd"]
+      
+      for val, key in zip(vals, keys):
+        if len(val) > 0:
+          modify_sfc[key] = float(val)
+    
+      return modify_sfc 
+
+    surface_mod_vals = check_for_vals(self.raob_temp.text, self.raob_dewp.text, self.raob_wspeed.text, self.raob_wdir.text)
+
+    if len(surface_mod_vals) > 0:
+      modify_sfc = surface_mod_vals 
     else:
       modify_sfc = False
 

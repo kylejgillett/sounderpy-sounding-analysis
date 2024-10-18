@@ -117,24 +117,34 @@ components:
         type: ColumnPanel
       - components:
         - layout_properties: {grid_position: 'BABWWC,DLGWRU'}
-          name: reanl_modifysfc_laybel
-          properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Modify surface temperature and dewpoint (in °C)}
+          name: acars_modifysfc_laybel
+          properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: 'Modify surface temperature, dewpoint, wind speed & direction'}
           type: Label
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
-          name: reanl_temp
+          name: raob_temp
           properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: T°C, type: text}
           type: TextBox
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
-          name: reanl_dewp
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C}
+          name: raob_dewp
+          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C, type: text}
           type: TextBox
-        layout_properties: {grid_position: 'MLSBOI,KQDDVB ZCMUUH,QLOTWS'}
-        name: acars_sm_card_copy_2
+        - event_bindings: {pressed_enter: station_id_pressed_enter}
+          layout_properties: {grid_position: 'EDWMJL,OSQXFI'}
+          name: raob_wspeed
+          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: ws (kts), type: text}
+          type: TextBox
+        - event_bindings: {pressed_enter: station_id_pressed_enter}
+          layout_properties: {grid_position: 'EDWMJL,ITESWM'}
+          name: raob_wdir
+          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: wd (deg), type: text}
+          type: TextBox
+        layout_properties: {grid_position: 'MLSBOI,KQDDVB RBWWXH,PRCUHT'}
+        name: raob_sfcmod_card
         properties: {background: '#363636', role: card}
         type: ColumnPanel
-      layout_properties: {grid_position: 'EJPJHL,LEQMKV'}
+      layout_properties: {grid_position: 'LRVOLT,ZICKWD'}
       name: reanl_options_card
       properties: {background: '#363636', role: card}
       type: ColumnPanel

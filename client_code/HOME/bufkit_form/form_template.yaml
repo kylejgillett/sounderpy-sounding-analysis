@@ -150,27 +150,37 @@ components:
           name: bufkit_speed
           properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'speed: (ex: 45) in knots'}
           type: TextBox
+        - components:
+          - layout_properties: {grid_position: 'BABWWC,DLGWRU'}
+            name: acars_modifysfc_laybel
+            properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: 'Modify surface temperature, dewpoint, wind speed & direction'}
+            type: Label
+          - event_bindings: {pressed_enter: station_id_pressed_enter}
+            layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
+            name: bufkit_temp
+            properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: T°C, type: text}
+            type: TextBox
+          - event_bindings: {pressed_enter: station_id_pressed_enter}
+            layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
+            name: bufkit_dewp
+            properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C, type: text}
+            type: TextBox
+          - event_bindings: {pressed_enter: station_id_pressed_enter}
+            layout_properties: {grid_position: 'EDWMJL,OSQXFI'}
+            name: bufkit_wspeed
+            properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: ws (kts), type: text}
+            type: TextBox
+          - event_bindings: {pressed_enter: station_id_pressed_enter}
+            layout_properties: {grid_position: 'EDWMJL,ITESWM'}
+            name: bufkit_wdir
+            properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: wd (deg), type: text}
+            type: TextBox
+          layout_properties: {grid_position: 'LAVTQJ,XFCTNN'}
+          name: bufkit_sfcmod_card
+          properties: {background: '#363636', role: card}
+          type: ColumnPanel
         layout_properties: {grid_position: 'MLSBOI,KQDDVB IVQPRM,UKANZH'}
         name: acars_sm_card
-        properties: {background: '#363636', role: card}
-        type: ColumnPanel
-      - components:
-        - layout_properties: {grid_position: 'BABWWC,DLGWRU'}
-          name: bufkit_modifysfc_laybel
-          properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Modify surface temperature and dewpoint (in °C)}
-          type: Label
-        - event_bindings: {pressed_enter: station_id_pressed_enter}
-          layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
-          name: bufkit_temp
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: T°C, type: text}
-          type: TextBox
-        - event_bindings: {pressed_enter: station_id_pressed_enter}
-          layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
-          name: bufkit_dewp
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C}
-          type: TextBox
-        layout_properties: {grid_position: 'MLSBOI,KQDDVB LSQOHN,UWVUST'}
-        name: acars_sm_card_copy_2
         properties: {background: '#363636', role: card}
         type: ColumnPanel
       layout_properties: {grid_position: 'XLBXVM,LTDGWH'}
