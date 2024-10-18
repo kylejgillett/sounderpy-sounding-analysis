@@ -37,7 +37,7 @@ class reanl_form(reanl_formTemplate):
     
       return modify_sfc 
 
-    surface_mod_vals = check_for_vals(self.bufkit_temp.text, self.bufkit_dewp.text, self.bufkit_wspeed.text, self.bufkit_wdir.text)
+    surface_mod_vals = check_for_vals(self.reanl_temp.text, self.reanl_dewp.text, self.reanl_wspeed.text, self.reanl_wdir.text)
 
     if len(surface_mod_vals) > 0:
       modify_sfc = surface_mod_vals 
