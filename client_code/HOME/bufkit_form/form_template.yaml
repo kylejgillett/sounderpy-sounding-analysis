@@ -121,11 +121,6 @@ components:
         properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Add ECAPE parcel path (slower)}
         type: CheckBox
       - event_bindings: {change: check_box_1_change}
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI EJUYNZ,TABIZX'}
-        name: bufkit_simple_check
-        properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Plot Simple Sounding (faster)}
-        type: CheckBox
-      - event_bindings: {change: check_box_1_change}
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IUSILP,UYOWIG'}
         name: bufkit_hodo_check
         properties: {align: left, allow_indeterminate: false, background: '', border: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Plot hodograph only}
@@ -179,7 +174,7 @@ components:
           name: bufkit_sfcmod_card
           properties: {background: '#363636', role: card}
           type: ColumnPanel
-        layout_properties: {grid_position: 'MLSBOI,KQDDVB IVQPRM,UKANZH'}
+        layout_properties: {grid_position: 'MLSBOI,KQDDVB'}
         name: acars_sm_card
         properties: {background: '#363636', role: card}
         type: ColumnPanel

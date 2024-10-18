@@ -82,11 +82,6 @@ components:
         properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Add ECAPE parcel path (slower)}
         type: CheckBox
       - event_bindings: {change: check_box_1_change}
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI HBPLCX,XPZVGB'}
-        name: reanl_simple_check
-        properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Plot Simple Sounding (faster)}
-        type: CheckBox
-      - event_bindings: {change: check_box_1_change}
         layout_properties: {grid_position: 'MLSBOI,ZYMWEI IUSILP,UYOWIG'}
         name: reanl_hodo_check
         properties: {align: left, allow_indeterminate: false, background: '', border: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Plot hodograph only}
@@ -112,7 +107,7 @@ components:
           properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'speed: (ex: 45) in knots'}
           type: TextBox
         layout_properties: {grid_position: 'MLSBOI,KQDDVB XEDDPT,VMXZAW'}
-        name: acars_sm_card
+        name: reanl_sm_card
         properties: {background: '#363636', role: card}
         type: ColumnPanel
       - components:
@@ -122,26 +117,26 @@ components:
           type: Label
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
-          name: raob_temp
+          name: reanl_temp
           properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: T°C, type: text}
           type: TextBox
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
-          name: raob_dewp
+          name: reanl_dewp
           properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C, type: text}
           type: TextBox
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,OSQXFI'}
-          name: raob_wspeed
+          name: reanl_wspeed
           properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: ws (kts), type: text}
           type: TextBox
         - event_bindings: {pressed_enter: station_id_pressed_enter}
           layout_properties: {grid_position: 'EDWMJL,ITESWM'}
-          name: raob_wdir
+          name: reanl_wdir
           properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: wd (deg), type: text}
           type: TextBox
         layout_properties: {grid_position: 'MLSBOI,KQDDVB RBWWXH,PRCUHT'}
-        name: raob_sfcmod_card
+        name: ranl_sfcmod_card
         properties: {background: '#363636', role: card}
         type: ColumnPanel
       layout_properties: {grid_position: 'LRVOLT,ZICKWD'}

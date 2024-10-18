@@ -18,10 +18,6 @@ class reanl_form(reanl_formTemplate):
     else:
       storm_motion = self.reanl_sm.selected_value
     
-    if self.reanl_simple_check.checked:
-      style = 'simple'
-    else:
-      style = 'full'
 
     
     if self.reanl_ecape_check.checked:
@@ -30,8 +26,21 @@ class reanl_form(reanl_formTemplate):
       special_parcels = 'simple'
 
     
-    if len(self.reanl_temp.text) > 0:
-      modify_sfc = [self.reanl_temp.text, self.reanl_dewp.text]
+    def check_for_vals(T_val, Td_val, ws_val, wd_val):
+      modify_sfc = {}
+      vals = [T_val, Td_val, ws_val, wd_val]
+      keys = ["T", "Td", "ws", "wd"]
+      
+      for val, key in zip(vals, keys):
+        if len(val) > 0:
+          modify_sfc[key] = float(val)
+    
+      return modify_sfc 
+
+    surface_mod_vals = check_for_vals(self.bufkit_temp.text, self.bufkit_dewp.text, self.bufkit_wspeed.text, self.bufkit_wdir.text)
+
+    if len(surface_mod_vals) > 0:
+      modify_sfc = surface_mod_vals 
     else:
       modify_sfc = False
 
