@@ -49,7 +49,6 @@ class reanl_form(reanl_formTemplate):
                                 self.reanl_color_blind_check.checked,
                                 self.reanl_dark_mode_check.checked,
                                 self.reanl_hodo_check.checked,
-                                style,
                                 storm_motion,
                                 modify_sfc,
                                 special_parcels, 

@@ -47,7 +47,6 @@ class raob_form(raob_formTemplate):
                               self.raob_color_blind_check.checked,
                               self.raob_dark_mode_check.checked,
                               self.raob_hodo_check.checked,
-                              style,
                               storm_motion,
                               modify_sfc,
                               special_parcels, 

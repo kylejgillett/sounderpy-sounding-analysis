@@ -47,7 +47,12 @@ class acars_form(acars_formTemplate):
     
       return modify_sfc 
 
-    modify_sfc = check_for_vals(self.acars.temp, self.acars.dewt, self.acars.wspeed, self.acars.wdir)
+    surface_mod_vals = check_for_vals(self.acars_temp, self.acars_dewp, self.acars_wspeed, self.acars_wdir)
+
+    if len(surface_mod_vals) > 0:
+      modify_sfc = surface_mod_vals 
+    else:
+      modify_sfc = False
 
 
     if self.acars_ecape_check.checked:
