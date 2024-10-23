@@ -93,7 +93,7 @@ components:
         type: Label
       - layout_properties: {grid_position: 'WEPRWE,DNGELK YKKHDO,KBDTZR'}
         name: bufkit_fhour
-        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'Forecast Hour (ex: 2, 4, 6, 8)', type: text}
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'Forecast Hours (ex: 2, 4, 6, 8)', type: text}
         type: TextBox
       layout_properties: {grid_position: 'WROOTP,GTUJTL'}
       name: acars_sm_card_copy
