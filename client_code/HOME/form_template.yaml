@@ -51,7 +51,7 @@ components:
           foreground: '#FFFFFF'
           spacing_above: small
           spacing_below: small
-          text: "Welcome to the SounderPy Sounding Analysis web app! \n\nThis is a simple tool that plots SounderPy soundings right in your browser. Below you can plot can plot RAOB observations, ACARS observations, latest model forecasts, and RAP-RUC model reanalyses! \n\n(C) Kyle J Gillett 2024 | @wxkylegillett"
+          text: "Welcome to the SounderPy Sounding Analysis web app! \n\nThis is a simple tool that plots SounderPy soundings right in your browser. Below you can plot RAOB observations, ACARS observations, latest model forecasts, and RAP-RUC model reanalysis! \n\n(C) Kyle J Gillett 2024 | @wxkylegillett"
         type: Label
       layout_properties: {grid_position: 'HPAUYQ,JVXBXC'}
       name: card_3
@@ -222,7 +222,7 @@ components:
         font: ''
         foreground: '#FFFFFF'
         text: |
-          Powered by SounderPy v3.0.4, 2024 | (C) Kyle J Gillett 2024
+          Powered by SounderPy v3.0.5, 2024 | (C) Kyle J Gillett 2024
       type: Label
     - data_bindings:
       - {code: 'self.item[''raob_tab'']', property: tag, writeback: false}
