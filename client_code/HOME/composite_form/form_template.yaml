@@ -3,72 +3,35 @@ components:
   - components:
     - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
       name: bufkit_header
-      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: COMPOSITE SOUNDING BUILDER}
+      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: FORECAST COMPOSITE SOUNDING BUILDER}
       type: Label
     - components:
-      - data_bindings:
-        - {code: 'self.item[''raob_tab'']', property: tag, writeback: false}
-        event_bindings: {click: raob_tab_click}
-        layout_properties: {grid_position: 'WPVUSG,SCQZXG QZJPZE,LDGLVS'}
-        name: bufkit_fcsthrs_button
+      - event_bindings: {click: bufkit_tab_click}
+        layout_properties: {grid_position: 'ZAUPKC,ENKAOB'}
+        name: fcst_hrs_button
         properties:
           background: '#363636'
-          text: |-
-            MODEL FORECAST
-             HOURS FOR A GIVEN RUN
+          text: |
+            forecast hours for a single location
+          visible: true
         type: Button
-      - data_bindings:
-        - {code: 'self.item[''raob_tab'']', property: tag, writeback: false}
-        event_bindings: {click: raob_tab_click}
-        layout_properties: {grid_position: 'WPVUSG,SCQZXG QZCHGK,UPUJYD'}
-        name: singlesiteraob_button
+      - event_bindings: {click: reanl_tab_click}
+        layout_properties: {grid_position: 'ZAUPKC,DEMRZR'}
+        name: model_runs_button
+        properties: {background: '#363636', text: model runs for a single location}
+        type: Button
+      - event_bindings: {click: about_tab_click}
+        layout_properties: {grid_position: 'ZAUPKC,MJVRYS'}
+        name: locations_button
         properties:
           background: '#363636'
-          text: "RAOB OBSERVATIONS \nFOR A SINGLE SITE"
+          text: |
+            multiple locations for a single forecast hour
         type: Button
-      - data_bindings:
-        - {code: 'self.item[''raob_tab'']', property: tag, writeback: false}
-        event_bindings: {click: raob_tab_click}
-        layout_properties: {grid_position: 'WPVUSG,HIXVVH AOXBUE,NGQTZR'}
-        name: raob_tab_button_copy_copy
-        properties:
-          background: '#363636'
-          text: "MODEL FORECAST \nFOR MULTIPLE SITES"
-        type: Button
-      - data_bindings:
-        - {code: 'self.item[''raob_tab'']', property: tag, writeback: false}
-        event_bindings: {click: raob_tab_click}
-        layout_properties: {grid_position: 'WPVUSG,HIXVVH VTAPAP,TEBEGZ'}
-        name: raob_tab_button_copy_2
-        properties:
-          background: '#363636'
-          text: |-
-            RAOB OBSERVATIONS
-            FOR MULTIPLE SITES
-        type: Button
-      - data_bindings:
-        - {code: 'self.item[''raob_tab'']', property: tag, writeback: false}
-        event_bindings: {click: raob_tab_click}
-        layout_properties: {grid_position: 'WPVUSG,MOKNTC YCTFSR,TWFBCF'}
-        name: raob_tab_button_copy
-        properties:
-          background: '#363636'
-          text: "MODEL FORECAST \nRUNS FOR A GIVEN HOUR"
-        type: Button
-      - data_bindings:
-        - {code: 'self.item[''raob_tab'']', property: tag, writeback: false}
-        event_bindings: {click: raob_tab_click}
-        layout_properties: {grid_position: 'WPVUSG,MOKNTC SWEGGK,SSQRGK'}
-        name: raob_tab_button_copy_2_copy_2
-        properties:
-          background: '#363636'
-          text: |-
-            ACARS OBSERVATIONS
-            FOR A GIVEN AIRPORT
-        type: Button
-      layout_properties: {grid_position: 'YNPFVG,KVNIUM'}
-      name: card_1
-      properties: {background: '#0fabff', foreground: '', role: card}
+      data_bindings: []
+      layout_properties: {grid_position: 'TMZRPM,OPITPB'}
+      name: card_4
+      properties: {background: '#44a2ff', role: card, visible: true, wrap_on: mobile}
       type: ColumnPanel
     - components: []
       layout_properties: {grid_position: 'COOFQV,MPJUYU'}
@@ -82,6 +45,10 @@ components:
   layout_properties: {grid_position: 'RVMUIU,CZNCUG'}
   name: bufkit_card
   properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
+  type: ColumnPanel
+- layout_properties: {grid_position: 'HUFCML,QSWFZK'}
+  name: tab_panel_copy
+  properties: {background: '', border: '', col_spacing: medium, col_widths: '', foreground: '', role: null, spacing_above: none, spacing_below: small, tooltip: '', visible: true, wrap_on: mobile}
   type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true

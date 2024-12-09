@@ -230,7 +230,7 @@ components:
         font: ''
         foreground: '#FFFFFF'
         text: |
-          Powered by SounderPy v3.0.5, 2024 | (C) Kyle J Gillett 2024
+          Powered by SounderPy v3.0.6, 2024 | (C) Kyle J Gillett 2024
       type: Label
     - data_bindings:
       - {code: 'self.item[''raob_tab'']', property: tag, writeback: false}
