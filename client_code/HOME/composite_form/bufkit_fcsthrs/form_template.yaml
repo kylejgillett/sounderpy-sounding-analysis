@@ -1,12 +1,63 @@
 components:
 - components:
+  - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+    name: bufkit_header
+    properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: MODEL FORECAST HOURS FOR A GIVEN RUN}
+    type: Label
+  - layout_properties: {grid_position: 'XMGFRJ,KVKLTZ'}
+    name: bufkit_fhour_label_copy
+    properties:
+      align: center
+      bold: true
+      font_size: 14
+      foreground: '#FFFF'
+      icon: ''
+      text: |
+        LATEST MODEL RUNS:
+    type: Label
+  - layout_properties: {grid_position: 'ITEVKZ,OTJZQB'}
+    name: latest_runs_txt
+    properties: {align: center, bold: true, foreground: '#FFFF00'}
+    type: Label
+  - layout_properties: {grid_position: 'GXNKET,NQIIZC WOWKGK,LKNFYM'}
+    name: bufkit_site_id_label
+    properties:
+      align: center
+      bold: true
+      font_size: 17
+      foreground: '#FFFFFF'
+      icon: fa:map-marker
+      text: |
+        BUFKIT SITE ID
+    type: Label
+  - event_bindings: {pressed_enter: station_id_pressed_enter}
+    layout_properties: {grid_position: 'GXNKET,NQIIZC PMNPAX,CTYJTK'}
+    name: bufkit_site_id
+    properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 3 or 4 digit BUFKIT site ID (see map below)}
+    type: TextBox
+  - layout_properties: {grid_position: 'GXNKET,BIKCZV SQMGGS,EQHHBN'}
+    name: bufkit_model_label
+    properties: {align: center, bold: true, font_size: 17, foreground: '#FFFFFF', icon: 'fa:database', text: MODEL}
+    type: Label
+  - event_bindings: {pressed_enter: station_id_pressed_enter}
+    layout_properties: {grid_position: 'GXNKET,BIKCZV JRECFL,OXQKYP'}
+    name: bufkit_model
+    properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'HRRR, RAP, NAM, GFS, SREF, HIRESW'}
+    type: TextBox
+  - layout_properties: {grid_position: 'CTEUJJ,RLTPLD'}
+    name: bufkit_fhour_label
+    properties:
+      align: center
+      bold: true
+      font_size: 17
+      foreground: '#FFFF'
+      icon: fa:clock-o
+      text: |
+        MODEL RUN DATE/HOUR & FORECAST HOUR
+    type: Label
   - components:
-    - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
-      name: bufkit_header
-      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: MODEL FORECAST HOURS FOR A GIVEN RUN}
-      type: Label
-    - layout_properties: {grid_position: 'XMGFRJ,KVKLTZ'}
-      name: bufkit_fhour_label_copy
+    - layout_properties: {grid_position: 'WEPRWE,PCRVQM YCIHOJ,QFPZAY'}
+      name: bufkit_fhour_label_copy_copy
       properties:
         align: center
         bold: true
@@ -14,126 +65,70 @@ components:
         foreground: '#FFFF'
         icon: ''
         text: |
-          LATEST MODEL RUNS:
+          MODEL RUN DATE (UTC)
       type: Label
-    - layout_properties: {grid_position: 'ITEVKZ,OTJZQB'}
-      name: latest_runs_txt
-      properties: {align: center, bold: true, foreground: '#FFFF00'}
-      type: Label
-    - layout_properties: {grid_position: 'GXNKET,NQIIZC WOWKGK,LKNFYM'}
-      name: bufkit_site_id_label
+    - layout_properties: {grid_position: 'WEPRWE,PCRVQM KRMJHW,LRYGMU'}
+      name: bufkit_run_date
+      properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', italic: true, pick_time: true, placeholder: leave blank for latest, visible: true}
+      type: DatePicker
+    - layout_properties: {grid_position: 'WEPRWE,ZOZXRN EAAAKE,QJDSKS'}
+      name: bufkit_fhour_label_copy_copy_copy
       properties:
         align: center
         bold: true
-        font_size: 17
-        foreground: '#FFFFFF'
-        icon: fa:map-marker
-        text: |
-          BUFKIT SITE ID
-      type: Label
-    - event_bindings: {pressed_enter: station_id_pressed_enter}
-      layout_properties: {grid_position: 'GXNKET,NQIIZC PMNPAX,CTYJTK'}
-      name: bufkit_site_id
-      properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 3 or 4 digit BUFKIT site ID (see map below)}
-      type: TextBox
-    - layout_properties: {grid_position: 'GXNKET,BIKCZV SQMGGS,EQHHBN'}
-      name: bufkit_model_label
-      properties: {align: center, bold: true, font_size: 17, foreground: '#FFFFFF', icon: 'fa:database', text: MODEL}
-      type: Label
-    - event_bindings: {pressed_enter: station_id_pressed_enter}
-      layout_properties: {grid_position: 'GXNKET,BIKCZV JRECFL,OXQKYP'}
-      name: bufkit_model
-      properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'HRRR, RAP, NAM, GFS, SREF, HIRESW'}
-      type: TextBox
-    - layout_properties: {grid_position: 'CTEUJJ,RLTPLD'}
-      name: bufkit_fhour_label
-      properties:
-        align: center
-        bold: true
-        font_size: 17
+        font_size: 14
         foreground: '#FFFF'
-        icon: fa:clock-o
+        icon: ''
         text: |
-          MODEL RUN DATE/HOUR & FORECAST HOUR
+          MODEL RUN HOUR (UTC)
       type: Label
-    - components:
-      - layout_properties: {grid_position: 'WEPRWE,PCRVQM YCIHOJ,QFPZAY'}
-        name: bufkit_fhour_label_copy_copy
-        properties:
-          align: center
-          bold: true
-          font_size: 14
-          foreground: '#FFFF'
-          icon: ''
-          text: |
-            MODEL RUN DATE (UTC)
-        type: Label
-      - layout_properties: {grid_position: 'WEPRWE,PCRVQM KRMJHW,LRYGMU'}
-        name: bufkit_run_date
-        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', italic: true, pick_time: true, placeholder: leave blank for latest, visible: true}
-        type: DatePicker
-      - layout_properties: {grid_position: 'WEPRWE,ZOZXRN EAAAKE,QJDSKS'}
-        name: bufkit_fhour_label_copy_copy_copy
-        properties:
-          align: center
-          bold: true
-          font_size: 14
-          foreground: '#FFFF'
-          icon: ''
-          text: |
-            MODEL RUN HOUR (UTC)
-        type: Label
-      - layout_properties: {grid_position: 'WEPRWE,ZOZXRN XVFART,FXQAZB'}
-        name: bufkit_run_hour
-        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: leave blank for latest, type: text}
-        type: TextBox
-      - layout_properties: {grid_position: 'WEPRWE,DNGELK SZBOYI,BJAATP'}
-        name: bufkit_fhour_label_copy_copy_copy_copy
-        properties: {align: center, bold: true, font_size: 14, foreground: '#FFFF', icon: '', text: MODEL FORECAST HOURS}
-        type: Label
-      - layout_properties: {grid_position: 'WEPRWE,DNGELK YKKHDO,KBDTZR'}
-        name: bufkit_fhour
-        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'Forecast Hours (ex: 2, 4, 6, 8)', type: text}
-        type: TextBox
-      layout_properties: {grid_position: 'WROOTP,GTUJTL'}
-      name: acars_sm_card_copy
-      properties: {background: '#363636', role: card}
-      type: ColumnPanel
-    - event_bindings: {click: bufkit_button_click}
-      layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
-      name: bufkit_button
-      properties:
-        align: center
-        background: '#44a2ff'
-        bold: true
-        border: ''
-        font: ''
-        font_size: 20
-        foreground: '#fbff00'
-        role: filled
-        text: |
-          GET SOUNDING
-      type: Button
-    - event_bindings: {show: raob_plot_label_copy_show}
-      layout_properties: {grid_position: 'KXBBLA,MDFJSA'}
-      name: bufkit_standby_label
-      properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#FFFFFF', italic: true}
+    - layout_properties: {grid_position: 'WEPRWE,ZOZXRN XVFART,FXQAZB'}
+      name: bufkit_run_hour
+      properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: leave blank for latest, type: text}
+      type: TextBox
+    - layout_properties: {grid_position: 'WEPRWE,DNGELK SZBOYI,BJAATP'}
+      name: bufkit_fhour_label_copy_copy_copy_copy
+      properties: {align: center, bold: true, font_size: 14, foreground: '#FFFF', icon: '', text: MODEL FORECAST HOURS}
       type: Label
-    - layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
-      name: bufkit_plot_label
-      properties: {align: center, background: '', bold: true, font_size: 18, foreground: '#fbff00'}
-      type: Label
-    - layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
-      name: bufkit_image_display
-      properties: {display_mode: original_size}
-      type: Image
-    layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
-    name: card_1_copy_copy_copy
-    properties: {background: '#363636', col_widths: '{}', role: card, visible: true}
+    - layout_properties: {grid_position: 'WEPRWE,DNGELK YKKHDO,KBDTZR'}
+      name: bufkit_fhour
+      properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'Forecast Hours (ex: 2, 4, 6, 8)', type: text}
+      type: TextBox
+    layout_properties: {grid_position: 'WROOTP,GTUJTL'}
+    name: acars_sm_card_copy
+    properties: {background: '#363636', role: card}
     type: ColumnPanel
-  layout_properties: {grid_position: 'OGLZRD,RZMGPK'}
-  name: bufkit_card
-  properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
+  - event_bindings: {click: bufkit_button_click}
+    layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
+    name: bufkit_button
+    properties:
+      align: center
+      background: '#44a2ff'
+      bold: true
+      border: ''
+      font: ''
+      font_size: 20
+      foreground: '#fbff00'
+      role: filled
+      text: |
+        GET SOUNDING
+    type: Button
+  - event_bindings: {show: raob_plot_label_copy_show}
+    layout_properties: {grid_position: 'KXBBLA,MDFJSA'}
+    name: bufkit_standby_label
+    properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#FFFFFF', italic: true}
+    type: Label
+  - layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
+    name: bufkit_plot_label
+    properties: {align: center, background: '', bold: true, font_size: 18, foreground: '#fbff00'}
+    type: Label
+  - layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+    name: bufkit_image_display
+    properties: {display_mode: original_size}
+    type: Image
+  layout_properties: {grid_position: 'TDWOJX,DRGKBA'}
+  name: card_1_copy_copy_copy
+  properties: {background: '#1f1f1f', col_widths: '{}', role: card, visible: true}
   type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true

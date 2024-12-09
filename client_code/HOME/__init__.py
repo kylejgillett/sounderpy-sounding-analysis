@@ -7,7 +7,7 @@ from acars_form import acars_form
 from bufkit_form import bufkit_form
 from reanl_form import reanl_form
 from about_form import about_form
-from test_form import test_form
+from composite_form import composite_form
 
 class HOME(HOMETemplate):
   def __init__(self, **properties):
@@ -47,5 +47,5 @@ class HOME(HOMETemplate):
   def test_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
-    self.tab_panel.add_component(test_form())
+    self.tab_panel.add_component(composite_form())
     pass

@@ -16,5 +16,5 @@ class Form1(Form1Template):
   def fcst_hours_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
-    self.tab_panel.add_component(raob_form())
+    self.tab_panel.add_component(bufkit_fcsthrs())
     pass
