@@ -54,7 +54,7 @@ components:
         text: |+
           Assessing Radiative Impacts of African Smoke Aerosols Over the Southeastern Atlantic Ocean | Logan et al. 2024
 
-
+          Occurrence of Rare Lightning Events During Hurricane Nicholas (2021) | Logan et al. 2024
 
       type: Label
     - components:
@@ -103,7 +103,7 @@ components:
       type: Label
     - layout_properties: {grid_position: 'HKAAID,ENHMTI'}
       name: label_2_copy_2_copy_copy
-      properties: {align: left, font: '', font_size: 16, foreground: '#FFFFFF', text: 'Gillett, K., 2024: SounderPy: Vertical Profile Data Retrieval & Analysis Tool for Python (Version 3.0.3). Py-Pi, https://pypi.org/project/sounderpy/'}
+      properties: {align: left, font: '', font_size: 16, foreground: '#FFFFFF', text: 'Gillett, K., 2025: SounderPy: Vertical Profile Data Retrieval & Analysis Tool for Python (Version 3.0.7). Py-Pi, https://pypi.org/project/sounderpy/'}
       type: Label
     - layout_properties: {grid_position: 'ONAWHX,GERHJI'}
       name: spacer_2
