@@ -219,6 +219,11 @@ components:
   name: bufkit_card
   properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
   type: ColumnPanel
+- layout_properties: {grid_position: 'OLYMFJ,HQWHEJ'}
+  name: map_1
+  properties:
+    margin: ['0', null, '0', null]
+  type: GoogleMap
 - layout_properties: {grid_position: 'PXTGGA,QEMIPL'}
   name: spacer_1
   properties: {height: 155}
