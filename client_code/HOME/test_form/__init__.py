@@ -1,11 +1,16 @@
 from ._anvil_designer import test_formTemplate
 from anvil import *
 import anvil.server
-from anvil import GoogleMap
-from anvil.js import import_from
 
-
-MarkerClusterer = import_from("https://cdn.skypack.dev/@googlemaps/markerclusterer").MarkerClusterer
+class test_form(test_formTemplate):
+    def __init__(self, **properties):
+        self.init_components(**properties)
+        
+        # Map HTML code hosted on GitHub
+        map_html_url = "https://raw.githubusercontent.com/kylejgillett/sounderpy/refs/heads/main/docs/raob_map.html"
+      
+        # Fetch the map HTML and set it as the source of the HTML component
+        self.html_1.source = f'<iframe src="{map_html_url}" width="100%" height="600px"></iframe>'
 
 
 # class test_form(test_formTemplate):

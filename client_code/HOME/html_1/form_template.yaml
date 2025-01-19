@@ -1,0 +1,6 @@
+components: []
+container:
+  properties: {html: ''}
+  type: HtmlTemplate
+custom_component: true
+is_package: true
