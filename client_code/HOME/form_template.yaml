@@ -121,7 +121,7 @@ components:
     data_bindings: []
     layout_properties: {grid_position: 'SCHABZ,GUSNNT'}
     name: card_4
-    properties: {background: '#44a2ff', role: card, visible: false, wrap_on: mobile}
+    properties: {background: '#44a2ff', role: card, visible: true, wrap_on: mobile}
     type: ColumnPanel
   - layout_properties: {grid_position: 'UZNNJF,QNSKTC'}
     name: tab_panel
@@ -139,7 +139,7 @@ components:
     font_size: 27
     text: |
       THIS SITE IS CURRENTLY DOWN FOR *BRIEF* MAINTENANCE AND WILL RETURN SHORTLY
-    visible: true
+    visible: false
   type: Label
 - layout_properties: {grid_position: 'RCHCIE,AAARTR'}
   name: spacer_2_copy_copy
