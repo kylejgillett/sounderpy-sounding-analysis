@@ -2,7 +2,22 @@ allow_embedding: false
 db_schema:
   bufkit_markers:
     client: none
-    columns: []
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: LAT
+      type: number
+    - admin_ui: {order: 1, width: 200}
+      name: LON
+      type: number
+    - admin_ui: {order: 2, width: 200}
+      name: ID
+      type: string
+    - admin_ui: {order: 3, width: 200}
+      name: NAME
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: LOC
+      type: string
     server: full
     title: bufkit_markers
   table_2:
