@@ -1,5 +1,10 @@
 from ._anvil_designer import HOMETemplate
 from anvil import *
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+import anvil.google.auth, anvil.google.drive
+from anvil.google.drive import app_files
 import anvil.server
 
 from raob_form import raob_form
@@ -8,6 +13,7 @@ from bufkit_form import bufkit_form
 from reanl_form import reanl_form
 from about_form import about_form
 from composite_form import composite_form
+from test_form import test_form
 
 class HOME(HOMETemplate):
   def __init__(self, **properties):
@@ -47,5 +53,5 @@ class HOME(HOMETemplate):
   def test_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
-    self.tab_panel.add_component(composite_form())
+    self.tab_panel.add_component(test_form())
     pass
