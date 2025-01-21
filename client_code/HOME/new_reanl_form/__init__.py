@@ -59,7 +59,8 @@ class new_reanl_form(new_reanl_formTemplate):
 
     params = anvil.server.call(
       "get_reanl_sounding",
-      [float(self.reanl_coords.text.split(",", 1)[0]), float(self.reanl_coords.text.split(",", 1)[1])],
+      [float(self.reanl_coords.text.split(",", 1)[0][0:6]), 
+       float(self.reanl_coords.text.split(",", 1)[1][0:6])],
       self.reanl_date.date.strftime("%Y"),
       self.reanl_date.date.strftime("%m"),
       self.reanl_date.date.strftime("%d"),

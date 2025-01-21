@@ -1,19 +1,14 @@
 from ._anvil_designer import HOMETemplate
 from anvil import *
-# import anvil.tables as tables
-# import anvil.tables.query as q
-# from anvil.tables import app_tables
-# import anvil.google.auth, anvil.google.drive
-# from anvil.google.drive import app_files
 import anvil.server
 
-from raob_form import raob_form
-from acars_form import acars_form
-from bufkit_form import bufkit_form
-from reanl_form import reanl_form
+from new_raob_form import new_raob_form
+from new_acars_form import new_acars_form
+from new_bufkit_form import new_bufkit_form
+from new_reanl_form import new_reanl_form
 from about_form import about_form
 #from composite_form import composite_form
-from test_form import test_form
+#from test_form import test_form
 
 class HOME(HOMETemplate):
   def __init__(self, **properties):
@@ -23,25 +18,25 @@ class HOME(HOMETemplate):
   def raob_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
-    self.tab_panel.add_component(raob_form())
+    self.tab_panel.add_component(new_raob_form())
     pass
 
   def acars_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
-    self.tab_panel.add_component(acars_form())
+    self.tab_panel.add_component(new_acars_form())
     pass
 
   def bufkit_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
-    self.tab_panel.add_component(bufkit_form())
+    self.tab_panel.add_component(new_bufkit_form())
     pass
 
   def reanl_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
-    self.tab_panel.add_component(reanl_form())
+    self.tab_panel.add_component(new_reanl_form())
     pass
 
   def about_tab_click(self, **event_args):
@@ -50,8 +45,8 @@ class HOME(HOMETemplate):
     self.tab_panel.add_component(about_form())
     pass
 
-  def test_tab_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.tab_panel.clear()
-    self.tab_panel.add_component(test_form())
-    pass
+  # def test_tab_click(self, **event_args):
+  #   """This method is called when the button is clicked"""
+  #   self.tab_panel.clear()
+  #   self.tab_panel.add_component(test_form())
+  #   pass

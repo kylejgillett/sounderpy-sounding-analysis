@@ -1,9 +1,9 @@
-from ._anvil_designer import test_formTemplate
+from ._anvil_designer import new_acars_formTemplate
 from anvil import *
 import anvil.server
 from datetime import datetime
 
-class test_form(test_formTemplate):
+class new_acars_form(new_acars_formTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

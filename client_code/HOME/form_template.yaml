@@ -3,7 +3,11 @@ components:
   - components:
     - layout_properties: {grid_position: 'HPAUYQ,MUYKLM'}
       name: image_1_copy
-      properties: {height: 155, horizontal_align: center, source: _/theme/251580013-2e9477c9-e36a-4163-accb-fe46780058dd.png}
+      properties:
+        height: 155
+        horizontal_align: center
+        margin: ['15', null, null, null]
+        source: _/theme/251580013-2e9477c9-e36a-4163-accb-fe46780058dd.png
       type: Image
     - components:
       - layout_properties: {grid_position: ''}
@@ -33,15 +37,15 @@ components:
           spacing_below: small
           text: "Welcome to the SounderPy Sounding Analysis web app! \n\n(C) Kyle J Gillett 2024 | @wxkylegillett"
         type: Label
-      layout_properties: {grid_position: 'HPAUYQ,EHAKEJ'}
+      layout_properties: {grid_position: 'HPAUYQ,EHAKEJ EZMSWX,LYJOPE'}
       name: card_1_copy
       properties: {background: '#363636', col_widths: '{"RBVESM":35}', role: card, spacing_above: none, spacing_below: none, wrap_on: never}
       type: ColumnPanel
-    - layout_properties: {grid_position: 'TJRPPA,CVUUAV'}
+    - layout_properties: {grid_position: 'HPAUYQ,EHAKEJ QCFDLW,YGIGRS'}
       name: spacer_2_copy_copy_copy_copy
       properties: {height: 4}
       type: Spacer
-    - layout_properties: {grid_position: 'AWGUCY,VBPURN'}
+    - layout_properties: {grid_position: 'HPAUYQ,EHAKEJ PWJGNU,NBCIAC'}
       name: utctime_display_comp_1_copy
       properties: {}
       type: form:HOME.utctime_display_comp
@@ -141,7 +145,7 @@ components:
   properties: {align: left, background: '', bold: true, font_size: 14, italic: true, text: 01/21/2025, visible: true}
   type: Label
 - data_bindings:
-  - {code: 'self.item['''']', property: font, writeback: false}
+  - {code: '', property: font, writeback: false}
   layout_properties: {grid_position: 'YRNTOI,GMZNVI'}
   name: label_3_copy_copy_copy_2_copy_copy_copy_copy_copy_copy_copy
   properties: {align: left, background: '', bold: true, font_size: 12, italic: true, text: 'New app design! Some features of this app have been updated to hopefully improve the UI. Have comments? Reach out (@wxkylegillett)', visible: true}
@@ -151,7 +155,7 @@ components:
   properties: {align: left, background: '', bold: true, font_size: 14, italic: true, text: 01/13/2025, visible: true}
   type: Label
 - data_bindings:
-  - {code: 'self.item['''']', property: font, writeback: false}
+  - {code: '', property: font, writeback: false}
   layout_properties: {grid_position: 'FCJBZD,FXJAGS'}
   name: label_3_copy_copy_copy_2_copy_copy_copy_copy_copy_copy
   properties: {align: left, background: '', bold: true, font_size: 12, italic: true, text: 'ACARS data is back online! There are some gaps in the data between June 2024 and December 2024, but "current" data is populating again.', visible: true}

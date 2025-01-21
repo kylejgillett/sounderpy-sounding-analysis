@@ -10,8 +10,7 @@ class new_bufkit_form(new_bufkit_formTemplate):
     self.bufkit_map_zoom.text = "2"
 
     text_list = anvil.server.call("get_latest_run")
-
-    self.latest_runs_txt.text = text_list
+    
     self.bufkit_model.items = text_list
 
   def bufkit_button_click(self, **event_args):

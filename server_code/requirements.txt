@@ -1,1 +1,2 @@
-sounderpy ==3.0.4dev1
+numpy
+sounderpy
