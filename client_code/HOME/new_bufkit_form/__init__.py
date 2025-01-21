@@ -7,8 +7,12 @@ class new_bufkit_form(new_bufkit_formTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.bufkit_map_zoom.text = "2"
 
-    self.latest_runs_txt.text = anvil.server.call("get_latest_run")
+    text_list = anvil.server.call("get_latest_run")
+
+    self.latest_runs_txt.text = text_list
+    self.bufkit_model.items = text_list
 
   def bufkit_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -49,15 +53,11 @@ class new_bufkit_form(new_bufkit_formTemplate):
     else:
       special_parcels = "simple"
 
-    if self.bufkit_map_check.checked:
-      map_zoom = 2
-    else:
-      map_zoom = 0
 
     if len(self.bufkit_run_hour.text) > 0:
       params = anvil.server.call(
         "get_bufkit_sounding",
-        self.bufkit_model.selected_value,
+        self.bufkit_model.selected_value.split(" ", 1)[0],
         self.bufkit_site_id.text,
         self.bufkit_fhour.text,
         self.bufkit_run_date.date.strftime("%Y"),
@@ -70,13 +70,13 @@ class new_bufkit_form(new_bufkit_formTemplate):
         storm_motion,
         modify_sfc,
         special_parcels,
-        map_zoom,
+        int(self.bufkit_map_zoom.text),
       )
 
     else:
       params = anvil.server.call(
         "get_latest_bufkit_sounding",
-        self.bufkit_model.selected_value,
+        self.bufkit_model.selected_value.split(" ", 1)[0],
         self.bufkit_site_id.text,
         self.bufkit_fhour.text,
         self.bufkit_color_blind_check.checked,
@@ -85,7 +85,7 @@ class new_bufkit_form(new_bufkit_formTemplate):
         storm_motion,
         modify_sfc,
         special_parcels,
-        map_zoom,
+        int(self.bufkit_map_zoom.text),
       )
 
     self.bufkit_image_display.source = params[0]

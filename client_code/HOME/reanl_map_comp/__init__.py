@@ -1,9 +1,9 @@
-from ._anvil_designer import bufkit_map_comp_copyTemplate
+from ._anvil_designer import reanl_map_compTemplate
 from anvil import *
 import anvil.server
 
 
-class bufkit_map_comp_copy(bufkit_map_comp_copyTemplate):
+class reanl_map_comp(reanl_map_compTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

@@ -1,0 +1,202 @@
+components:
+- components:
+  - components:
+    - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+      name: reanl_header
+      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: RAP-RUC MODEL REANALYSIS SOUNDINGS}
+      type: Label
+    - layout_properties: {grid_position: 'VPBARC,FDAVCL'}
+      name: reanl_info_text
+      properties:
+        align: center
+        font: ''
+        font_size: 12
+        foreground: '#FFFFFF'
+        text: "This tool retrieves Rapid Refresh & Rapid Update Cycle model reanalysis data from NCEI for a given date/time and location. To learn more about the RAP/RUC reanalysis datasets, available times and the lat/lon domain (CONUS), check out the link below: \nhttps://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update "
+      type: Label
+    - components:
+      - layout_properties: {grid_position: 'FCWKRR,AXIWCQ'}
+        name: reanl_latlon_label
+        properties:
+          align: center
+          bold: true
+          font_size: 14
+          foreground: '#FFFF'
+          icon: ''
+          text: |
+            CLICK THE MAP TO "COPY" COORDINATES, THEN "PASTE" THEM IN THE BOX
+        type: Label
+      - data_bindings: []
+        layout_properties: {grid_position: 'FCWKRR,EZUSVR'}
+        name: reanl_coords
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'paste coordinates here (ex: 45.6, -86.7)', type: text}
+        type: TextBox
+      - layout_properties: {grid_position: 'FNZCGX,FSFRQK'}
+        name: reanl_map_comp_1
+        properties: {}
+        type: form:HOME.reanl_map_comp
+      layout_properties: {grid_position: 'DQNGDB,DIMUKH'}
+      name: card_1
+      properties: {col_widths: '{"AXIWCQ":35,"EZUSVR":25}', role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'DMUCZG,GNQXAB'}
+        name: reanl_date_label
+        properties: {align: center, bold: true, font: '', font_size: 17, foreground: '#FFFFFF', icon: 'fa:calendar', text: REANALYSIS DATE}
+        type: Label
+      - layout_properties: {grid_position: 'DMUCZG,KHHHHI'}
+        name: reanl_date
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', italic: true, pick_time: true, placeholder: enter a UTC date, visible: true}
+        type: DatePicker
+      - layout_properties: {grid_position: 'CSFZTE,VEQFRD'}
+        name: reanl_fhour_label
+        properties:
+          align: center
+          bold: true
+          font_size: 17
+          foreground: '#FFFF'
+          icon: fa:clock-o
+          text: |
+            REANALYSIS HOUR
+        type: Label
+      - layout_properties: {grid_position: 'CSFZTE,CVHTEO'}
+        name: reanl_hour
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'UTC hour (12, 18, 00 etc)', type: text}
+        type: TextBox
+      layout_properties: {grid_position: 'OMJKSG,KJSUKF'}
+      name: card_2
+      properties: {role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'BHDEOF,SURQZJ'}
+        name: bufkit_stormmotion_label_copy
+        properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Figure Settings}
+        type: Label
+      - event_bindings: {change: dark_mode_check_change}
+        layout_properties: {grid_position: 'ZSLACS,EEEFKZ'}
+        name: reanl_dark_mode_check
+        properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Turn on dark mode}
+        type: CheckBox
+      - event_bindings: {change: check_box_1_change}
+        layout_properties: {grid_position: 'SQMVUS,ZXGLZC'}
+        name: reanl_color_blind_check
+        properties: {align: left, allow_indeterminate: false, background: '', checked: true, font_size: 15, foreground: '#FFFFFF', italic: false, role: null, text: Turn on color-blind friendly settings}
+        type: CheckBox
+      - event_bindings: {change: check_box_1_change}
+        layout_properties: {grid_position: 'CHPEQC,QFBAYX'}
+        name: reanl_ecape_check
+        properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Add ECAPE parcel path (slower)}
+        type: CheckBox
+      - event_bindings: {change: check_box_1_change}
+        layout_properties: {grid_position: 'OOFSGE,CJVYGF'}
+        name: reanl_hodo_check
+        properties: {align: left, allow_indeterminate: false, background: '', border: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Plot hodograph only}
+        type: CheckBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'BRZMZB,LJJUKG'}
+        name: reanl_map_zoom
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: '2', type: text}
+        type: TextBox
+      - layout_properties: {grid_position: 'BRZMZB,SYHXSR'}
+        name: raob_map_zoom_label
+        properties: {align: left, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Set map zoom level. Set to zero to remove map}
+        type: Label
+      layout_properties: {grid_position: 'FFLDRM,YXFTKP'}
+      name: card_3
+      properties: {col_widths: '{"LJJUKG":20,"SYHXSR":40}', role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'UHCWMM,YGITUF'}
+        name: raob_stormmotion_label
+        properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Select a storm motion from the list below or enter your own.}
+        type: Label
+      - layout_properties: {grid_position: 'VMQOOV,UKKCCN'}
+        name: reanl_sm
+        properties:
+          items: [right_moving, left_moving, mean_wind]
+        type: DropDown
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'FDGGGS,OOMMJY'}
+        name: reanl_direction
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'direction (ex: 245) in degrees', type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'FDGGGS,IYWTCX'}
+        name: reanl_speed
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'speed: (ex: 45) in knots'}
+        type: TextBox
+      - layout_properties: {grid_position: 'LEZDXY,AJUUBF'}
+        name: spacer_2
+        properties: {height: 42}
+        type: Spacer
+      - layout_properties: {grid_position: 'PBYLNK,RPLCDH'}
+        name: acars_modifysfc_laybel
+        properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: 'Modify surface temperature, dewpoint, wind speed & direction'}
+        type: Label
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'WDKVXD,FPCVZZ'}
+        name: reanl_temp
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: T°C, type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'WDKVXD,ARHUBS'}
+        name: reanl_dewp
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C, type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'WDKVXD,UPNKMQ'}
+        name: reanl_wspeed
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: ws (kts), type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'WDKVXD,ABIRUQ'}
+        name: reanl_wdir
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: wd (deg), type: text}
+        type: TextBox
+      layout_properties: {grid_position: 'FFLDRM,NJZMOB'}
+      name: card_4
+      properties: {role: card}
+      type: ColumnPanel
+    - components: []
+      layout_properties: {grid_position: 'LRVOLT,ZICKWD'}
+      name: reanl_options_card
+      properties: {background: '#363636', role: card}
+      type: ColumnPanel
+    - event_bindings: {click: reanl_button_click}
+      layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
+      name: reanl_button
+      properties:
+        align: center
+        background: '#44a2ff'
+        bold: true
+        border: ''
+        font: ''
+        font_size: 20
+        foreground: '#fbff00'
+        role: filled
+        text: |
+          GET SOUNDING
+      type: Button
+    - event_bindings: {show: raob_plot_label_copy_show}
+      layout_properties: {grid_position: 'KXBBLA,MDFJSA'}
+      name: reanl_standby_label
+      properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#FFFFFF', italic: true}
+      type: Label
+    - layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
+      name: reanl_plot_label
+      properties: {align: center, background: '', bold: true, font_size: 18, foreground: '#fbff00'}
+      type: Label
+    - layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+      name: reanl_image_display
+      properties: {display_mode: original_size}
+      type: Image
+    layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
+    name: reanl_card_inside
+    properties: {background: '#363636', col_widths: '{}', role: card}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'ZJUHHX,GNHYAV'}
+  name: reanl_card
+  properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true

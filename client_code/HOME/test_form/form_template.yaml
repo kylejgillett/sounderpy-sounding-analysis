@@ -2,146 +2,253 @@ components:
 - components:
   - components:
     - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
-      name: raob_header
-      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: OBSERVED RAOB SOUNDINGS}
+      name: acars_header
+      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: OBSERVED ACARS SOUNDINGS}
       type: Label
-    - layout_properties: {grid_position: 'CMNHRV,VRKEFS'}
-      name: raob_station_id
-      properties: {align: center, bold: true, font_size: 17, foreground: '#FFFFFF', icon: '', text: 'CLICK A BUFKIT SITE TO "COPY" THE SITE ID, THEN PASTE IT IN THE BOX'}
-      type: Label
-    - event_bindings: {pressed_enter: station_id_pressed_enter}
-      layout_properties: {grid_position: 'CMNHRV,YLWPBR'}
-      name: raob_site_id
-      properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: '3 digit RAOB or 11 digit IGRAv2 ID (ex: ''DTX'')'}
-      type: TextBox
-    - event_bindings: {click: raob_button_click}
-      layout_properties: {grid_position: 'CMNHRV,IUSPKI'}
-      name: raob_button_copy
+    - layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
+      name: label_2_copy_copy
       properties:
         align: center
-        background: '#44a2ff'
-        bold: true
-        border: ''
         font: ''
         font_size: 12
-        foreground: '#fbff00'
-        role: filled
-        spacing:
-          padding: ['2', '2', '2', '2']
-        text: |
-          show all raob sites
-      type: Button
+        foreground: '#FFFFFF'
+        text: "Plot ACARS aircraft observed soundings from North American airports. To use this, you must first search for either... all available profiles from any airport for a given date and hour or... all available profiles for a single airport on a given date. Next, you can copy one of the 'flight identifiers' (ex: 'BNA_1240') and paste it in the 'FLIGHT ID' box. Finally, select optional settings and push the 'GET SOUNDING' button.\n\n  "
+      type: Label
     - components:
-      - layout_properties: {grid_position: 'GGFEHH,XVNOBW'}
-        name: raob_map_comp_1
-        properties: {}
-        type: form:HOME.raob_map_comp
-      layout_properties: {grid_position: 'VTJZYU,CMQNKO'}
-      name: tab_panel
-      properties: {background: '', border: '', col_spacing: medium, col_widths: '', foreground: '', role: null, spacing_above: none, spacing_below: small, tooltip: '', visible: true, wrap_on: mobile}
+      - layout_properties: {grid_position: 'FVUDCV,VVLYEC'}
+        name: acars_instructions_label
+        properties:
+          align: center
+          bold: true
+          font_size: 20
+          foreground: '#FFFF00'
+          icon: ''
+          spacing_above: small
+          text: |-
+            LATEST PROFILES BY DATE & HOUR
+            _______________________________________
+        type: Label
+      - layout_properties: {grid_position: 'MQMAQT,SMPKGZ'}
+        name: acars_date_label
+        properties: {align: center, bold: true, font: '', font_size: 14, foreground: '#FFFFFF', icon: 'fa:calendar', text: FLIGHT DATE}
+        type: Label
+      - layout_properties: {grid_position: 'MQMAQT,OOSGSX'}
+        name: acars_hour_label
+        properties: {align: center, bold: true, font_size: 14, foreground: '#FFFF', icon: 'fa:clock-o', text: FLIGHT HOUR}
+        type: Label
+      - layout_properties: {grid_position: 'NFPCIT,EKPLRN'}
+        name: acars_all_date
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', italic: true, pick_time: true, placeholder: enter a flight date, visible: true}
+        type: DatePicker
+      - layout_properties: {grid_position: 'NFPCIT,RWIZAV'}
+        name: acars_all_hour
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'UTC format (ex: ''12'', ''00'')'}
+        type: TextBox
+      - event_bindings: {click: acars_all_profiles_button_click}
+        layout_properties: {grid_position: 'BSBATR,GOFXTF'}
+        name: acars_all_profiles_button
+        properties:
+          align: center
+          background: '#44a2ff'
+          bold: true
+          border: ''
+          font: ''
+          font_size: 17
+          foreground: '#fbff00'
+          role: filled
+          text: |
+            GET AVAILABLE PROFILES
+        type: Button
+      - layout_properties: {grid_position: 'UREINQ,AXARFA'}
+        name: empty_text_box
+        properties: {align: center, background: '', bold: false, font_size: 15, foreground: '#fbff00', italic: true, text: ''}
+        type: Label
+      - layout_properties: {grid_position: 'DBELRL,VWKWNM'}
+        name: acars_all_profiles_list
+        properties: {align: left, background: '', bold: false, font_size: 12, foreground: '#fbff00', italic: true}
+        type: Label
+      layout_properties: {grid_position: 'LJIOUE,NAZZFV'}
+      name: card_2
+      properties: {col_widths: '{"VWKWNM":50}', role: card}
       type: ColumnPanel
-    - layout_properties: {grid_position: 'UFHIWO,GBXHZR'}
-      name: raob_date_label
-      properties: {align: center, bold: true, font_size: 17, foreground: '#FFFFFF', icon: 'fa:calendar', text: LAUNCH DATE}
-      type: Label
-    - layout_properties: {grid_position: 'UFHIWO,UDNJLU'}
-      name: raob_date
-      properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', pick_time: true, placeholder: enter a launch date, visible: true}
-      type: DatePicker
-    - layout_properties: {grid_position: 'URSDTN,TDYQOP'}
-      name: raob_hour_label
-      properties: {align: center, bold: true, font_size: 17, foreground: '#FFFF', icon: 'fa:clock-o', text: LAUNCH HOUR}
-      type: Label
-    - layout_properties: {grid_position: 'URSDTN,GOFMEY'}
-      name: raob_hour
-      properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'UTC format (ex: ''12'', ''00'')'}
-      type: TextBox
     - components:
+      - layout_properties: {grid_position: 'YZTFXS,QKKQXT'}
+        name: acars_instructions_label_copy
+        properties:
+          align: center
+          bold: true
+          font_size: 20
+          foreground: '#FFFF00'
+          icon: ''
+          spacing_above: small
+          text: |-
+            ALL PROFILES BY DATE & AIRPORT
+            _______________________________________
+        type: Label
+      - layout_properties: {grid_position: 'DUEZNP,DKKSHT'}
+        name: acars_date_label_copy_2
+        properties: {align: center, bold: true, font: '', font_size: 14, foreground: '#FFFFFF', icon: 'fa:calendar', text: FLIGHT DATE}
+        type: Label
+      - layout_properties: {grid_position: 'DUEZNP,XEQKMF'}
+        name: acars_date_label_copy
+        properties: {align: center, bold: true, font: '', font_size: 14, foreground: '#FFFFFF', icon: 'fa:calendar', text: AIRPORT ID}
+        type: Label
+      - layout_properties: {grid_position: 'KRWEDA,CZBPQG'}
+        name: acars_airport_date
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', italic: true, pick_time: true, placeholder: enter a flight date, visible: true}
+        type: DatePicker
+      - layout_properties: {grid_position: 'KRWEDA,VNBDTK'}
+        name: acars_airport_id
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'airport ICAO ID (ex: ''JFK'')'}
+        type: TextBox
+      - event_bindings: {click: acars_airport_profiles_button_click}
+        layout_properties: {grid_position: 'HPZVAG,EFWMWV'}
+        name: acars_airport_profiles_button
+        properties:
+          align: center
+          background: '#44a2ff'
+          bold: true
+          border: ''
+          font: ''
+          font_size: 17
+          foreground: '#fbff00'
+          role: filled
+          text: |
+            GET AVAILABLE PROFILES
+        type: Button
+      - layout_properties: {grid_position: 'FWLMBB,HGMCIS'}
+        name: acars_airport_info_label
+        properties: {align: center, background: '', bold: false, font_size: 15, foreground: '#fbff00', italic: true}
+        type: Label
+      - layout_properties: {grid_position: 'OPXBHA,XKCUUD'}
+        name: acars_airport_profiles_list
+        properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#fbff00', italic: true}
+        type: Label
+      layout_properties: {grid_position: 'LJIOUE,EWFKVT'}
+      name: card_1
+      properties: {col_widths: '{"XKCUUD":50}', role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'VCMVUZ,QNQLNY'}
+        name: acars_instructions_label_2
+        properties:
+          align: center
+          bold: true
+          font_size: 20
+          foreground: '#FFFF00'
+          icon: ''
+          spacing_above: small
+          text: |2-
+
+             'COPY & PASTE' ONE OF THE ABOVE 'FLIGHT IDS' INTO THE BOX BELOW
+            _______________________________________
+        type: Label
+      - layout_properties: {grid_position: 'UCYYUR,MJTAIY'}
+        name: acars_flight_id
+        properties: {align: center, bold: true, font_size: 17, foreground: '#FFFFFF', icon: 'fa:map-marker', text: FLIGHT ID}
+        type: Label
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'JESURB,TIBFTG'}
+        name: acars_site_id
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'ACARS Flight ID (ex: ''PDX_0050'')'}
+        type: TextBox
+      layout_properties: {grid_position: 'FFPRPX,SDPJBB'}
+      name: card_3
+      properties: {role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'IEJLPC,UZKJGV'}
+        name: bufkit_stormmotion_label_copy
+        properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Figure Settings}
+        type: Label
       - event_bindings: {change: dark_mode_check_change}
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI IBQVEU,SQQYDB'}
-        name: raob_dark_mode_check
+        layout_properties: {grid_position: 'ICUMXD,XULHIU'}
+        name: acars_dark_mode_check
         properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Turn on dark mode}
         type: CheckBox
       - event_bindings: {change: check_box_1_change}
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI WJTXUC,WTLZER'}
-        name: raob_color_blind_check
+        layout_properties: {grid_position: 'NHOIZW,XANETP'}
+        name: acars_color_blind_check
         properties: {align: left, allow_indeterminate: false, background: '', checked: true, font_size: 15, foreground: '#FFFFFF', role: null, text: Turn on color-blind friendly settings}
         type: CheckBox
       - event_bindings: {change: check_box_1_change}
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI ARZRYV,HUCBZJ'}
-        name: raob_map_check
-        properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Add map inset (slower)}
-        type: CheckBox
-      - event_bindings: {change: check_box_1_change}
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI LTMXQI,JPFZXL'}
-        name: raob_ecape_check
+        layout_properties: {grid_position: 'BNVKBV,JLWERQ'}
+        name: acars_ecape_check
         properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Add ECAPE parcel path (slower)}
         type: CheckBox
       - event_bindings: {change: check_box_1_change}
-        layout_properties: {grid_position: 'MLSBOI,ZYMWEI IUSILP,UYOWIG'}
-        name: raob_hodo_check
+        layout_properties: {grid_position: 'KBDMKV,ZDZMWR'}
+        name: acars_hodo_check
         properties: {align: left, allow_indeterminate: false, background: '', border: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Plot hodograph only}
         type: CheckBox
-      - components:
-        - layout_properties: {grid_position: 'BABWWC,DLGWRU'}
-          name: raob_stormmotion_label
-          properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Select a storm motion from the list below or enter your own.}
-          type: Label
-        - layout_properties: {grid_position: 'NOIXON,LQYJAR'}
-          name: raob_sm
-          properties:
-            items: [right_moving, left_moving, mean_wind]
-          type: DropDown
-        - event_bindings: {pressed_enter: station_id_pressed_enter}
-          layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
-          name: raob_direction
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'direction (ex: 245) in degrees', type: text}
-          type: TextBox
-        - event_bindings: {pressed_enter: station_id_pressed_enter}
-          layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
-          name: raob_speed
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'speed: (ex: 45) in knots'}
-          type: TextBox
-        layout_properties: {grid_position: 'MLSBOI,KQDDVB PWXSPK,UYWEMM'}
-        name: acars_sm_card
-        properties: {background: '#363636', role: card}
-        type: ColumnPanel
-      - components:
-        - layout_properties: {grid_position: 'BABWWC,DLGWRU'}
-          name: acars_modifysfc_laybel
-          properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: 'Modify surface temperature, dewpoint, wind speed & direction'}
-          type: Label
-        - event_bindings: {pressed_enter: station_id_pressed_enter}
-          layout_properties: {grid_position: 'EDWMJL,PLTTFX'}
-          name: raob_temp
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: T°C, type: text}
-          type: TextBox
-        - event_bindings: {pressed_enter: station_id_pressed_enter}
-          layout_properties: {grid_position: 'EDWMJL,SJHUBO'}
-          name: raob_dewp
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C, type: text}
-          type: TextBox
-        - event_bindings: {pressed_enter: station_id_pressed_enter}
-          layout_properties: {grid_position: 'EDWMJL,OSQXFI'}
-          name: raob_wspeed
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: ws (kts), type: text}
-          type: TextBox
-        - event_bindings: {pressed_enter: station_id_pressed_enter}
-          layout_properties: {grid_position: 'EDWMJL,ITESWM'}
-          name: raob_wdir
-          properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: wd (deg), type: text}
-          type: TextBox
-        layout_properties: {grid_position: 'MLSBOI,KQDDVB PWZPWS,YIAYUG'}
-        name: raob_sfcmod_card
-        properties: {background: '#363636', role: card}
-        type: ColumnPanel
-      layout_properties: {grid_position: 'DAPSCB,SYRHIF'}
-      name: raob_options_card
-      properties: {background: '#363636', role: card}
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'PSXZLD,ETAMIM'}
+        name: acars_map_zoom
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: '2', type: text}
+        type: TextBox
+      - layout_properties: {grid_position: 'PSXZLD,KKGUJD'}
+        name: acars_modifysfc_laybel_copy
+        properties: {align: left, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Set map zoom level. Set to zero to remove map}
+        type: Label
+      layout_properties: {grid_position: 'KRAZYJ,PXEGDP'}
+      name: card_4
+      properties: {col_widths: '{"ETAMIM":15,"KKGUJD":45}', role: card}
       type: ColumnPanel
-    - event_bindings: {click: raob_button_click}
+    - components:
+      - layout_properties: {grid_position: 'WUYVRQ,APIUBC'}
+        name: acars_instructions_label_2_copy
+        properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Select a storm motion from the list below or enter your own.}
+        type: Label
+      - layout_properties: {grid_position: 'YGJZWC,NLTUZQ'}
+        name: acars_sm
+        properties:
+          items: [right_moving, left_moving, mean_wind]
+        type: DropDown
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'ZTJZQF,LMBUED'}
+        name: acars_direction
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'direction (ex: 245) in degrees', type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'ZTJZQF,HGMEOC'}
+        name: acars_speed
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'speed: (ex: 45) in knots'}
+        type: TextBox
+      - layout_properties: {grid_position: 'IEUSRE,PZOVUN'}
+        name: spacer_2
+        properties: {height: 42}
+        type: Spacer
+      - layout_properties: {grid_position: 'EWUEEG,HRYOHJ'}
+        name: acars_modifysfc_laybel
+        properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: 'Modify surface temperature, dewpoint, wind speed & direction'}
+        type: Label
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'NRCQOW,YUFKDE'}
+        name: acars_temp
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: T°C, type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'NRCQOW,WTSCEV'}
+        name: acars_dewp
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C, type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'NRCQOW,FQPRQJ'}
+        name: acars_wspeed
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: ws (kts), type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'NRCQOW,ACVNRR'}
+        name: acars_wdir
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: wd (deg), type: text}
+        type: TextBox
+      layout_properties: {grid_position: 'KRAZYJ,EVLHCF'}
+      name: card_5
+      properties: {role: card}
+      type: ColumnPanel
+    - event_bindings: {click: acars_button_click}
       layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
-      name: raob_button
+      name: acars_button
       properties:
         align: center
         background: '#44a2ff'
@@ -155,33 +262,42 @@ components:
           GET SOUNDING
       type: Button
     - event_bindings: {show: raob_plot_label_copy_show}
-      layout_properties: {grid_position: 'XQIEYH,HVANXS'}
-      name: raob_standby_label
+      layout_properties: {grid_position: 'BQARFE,HNABIL'}
+      name: acars_standby_label
       properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#FFFFFF', italic: true}
       type: Label
     - layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
-      name: raob_plot_label
+      name: acars_plot_label
       properties: {align: center, background: '', bold: true, font_size: 18, foreground: '#fbff00'}
       type: Label
     - layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
-      name: raob_image_display
+      name: acars_image_display
       properties: {display_mode: original_size}
       type: Image
-    - layout_properties: {grid_position: 'PTKKQV,HTIPAG'}
-      name: raob_station_id_copy
-      properties: {align: center, bold: true, font_size: 13, foreground: '#FFFFFF', icon: 'fa:question-circle', text: 'Wind profile look funky? Try Using the IGRAv2 ID instead'}
-      type: Label
-    layout_properties: {grid_position: 'VVBZAR,ZMDZQM'}
-    name: card_1_copy
-    properties: {background: '#363636', col_widths: '{"VRKEFS":25,"YLWPBR":25,"IUSPKI":10}', role: card}
+    layout_properties: {grid_position: 'YJASZZ,ZWVHPM'}
+    name: card_1_copy_copy
+    properties: {background: '#363636', col_widths: '{}', role: card, visible: true}
     type: ColumnPanel
-  layout_properties: {grid_position: 'JXNQSU,OLILVW'}
-  name: raob_card
+  layout_properties: {grid_position: 'IBHDIK,AWNVDF'}
+  name: acars_card
   properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
   type: ColumnPanel
-- layout_properties: {grid_position: 'MIJINO,NHVOCS'}
+- layout_properties: {grid_position: 'LBMUOO,ESONIG'}
   name: spacer_1
   properties: {height: 155}
   type: Spacer
+- components:
+  - layout_properties: {grid_position: 'YYHUBV,KSNAJN'}
+    name: bufkit_instructions_label_copy
+    properties: {align: center, bold: true, font_size: 15, foreground: '#FFFFFF', icon: 'fa:map', spacing_above: small, text: US Airports Map | Courtesy OurAirports.com}
+    type: Label
+  - layout_properties: {grid_position: 'IONOFZ,HAQCHG'}
+    name: airport_map_comp_1
+    properties: {}
+    type: form:HOME.airport_map_comp
+  layout_properties: {grid_position: 'QMPKQH,WTWVJH'}
+  name: card_1_copy
+  properties: {role: card}
+  type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true

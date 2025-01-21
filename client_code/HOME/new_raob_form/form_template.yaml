@@ -1,0 +1,186 @@
+components:
+- components:
+  - components:
+    - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+      name: raob_header
+      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: OBSERVED RAOB SOUNDINGS}
+      type: Label
+    - components:
+      - layout_properties: {grid_position: 'JILQOL,YNHATS'}
+        name: raob_station_id
+        properties: {align: center, bold: true, font_size: 14, foreground: '#FFFFFF', icon: '', text: 'CLICK A RAOB SITE TO "COPY" THE SITE ID, THEN "PASTE" IT IN THE BOX'}
+        type: Label
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'JILQOL,MASISM'}
+        name: raob_site_id
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: paste RAOB site ID here}
+        type: TextBox
+      - components:
+        - layout_properties: {grid_position: 'GGFEHH,XVNOBW'}
+          name: raob_map_comp_1
+          properties: {}
+          type: form:HOME.raob_map_comp
+        layout_properties: {grid_position: 'RVZOJK,PNLITO'}
+        name: tab_panel
+        properties: {background: '', border: '', col_spacing: medium, col_widths: '', foreground: '', role: null, spacing_above: none, spacing_below: small, tooltip: '', visible: true, wrap_on: mobile}
+        type: ColumnPanel
+      layout_properties: {grid_position: 'SMHCMK,OHSUKZ'}
+      name: card_1
+      properties: {role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'YAHBRQ,BESGOB'}
+        name: raob_date_label
+        properties: {align: center, bold: true, font_size: 17, foreground: '#FFFFFF', icon: 'fa:calendar', text: LAUNCH DATE (UTC)}
+        type: Label
+      - layout_properties: {grid_position: 'YAHBRQ,XRZZDC'}
+        name: raob_date
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', pick_time: true, placeholder: enter a launch date, visible: true}
+        type: DatePicker
+      - layout_properties: {grid_position: 'AJVYUW,VEUSOZ'}
+        name: raob_hour_label
+        properties: {align: center, bold: true, font_size: 17, foreground: '#FFFF', icon: 'fa:clock-o', text: LAUNCH HOUR (UTC)}
+        type: Label
+      - layout_properties: {grid_position: 'AJVYUW,EFFBBG'}
+        name: raob_hour
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'UTC format (ex: ''12'', ''00'')'}
+        type: TextBox
+      layout_properties: {grid_position: 'MOKLYB,JLIUMI'}
+      name: card_2
+      properties: {role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'GBCRIW,VQYCRO'}
+        name: bufkit_stormmotion_label_copy
+        properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Figure Settings}
+        type: Label
+      - event_bindings: {change: dark_mode_check_change}
+        layout_properties: {grid_position: 'UEVDVN,BSVPTY'}
+        name: raob_dark_mode_check
+        properties: {align: left, allow_indeterminate: false, background: '', border: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Turn on dark mode, visible: true}
+        type: CheckBox
+      - event_bindings: {change: check_box_1_change}
+        layout_properties: {grid_position: 'EYNBOA,CCFVJP'}
+        name: raob_color_blind_check
+        properties: {align: left, allow_indeterminate: false, background: '', checked: true, font_size: 15, foreground: '#FFFFFF', role: null, text: Turn on color-blind friendly settings}
+        type: CheckBox
+      - event_bindings: {change: check_box_1_change}
+        layout_properties: {grid_position: 'GORHJU,GZGZFS'}
+        name: raob_ecape_check
+        properties: {align: left, allow_indeterminate: false, background: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Add ECAPE parcel path (slower)}
+        type: CheckBox
+      - event_bindings: {change: check_box_1_change}
+        layout_properties: {grid_position: 'IPKUCP,IUIJMX'}
+        name: raob_hodo_check
+        properties: {align: left, allow_indeterminate: false, background: '', border: '', checked: false, font_size: 15, foreground: '#FFFFFF', role: null, text: Plot hodograph only}
+        type: CheckBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'QBHZJU,YOOYUJ'}
+        name: raob_map_zoom
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: '2', type: text}
+        type: TextBox
+      - layout_properties: {grid_position: 'QBHZJU,WFUWUJ'}
+        name: raob_map_zoom_label
+        properties: {align: left, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Set map zoom level. Set to zero to remove map}
+        type: Label
+      layout_properties: {grid_position: 'MKAWRS,LCSHKN'}
+      name: card_3
+      properties: {col_widths: '{"YOOYUJ":20,"WFUWUJ":40}', role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'NXFLTD,DKXNEH'}
+        name: raob_stormmotion_label
+        properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Select a storm motion from the list below or enter your own.}
+        type: Label
+      - layout_properties: {grid_position: 'VHAKVH,EFASRO'}
+        name: raob_sm
+        properties:
+          items: [right_moving, left_moving, mean_wind]
+        type: DropDown
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'TZONIH,EWZSEW'}
+        name: raob_direction
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'direction (ex: 245) in degrees', type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'TZONIH,GVUBWM'}
+        name: raob_speed
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'speed: (ex: 45) in knots'}
+        type: TextBox
+      - layout_properties: {grid_position: 'RSWXMB,BSUKWG'}
+        name: spacer_2
+        properties: {height: 58}
+        type: Spacer
+      - layout_properties: {grid_position: 'XMWHRE,DPARMM'}
+        name: acars_modifysfc_laybel
+        properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: 'Modify surface temperature, dewpoint, wind speed & direction'}
+        type: Label
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'LNMVCD,PTOUQU'}
+        name: raob_temp
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: T°C, type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'LNMVCD,UAMRAA'}
+        name: raob_dewp
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: Td°C, type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'LNMVCD,UDKPOU'}
+        name: raob_wspeed
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: ws (kts), type: text}
+        type: TextBox
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: 'LNMVCD,AQEWTT'}
+        name: raob_wdir
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: wd (deg), type: text}
+        type: TextBox
+      layout_properties: {grid_position: 'MKAWRS,NYPVIK'}
+      name: card_4
+      properties: {role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'DUVJQG,KLCIHY'}
+      name: spacer_3
+      properties: {height: 39}
+      type: Spacer
+    - event_bindings: {click: raob_button_click}
+      layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
+      name: raob_button
+      properties:
+        align: center
+        background: '#44a2ff'
+        bold: true
+        border: ''
+        font: ''
+        font_size: 20
+        foreground: '#fbff00'
+        role: filled
+        text: "    GET SOUNDING   \n"
+      type: Button
+    - event_bindings: {show: raob_plot_label_copy_show}
+      layout_properties: {grid_position: 'XQIEYH,HVANXS'}
+      name: raob_standby_label
+      properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#FFFFFF', italic: true}
+      type: Label
+    - layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
+      name: raob_plot_label
+      properties: {align: center, background: '', bold: true, font_size: 18, foreground: '#fbff00'}
+      type: Label
+    - layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+      name: raob_image_display
+      properties: {display_mode: original_size}
+      type: Image
+    layout_properties: {grid_position: 'VVBZAR,ZMDZQM'}
+    name: card_1_copy
+    properties: {background: '#363636', col_widths: '{}', role: card}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'JXNQSU,OLILVW'}
+  name: raob_card
+  properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
+  type: ColumnPanel
+- layout_properties: {grid_position: 'MIJINO,NHVOCS'}
+  name: spacer_1
+  properties: {height: 155}
+  type: Spacer
+container: {type: ColumnPanel}
+is_package: true

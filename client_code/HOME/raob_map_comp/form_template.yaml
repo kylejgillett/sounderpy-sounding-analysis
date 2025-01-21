@@ -9,7 +9,7 @@ container:
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
       </head>
       <body>
-          <iframe src="https://kylejgillett.github.io/sounderpy/raob_map" width="100%" height="500"></iframe>
+          <iframe src="https://kylejgillett.github.io/sounderpy/raob_map_anvil" width="100%" height="500", allow="clipboard-write">></iframe>
       </body>
       </html>
   type: HtmlTemplate

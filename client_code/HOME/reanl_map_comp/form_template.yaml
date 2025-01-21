@@ -10,7 +10,7 @@ container:
           <title>Embedded Page</title>
       </head>
       <body>
-          <iframe src="https://kylejgillett.github.io/sounderpy/bufkit_map_anvil" width="100%" height="400", allow="clipboard-write"></iframe>
+          <iframe src="https://kylejgillett.github.io/sounderpy/reanl_map_anvil" width="100%" height="400", allow="clipboard-write"></iframe>
       </body>
       </html>
   type: HtmlTemplate

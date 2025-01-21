@@ -1,30 +1,56 @@
 from ._anvil_designer import test_formTemplate
 from anvil import *
 import anvil.server
-#from raob_all_sites_map_comp import raob_all_sites_map_comp
-
+from datetime import datetime
 
 class test_form(test_formTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-  # def show_all_sites_button_click(self, **event_args):
-  #   """This method is called when the button is clicked"""
-  #   self.map_panel.clear()
-  #   self.map_panel.add_component(roab_all_sites_map_comp())
-  #   pass
+    ### SET DEFAULT DATE PARAMETERS ----------------------
+    # set date to current date in UTC
+    self.acars_all_date.date = datetime.utcnow().date()
+    self.acars_airport_date.date = datetime.utcnow().date()
+    # map zoom level
+    self.acars_map_zoom.text = "2"
 
-  def raob_button_click(self, **event_args):
+  def acars_all_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.raob_standby_label.text = (
+    self.acars_all_profiles_list.text = anvil.server.call(
+      "get_acars_all_profile_list",
+      self.acars_all_date.date.strftime("%Y"),
+      self.acars_all_date.date.strftime("%m"),
+      self.acars_all_date.date.strftime("%d"),
+      self.acars_all_hour.text,
+    )
+
+  def acars_airport_profiles_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    (
+      self.acars_airport_profiles_list.text,
+      self.acars_airport_info_label.text,
+      self.profiles_list,
+      self.dates_list,
+    ) = anvil.server.call(
+      "get_acars_airport_profile_list",
+      self.acars_airport_date.date.strftime("%Y"),
+      self.acars_airport_date.date.strftime("%m"),
+      self.acars_airport_date.date.strftime("%d"),
+      str.upper(self.acars_airport_id.text),
+    )
+    return self.profiles_list, self.dates_list
+
+  def acars_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.acars_standby_label.text = (
       "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
     )
 
-    if len(self.raob_direction.text) > 0:
-      storm_motion = [int(self.raob_direction.text), int(self.raob_speed.text)]
+    if len(self.acars_direction.text) > 0:
+      storm_motion = [int(self.acars_direction.text), int(self.acars_speed.text)]
     else:
-      storm_motion = self.raob_sm.selected_value
+      storm_motion = self.acars_sm.selected_value
 
     def check_for_vals(T_val, Td_val, ws_val, wd_val):
       modify_sfc = {}
@@ -38,10 +64,10 @@ class test_form(test_formTemplate):
       return modify_sfc
 
     surface_mod_vals = check_for_vals(
-      self.raob_temp.text,
-      self.raob_dewp.text,
-      self.raob_wspeed.text,
-      self.raob_wdir.text,
+      self.acars_temp.text,
+      self.acars_dewp.text,
+      self.acars_wspeed.text,
+      self.acars_wdir.text,
     )
 
     if len(surface_mod_vals) > 0:
@@ -49,29 +75,46 @@ class test_form(test_formTemplate):
     else:
       modify_sfc = False
 
-    if self.raob_ecape_check.checked:
+    if self.acars_ecape_check.checked:
       special_parcels = None
     else:
       special_parcels = "simple"
 
-    if self.raob_map_check.checked:
-      map_zoom = 2
+
+    if len(self.acars_airport_id.text) > 0:
+      try:
+        profile_idx = self.profiles_list.index(self.acars_site_id.text)
+        year = self.dates_list[profile_idx][0]
+        month = self.dates_list[profile_idx][1]
+        day = self.dates_list[profile_idx][2]
+        hour = self.dates_list[profile_idx][3]
+      except:
+        year = self.acars_all_date.date.strftime("%Y")
+        month = self.acars_all_date.date.strftime("%m")
+        day = self.acars_all_date.date.strftime("%d")
+        hour = self.acars_all_hour.text
+        pass
     else:
-      map_zoom = 0
+      year = self.acars_all_date.date.strftime("%Y")
+      month = self.acars_all_date.date.strftime("%m")
+      day = self.acars_all_date.date.strftime("%d")
+      hour = self.acars_all_hour.text
+
     params = anvil.server.call(
-      "get_raob_sounding",
-      self.raob_site_id.text,
-      self.raob_date.date.strftime("%Y"),
-      self.raob_date.date.strftime("%m"),
-      self.raob_date.date.strftime("%d"),
-      self.raob_hour.text,
-      self.raob_color_blind_check.checked,
-      self.raob_dark_mode_check.checked,
-      self.raob_hodo_check.checked,
+      "get_acars_sounding",
+      self.acars_site_id.text[0:8],
+      year,
+      month,
+      day,
+      hour,
+      self.acars_color_blind_check.checked,
+      self.acars_dark_mode_check.checked,
+      self.acars_hodo_check.checked,
       storm_motion,
       modify_sfc,
       special_parcels,
-      map_zoom,
+      int(self.acars_map_zoom.text),
     )
-    self.raob_image_display.source = params[0]
-    self.raob_plot_label.text = params[1]
+    self.acars_image_display.source = params[0]
+    self.acars_plot_label.text = params[1]
+    self.acars_plot_label.text = params[1]
