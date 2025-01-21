@@ -1,10 +1,14 @@
 components:
-- layout_properties: {grid_position: 'KCHODK,DAYWHI'}
-  name: html_1
-  properties: {}
-  type: form:HOME.html_1
-container:
-  properties: {col_spacing: small}
+- components:
+  - layout_properties: {grid_position: 'NQGWVX,JKCHOD'}
+    name: bufkit_map_comp_1
+    properties: {}
+    type: form:HOME.bufkit_map_comp
+  layout_properties: {full_width_row: true, grid_position: 'GVBTUZ,CGOVZE'}
+  name: card_1
+  properties: {role: card}
   type: ColumnPanel
-custom_component: false
+container:
+  properties: {col_spacing: huge}
+  type: ColumnPanel
 is_package: true

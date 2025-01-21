@@ -1,71 +1,16 @@
 from ._anvil_designer import test_formTemplate
 from anvil import *
 import anvil.server
+import anvil.google.auth, anvil.google.drive
+from anvil.google.drive import app_files
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+
 
 class test_form(test_formTemplate):
-    def __init__(self, **properties):
-        self.init_components(**properties)
-        
-        # Map HTML code hosted on GitHub
-        map_html_url = "https://raw.githubusercontent.com/kylejgillett/sounderpy/refs/heads/main/docs/raob_map.html"
-      
-        # Fetch the map HTML and set it as the source of the HTML component
-        self.html_1.source = f'<iframe src="{map_html_url}" width="100%" height="600px"></iframe>'
+  def __init__(self, **properties):
+    # Set Form properties and Data Bindings.
+    self.init_components(**properties)
 
-
-# class test_form(test_formTemplate):
-#     def __init__(self, **properties):
-#         self.init_components(**properties)
-#         self.setup_map()
-
-#     def setup_map(self):
-#         self.map.center = {"lat":-28.024, "lng":140.887 }
-#         infoWindow = GoogleMap.InfoWindow(disable_auto_pan=True)
-
-#         locations = anvil.server.call('get_location_data')
-
-#         marker_list = []
-#         label_list = []
-
-#         for location in locations:
-#             lat = location['LAT']
-#             lon = location['LON']
-#             name = location['NAME']
-#             marker_list.append({"lat": lat, "lng": lon})
-#             label_list.append(name)
-      
-#         markers = [GoogleMap.Marker(position=p, label=l) for p, l in zip(marker_list, label_list)]
-
-#         def click(sender, **event_args):
-#             infoWindow.content = sender.label
-#             infoWindow.open(self.map, sender)
-
-#         for mark in markers:
-#             mark.add_event_handler("click", click)
-
-#         MarkerClusterer({"markers": markers, "map": self.map})
-
-
-      
-# class test_form(test_formTemplate):
-#   def __init__(self, **properties):
-#           self.init_components(**properties)
-  
-#           # Initial setup
-#           self.map.center = GoogleMap.LatLng(37.7749, -122.4194)  # San Francisco
-#           self.map.zoom = 10
-      
-#           # Call the server-side function to get the location data
-#           locations = anvil.server.call('get_location_data')
-          
-#           # Iterate over each location and plot it on the map
-#           for location in locations:
-#               lat = location['LAT']
-#               lon = location['LON']
-#               name = location['NAME']
-
-#               marker = GoogleMap.Marker(
-#                       position=GoogleMap.LatLng(lat, lon)
-#                   )
-#               # Plot the marker on the map (adjust for your map component)
-#               self.map.add_component(marker)
+    # Any code you write here will run before the form opens.
