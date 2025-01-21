@@ -1,11 +1,7 @@
 from ._anvil_designer import test_formTemplate
 from anvil import *
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
 import anvil.server
+#from raob_all_sites_map_comp import raob_all_sites_map_comp
 
 
 class test_form(test_formTemplate):
@@ -13,18 +9,22 @@ class test_form(test_formTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-    self.latest_runs_txt.text = anvil.server.call("get_latest_run")
+  # def show_all_sites_button_click(self, **event_args):
+  #   """This method is called when the button is clicked"""
+  #   self.map_panel.clear()
+  #   self.map_panel.add_component(roab_all_sites_map_comp())
+  #   pass
 
-  def bufkit_button_click(self, **event_args):
+  def raob_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.bufkit_standby_label.text = (
+    self.raob_standby_label.text = (
       "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
     )
 
-    if len(self.bufkit_direction.text) > 0:
-      storm_motion = [int(self.bufkit_direction.text), int(self.bufkit_speed.text)]
+    if len(self.raob_direction.text) > 0:
+      storm_motion = [int(self.raob_direction.text), int(self.raob_speed.text)]
     else:
-      storm_motion = self.bufkit_sm.selected_value
+      storm_motion = self.raob_sm.selected_value
 
     def check_for_vals(T_val, Td_val, ws_val, wd_val):
       modify_sfc = {}
@@ -38,10 +38,10 @@ class test_form(test_formTemplate):
       return modify_sfc
 
     surface_mod_vals = check_for_vals(
-      self.bufkit_temp.text,
-      self.bufkit_dewp.text,
-      self.bufkit_wspeed.text,
-      self.bufkit_wdir.text,
+      self.raob_temp.text,
+      self.raob_dewp.text,
+      self.raob_wspeed.text,
+      self.raob_wdir.text,
     )
 
     if len(surface_mod_vals) > 0:
@@ -49,49 +49,29 @@ class test_form(test_formTemplate):
     else:
       modify_sfc = False
 
-    if self.bufkit_ecape_check.checked:
+    if self.raob_ecape_check.checked:
       special_parcels = None
     else:
       special_parcels = "simple"
 
-    if self.bufkit_map_check.checked:
+    if self.raob_map_check.checked:
       map_zoom = 2
     else:
       map_zoom = 0
-
-    if len(self.bufkit_run_hour.text) > 0:
-      params = anvil.server.call(
-        "get_bufkit_sounding",
-        self.bufkit_model.selected_value,
-        self.bufkit_site_id.text,
-        self.bufkit_fhour.text,
-        self.bufkit_run_date.date.strftime("%Y"),
-        self.bufkit_run_date.date.strftime("%m"),
-        self.bufkit_run_date.date.strftime("%d"),
-        self.bufkit_run_hour.text,
-        self.bufkit_color_blind_check.checked,
-        self.bufkit_dark_mode_check.checked,
-        self.bufkit_hodo_check.checked,
-        storm_motion,
-        modify_sfc,
-        special_parcels,
-        map_zoom,
-      )
-
-    else:
-      params = anvil.server.call(
-        "get_latest_bufkit_sounding",
-        self.bufkit_model.selected_value,
-        self.bufkit_site_id.text,
-        self.bufkit_fhour.text,
-        self.bufkit_color_blind_check.checked,
-        self.bufkit_dark_mode_check.checked,
-        self.bufkit_hodo_check.checked,
-        storm_motion,
-        modify_sfc,
-        special_parcels,
-        map_zoom,
-      )
-
-    self.bufkit_image_display.source = params[0]
-    self.bufkit_plot_label.text = params[1]
+    params = anvil.server.call(
+      "get_raob_sounding",
+      self.raob_site_id.text,
+      self.raob_date.date.strftime("%Y"),
+      self.raob_date.date.strftime("%m"),
+      self.raob_date.date.strftime("%d"),
+      self.raob_hour.text,
+      self.raob_color_blind_check.checked,
+      self.raob_dark_mode_check.checked,
+      self.raob_hodo_check.checked,
+      storm_motion,
+      modify_sfc,
+      special_parcels,
+      map_zoom,
+    )
+    self.raob_image_display.source = params[0]
+    self.raob_plot_label.text = params[1]

@@ -1,30 +1,5 @@
 allow_embedding: false
-db_schema:
-  bufkit_markers:
-    client: none
-    columns:
-    - admin_ui: {order: 0, width: 200}
-      name: LAT
-      type: number
-    - admin_ui: {order: 1, width: 200}
-      name: LON
-      type: number
-    - admin_ui: {order: 2, width: 200}
-      name: ID
-      type: string
-    - admin_ui: {order: 3, width: 200}
-      name: NAME
-      type: string
-    - admin_ui: {order: 4, width: 200}
-      name: LOC
-      type: string
-    server: full
-    title: bufkit_markers
-  table_2:
-    client: none
-    columns: []
-    server: full
-    title: Table 2
+db_schema: {}
 metadata: {description: 'A simple tool that plots SounderPy soundings right in your browser. ', logo_img: 'asset:GDSrWo0XkAAGWX5(1)-logo.png', title: SounderPy Sounding Analysis}
 name: SounderPy Sounding Analysis
 native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
@@ -39,9 +14,6 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-- client_config: {api_key: AIzaSyDqWc25TEkPO2o49Rhnh3u1E66CKamuCZA}
-  server_config: {}
-  source: /runtime/services/google.yml
 startup: {module: HOME, type: form}
 startup_form: null
 uplink_visible: true
