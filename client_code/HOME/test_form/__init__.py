@@ -62,7 +62,7 @@ class test_form(test_formTemplate):
     if len(self.bufkit_run_hour.text) > 0:
       params = anvil.server.call(
         "get_bufkit_sounding",
-        self.bufkit_model.text,
+        self.bufkit_model.selected_value,
         self.bufkit_site_id.text,
         self.bufkit_fhour.text,
         self.bufkit_run_date.date.strftime("%Y"),
@@ -81,7 +81,7 @@ class test_form(test_formTemplate):
     else:
       params = anvil.server.call(
         "get_latest_bufkit_sounding",
-        self.bufkit_model.text,
+        self.bufkit_model.selected_value,
         self.bufkit_site_id.text,
         self.bufkit_fhour.text,
         self.bufkit_color_blind_check.checked,
