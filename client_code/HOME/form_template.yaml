@@ -35,7 +35,7 @@ components:
           foreground: '#FFFFFF'
           spacing_above: small
           spacing_below: small
-          text: "Welcome to the SounderPy Sounding Analysis web app! \n\n(C) Kyle J Gillett 2024 | @wxkylegillett"
+          text: "Welcome to the SounderPy Sounding Analysis web app! \n\n(C) Kyle J Gillett 2025 | @wxkylegillett"
         type: Label
       layout_properties: {grid_position: 'HPAUYQ,EHAKEJ EZMSWX,LYJOPE'}
       name: card_1_copy
