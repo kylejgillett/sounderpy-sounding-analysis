@@ -51,11 +51,12 @@ components:
         font: ''
         font_size: 16
         foreground: '#FFFFFF'
-        text: |+
+        text: |-
           Assessing Radiative Impacts of African Smoke Aerosols Over the Southeastern Atlantic Ocean | Logan et al. 2024
 
           Occurrence of Rare Lightning Events During Hurricane Nicholas (2021) | Logan et al. 2024
 
+          Supercell Environments Using GridRad-Severe and the HRRR: Addressing Discrepancies between Prior Tornado Datasets | Coffer et al. 2025
       type: Label
     - components:
       - components:
