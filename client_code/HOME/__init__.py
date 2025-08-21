@@ -48,6 +48,6 @@ class HOME(HOMETemplate):
   def test_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
-    self.tab_panel.add_component(test_form())
+    self.tab_panel.add_component(new_bufkit_form())
     pass
 
