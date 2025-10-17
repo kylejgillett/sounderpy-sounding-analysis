@@ -19,75 +19,40 @@ class new_bufkit_form(new_bufkit_formTemplate):
       "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
     )
 
-    if len(self.bufkit_direction.text) > 0:
-      storm_motion = [int(self.bufkit_direction.text), int(self.bufkit_speed.text)]
-    else:
-      storm_motion = self.bufkit_sm.selected_value
+    # if len(self.bufkit_direction.text) > 0:
+    #   storm_motion = [int(self.bufkit_direction.text), int(self.bufkit_speed.text)]
+    # else:
+    #   storm_motion = self.bufkit_sm.selected_value
 
-    def check_for_vals(T_val, Td_val, ws_val, wd_val):
-      modify_sfc = {}
-      vals = [T_val, Td_val, ws_val, wd_val]
-      keys = ["T", "Td", "ws", "wd"]
+    # def check_for_vals(T_val, Td_val, ws_val, wd_val):
+    #   modify_sfc = {}
+    #   vals = [T_val, Td_val, ws_val, wd_val]
+    #   keys = ["T", "Td", "ws", "wd"]
 
-      for val, key in zip(vals, keys):
-        if len(val) > 0:
-          modify_sfc[key] = float(val)
+    #   for val, key in zip(vals, keys):
+    #     if len(val) > 0:
+    #       modify_sfc[key] = float(val)
 
-      return modify_sfc
+    #   return modify_sfc
 
-    surface_mod_vals = check_for_vals(
-      self.bufkit_temp.text,
-      self.bufkit_dewp.text,
-      self.bufkit_wspeed.text,
-      self.bufkit_wdir.text,
-    )
+    # surface_mod_vals = check_for_vals(
+    #   self.bufkit_temp.text,
+    #   self.bufkit_dewp.text,
+    #   self.bufkit_wspeed.text,
+    #   self.bufkit_wdir.text,
+    # )
 
-    if len(surface_mod_vals) > 0:
-      modify_sfc = surface_mod_vals
-    else:
-      modify_sfc = False
+    # if len(surface_mod_vals) > 0:
+    #   modify_sfc = surface_mod_vals
+    # else:
+    #   modify_sfc = False
 
-    if self.bufkit_ecape_check.checked:
-      special_parcels = None
-    else:
-      special_parcels = "simple"
+    # if self.bufkit_ecape_check.checked:
+    #   special_parcels = None
+    # else:
+    #   special_parcels = "simple"
 
 
-    if len(self.bufkit_run_hour.text) > 0:
-      params = anvil.server.call(
-        "get_bufkit_sounding",
-        self.bufkit_model.selected_value.split(" ", 1)[0],
-        self.bufkit_site_id.text,
-        self.bufkit_fhour.text,
-        self.bufkit_run_date.date.strftime("%Y"),
-        self.bufkit_run_date.date.strftime("%m"),
-        self.bufkit_run_date.date.strftime("%d"),
-        self.bufkit_run_hour.text,
-        self.bufkit_color_blind_check.checked,
-        self.bufkit_dark_mode_check.checked,
-        self.bufkit_hodo_check.checked,
-        storm_motion,
-        modify_sfc,
-        special_parcels,
-        int(self.bufkit_map_zoom.text),
-      )
-
-    else:
-      params = anvil.server.call(
-        "get_latest_bufkit_sounding",
-        self.bufkit_model.selected_value.split(" ", 1)[0],
-        self.bufkit_site_id.text,
-        self.bufkit_fhour.text,
-        self.bufkit_color_blind_check.checked,
-        self.bufkit_dark_mode_check.checked,
-        self.bufkit_hodo_check.checked,
-        storm_motion,
-        modify_sfc,
-        special_parcels,
-        int(self.bufkit_map_zoom.text),
-      )
-      
-    #  #settings = self.fig_settings_comp_1.get_settings()
     # if len(self.bufkit_run_hour.text) > 0:
     #   params = anvil.server.call(
     #     "get_bufkit_sounding",
@@ -98,34 +63,70 @@ class new_bufkit_form(new_bufkit_formTemplate):
     #     self.bufkit_run_date.date.strftime("%m"),
     #     self.bufkit_run_date.date.strftime("%d"),
     #     self.bufkit_run_hour.text,
-    #     settings['color_blind'],
-    #     settings['dark_mode'],
-    #     settings['show_hodo'],
-    #     settings['storm_motion'],
-    #     settings['modify_sfc'],
-    #     settings['special_parcels'],
-    #     settings['map_zoom'],
-    #     settings['radar'],
-    #     settings['radar_time'],
-    #     settings['hodo_boundary']
+    #     self.bufkit_color_blind_check.checked,
+    #     self.bufkit_dark_mode_check.checked,
+    #     self.bufkit_hodo_check.checked,
+    #     storm_motion,
+    #     modify_sfc,
+    #     special_parcels,
+    #     int(self.bufkit_map_zoom.text),
     #   )
 
-     # params = anvil.server.call(
-     #    "get_latest_bufkit_sounding_test",
-     #    self.bufkit_model.selected_value.split(" ", 1)[0],
-     #    self.bufkit_site_id.text,
-     #    self.bufkit_fhour.text,
-     #    settings['color_blind'],
-     #    settings['dark_mode'],
-     #    settings['show_hodo'],
-     #    settings['storm_motion'],
-     #    settings['modify_sfc'],
-     #    settings['special_parcels'],
-     #    settings['map_zoom'],
-     #    settings['radar'],
-     #    settings['radar_time'],
-     #    settings['hodo_boundary']
-     #  )
+    # else:
+    #   params = anvil.server.call(
+    #     "get_latest_bufkit_sounding",
+    #     self.bufkit_model.selected_value.split(" ", 1)[0],
+    #     self.bufkit_site_id.text,
+    #     self.bufkit_fhour.text,
+    #     self.bufkit_color_blind_check.checked,
+    #     self.bufkit_dark_mode_check.checked,
+    #     self.bufkit_hodo_check.checked,
+    #     storm_motion,
+    #     modify_sfc,
+    #     special_parcels,
+    #     int(self.bufkit_map_zoom.text),
+    #   )
+      
+    settings = self.fig_settings_comp_1.get_settings()
+    if len(self.bufkit_run_hour.text) > 0:
+      params = anvil.server.call(
+        "get_bufkit_sounding",
+        self.bufkit_model.selected_value.split(" ", 1)[0],
+        self.bufkit_site_id.text,
+        self.bufkit_fhour.text,
+        self.bufkit_run_date.date.strftime("%Y"),
+        self.bufkit_run_date.date.strftime("%m"),
+        self.bufkit_run_date.date.strftime("%d"),
+        self.bufkit_run_hour.text,
+        settings['color_blind'],
+        settings['dark_mode'],
+        settings['show_hodo'],
+        settings['storm_motion'],
+        settings['modify_sfc'],
+        settings['special_parcels'],
+        settings['map_zoom'],
+        settings['radar'],
+        settings['radar_time'],
+        settings['hodo_boundary']
+      )
+
+    else:
+      params = anvil.server.call(
+        "get_latest_bufkit_sounding",
+        self.bufkit_model.selected_value.split(" ", 1)[0],
+        self.bufkit_site_id.text,
+        self.bufkit_fhour.text,
+        settings['color_blind'],
+        settings['dark_mode'],
+        settings['show_hodo'],
+        settings['storm_motion'],
+        settings['modify_sfc'],
+        settings['special_parcels'],
+        settings['map_zoom'],
+        settings['radar'],
+        settings['radar_time'],
+        settings['hodo_boundary']
+      )
     
     self.bufkit_image_display.source = params[0]
     self.bufkit_plot_label.text = params[1]
