@@ -8,11 +8,19 @@ class fig_settings_comp(fig_settings_compTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
+  def show_settings_panel_click(self, **event_args):
+    current_state = self.settings_panel.visible
+    self.settings_panel.visible = not current_state
+    
+    # Optional: Change the button text
+    if self.settings_panel.visible:
+      self.show_settings_panel.text = "Hide Figure Settings"
+    else:
+      self.show_settings_panel.text = "Show Figure Settings"
+
+
+  
   def get_settings(self):
-    """
-            Gathers ALL relevant settings into a single, standardized dictionary.
-            This dictionary should be the ONLY way forms interact with the settings.
-            """
   
     # --- Storm Motion Logic ---
     if len(self.sm_direction.text) > 0:
@@ -72,3 +80,5 @@ class fig_settings_comp(fig_settings_compTemplate):
       'radar_time': radar_date,
       'hodo_boundary': hodo_boundary_angle
     }
+
+

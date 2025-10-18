@@ -12,8 +12,6 @@ class new_acars_form(new_acars_formTemplate):
     # set date to current date in UTC
     self.acars_all_date.date = datetime.utcnow().date()
     self.acars_airport_date.date = datetime.utcnow().date()
-    # map zoom level
-    self.acars_map_zoom.text = "2"
 
   def acars_all_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -47,39 +45,8 @@ class new_acars_form(new_acars_formTemplate):
       "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
     )
 
-    if len(self.acars_direction.text) > 0:
-      storm_motion = [int(self.acars_direction.text), int(self.acars_speed.text)]
-    else:
-      storm_motion = self.acars_sm.selected_value
-
-    def check_for_vals(T_val, Td_val, ws_val, wd_val):
-      modify_sfc = {}
-      vals = [T_val, Td_val, ws_val, wd_val]
-      keys = ["T", "Td", "ws", "wd"]
-
-      for val, key in zip(vals, keys):
-        if len(val) > 0:
-          modify_sfc[key] = float(val)
-
-      return modify_sfc
-
-    surface_mod_vals = check_for_vals(
-      self.acars_temp.text,
-      self.acars_dewp.text,
-      self.acars_wspeed.text,
-      self.acars_wdir.text,
-    )
-
-    if len(surface_mod_vals) > 0:
-      modify_sfc = surface_mod_vals
-    else:
-      modify_sfc = False
-
-    if self.acars_ecape_check.checked:
-      special_parcels = None
-    else:
-      special_parcels = "simple"
-
+    # get figure settings
+    settings = self.fig_settings_comp_1.get_settings()
 
     if len(self.acars_airport_id.text) > 0:
       try:
@@ -107,14 +74,17 @@ class new_acars_form(new_acars_formTemplate):
       month,
       day,
       hour,
-      self.acars_color_blind_check.checked,
-      self.acars_dark_mode_check.checked,
-      self.acars_hodo_check.checked,
-      storm_motion,
-      modify_sfc,
-      special_parcels,
-      int(self.acars_map_zoom.text),
+      settings['color_blind'],
+      settings['dark_mode'],
+      settings['show_hodo'],
+      settings['storm_motion'],
+      settings['modify_sfc'],
+      settings['special_parcels'],
+      settings['map_zoom'],
+      settings['radar'],
+      settings['radar_time'],
+      settings['hodo_boundary']
     )
+    
     self.acars_image_display.source = params[0]
-    self.acars_plot_label.text = params[1]
     self.acars_plot_label.text = params[1]
