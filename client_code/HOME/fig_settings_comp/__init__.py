@@ -41,7 +41,7 @@ class fig_settings_comp(fig_settings_compTemplate):
       radar_date = self.radar_date.date
   
       # --- Hodo Boudnary Angle Logic ---
-    hodo_boundary_angle = {'angle':[self.hodoboundary_angle.text], 'color':['brown']} if len(self.hodoboundary_angle.text) > 0 else None
+    hodo_boundary_angle = {'angle':[int(self.hodoboundary_angle.text)], 'color':['brown']} if len(self.hodoboundary_angle.text) > 0 else None
   
     # --- Surface Modification Logic ---
     def check_for_vals(T_val, Td_val, ws_val, wd_val):
