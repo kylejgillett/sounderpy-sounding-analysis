@@ -2,6 +2,7 @@ from ._anvil_designer import new_acars_formTemplate
 from anvil import *
 import anvil.server
 from datetime import datetime
+from ...SHARED_UTILS import server_call
 
 class new_acars_form(new_acars_formTemplate):
   def __init__(self, **properties):
@@ -45,9 +46,6 @@ class new_acars_form(new_acars_formTemplate):
       "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
     )
 
-    # get figure settings
-    settings = self.fig_settings_comp_1.get_settings()
-
     if len(self.acars_airport_id.text) > 0:
       try:
         profile_idx = self.profiles_list.index(self.acars_site_id.text)
@@ -67,24 +65,31 @@ class new_acars_form(new_acars_formTemplate):
       day = self.acars_all_date.date.strftime("%d")
       hour = self.acars_all_hour.text
 
-    params = anvil.server.call(
+    # get figure settings
+    settings = self.fig_settings_comp_1.get_settings()
+    args_list = [self.acars_site_id.text[0:8],
+    year,
+    month,
+    day,
+    hour,
+    settings['color_blind'],
+    settings['dark_mode'],
+    settings['show_hodo'],
+    settings['storm_motion'],
+    settings['modify_sfc'],
+    settings['special_parcels'],
+    settings['map_zoom'],
+    settings['radar'],
+    settings['radar_time'],
+    settings['hodo_boundary']]
+      
+    # call server call wrapper
+    params = server_call(
       "get_acars_sounding",
-      self.acars_site_id.text[0:8],
-      year,
-      month,
-      day,
-      hour,
-      settings['color_blind'],
-      settings['dark_mode'],
-      settings['show_hodo'],
-      settings['storm_motion'],
-      settings['modify_sfc'],
-      settings['special_parcels'],
-      settings['map_zoom'],
-      settings['radar'],
-      settings['radar_time'],
-      settings['hodo_boundary']
+      self.acars_standby_label,
+      *args_list
     )
     
-    self.acars_image_display.source = params[0]
-    self.acars_plot_label.text = params[1]
+    if params is not None:
+      self.acars_image_display.source = params[0]
+      self.acars_plot_label.text = params[1]

@@ -1,6 +1,7 @@
 from ._anvil_designer import new_bufkit_formTemplate
 from anvil import *
 import anvil.server
+from ...SHARED_UTILS import server_call
 
 
 class new_bufkit_form(new_bufkit_formTemplate):
@@ -23,9 +24,7 @@ class new_bufkit_form(new_bufkit_formTemplate):
 
     
     if len(self.bufkit_run_hour.text) > 0:
-      params = anvil.server.call(
-        "get_bufkit_sounding",
-        self.bufkit_model.selected_value.split(" ", 1)[0],
+      args_list = [self.bufkit_model.selected_value.split(" ", 1)[0],
         self.bufkit_site_id.text,
         self.bufkit_fhour.text,
         self.bufkit_run_date.date.strftime("%Y"),
@@ -41,13 +40,17 @@ class new_bufkit_form(new_bufkit_formTemplate):
         settings['map_zoom'],
         settings['radar'],
         settings['radar_time'],
-        settings['hodo_boundary']
+        settings['hodo_boundary']]
+     
+      # call server call wrapper
+      params = server_call(
+        "get_bufkit_sounding",
+        self.bufkit_standby_label,
+        *args_list
       )
 
     else:
-      params = anvil.server.call(
-        "get_latest_bufkit_sounding",
-        self.bufkit_model.selected_value.split(" ", 1)[0],
+      args_list = [self.bufkit_model.selected_value.split(" ", 1)[0],
         self.bufkit_site_id.text,
         self.bufkit_fhour.text,
         settings['color_blind'],
@@ -59,11 +62,18 @@ class new_bufkit_form(new_bufkit_formTemplate):
         settings['map_zoom'],
         settings['radar'],
         settings['radar_time'],
-        settings['hodo_boundary']
-      )
+        settings['hodo_boundary']]
+
+    # call server call wrapper
+    params = server_call(
+      "get_latest_bufkit_sounding",
+      self.bufkit_standby_label,
+      *args_list
+    )
     
-    self.bufkit_image_display.source = params[0]
-    self.bufkit_plot_label.text = params[1]
+    if params is not None:
+      self.bufkit_image_display.source = params[0]
+      self.bufkit_plot_label.text = params[1]
 
 
 

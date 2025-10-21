@@ -33,6 +33,6 @@ unique_ids:
     HOME.reanl_map_comp: '1737489618524152575438593.84293'
     HOME.utctime_display_comp: '1713552476878414081892260.6173'
   modules:
-    Module1: '1760660671898144284823583.85886'
+    SHARED_UTILS: '1760660671898144284823583.85886'
   scripts: {}
   server_modules: {}

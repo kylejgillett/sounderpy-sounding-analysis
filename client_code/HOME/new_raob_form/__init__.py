@@ -2,6 +2,7 @@ from ._anvil_designer import new_raob_formTemplate
 from anvil import *
 import anvil.server
 from datetime import datetime
+from ...SHARED_UTILS import server_call
 
 
 class new_raob_form(new_raob_formTemplate):
@@ -26,11 +27,9 @@ class new_raob_form(new_raob_formTemplate):
       "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
     )
 
-    # get figure settings
     settings = self.fig_settings_comp_1.get_settings()
-
-    params = anvil.server.call(
-      "get_raob_sounding",
+    
+    args_list = [
       self.raob_site_id.text,
       self.raob_date.date.strftime("%Y"),
       self.raob_date.date.strftime("%m"),
@@ -46,6 +45,15 @@ class new_raob_form(new_raob_formTemplate):
       settings['radar'],
       settings['radar_time'],
       settings['hodo_boundary']
+    ]
+    
+    # call server call wrapper
+    params = server_call(
+      "get_raob_sounding",
+      self.raob_standby_label,
+      *args_list
     )
-    self.raob_image_display.source = params[0]
-    self.raob_plot_label.text = params[1]
+
+    if params is not None:
+      self.raob_image_display.source = params[0]
+      self.raob_plot_label.text = params[1]
