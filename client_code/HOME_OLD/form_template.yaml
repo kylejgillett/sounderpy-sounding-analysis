@@ -40,7 +40,7 @@ components:
     - layout_properties: {grid_position: 'HPAUYQ,EHAKEJ PWJGNU,NBCIAC'}
       name: utctime_display_comp_1_copy
       properties: {}
-      type: form:HOME.utctime_display_comp
+      type: form:HOME_OLD.utctime_display_comp
     layout_properties: {grid_position: 'QRJDJK,HNVOZF'}
     name: card_2_copy
     properties: {background: '#44a2ff', col_spacing: tiny, col_widths: '{"EHAKEJ":40,"MUYKLM":10}', role: card, spacing_above: none, spacing_below: none}

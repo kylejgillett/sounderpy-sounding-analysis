@@ -34,7 +34,7 @@ components:
       - layout_properties: {grid_position: 'FNZCGX,FSFRQK'}
         name: reanl_map_comp_1
         properties: {}
-        type: form:HOME.reanl_map_comp
+        type: form:HOME_OLD.reanl_map_comp
       layout_properties: {grid_position: 'DQNGDB,DIMUKH'}
       name: card_1
       properties: {col_widths: '{"AXIWCQ":35,"EZUSVR":25}', role: card}
@@ -70,7 +70,7 @@ components:
     - layout_properties: {grid_position: 'CDHCWS,DGEWZH'}
       name: fig_settings_comp_1
       properties: {}
-      type: form:HOME.fig_settings_comp
+      type: form:HOME_OLD.fig_settings_comp
     - components: []
       layout_properties: {grid_position: 'LRVOLT,ZICKWD'}
       name: reanl_options_card

@@ -278,7 +278,7 @@ components:
   - layout_properties: {grid_position: 'IONOFZ,HAQCHG'}
     name: airport_map_comp_1
     properties: {}
-    type: form:HOME.airport_map_comp
+    type: form:HOME_OLD.airport_map_comp
   layout_properties: {grid_position: 'QMPKQH,WTWVJH'}
   name: card_1_copy
   properties: {role: card}
