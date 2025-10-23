@@ -64,12 +64,12 @@ class new_bufkit_form(new_bufkit_formTemplate):
         settings['radar_time'],
         settings['hodo_boundary']]
 
-    # call server call wrapper
-    params = server_call(
-      "get_latest_bufkit_sounding",
-      self.bufkit_standby_label,
-      *args_list
-    )
+      # call server call wrapper
+      params = server_call(
+        "get_latest_bufkit_sounding",
+        self.bufkit_standby_label,
+        *args_list
+      )
     
     if params is not None:
       self.bufkit_image_display.source = params[0]

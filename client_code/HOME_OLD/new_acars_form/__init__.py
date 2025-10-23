@@ -13,12 +13,13 @@ class new_acars_form(new_acars_formTemplate):
     # set date to current date in UTC
     self.acars_all_date.date = datetime.utcnow().date()
     self.acars_airport_date.date = datetime.utcnow().date()
+    self.acars_all_hour.text = datetime.utcnow().hour
     self.acars_profiles_dropdown.placeholder = "Enter a date or airport above"
 
   def acars_all_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     
-    self.acars_profiles_dropdown.placeholder = "Profiles Loaded! Select a Flight Profile..."
+    self.acars_profiles_dropdown.placeholder = "Profiles Loaded! Click here to browse and select a profile ID..."
     
     self.acars_profiles_dropdown.items = anvil.server.call(
       "get_acars_all_profile_list",
@@ -31,7 +32,7 @@ class new_acars_form(new_acars_formTemplate):
   def acars_airport_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     
-    self.acars_profiles_dropdown.placeholder = "Profiles Loaded! Select a Flight Profile..."
+    self.acars_profiles_dropdown.placeholder = "Profiles Loaded! Click here to browse and select a profile ID..."
 
     (
       self.acars_profiles_dropdown.items,

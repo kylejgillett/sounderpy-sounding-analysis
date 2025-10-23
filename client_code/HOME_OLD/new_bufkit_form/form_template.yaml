@@ -6,22 +6,22 @@ components:
       properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: MODEL FORECAST SOUNDINGS}
       type: Label
     - components:
-      - layout_properties: {grid_position: 'CJWRMP,SLWDGQ'}
-        name: bufkit_site_id_label
-        properties: {align: center, bold: true, font_size: 14, foreground: '#FFFFFF', icon: '', italic: false, text: 'CLICK A BUFKIT SITE TO "COPY" THE SITE ID, THEN "PASTE" IT IN THE BOX', underline: false}
-        type: Label
-      - event_bindings: {pressed_enter: station_id_pressed_enter}
-        layout_properties: {grid_position: 'CJWRMP,ZALGIE'}
-        name: bufkit_site_id
-        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: paste BUFKIT site ID here}
-        type: TextBox
       - layout_properties: {grid_position: 'GTLCSZ,FJODML'}
         name: bufkit_map_comp_1
         properties: {}
-        type: form:HOME.bufkit_map_comp
+        type: form:HOME_OLD.bufkit_map_comp
+      - layout_properties: {grid_position: ''}
+        name: bufkit_site_id_label
+        properties: {align: center, bold: true, font_size: 14, foreground: '#FFFFFF', icon: '', italic: false, text: 'CLICK A BUFKIT SITE TO "COPY" THE SITE ID, THEN "PASTE" IT IN THE BOX:', underline: false}
+        type: Label
+      - event_bindings: {pressed_enter: station_id_pressed_enter}
+        layout_properties: {grid_position: ',PQBXRZ'}
+        name: bufkit_site_id
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: paste or type BUFKIT site ID here}
+        type: TextBox
       layout_properties: {grid_position: 'TTJMCO,KYVNJX'}
       name: card_1
-      properties: {col_widths: '{"SLWDGQ":35,"ZALGIE":25}', role: card}
+      properties: {col_widths: '{}', role: card}
       type: ColumnPanel
     - components:
       - layout_properties: {grid_position: 'CHWSDJ,JAHSGN'}
@@ -113,7 +113,7 @@ components:
     - layout_properties: {grid_position: 'NOXKAT,QAOMKG'}
       name: fig_settings_comp_1
       properties: {}
-      type: form:HOME.fig_settings_comp
+      type: form:HOME_OLD.fig_settings_comp
     - layout_properties: {grid_position: 'ITEIYH,KOXBXH'}
       name: bufkit_stormmotion_label_copy
       properties: {align: center, bold: true, font_size: 12, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Figure Settings, visible: false}

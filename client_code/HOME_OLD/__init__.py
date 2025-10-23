@@ -1,4 +1,4 @@
-from ._anvil_designer import HOMETemplate
+from ._anvil_designer import HOME_OLDTemplate
 from anvil import *
 import anvil.server
 
@@ -11,7 +11,7 @@ from Form2 import Form2
 #from composite_form import composite_form
 #from test_form import test_form
 
-class HOME(HOMETemplate):
+class HOME_OLD(HOME_OLDTemplate):
   def __init__(self, **properties):
     # Set Form Properties and Data Bindings.
     self.init_components(**properties)
@@ -51,3 +51,4 @@ class HOME(HOMETemplate):
     self.tab_panel.clear()
     self.tab_panel.add_component(Form2())
     pass
+
