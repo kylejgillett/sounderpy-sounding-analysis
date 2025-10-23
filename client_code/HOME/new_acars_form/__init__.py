@@ -13,22 +13,29 @@ class new_acars_form(new_acars_formTemplate):
     # set date to current date in UTC
     self.acars_all_date.date = datetime.utcnow().date()
     self.acars_airport_date.date = datetime.utcnow().date()
+    self.acars_profiles_dropdown.placeholder = "Enter a date or airport above"
 
   def acars_all_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.acars_profiles_dropdown.items = [anvil.server.call(
+    
+    self.acars_profiles_dropdown.placeholder = "Profiles Loaded! Select a Flight Profile..."
+    
+    self.acars_profiles_dropdown.items = anvil.server.call(
       "get_acars_all_profile_list",
       self.acars_all_date.date.strftime("%Y"),
       self.acars_all_date.date.strftime("%m"),
       self.acars_all_date.date.strftime("%d"),
       self.acars_all_hour.text,
-    )]
+    )
 
   def acars_airport_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
+    
+    self.acars_profiles_dropdown.placeholder = "Profiles Loaded! Select a Flight Profile..."
+
     (
-      self.acars_airport_profiles_list.text,
-      self.acars_airport_info_label.text,
+      self.acars_profiles_dropdown.items,
+      # self.acars_airport_info_label.text,
       self.profiles_list,
       self.dates_list,
     ) = anvil.server.call(
@@ -39,6 +46,7 @@ class new_acars_form(new_acars_formTemplate):
       str.upper(self.acars_airport_id.text),
     )
     return self.profiles_list, self.dates_list
+    
 
   def acars_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -46,9 +54,9 @@ class new_acars_form(new_acars_formTemplate):
       "YOUR REQUEST IS PROCESSING, THIS MAY TAKE A MOMENT..."
     )
 
-    if len(self.acars_airport_id.text) > 0:
+    if len(self.acars_profiles_dropdown.selected_value) > 0:
       try:
-        profile_idx = self.profiles_list.index(self.acars_site_id.text)
+        profile_idx = self.profiles_list.index(self.acars_profiles_dropdown.selected_value)
         year = self.dates_list[profile_idx][0]
         month = self.dates_list[profile_idx][1]
         day = self.dates_list[profile_idx][2]
@@ -67,7 +75,7 @@ class new_acars_form(new_acars_formTemplate):
 
     # get figure settings
     settings = self.fig_settings_comp_1.get_settings()
-    args_list = [self.acars_site_id.text[0:8],
+    args_list = [self.acars_profiles_dropdown.selected_value[0:8],
     year,
     month,
     day,

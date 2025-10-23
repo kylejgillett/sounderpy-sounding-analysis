@@ -24,9 +24,8 @@ components:
           foreground: '#FFFF00'
           icon: ''
           spacing_above: small
-          text: |-
+          text: |
             LATEST PROFILES BY DATE & HOUR
-            _______________________________________
         type: Label
       - layout_properties: {grid_position: 'MQMAQT,SMPKGZ'}
         name: acars_date_label
@@ -59,18 +58,6 @@ components:
           text: |
             GET AVAILABLE PROFILES
         type: Button
-      - layout_properties: {grid_position: 'ODGZMV,PPOBXB'}
-        name: acars_profiles_dropdown
-        properties: {include_placeholder: true, placeholder: 'enter a date above, then select a profile'}
-        type: DropDown
-      - layout_properties: {grid_position: 'UREINQ,AXARFA'}
-        name: empty_text_box
-        properties: {align: center, background: '', bold: false, font_size: 15, foreground: '#fbff00', italic: true, text: ''}
-        type: Label
-      - layout_properties: {grid_position: 'DBELRL,VWKWNM'}
-        name: acars_all_profiles_list
-        properties: {align: left, background: '', bold: false, font_size: 12, foreground: '#fbff00', italic: true}
-        type: Label
       layout_properties: {grid_position: 'LJIOUE,NAZZFV'}
       name: card_2
       properties: {col_widths: '{"VWKWNM":50}', role: card}
@@ -85,9 +72,8 @@ components:
           foreground: '#FFFF00'
           icon: ''
           spacing_above: small
-          text: |-
+          text: |
             ALL PROFILES BY DATE & AIRPORT
-            _______________________________________
         type: Label
       - layout_properties: {grid_position: 'DUEZNP,DKKSHT'}
         name: acars_date_label_copy_2
@@ -120,42 +106,20 @@ components:
           text: |
             GET AVAILABLE PROFILES
         type: Button
-      - layout_properties: {grid_position: 'FWLMBB,HGMCIS'}
-        name: acars_airport_info_label
-        properties: {align: center, background: '', bold: false, font_size: 15, foreground: '#fbff00', italic: true}
-        type: Label
-      - layout_properties: {grid_position: 'OPXBHA,XKCUUD'}
-        name: acars_airport_profiles_list
-        properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#fbff00', italic: true}
-        type: Label
       layout_properties: {grid_position: 'LJIOUE,EWFKVT'}
       name: card_1
       properties: {col_widths: '{"XKCUUD":50}', role: card}
       type: ColumnPanel
     - components:
-      - layout_properties: {grid_position: 'VCMVUZ,QNQLNY'}
-        name: acars_instructions_label_2
-        properties:
-          align: center
-          bold: true
-          font_size: 20
-          foreground: '#FFFF00'
-          icon: ''
-          spacing_above: small
-          text: |2-
-
-             'COPY & PASTE' ONE OF THE ABOVE 'FLIGHT IDS' INTO THE BOX BELOW
-            _______________________________________
-        type: Label
-      - layout_properties: {grid_position: 'UCYYUR,MJTAIY'}
+      - layout_properties: {grid_position: 'SCCDWY,BJBYJT'}
         name: acars_flight_id
-        properties: {align: center, bold: true, font_size: 17, foreground: '#FFFFFF', icon: 'fa:map-marker', text: FLIGHT ID}
+        properties: {align: center, bold: true, font_size: 20, foreground: '#FFFF00', icon: 'fa:map-marker', text: FLIGHT ID}
         type: Label
-      - event_bindings: {pressed_enter: station_id_pressed_enter}
-        layout_properties: {grid_position: 'JESURB,TIBFTG'}
-        name: acars_site_id
-        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'ACARS Flight ID (ex: ''PDX_0050'')'}
-        type: TextBox
+      - data_bindings: []
+        layout_properties: {grid_position: 'XPPDBF,ZOICCK'}
+        name: acars_profiles_dropdown
+        properties: {include_placeholder: true, placeholder: 'enter a date above, then select a profile'}
+        type: DropDown
       layout_properties: {grid_position: 'FFPRPX,SDPJBB'}
       name: card_3
       properties: {role: card}
