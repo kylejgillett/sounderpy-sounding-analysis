@@ -14,8 +14,8 @@ def server_call(server_function_name, standby_label, *args, **kwargs):
     alert("Connection to server was lost, but it's attempting to reconnect. Try again in 10 seconds", title="Connection Error")
     return None
 
-  except Exception as e:
-    # Handle other unexpected errors (e.g., from server-side Python logic)
-    standby_label.text = f"SERVER ERROR: {type(e).__name__}"
-    print(f"Server call '{server_function_name}' failed with: {e}")
-    return None
+  # except Exception as e:
+  #   # Handle other unexpected errors (e.g., from server-side Python logic)
+  #   standby_label.text = f"SERVER ERROR: {type(e).__name__}"
+  #   print(f"Server call '{server_function_name}' failed with: {e}")
+  #   return None

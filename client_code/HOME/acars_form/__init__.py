@@ -25,6 +25,7 @@ class acars_form(acars_formTemplate):
                                 self.acars_airport_date.date.strftime('%d'),
                                 str.upper(self.acars_airport_id.text))
     return self.profiles_list, self.dates_list
+    
   
   def acars_button_click(self, **event_args):
     """This method is called when the button is clicked"""

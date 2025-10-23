@@ -59,6 +59,10 @@ components:
           text: |
             GET AVAILABLE PROFILES
         type: Button
+      - layout_properties: {grid_position: 'ODGZMV,PPOBXB'}
+        name: acars_profiles_dropdown
+        properties: {include_placeholder: true, placeholder: 'enter a date above, then select a profile'}
+        type: DropDown
       - layout_properties: {grid_position: 'UREINQ,AXARFA'}
         name: empty_text_box
         properties: {align: center, background: '', bold: false, font_size: 15, foreground: '#fbff00', italic: true, text: ''}

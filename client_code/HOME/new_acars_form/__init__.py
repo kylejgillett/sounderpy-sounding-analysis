@@ -16,13 +16,13 @@ class new_acars_form(new_acars_formTemplate):
 
   def acars_all_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.acars_all_profiles_list.text = anvil.server.call(
+    self.acars_profiles_dropdown.items = [anvil.server.call(
       "get_acars_all_profile_list",
       self.acars_all_date.date.strftime("%Y"),
       self.acars_all_date.date.strftime("%m"),
       self.acars_all_date.date.strftime("%d"),
       self.acars_all_hour.text,
-    )
+    )]
 
   def acars_airport_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
