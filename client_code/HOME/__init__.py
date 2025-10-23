@@ -51,3 +51,4 @@ class HOME(HOMETemplate):
   #   self.tab_panel.clear()
   #   self.tab_panel.add_component(Form2())
   #   pass
+

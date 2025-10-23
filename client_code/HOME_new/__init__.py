@@ -1,4 +1,4 @@
-from ._anvil_designer import HOME_OLDTemplate
+from ._anvil_designer import HOME_newTemplate
 from anvil import *
 import anvil.server
 
@@ -7,11 +7,11 @@ from new_acars_form import new_acars_form
 from new_bufkit_form import new_bufkit_form
 from new_reanl_form import new_reanl_form
 from about_form import about_form
-from Form2 import Form2
+#from Form2 import Form2
 #from composite_form import composite_form
 #from test_form import test_form
 
-class HOME_OLD(HOME_OLDTemplate):
+class HOME_new(HOME_newTemplate):
   def __init__(self, **properties):
     # Set Form Properties and Data Bindings.
     self.init_components(**properties)
@@ -46,9 +46,8 @@ class HOME_OLD(HOME_OLDTemplate):
     self.tab_panel.add_component(about_form())
     pass
 
-  def test_tab_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.tab_panel.clear()
-    self.tab_panel.add_component(Form2())
-    pass
-
+  # def test_tab_click(self, **event_args):
+  #   """This method is called when the button is clicked"""
+  #   self.tab_panel.clear()
+  #   self.tab_panel.add_component(Form2())
+  #   pass

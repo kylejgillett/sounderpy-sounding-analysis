@@ -19,7 +19,7 @@ components:
         - layout_properties: {grid_position: 'GGFEHH,XVNOBW'}
           name: raob_map_comp_1
           properties: {}
-          type: form:HOME_OLD.raob_map_comp
+          type: form:HOME.raob_map_comp
         layout_properties: {grid_position: 'RVZOJK,PNLITO'}
         name: tab_panel
         properties: {background: '', border: '', col_spacing: medium, col_widths: '', foreground: '', role: null, spacing_above: none, spacing_below: small, tooltip: '', visible: true, wrap_on: mobile}
@@ -52,7 +52,7 @@ components:
     - layout_properties: {full_width_row: false, grid_position: 'ILOOTK,HGRXME'}
       name: fig_settings_comp_1
       properties: {}
-      type: form:HOME_OLD.fig_settings_comp
+      type: form:HOME.fig_settings_comp
     - layout_properties: {grid_position: 'DUVJQG,KLCIHY'}
       name: spacer_3
       properties: {height: 39}

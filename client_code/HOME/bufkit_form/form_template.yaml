@@ -230,7 +230,7 @@ components:
   - layout_properties: {grid_position: 'PXYTVQ,TUMUQJ'}
     name: bufkit_map_comp_1
     properties: {}
-    type: form:HOME_OLD.bufkit_map_comp
+    type: form:HOME.bufkit_map_comp
   layout_properties: {grid_position: 'PJPKFE,OAMGCJ'}
   name: card_1
   properties: {role: card}
