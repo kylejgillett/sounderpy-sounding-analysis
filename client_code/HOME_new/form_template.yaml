@@ -1,7 +1,7 @@
 components:
 - layout_properties: {slot: logo}
   name: image_1
-  properties: {height: 137, source: _/theme/251580013-2e9477c9-e36a-4163-accb-fe46780058dd-logo.png}
+  properties: {height: 137, source: _/theme/sounderpy_logo_new_small.png}
   type: Image
 - components:
   - layout_properties: {grid_position: 'ZGFNMR,ELAEGS'}
