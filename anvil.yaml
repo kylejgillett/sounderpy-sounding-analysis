@@ -14,6 +14,6 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup: {module: HOME, type: form}
+startup: {module: HOME_new, type: form}
 startup_form: null
 uplink_visible: true

@@ -19,30 +19,35 @@ class HOME_new(HOME_newTemplate):
   def raob_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
+    self.welcome_label.visible = False
     self.tab_panel.add_component(new_raob_form())
     pass
 
   def acars_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
+    self.welcome_label.visible = False
     self.tab_panel.add_component(new_acars_form())
     pass
 
   def bufkit_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
+    self.welcome_label.visible = False
     self.tab_panel.add_component(new_bufkit_form())
     pass
 
   def reanl_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
+    self.welcome_label.visible = False
     self.tab_panel.add_component(new_reanl_form())
     pass
 
   def about_tab_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
+    self.welcome_label.visible = False
     self.tab_panel.add_component(about_form())
     pass
 

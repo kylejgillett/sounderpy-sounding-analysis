@@ -1,0 +1,185 @@
+components:
+- components:
+  - components:
+    - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+      name: acars_header
+      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: OBSERVED ACARS SOUNDINGS}
+      type: Label
+    - layout_properties: {grid_position: 'JYAGYY,VPJVGF'}
+      name: label_2_copy_copy
+      properties:
+        align: center
+        font: ''
+        font_size: 12
+        foreground: '#FFFFFF'
+        text: "Plot ACARS aircraft observed soundings from North American airports. To use this, you must first search for either... all available profiles from any airport for a given date and hour or... all available profiles for a single airport on a given date. Next, you can copy one of the 'flight identifiers' (ex: 'BNA_1240') and paste it in the 'FLIGHT ID' box. Finally, select optional settings and push the 'GET SOUNDING' button.\n\n  "
+      type: Label
+    - components:
+      - layout_properties: {grid_position: 'FVUDCV,VVLYEC'}
+        name: acars_instructions_label
+        properties:
+          align: center
+          bold: true
+          font_size: 20
+          foreground: '#FFFF00'
+          icon: ''
+          spacing_above: small
+          text: |
+            LATEST PROFILES BY DATE & HOUR
+        type: Label
+      - layout_properties: {grid_position: 'MQMAQT,SMPKGZ'}
+        name: acars_date_label
+        properties: {align: center, bold: true, font: '', font_size: 14, foreground: '#FFFFFF', icon: 'fa:calendar', text: FLIGHT DATE}
+        type: Label
+      - layout_properties: {grid_position: 'MQMAQT,OOSGSX'}
+        name: acars_hour_label
+        properties: {align: center, bold: true, font_size: 14, foreground: '#FFFF', icon: 'fa:clock-o', text: FLIGHT HOUR}
+        type: Label
+      - layout_properties: {grid_position: 'NFPCIT,EKPLRN'}
+        name: acars_all_date
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', italic: true, pick_time: true, placeholder: enter a flight date, visible: true}
+        type: DatePicker
+      - layout_properties: {grid_position: 'NFPCIT,RWIZAV'}
+        name: acars_all_hour
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'UTC format (ex: ''12'', ''00'')'}
+        type: TextBox
+      - event_bindings: {click: acars_all_profiles_button_click}
+        layout_properties: {grid_position: 'BSBATR,GOFXTF'}
+        name: acars_all_profiles_button
+        properties:
+          align: center
+          background: theme:On Primary
+          bold: true
+          border: ''
+          font: ''
+          font_size: 17
+          foreground: '#fbff00'
+          role: filled
+          text: |
+            GET AVAILABLE PROFILES
+        type: Button
+      layout_properties: {grid_position: 'LJIOUE,NAZZFV'}
+      name: card_2
+      properties: {col_widths: '{"VWKWNM":50}', role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'YZTFXS,QKKQXT'}
+        name: acars_instructions_label_copy
+        properties:
+          align: center
+          bold: true
+          font_size: 20
+          foreground: '#FFFF00'
+          icon: ''
+          spacing_above: small
+          text: |
+            ALL PROFILES BY DATE & AIRPORT
+        type: Label
+      - layout_properties: {grid_position: 'DUEZNP,DKKSHT'}
+        name: acars_date_label_copy_2
+        properties: {align: center, bold: true, font: '', font_size: 14, foreground: '#FFFFFF', icon: 'fa:calendar', text: FLIGHT DATE}
+        type: Label
+      - layout_properties: {grid_position: 'DUEZNP,XEQKMF'}
+        name: acars_date_label_copy
+        properties: {align: center, bold: true, font: '', font_size: 14, foreground: '#FFFFFF', icon: 'fa:calendar', text: AIRPORT ID}
+        type: Label
+      - layout_properties: {grid_position: 'KRWEDA,CZBPQG'}
+        name: acars_airport_date
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', italic: true, pick_time: true, placeholder: enter a flight date, visible: true}
+        type: DatePicker
+      - layout_properties: {grid_position: 'KRWEDA,VNBDTK'}
+        name: acars_airport_id
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'airport ICAO ID (ex: ''JFK'')'}
+        type: TextBox
+      - event_bindings: {click: acars_airport_profiles_button_click}
+        layout_properties: {grid_position: 'HPZVAG,EFWMWV'}
+        name: acars_airport_profiles_button
+        properties:
+          align: center
+          background: theme:On Primary
+          bold: true
+          border: ''
+          font: ''
+          font_size: 17
+          foreground: '#fbff00'
+          role: filled
+          text: |
+            GET AVAILABLE PROFILES
+        type: Button
+      layout_properties: {grid_position: 'LJIOUE,EWFKVT'}
+      name: card_1
+      properties: {col_widths: '{"XKCUUD":50}', role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'SCCDWY,BJBYJT'}
+        name: acars_flight_id
+        properties: {align: center, bold: true, font_size: 20, foreground: '#FFFF00', icon: 'fa:map-marker', text: FLIGHT ID}
+        type: Label
+      - data_bindings: []
+        layout_properties: {grid_position: 'XPPDBF,ZOICCK'}
+        name: acars_profiles_dropdown
+        properties: {include_placeholder: true, placeholder: ''}
+        type: DropDown
+      layout_properties: {grid_position: 'FFPRPX,SDPJBB'}
+      name: card_3
+      properties: {role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'CJTVVL,JKGOCI'}
+      name: fig_settings_comp_1
+      properties: {}
+      type: form:HOME.fig_settings_comp
+    - event_bindings: {click: acars_button_click}
+      layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
+      name: acars_button
+      properties:
+        align: center
+        background: theme:On Primary
+        bold: true
+        border: ''
+        font: ''
+        font_size: 20
+        foreground: '#fbff00'
+        role: filled
+        text: |
+          GET SOUNDING
+      type: Button
+    - event_bindings: {show: raob_plot_label_copy_show}
+      layout_properties: {grid_position: 'BQARFE,HNABIL'}
+      name: acars_standby_label
+      properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#FFFFFF', italic: true}
+      type: Label
+    - layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
+      name: acars_plot_label
+      properties: {align: center, background: '', bold: true, font_size: 18, foreground: '#fbff00'}
+      type: Label
+    - layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+      name: acars_image_display
+      properties: {display_mode: original_size}
+      type: Image
+    layout_properties: {grid_position: 'YJASZZ,ZWVHPM'}
+    name: card_1_copy_copy
+    properties: {background: 'theme:Surface Variant', col_widths: '{}', role: card, visible: true}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'IBHDIK,AWNVDF'}
+  name: acars_card
+  properties: {background: 'theme:On Primary', foreground: 'theme:Primary', role: card, visible: true}
+  type: ColumnPanel
+- layout_properties: {grid_position: 'LBMUOO,ESONIG'}
+  name: spacer_1
+  properties: {height: 155}
+  type: Spacer
+- components:
+  - layout_properties: {grid_position: 'YYHUBV,KSNAJN'}
+    name: bufkit_instructions_label_copy
+    properties: {align: center, bold: true, font_size: 15, foreground: '#FFFFFF', icon: 'fa:map', spacing_above: small, text: US Airports Map | Courtesy OurAirports.com}
+    type: Label
+  - layout_properties: {grid_position: 'IONOFZ,HAQCHG'}
+    name: airport_map_comp_1
+    properties: {}
+    type: form:HOME.airport_map_comp
+  layout_properties: {grid_position: 'QMPKQH,WTWVJH'}
+  name: card_1_copy
+  properties: {role: card}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true

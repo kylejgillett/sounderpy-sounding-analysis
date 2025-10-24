@@ -1,0 +1,116 @@
+components:
+- components:
+  - components:
+    - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
+      name: reanl_header
+      properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: RAP-RUC MODEL REANALYSIS SOUNDINGS}
+      type: Label
+    - layout_properties: {grid_position: 'VPBARC,FDAVCL'}
+      name: reanl_info_text
+      properties:
+        align: center
+        font: ''
+        font_size: 12
+        foreground: '#FFFFFF'
+        text: "This tool retrieves Rapid Refresh & Rapid Update Cycle model reanalysis data from NCEI for a given date/time and location. To learn more about the RAP/RUC reanalysis datasets, available times and the lat/lon domain (CONUS), check out the link below.\nSometimes this data is unavailable, check here for updates: https://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update "
+      type: Label
+    - components:
+      - layout_properties: {grid_position: 'FCWKRR,AXIWCQ'}
+        name: reanl_latlon_label
+        properties:
+          align: center
+          bold: true
+          font_size: 14
+          foreground: '#FFFF'
+          icon: ''
+          text: |
+            CLICK THE MAP TO "COPY" COORDINATES, THEN "PASTE" THEM IN THE BOX
+        type: Label
+      - data_bindings: []
+        layout_properties: {grid_position: 'FCWKRR,EZUSVR'}
+        name: reanl_coords
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'paste coordinates here (ex: 45.6, -86.7)', type: text}
+        type: TextBox
+      - layout_properties: {grid_position: 'FNZCGX,FSFRQK'}
+        name: reanl_map_comp_1
+        properties: {}
+        type: form:HOME.reanl_map_comp
+      layout_properties: {grid_position: 'DQNGDB,DIMUKH'}
+      name: card_1
+      properties: {col_widths: '{"AXIWCQ":35,"EZUSVR":25}', role: card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'DMUCZG,GNQXAB'}
+        name: reanl_date_label
+        properties: {align: center, bold: true, font: '', font_size: 17, foreground: '#FFFFFF', icon: 'fa:calendar', text: REANALYSIS DATE}
+        type: Label
+      - layout_properties: {grid_position: 'DMUCZG,KHHHHI'}
+        name: reanl_date
+        properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', italic: true, pick_time: true, placeholder: enter a UTC date, visible: true}
+        type: DatePicker
+      - layout_properties: {grid_position: 'CSFZTE,VEQFRD'}
+        name: reanl_fhour_label
+        properties:
+          align: center
+          bold: true
+          font_size: 17
+          foreground: '#FFFF'
+          icon: fa:clock-o
+          text: |
+            REANALYSIS HOUR
+        type: Label
+      - layout_properties: {grid_position: 'CSFZTE,CVHTEO'}
+        name: reanl_hour
+        properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'UTC hour (12, 18, 00 etc)', type: text}
+        type: TextBox
+      layout_properties: {grid_position: 'OMJKSG,KJSUKF'}
+      name: card_2
+      properties: {role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'CDHCWS,DGEWZH'}
+      name: fig_settings_comp_1
+      properties: {}
+      type: form:HOME.fig_settings_comp
+    - components: []
+      layout_properties: {grid_position: 'LRVOLT,ZICKWD'}
+      name: reanl_options_card
+      properties: {background: '#363636', role: card}
+      type: ColumnPanel
+    - event_bindings: {click: reanl_button_click}
+      layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
+      name: reanl_button
+      properties:
+        align: center
+        background: '#44a2ff'
+        bold: true
+        border: ''
+        font: ''
+        font_size: 20
+        foreground: '#fbff00'
+        role: filled
+        text: |
+          GET SOUNDING
+      type: Button
+    - event_bindings: {show: raob_plot_label_copy_show}
+      layout_properties: {grid_position: 'KXBBLA,MDFJSA'}
+      name: reanl_standby_label
+      properties: {align: center, background: '', bold: false, font_size: 12, foreground: '#FFFFFF', italic: true}
+      type: Label
+    - layout_properties: {grid_position: 'MCSXSQ,JJYYFQ'}
+      name: reanl_plot_label
+      properties: {align: center, background: '', bold: true, font_size: 18, foreground: '#fbff00'}
+      type: Label
+    - layout_properties: {grid_position: 'MSGDQX,KZZEVY'}
+      name: reanl_image_display
+      properties: {display_mode: original_size}
+      type: Image
+    layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
+    name: reanl_card_inside
+    properties: {background: '#363636', col_widths: '{}', role: card}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'ZJUHHX,GNHYAV'}
+  name: reanl_card
+  properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true
