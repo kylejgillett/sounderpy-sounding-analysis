@@ -12,7 +12,7 @@ container:
           function updateUTCTime() {
             var now = new Date();
             // Customize the time format to end with 'Z'
-            var utcString = "Current UTC time: " + now.toISOString().replace('T', ' ').replace(/\.\d+Z$/, 'Z');
+            var utcString = now.toISOString().replace('T', ' ').replace(/\.\d+Z$/, 'Z');
             document.getElementById('utc-time').textContent = utcString;
           }
 

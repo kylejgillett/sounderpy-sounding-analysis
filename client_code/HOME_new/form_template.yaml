@@ -8,13 +8,17 @@ components:
   properties: {height: 137, source: _/theme/251580013-2e9477c9-e36a-4163-accb-fe46780058dd-logo.png}
   type: Image
 - components:
+  - layout_properties: {grid_position: 'WUKZZW,ENHJBQ'}
+    name: utctime_display_comp_1_copy
+    properties: {}
+    type: form:HOME.utctime_display_comp
   - data_bindings:
     - {code: 'self.item[''raob_tab'']', property: tag, writeback: false}
     event_bindings: {click: raob_tab_click}
-    layout_properties: {grid_position: 'ZAUPKC,QTHOJM'}
+    layout_properties: {grid_position: 'OZDVOF,QVDMGA'}
     name: raob_tab_button
     properties:
-      background: '#363636'
+      background: theme:On Primary
       text: |-
         RAOB
         OBSERVATIONS
@@ -23,7 +27,7 @@ components:
     layout_properties: {grid_position: 'HHDOVM,PPQMTA'}
     name: bufkit_tab_button
     properties:
-      background: '#363636'
+      background: theme:On Primary
       text: |
         MODEL
         FORECASTS
@@ -33,7 +37,7 @@ components:
     layout_properties: {grid_position: 'OCBAOX,SACRIZ'}
     name: acars_tab_button
     properties:
-      background: '#363636'
+      background: theme:On Primary
       text: |
         ACARS
         OBSERVATIONS
@@ -42,24 +46,32 @@ components:
     layout_properties: {grid_position: 'XBYGVJ,AUGLID'}
     name: reanl_tab_button
     properties:
-      background: '#363636'
+      background: theme:On Primary
       text: |
         MODEL
         REANALYSIS
     type: Button
   - event_bindings: {click: about_tab_click}
-    layout_properties: {grid_position: 'KGUWXA,JCGIUA'}
-    name: reanl_tab_button_copy
+    layout_properties: {grid_position: 'UBCNKA,DZZZUO'}
+    name: about_button
     properties:
-      background: '#363636'
+      background: theme:On Primary
       text: |
         ABOUT
         SOUNDERPY
     type: Button
+  - layout_properties: {grid_position: 'UYVVSD,WJKEPK'}
+    name: spacer_1
+    properties: {height: 26}
+    type: Spacer
+  - layout_properties: {grid_position: ''}
+    name: label_2_copy
+    properties: {align: center, bold: false, font: '', font_size: 14, foreground: '#FFFFFF', spacing_above: small, spacing_below: small, text: (C) Kyle J Gillett 2025 | @wxkylegillett}
+    type: Label
   data_bindings: []
   layout_properties: {slot: left-nav}
   name: card_4
-  properties: {background: '#44a2ff', role: card, visible: true, wrap_on: mobile}
+  properties: {background: '', role: card, visible: true, wrap_on: mobile}
   type: ColumnPanel
 container:
   properties: {html: '@theme:standard-page.html'}
