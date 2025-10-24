@@ -12,7 +12,7 @@ components:
         font: ''
         font_size: 12
         foreground: '#FFFFFF'
-        text: "Plot ACARS aircraft observed soundings from North American airports. To use this, you must first search for either... all available profiles from any airport for a given date and hour or... all available profiles for a single airport on a given date. Next, you can copy one of the 'flight identifiers' (ex: 'BNA_1240') and paste it in the 'FLIGHT ID' box. Finally, select optional settings and push the 'GET SOUNDING' button.\n\n  "
+        text: "Plot ACARS aircraft observed soundings from North American airports. To use this, you must first search for either... all available profiles from any airport for a given date and hour or... all available profiles for a single airport on a given date. After searching, the results populate in the dropdown menu below. Select a profile and push the 'GET SOUNDING' button.\n\n  "
       type: Label
     - components:
       - layout_properties: {grid_position: 'FVUDCV,VVLYEC'}
