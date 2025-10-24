@@ -14,7 +14,7 @@ class new_acars_form(new_acars_formTemplate):
     # set date to current date in UTC
     self.acars_all_date.date = datetime.utcnow().date()
     self.acars_airport_date.date = datetime.utcnow().date()
-    self.acars_all_hour.text = datetime.utcnow().hour
+    self.acars_all_hour.text = str(datetime.utcnow().hour).zfill(2)
     self.acars_profiles_dropdown.placeholder = "Enter a date or airport above"
 
   def acars_all_profiles_button_click(self, **event_args):

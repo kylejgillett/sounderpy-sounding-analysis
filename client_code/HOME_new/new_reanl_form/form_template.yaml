@@ -15,7 +15,15 @@ components:
         text: "This tool retrieves Rapid Refresh & Rapid Update Cycle model reanalysis data from NCEI for a given date/time and location. To learn more about the RAP/RUC reanalysis datasets, available times and the lat/lon domain (CONUS), check out the link below.\nSometimes this data is unavailable, check here for updates: https://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update "
       type: Label
     - components:
-      - layout_properties: {grid_position: 'FCWKRR,AXIWCQ'}
+      - layout_properties: {grid_position: 'FNZCGX,FSFRQK'}
+        name: reanl_map_comp_1
+        properties: {}
+        type: form:HOME.reanl_map_comp
+      - layout_properties: {grid_position: 'VAFNQF,YWHARD'}
+        name: spacer_1
+        properties: {height: 32}
+        type: Spacer
+      - layout_properties: {grid_position: 'DQQTDQ,WVGEBG'}
         name: reanl_latlon_label
         properties:
           align: center
@@ -27,28 +35,19 @@ components:
             CLICK THE MAP TO "COPY" COORDINATES, THEN "PASTE" THEM IN THE BOX
         type: Label
       - data_bindings: []
-        layout_properties: {grid_position: 'FCWKRR,EZUSVR'}
+        layout_properties: {grid_position: 'DQQTDQ,THRZMK'}
         name: reanl_coords
         properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'paste coordinates here (ex: 45.6, -86.7)', type: text}
         type: TextBox
-      - layout_properties: {grid_position: 'FNZCGX,FSFRQK'}
-        name: reanl_map_comp_1
-        properties: {}
-        type: form:HOME.reanl_map_comp
-      layout_properties: {grid_position: 'DQNGDB,DIMUKH'}
-      name: card_1
-      properties: {col_widths: '{"AXIWCQ":35,"EZUSVR":25}', role: card}
-      type: ColumnPanel
-    - components:
-      - layout_properties: {grid_position: 'DMUCZG,GNQXAB'}
+      - layout_properties: {grid_position: 'IEMWGR,EVLBFV'}
         name: reanl_date_label
         properties: {align: center, bold: true, font: '', font_size: 17, foreground: '#FFFFFF', icon: 'fa:calendar', text: REANALYSIS DATE}
         type: Label
-      - layout_properties: {grid_position: 'DMUCZG,KHHHHI'}
+      - layout_properties: {grid_position: 'IEMWGR,DRFZHY'}
         name: reanl_date
         properties: {align: center, background: '#707070', bold: true, enabled: true, font_size: 15, foreground: 'theme:', format: '"%m-%d-%Y"', italic: true, pick_time: true, placeholder: enter a UTC date, visible: true}
         type: DatePicker
-      - layout_properties: {grid_position: 'CSFZTE,VEQFRD'}
+      - layout_properties: {grid_position: 'KJDYXA,IYPJGI'}
         name: reanl_fhour_label
         properties:
           align: center
@@ -59,13 +58,13 @@ components:
           text: |
             REANALYSIS HOUR
         type: Label
-      - layout_properties: {grid_position: 'CSFZTE,CVHTEO'}
+      - layout_properties: {grid_position: 'KJDYXA,WSHNYM'}
         name: reanl_hour
         properties: {align: center, background: '#707070', bold: true, font_size: 15, foreground: 'theme:', italic: true, placeholder: 'UTC hour (12, 18, 00 etc)', type: text}
         type: TextBox
-      layout_properties: {grid_position: 'OMJKSG,KJSUKF'}
-      name: card_2
-      properties: {role: card}
+      layout_properties: {grid_position: 'DQNGDB,DIMUKH'}
+      name: card_1
+      properties: {col_widths: '{}', role: card}
       type: ColumnPanel
     - layout_properties: {grid_position: 'CDHCWS,DGEWZH'}
       name: fig_settings_comp_1
@@ -81,7 +80,7 @@ components:
       name: reanl_button
       properties:
         align: center
-        background: '#44a2ff'
+        background: theme:Tertiary Container
         bold: true
         border: ''
         font: ''
@@ -106,11 +105,11 @@ components:
       type: Image
     layout_properties: {grid_position: 'RLDNOX,DQIOIF'}
     name: reanl_card_inside
-    properties: {background: '#363636', col_widths: '{}', role: card}
+    properties: {background: '#1b2628', col_widths: '{}', role: card}
     type: ColumnPanel
   layout_properties: {grid_position: 'ZJUHHX,GNHYAV'}
   name: reanl_card
-  properties: {background: '#44a2ff', foreground: 'theme:Primary', role: card, visible: true}
+  properties: {background: 'theme:Outline', foreground: 'theme:Primary', role: card, visible: true}
   type: ColumnPanel
 container: {type: ColumnPanel}
 is_package: true

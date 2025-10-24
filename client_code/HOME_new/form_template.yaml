@@ -73,6 +73,15 @@ components:
     name: label_2_copy
     properties: {align: center, bold: false, font: '', font_size: 14, foreground: '#FFFFFF', spacing_above: small, spacing_below: small, text: (C) Kyle J Gillett 2025 | @wxkylegillett}
     type: Label
+  - layout_properties: {grid_position: 'EGUMLS,LUOIBO'}
+    name: label_2_copy_2_copy
+    properties:
+      align: center
+      font: ''
+      foreground: '#FFFFFF'
+      text: |
+        Powered by SounderPy v3.1.0
+    type: Label
   data_bindings: []
   layout_properties: {slot: left-nav}
   name: card_4
@@ -91,7 +100,7 @@ components:
       bold: true
       font_size: 20
       text: |
-        Welcome, please select a data explorer from the menu on the left
+        Welcome! Please select a data explorer from the menu on the left.
       visible: true
     type: Label
   - layout_properties: {grid_position: 'FIWSFJ,HMMMBO'}
@@ -106,26 +115,8 @@ components:
     type: Label
   - layout_properties: {grid_position: 'HMXLCW,JQSYEC'}
     name: spacer_2
-    properties: {height: 367}
+    properties: {height: 243}
     type: Spacer
-  - components:
-    - layout_properties: {grid_position: 'FFFVZI,MYVMHX'}
-      name: link_1_copy_2
-      properties: {align: center, bold: true, col_spacing: huge, font: '', font_size: 15, foreground: 'theme:On Tertiary Container', icon_align: top, italic: true, text: 'Enjoy using this app? Consider supporting future development of SounderPy and SounderPy applications by “Buying me a coffee”! ☕', underline: false, url: 'https://www.buymeacoffee.com/kylejgillett'}
-      type: Link
-    - layout_properties: {grid_position: 'HFBIZM,XUTDIV'}
-      name: label_2_copy_2_copy
-      properties:
-        align: center
-        font: ''
-        foreground: '#FFFFFF'
-        text: |
-          Powered by SounderPy v3.1.0 | (C) Kyle J Gillett 2024, 2025
-      type: Label
-    layout_properties: {grid_position: 'FVISEW,ILWZTN'}
-    name: reanl_card_inside_copy
-    properties: {background: '#363636', col_widths: '{}', role: card}
-    type: ColumnPanel
   layout_properties: {slot: default}
   name: column_panel_1
   properties: {}
