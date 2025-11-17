@@ -98,10 +98,10 @@ components:
       name: card_1
       properties: {col_widths: '{}', role: card}
       type: ColumnPanel
-    - layout_properties: {grid_position: 'NOXKAT,QAOMKG'}
+    - layout_properties: {grid_position: 'HYZHBQ,AQULYA'}
       name: fig_settings_comp_1
       properties: {}
-      type: form:HOME.fig_settings_comp
+      type: form:HOME_new.fig_settings_comp
     - event_bindings: {click: bufkit_button_click}
       layout_properties: {grid_position: 'TQCSFA,FHOEWA'}
       name: bufkit_button

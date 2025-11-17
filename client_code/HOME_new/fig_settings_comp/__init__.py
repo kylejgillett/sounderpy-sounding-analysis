@@ -8,15 +8,15 @@ class fig_settings_comp(fig_settings_compTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-  def show_settings_panel_click(self, **event_args):
-    current_state = self.settings_panel.visible
-    self.settings_panel.visible = not current_state
+  def show_fig_settings_panel_click(self, **event_args):
+    current_state = self.fig_settings_panel.visible
+    self.fig_settings_panel.visible = not current_state
 
     # Optional: Change the button text
-    if self.settings_panel.visible:
-      self.show_settings_panel.text = "Hide Figure Settings"
+    if self.fig_settings_panel.visible:
+      self.show_fig_settings_panel.text = "Hide Figure Settings"
     else:
-      self.show_settings_panel.text = "Show Figure Settings"
+      self.show_fig_settings_panel.text = "Show Figure Settings"
 
   def get_settings(self):
     # --- Storm Motion Logic ---
@@ -79,3 +79,28 @@ class fig_settings_comp(fig_settings_compTemplate):
       "radar_time": radar_date,
       "hodo_boundary": hodo_boundary_angle,
     }
+
+  # def show_file_settings_panel_click(self, **event_args):
+  #   current_state = self.file_settings_panel.visible
+  #   self.file_settings_panel.visible = not current_state
+
+  #   # Optional: Change the button text
+  #   if self.file_settings_panel.visible:
+  #     self.show_file_settings_panel.text = "Hide File Settings"
+  #   else:
+  #     self.show_file_settings_panel.text = "Show File Settings"
+
+  # def get_settings(self):
+  #   # --- FILE TYPE ---
+  #   file_type = self.file_type.selected_value
+
+  #   # --- Special Parcels Logic ---
+  #   convert_to_agl = True if self.agl_check.checked else False
+
+  #   # --- Return all settings ---
+  #   return {
+  #     "file_type": file_type,
+  #     "convert_agl": convert_to_agl,
+  #   }
+
+

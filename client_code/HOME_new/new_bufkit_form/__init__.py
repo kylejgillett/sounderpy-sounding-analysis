@@ -72,6 +72,13 @@ class new_bufkit_form(new_bufkit_formTemplate):
       self.bufkit_image_display.source = params[0]
       self.bufkit_plot_label.text = params[1]
 
+
+  # def download_button_click(self, **event_args):
+  #   # get figure settings
+  #   settings = self.fig_settings_comp_1.get_settings()
+  #   media_file = server_call('get_latest_bufkit_sounding', self.bufkit_standby_label, *args_list)
+  #   anvil.media.download(media_file)
+
   # if len(self.bufkit_direction.text) > 0:
   #   storm_motion = [int(self.bufkit_direction.text), int(self.bufkit_speed.text)]
   # else:

@@ -1,8 +1,8 @@
 components:
 - components:
-  - event_bindings: {click: show_settings_panel_click, show: show_settings_panel_show}
+  - event_bindings: {click: show_fig_settings_panel_click, show: show_settings_panel_show}
     layout_properties: {full_width_row: false, grid_position: 'UOMCDW,ULLJVZ'}
-    name: show_settings_panel
+    name: show_fig_settings_panel
     properties: {background: '#2a282e', border: '', icon: 'fa:cogs', italic: false, text: Show Figure Settings}
     type: Button
   - components:
@@ -141,7 +141,7 @@ components:
       properties: {background: '#49454f', role: card}
       type: ColumnPanel
     layout_properties: {grid_position: 'WZMGMG,WODTEA'}
-    name: settings_panel
+    name: fig_settings_panel
     properties: {col_widths: '{"XKQOCK":20,"ZKYEIE":40}', visible: false}
     type: ColumnPanel
   layout_properties: {grid_position: 'AHBQSA,VRWJOK'}
