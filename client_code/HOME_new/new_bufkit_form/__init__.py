@@ -81,8 +81,8 @@ class new_bufkit_form(new_bufkit_formTemplate):
     if params is not None:
       self.bufkit_image_display.source = params[0]
       self.bufkit_plot_label.text = params[1]
-      self.file_download_panel.visible = True
-      self.files = params[2]
+      # self.file_download_panel.visible = True
+      # self.files = params[2]
     
 
   # def download_button_click(self, **event_args):
