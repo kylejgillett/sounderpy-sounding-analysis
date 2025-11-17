@@ -9,6 +9,7 @@ class new_acars_form(new_acars_formTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.file_download_panel.visible = False
 
     ### SET DEFAULT DATE PARAMETERS ----------------------
     # set date to current date in UTC
@@ -17,6 +18,16 @@ class new_acars_form(new_acars_formTemplate):
     self.acars_all_hour.text = str(datetime.utcnow().hour).zfill(2)
     self.acars_profiles_dropdown.placeholder = "Enter a date or airport above"
 
+    
+  def download_png_click(self, **event_args):
+    anvil.media.download(self.image)
+  def download_csv_click(self, **event_args):
+    anvil.media.download(self.files['CSV'])
+  def download_cm1_click(self, **event_args):
+    anvil.media.download(self.files['CM1'])
+  def download_sharppy_click(self, **event_args):
+    anvil.media.download(self.files['SHARPPY']) 
+    
   def acars_all_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
 
@@ -106,3 +117,6 @@ class new_acars_form(new_acars_formTemplate):
     if params is not None:
       self.acars_image_display.source = params[0]
       self.acars_plot_label.text = params[1]
+      self.file_download_panel.visible = True
+      self.files = params[2]
+      self.image = params[0]

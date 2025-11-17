@@ -9,7 +9,8 @@ class new_raob_form(new_raob_formTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
+    self.file_download_panel.visible = False
+    
     ### SET DEFAULT DATE PARAMETERS ----------------------
     # set date to current date in UTC
     self.raob_date.date = datetime.utcnow().date()
@@ -21,6 +22,18 @@ class new_raob_form(new_raob_formTemplate):
     else:
       self.raob_hour.text = "00"
 
+
+  def download_png_click(self, **event_args):
+    anvil.media.download(self.image)
+  def download_csv_click(self, **event_args):
+    anvil.media.download(self.files['CSV'])
+  def download_cm1_click(self, **event_args):
+    anvil.media.download(self.files['CM1'])
+  def download_sharppy_click(self, **event_args):
+    anvil.media.download(self.files['SHARPPY']) 
+
+
+  
   ### GET SOUNDING FUNCTION -------------------------------
   def raob_button_click(self, **event_args):
     self.raob_standby_label.text = (
@@ -53,3 +66,6 @@ class new_raob_form(new_raob_formTemplate):
     if params is not None:
       self.raob_image_display.source = params[0]
       self.raob_plot_label.text = params[1]
+      self.file_download_panel.visible = True
+      self.files = params[2]
+      self.image = params[0]

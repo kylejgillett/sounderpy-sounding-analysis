@@ -15,6 +15,8 @@ class new_bufkit_form(new_bufkit_formTemplate):
 
     self.bufkit_model.items = text_list
 
+  def download_png_click(self, **event_args):
+    anvil.media.download(self.image)
   def download_csv_click(self, **event_args):
     anvil.media.download(self.files['CSV'])
   def download_cm1_click(self, **event_args):
@@ -81,8 +83,9 @@ class new_bufkit_form(new_bufkit_formTemplate):
     if params is not None:
       self.bufkit_image_display.source = params[0]
       self.bufkit_plot_label.text = params[1]
-      # self.file_download_panel.visible = True
-      # self.files = params[2]
+      self.file_download_panel.visible = True
+      self.files = params[2]
+      self.image = params[0]
     
 
   # def download_button_click(self, **event_args):

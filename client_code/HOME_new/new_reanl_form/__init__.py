@@ -16,6 +16,19 @@ class new_reanl_form(new_reanl_formTemplate):
     # set to 23z
     self.reanl_hour.text = "23"
 
+    self.file_download_panel.visible = False
+
+    
+  def download_png_click(self, **event_args):
+    anvil.media.download(self.image)
+  def download_csv_click(self, **event_args):
+    anvil.media.download(self.files['CSV'])
+  def download_cm1_click(self, **event_args):
+    anvil.media.download(self.files['CM1'])
+  def download_sharppy_click(self, **event_args):
+    anvil.media.download(self.files['SHARPPY']) 
+
+    
   def reanl_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.reanl_standby_label.text = (
@@ -51,3 +64,6 @@ class new_reanl_form(new_reanl_formTemplate):
     if params is not None:
       self.reanl_image_display.source = params[0]
       self.reanl_plot_label.text = params[1]
+      self.file_download_panel.visible = True
+      self.files = params[2]
+      self.image = params[0]

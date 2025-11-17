@@ -83,6 +83,35 @@ components:
       name: raob_image_display
       properties: {display_mode: original_size}
       type: Image
+    - components:
+      - layout_properties: {grid_position: 'SEGTHY,BEMNNI'}
+        name: map_settings_label
+        properties: {align: center, bold: true, font_size: 15, foreground: '#FFFFFF', icon: '', spacing_above: small, text: Download this profile's data as a...}
+        type: Label
+      - event_bindings: {click: download_png_click, show: show_settings_panel_show}
+        layout_properties: {grid_position: 'TUVECA,GVDGTR'}
+        name: download_png
+        properties: {background: '#2a282e', border: '', icon: 'fa:download', italic: false, text: PNG File}
+        type: Button
+      - event_bindings: {click: download_csv_click, show: show_settings_panel_show}
+        layout_properties: {grid_position: 'TUVECA,HUEKHA'}
+        name: download_csv
+        properties: {background: '#2a282e', border: '', icon: 'fa:download', italic: false, text: CSV File}
+        type: Button
+      - event_bindings: {click: download_sharppy_click, show: show_settings_panel_show}
+        layout_properties: {grid_position: 'TUVECA,NTJYPU'}
+        name: download_sharppy
+        properties: {background: '#2a282e', border: '', icon: 'fa:download', italic: false, text: SharpPy File}
+        type: Button
+      - event_bindings: {click: download_cm1_click, show: show_settings_panel_show}
+        layout_properties: {grid_position: 'TUVECA,ULEOWS'}
+        name: download_cm1
+        properties: {background: '#2a282e', border: '', icon: 'fa:download', italic: false, text: CM1 input sounding}
+        type: Button
+      layout_properties: {grid_position: 'KHWVPZ,BMEHJX'}
+      name: file_download_panel
+      properties: {col_widths: '{}', role: card, visible: false}
+      type: ColumnPanel
     layout_properties: {grid_position: 'VVBZAR,ZMDZQM'}
     name: card_1_copy
     properties: {background: '#1b2628', col_widths: '{}', role: card}
