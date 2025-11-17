@@ -72,6 +72,9 @@ class new_bufkit_form(new_bufkit_formTemplate):
       self.bufkit_image_display.source = params[0]
       self.bufkit_plot_label.text = params[1]
 
+      self.download_file_comp.files = params[2]
+      self.download_file_comp.visible = True
+
 
   # def download_button_click(self, **event_args):
   #   # get figure settings
