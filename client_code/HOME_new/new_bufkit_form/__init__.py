@@ -15,16 +15,14 @@ class new_bufkit_form(new_bufkit_formTemplate):
 
     self.bufkit_model.items = text_list
 
-  def csv_button_click(self, files, **event_args):
-      anvil.media.download(files['CSV'])
+  def download_csv_click(self, **event_args):
+    anvil.media.download(self.files['CSV'])
+  def download_cm1_click(self, **event_args):
+    anvil.media.download(self.files['CM1'])
+  def download_sharppy_click(self, **event_args):
+    anvil.media.download(self.files['SHARPPY']) 
 
-  def cm1_button_click(self, files, **event_args):
-      anvil.media.download(files['CM1'])
-  
-  def sharppy_button_click(self, files, **event_args):
-        anvil.media.download(files['SHARPPY'])
-
-      
+    
   def bufkit_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.bufkit_standby_label.text = (
@@ -84,8 +82,8 @@ class new_bufkit_form(new_bufkit_formTemplate):
       self.bufkit_image_display.source = params[0]
       self.bufkit_plot_label.text = params[1]
       self.file_download_panel.visible = True
-      files = params[2]
-      print("FILES RETURNED =", params[2])
+      self.files = params[2]
+    
 
   # def download_button_click(self, **event_args):
   #   # get figure settings
@@ -159,3 +157,4 @@ class new_bufkit_form(new_bufkit_formTemplate):
   #     special_parcels,
   #     int(self.bufkit_map_zoom.text),
   #   )
+
