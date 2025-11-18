@@ -1,6 +1,26 @@
 components:
 - components:
   - components:
+    - layout_properties: {grid_position: 'RTPEHD,NVCPVE'}
+      name: link_1_copy
+      properties:
+        align: center
+        bold: true
+        col_spacing: none
+        font: ''
+        font_size: 11
+        foreground: theme:Secondary
+        icon: fa:coffee
+        italic: true
+        spacing:
+          margin: ['0', null, '0', null]
+          padding: ['0', null, 0, null]
+        spacing_above: none
+        spacing_below: none
+        text: Consider supporting continued development of this app by "buying me a coffee".
+        underline: true
+        url: https://buymeacoffee.com/kylejgillett
+      type: Link
     - layout_properties: {grid_position: 'YQYEGG,HLIEUH'}
       name: bufkit_header
       properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: MODEL FORECAST SOUNDINGS}

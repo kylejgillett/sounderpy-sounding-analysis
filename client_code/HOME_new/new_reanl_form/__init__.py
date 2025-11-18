@@ -19,12 +19,12 @@ class new_reanl_form(new_reanl_formTemplate):
     self.file_download_panel.visible = False
 
     
-def download_csv_click(self, **event_args):
-  args = self.args_list.copy()
-  args[-1] = 'csv'
-  args[-2] = True
-  media_file = server_call("get_reanl_sounding", self.reanl_standby_label, *args)
-  anvil.media.download(media_file)
+  def download_csv_click(self, **event_args):
+    args = self.args_list.copy()
+    args[-1] = 'csv'
+    args[-2] = True
+    media_file = server_call("get_reanl_sounding", self.reanl_standby_label, *args)
+    anvil.media.download(media_file)
 
   def download_cm1_click(self, **event_args):
     args = self.args_list.copy()
@@ -33,12 +33,12 @@ def download_csv_click(self, **event_args):
     media_file = server_call("get_reanl_sounding", self.reanl_standby_label, *args)
     anvil.media.download(media_file)
 
-def download_sharppy_click(self, **event_args):
-  args = self.args_list.copy()
-  args[-1] = 'sharppy'
-  args[-2] = True
-  media_file = server_call("get_reanl_sounding", self.reanl_standby_label, *args)
-  anvil.media.download(media_file)
+  def download_sharppy_click(self, **event_args):
+    args = self.args_list.copy()
+    args[-1] = 'sharppy'
+    args[-2] = True
+    media_file = server_call("get_reanl_sounding", self.reanl_standby_label, *args)
+    anvil.media.download(media_file)
 
   def download_png_click(self, **event_args):
     anvil.media.download(self.image)

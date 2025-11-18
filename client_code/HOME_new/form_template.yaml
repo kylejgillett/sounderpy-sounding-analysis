@@ -85,7 +85,7 @@ components:
   - event_bindings: {click: button_1_click}
     layout_properties: {grid_position: 'RKBQUY,JVJGSA'}
     name: button_1
-    properties: {text: '-'}
+    properties: {text: '-', visible: false}
     type: Button
   data_bindings: []
   layout_properties: {slot: left-nav}
@@ -106,7 +106,7 @@ components:
       font_size: 20
       text: |
         Welcome! Please select a data explorer from the menu on the left.
-      visible: false
+      visible: true
     type: Label
   - layout_properties: {grid_position: 'FIWSFJ,HMMMBO'}
     name: label_3
@@ -116,7 +116,7 @@ components:
       font_size: 27
       text: |
         THIS SITE IS CURRENTLY DOWN. RESTORATION TIME IS UNKNOWN. APOLOGIES FOR ANY INCONVIENCE.
-      visible: true
+      visible: false
     type: Label
   - layout_properties: {grid_position: 'HMXLCW,JQSYEC'}
     name: spacer_2
