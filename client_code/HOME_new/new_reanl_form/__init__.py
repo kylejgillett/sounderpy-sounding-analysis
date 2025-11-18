@@ -19,14 +19,29 @@ class new_reanl_form(new_reanl_formTemplate):
     self.file_download_panel.visible = False
 
     
+def download_csv_click(self, **event_args):
+  args = self.args_list.copy()
+  args[-1] = 'csv'
+  args[-2] = True
+  media_file = server_call("get_reanl_sounding", self.reanl_standby_label, *args)
+  anvil.media.download(media_file)
+
+  def download_cm1_click(self, **event_args):
+    args = self.args_list.copy()
+    args[-1] = 'cm1'
+    args[-2] = True
+    media_file = server_call("get_reanl_sounding", self.reanl_standby_label, *args)
+    anvil.media.download(media_file)
+
+def download_sharppy_click(self, **event_args):
+  args = self.args_list.copy()
+  args[-1] = 'sharppy'
+  args[-2] = True
+  media_file = server_call("get_reanl_sounding", self.reanl_standby_label, *args)
+  anvil.media.download(media_file)
+
   def download_png_click(self, **event_args):
     anvil.media.download(self.image)
-  def download_csv_click(self, **event_args):
-    anvil.media.download(self.files['CSV'])
-  def download_cm1_click(self, **event_args):
-    anvil.media.download(self.files['CM1'])
-  def download_sharppy_click(self, **event_args):
-    anvil.media.download(self.files['SHARPPY']) 
 
     
   def reanl_button_click(self, **event_args):
@@ -56,14 +71,16 @@ class new_reanl_form(new_reanl_formTemplate):
       settings["radar"],
       settings["radar_time"],
       settings["hodo_boundary"],
+      False,
+      None
     ]
+    self.args_list = args_list
 
     # call server call wrapper
     params = server_call("get_reanl_sounding", self.reanl_standby_label, *args_list)
 
     if params is not None:
-      self.reanl_image_display.source = params[0]
+      self.image = params[0]
+      self.reanl_image_display.source = self.image
       self.reanl_plot_label.text = params[1]
       self.file_download_panel.visible = True
-      self.files = params[2]
-      self.image = params[0]

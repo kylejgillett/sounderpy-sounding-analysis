@@ -19,14 +19,32 @@ class new_acars_form(new_acars_formTemplate):
     self.acars_profiles_dropdown.placeholder = "Enter a date or airport above"
 
     
+  def download_csv_click(self, **event_args):
+    args = self.args_list.copy()
+    args[-1] = 'csv'
+    args[-2] = True
+    media_file = server_call("get_acars_sounding", self.acars_standby_label, *args)
+    anvil.media.download(media_file)
+
+  def download_cm1_click(self, **event_args):
+    args = self.args_list.copy()
+    args[-1] = 'cm1'
+    args[-2] = True
+    media_file = server_call("get_acars_sounding", self.acars_standby_label, *args)
+    anvil.media.download(media_file)
+
+  def download_sharppy_click(self, **event_args):
+    args = self.args_list.copy()
+    args[-1] = 'sharppy'
+    args[-2] = True
+    media_file = server_call("get_acars_sounding", self.acars_standby_label, *args)
+    anvil.media.download(media_file)
+
   def download_png_click(self, **event_args):
     anvil.media.download(self.image)
-  def download_csv_click(self, **event_args):
-    anvil.media.download(self.files['CSV'])
-  def download_cm1_click(self, **event_args):
-    anvil.media.download(self.files['CM1'])
-  def download_sharppy_click(self, **event_args):
-    anvil.media.download(self.files['SHARPPY']) 
+
+
+
     
   def acars_all_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -43,6 +61,9 @@ class new_acars_form(new_acars_formTemplate):
       self.acars_all_hour.text,
     )
 
+
+
+  
   def acars_airport_profiles_button_click(self, **event_args):
     """This method is called when the button is clicked"""
 
@@ -109,14 +130,16 @@ class new_acars_form(new_acars_formTemplate):
       settings["radar"],
       settings["radar_time"],
       settings["hodo_boundary"],
+      False,
+      None
     ]
+    self.args_list = args_list
 
     # call server call wrapper
     params = server_call("get_acars_sounding", self.acars_standby_label, *args_list)
 
     if params is not None:
-      self.acars_image_display.source = params[0]
+      self.image = params[0]
+      self.acars_image_display.source = self.image
       self.acars_plot_label.text = params[1]
       self.file_download_panel.visible = True
-      self.files = params[2]
-      self.image = params[0]
