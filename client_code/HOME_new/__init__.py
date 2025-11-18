@@ -56,3 +56,10 @@ class HOME_new(HOME_newTemplate):
   #   self.tab_panel.clear()
   #   self.tab_panel.add_component(Form2())
   #   pass
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.tab_panel.clear()
+    self.welcome_label.visible = False
+    self.tab_panel.add_component(new_bufkit_form())
+    pass
