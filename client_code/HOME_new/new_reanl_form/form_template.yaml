@@ -25,6 +25,14 @@ components:
       name: reanl_header
       properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: RAP-RUC MODEL REANALYSIS SOUNDINGS}
       type: Label
+    - layout_properties: {grid_position: 'FZHUMQ,WFLZPD'}
+      name: label_1
+      properties:
+        align: center
+        font_size: 17
+        icon: fa:hand-stop-o
+        text: "EXPECT OUTAGES AND DELAYS WHEN ACCESSING THIS DATA \nThe source of this data is experiencing outages and down time, resultiung is missing and incomplete data"
+      type: Label
     - layout_properties: {grid_position: 'VPBARC,FDAVCL'}
       name: reanl_info_text
       properties:
