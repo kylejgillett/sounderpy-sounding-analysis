@@ -31,7 +31,8 @@ components:
         align: center
         font_size: 17
         icon: fa:hand-stop-o
-        text: "EXPECT OUTAGES AND DELAYS WHEN ACCESSING THIS DATA \nThe source of this data is experiencing outages and down time, resultiung is missing and incomplete data"
+        text: |
+          EXPECT OUTAGES AND DELAYS WHEN ACCESSING THIS DATA
       type: Label
     - layout_properties: {grid_position: 'VPBARC,FDAVCL'}
       name: reanl_info_text
@@ -40,13 +41,14 @@ components:
         font: ''
         font_size: 12
         foreground: '#FFFFFF'
-        text: "This tool retrieves Rapid Refresh & Rapid Update Cycle model reanalysis data from NCEI for a given date/time and location. To learn more about the RAP/RUC reanalysis datasets, available times and the lat/lon domain (CONUS), check out the link below.\nSometimes this data is unavailable, check here for updates: https://www.ncei.noaa.gov/products/weather-climate-models/rapid-refresh-update "
+        text: |
+          This tool retrieves Rapid Refresh & Rapid Update Cycle model reanalysis data from NCEI and AWS for a given date/time and location. Click the map to select a latitude-longitude coordinate, paste it in the box below
       type: Label
     - components:
-      - layout_properties: {grid_position: 'FNZCGX,FSFRQK'}
+      - layout_properties: {grid_position: 'KVCVHP,YUOJEK'}
         name: reanl_map_comp_1
         properties: {}
-        type: form:HOME.reanl_map_comp
+        type: SounderPy_Sounding_Analysis.HOME_new.reanl_map_comp
       - layout_properties: {grid_position: 'VAFNQF,YWHARD'}
         name: spacer_1
         properties: {height: 32}

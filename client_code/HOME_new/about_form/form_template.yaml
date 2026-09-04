@@ -14,18 +14,38 @@ components:
         foreground: '#FFFFFF'
         text: "SounderPy is an open-source atmospheric science Python paackage for vertical profile analysis. This web-app is an extension of the SounderPy library that uses the code's same functionality to load data and create soundings right in your browser with no coding involved (on your end 😉). \n\nThis library is developed with the goal in mind to keep the code (and now this web-app) simple and efficient for users of all experience levels and for reliability in all use cases.\n\n"
       type: Label
+    - event_bindings: {click: button_1_click}
+      layout_properties: {grid_position: 'OGRLXP,DDLGIG'}
+      name: button_1
+      properties: {align: full, background: 'theme:Tertiary Container', text: Read more about SounderPy in this article published in the Journal of Open Source Software}
+      type: Button
+    - components: []
+      layout_properties: {grid_position: 'LTFPHB,OMRIAZ'}
+      name: link_1_copy
+      properties: {align: center, bold: true, font: '', font_size: 16, foreground: 'theme:On Tertiary Container', text: Check out SounderPy's Full Documentation, underline: true, url: 'https://kylejgillett.github.io/sounderpy/'}
+      type: Link
+    - components: []
+      layout_properties: {grid_position: 'LTFPHB,ICQIMV'}
+      name: link_1
+      properties: {align: center, bold: true, font: '', font_size: 16, foreground: 'theme:On Tertiary Container', text: Check out SounderPy's code on Github, underline: true, url: 'https://github.com/kylejgillett/sounderpy'}
+      type: Link
+    - components: []
+      layout_properties: {grid_position: 'LTFPHB,AQTDSQ'}
+      name: link_1_copy_2
+      properties: {align: center, bold: true, font: '', font_size: 16, foreground: 'theme:On Tertiary Container', text: Check out the author's website, underline: true, url: 'https://kylegillettwx.wordpress.com/'}
+      type: Link
     - layout_properties: {grid_position: 'COIKFF,XMZZKE'}
       name: spacer_1_copy
       properties: {height: 43}
       type: Spacer
     - layout_properties: {grid_position: 'WDMIUK,OEIKXA'}
       name: abstract_label
-      properties: {align: left, bold: true, font: '', font_size: 24, foreground: '#FFFFFF', text: 'SounderPy: An atmospheric sounding visualization and analysis tool for Python'}
+      properties: {align: center, bold: true, font: '', font_size: 24, foreground: '#FFFFFF', text: 'SounderPy: An atmospheric sounding visualization and analysis tool for Python'}
       type: Label
     - layout_properties: {grid_position: 'ESQLKY,NQUCCZ'}
       name: abstract
       properties:
-        align: left
+        align: center
         font: ''
         font_size: 16
         foreground: '#FFFFFF'
@@ -35,16 +55,11 @@ components:
           SounderPy has been used by several institutions. For example, this tool has been implemented by the Des Moines, Little Rock, Columbia, and Grand Rapids National Weather Service Offices, the State University of New York at Albany, Mississippi State University, the University of North Dakota, and others. Many students at various universities have used SounderPy in projects and papers, such as students at Ohio State University, Central Michigan University, Texas A&M University, & Rizal Technological University.
 
       type: Label
-    - event_bindings: {click: button_1_click}
-      layout_properties: {grid_position: 'ATKTVV,TYPPUD'}
-      name: button_1
-      properties: {align: full, background: 'theme:Tertiary Container', text: Read more about SounderPy in this article published in the Journal of Open Source Software}
-      type: Button
     - layout_properties: {grid_position: 'JVKHGJ,ZAIADX'}
       name: spacer_4
       properties: {height: 63}
       type: Spacer
-    - layout_properties: {grid_position: 'ZTBHPH,LNPLKQ'}
+    - layout_properties: {grid_position: 'UILJLS,LJJENC'}
       name: citing_label
       properties: {align: left, bold: true, font: '', font_size: 24, foreground: '#FFFFFF', text: CITING THIS PROJECT}
       type: Label
@@ -100,21 +115,6 @@ components:
       name: spacer_1
       properties: {height: 45}
       type: Spacer
-    - components: []
-      layout_properties: {grid_position: 'ETQFHJ,DNXBDH'}
-      name: link_1_copy
-      properties: {align: center, bold: true, font: '', font_size: 16, foreground: 'theme:On Tertiary Container', text: Check out SounderPy's Full Documentation, underline: true, url: 'https://kylejgillett.github.io/sounderpy/'}
-      type: Link
-    - components: []
-      layout_properties: {grid_position: 'FFZMJV,GXUDEJ'}
-      name: link_1
-      properties: {align: center, bold: true, font: '', font_size: 16, foreground: 'theme:On Tertiary Container', text: Check out SounderPy's code on Github, underline: true, url: 'https://github.com/kylejgillett/sounderpy'}
-      type: Link
-    - components: []
-      layout_properties: {grid_position: 'UTNJVO,HQWHZY'}
-      name: link_1_copy_2
-      properties: {align: center, bold: true, font: '', font_size: 16, foreground: 'theme:On Tertiary Container', text: Check out the author's website, underline: true, url: 'https://kylegillettwx.wordpress.com/'}
-      type: Link
     - layout_properties: {grid_position: 'TUOPXQ,XVKCIL'}
       name: spacer_5
       properties: {height: 62}

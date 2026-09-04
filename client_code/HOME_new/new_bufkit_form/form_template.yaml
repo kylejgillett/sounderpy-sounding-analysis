@@ -26,10 +26,10 @@ components:
       properties: {align: center, bold: true, font: '', font_size: 32, foreground: '#fbff00', icon: '', spacing_above: small, text: MODEL FORECAST SOUNDINGS}
       type: Label
     - components:
-      - layout_properties: {grid_position: 'GTLCSZ,FJODML'}
+      - layout_properties: {grid_position: 'ZBMEKE,MZABDP'}
         name: bufkit_map_comp_1
         properties: {}
-        type: form:HOME.bufkit_map_comp
+        type: SounderPy_Sounding_Analysis.HOME_new.bufkit_map_comp
       - layout_properties: {grid_position: 'ASSYVX,DLMUSB'}
         name: spacer_2
         properties: {height: 32}
