@@ -2,6 +2,7 @@ from ._anvil_designer import HOME_newTemplate
 from anvil import *
 import anvil.server
 
+from ..redirect_home import redirect_home
 from new_raob_form import new_raob_form
 from new_acars_form import new_acars_form
 from new_bufkit_form import new_bufkit_form
@@ -61,5 +62,5 @@ class HOME_new(HOME_newTemplate):
     """This method is called when the button is clicked"""
     self.tab_panel.clear()
     self.welcome_label.visible = False
-    self.tab_panel.add_component(new_bufkit_form())
+    self.tab_panel.add_component(redirect_home())
     pass

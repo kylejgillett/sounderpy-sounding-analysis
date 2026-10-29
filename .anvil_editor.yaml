@@ -42,6 +42,7 @@ unique_ids:
     HOME_new.raob_map_comp: '1761276279421719713220309.9023'
     HOME_new.reanl_map_comp: '1761276263483228905270133.3879'
     HOME_new.utctime_display_comp: '1761276300700906734416775.0576'
+    redirect_home: '1793309383811843333395881.124'
   modules:
     SHARED_UTILS: '1760660671898144284823583.85886'
   scripts: {}
